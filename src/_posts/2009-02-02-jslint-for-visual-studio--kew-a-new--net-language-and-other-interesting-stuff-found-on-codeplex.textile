@@ -1,0 +1,24 @@
+---
+layout: post
+title: JSLint for Visual Studio, Kew a new .Net language and other interesting stuff found on Codeplex
+summary: If you do any Js development at all you may want to consider installing this add in for Visual Studio that brings JSLint to the IDE.
+categories: [JavaScript]
+---
+
+If you do any Js development at all you may want to consider installing <a href="http://www.codeplex.com/jslint" target="_blank">this add in</a> for Visual Studio that brings <a href="http://www.jslint.com/" target="_blank">JSLint</a> to the IDE.
+
+If you are still doing asp.net web forms development you may consider to download <a href="http://www.codeplex.com/VSXHTML11Templates" target="_blank">this XHTML compliant templates</a> to clean up your code.
+
+ESENT is an embedded database that is part of Windows, this library is a <a href="http://www.codeplex.com/ManagedEsent" target="_blank">managed interface to ESENT</a>.
+
+If you need to DUMP a database as Insert statements <a href="http://www.codeplex.com/GetMsSqlDump" target="_blank">GetMsSqlDump</a> is the tool you are looking for.
+
+<a href="http://www.codeplex.com/kew" target="_blank">Kew</a> now named <a href="http://www.codeplex.com/kew" target="_blank">Rokyt</a> is a new object oriented based on closures language, the syntax is very simple and looks really good.
+
+If you need to do a backup of your SVN repository, <a href="http://www.codeplex.com/svnbackup" target="_blank">SVN Backup</a> is a nice little tool to do so in just one line.
+
+<a href="http://www.codeplex.com/ValidationAspects" target="_blank">ValidationAspects</a> is an AOP framework to perform validation on objects, methods and parameters by contract, you can use attributes or augment the code programmatically.
+
+If Kew (sorry Rokyt), is not our cup of tea, take a look at this Lisp based scripting language for the CLR, <a href="http://www.codeplex.com/Yarr" target="_blank">Yarr</a>. The home page claims to be a good starting point to build DSL’s.
+
+<a href="http://www.codeplex.com/sqlinstaller" target="_blank">SQLInstaller</a> a toolset to assist with deployment of database related projects.

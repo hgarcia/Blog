@@ -1,0 +1,18 @@
+---
+layout: post
+title: Reading a book and sharing with your pairs.
+summary: A month ago or so I found a mention to the Toronto Patterns Study Interest Group in the Toronto XP list. I made contact with them and I was reading the Clean Code book in no time.  I have ben to two meetings so far and I can't be any happier.
+categories: [Books, General]
+---
+
+A month ago or so I found a mention to the <a target="_blank" href="http://groups.yahoo.com/group/dpsig-toronto/">Toronto Patterns Study Interest Group</a> in the Toronto XP list.
+
+I made contact with them and I was reading the Clean Code book in no time.  I have ben to two meetings so far and I can't be any happier.
+
+We are reading <a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code by Robert Martin</a>, a book that I had sitting in my library for a while.  I really like the book and I mostly agree with all the concepts so far (we deal with the first five or six chapters so far). But I think that what I like the most is the interaction and how eterogeneous the group is.
+
+There are programmers that do Java, .Net, Python, C, C++, Ruby? on their day jobs, and this bring different perspectives. At the same time is fun to find that we all face the same issues with the code we have to deal with.
+
+It's nice as well to listen to those that disagree with my point of view or the author point of view and why. This make you, to further question your asumptions and the book as well. I did something similar a few months ago with my team, we all set up to read the <a target="_blank" href="http://codebetter.com/files/folders/codebetter_downloads/entry179694.aspx">Foundations of Programming ebook</a> and them we discuss it during our weekly learning meating.
+
+Having to explain why you think that the author is right or wrong is a good exercise to fully understand the problem.  Latelly at work I have been dealing with a piece of code that is not fun to work with (it's actually a real pain), so this meetings and this discussions help me to keep my morale high.

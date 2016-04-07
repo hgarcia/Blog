@@ -1,0 +1,75 @@
+---
+layout: post
+title: FirstOrNullObject extension method for IEnumerable&lt;T&gt; and FirstOrNew.
+summary: In the context of this article every time I mention Linq I'm actually talking about Linq To Objects. Although  Linq has a very handy method on FirstOrDefault&lt;T&gt;.
+categories: [Patterns, Programming, .Net]
+---
+
+In the context of this article every time I mention Linq I'm actually talking about Linq To Objects. Although 
+
+Linq has a very handy method on FirstOrDefault&lt;T&gt;. When applying this method to a collection you will get in return the First object of the default of T. This works great with numeric values in the sense that the default is not null. So you can do stuff like this without anything blowing up.
+
+
+
+<script src='http://gist.github.com/561849.js?file=file0.aspx-cs'></script>
+
+
+
+The result will be "0". But what if you do this with a list of strings?
+
+
+
+<script src='http://gist.github.com/561849.js?file=file1.aspx-cs'></script>
+
+
+
+You will get this:
+
+
+
+<script src='http://gist.github.com/561849.js?file=file2.console'></script>
+
+
+
+Why? The default of string is null.
+
+h3. A possible solution.
+
+Sometimes you need to filter a list of objects and access one of the properties of the object right away. For that we can use the <a href="http://en.wikipedia.org/wiki/Null_Object_pattern" target="_blank">Null Object pattern</a>, but how to tell Linq about it? 
+
+Linq is implemented as a set of extension methods on IEnumeration&lt;T&gt;, so let's add another one!
+
+
+
+<script src='http://gist.github.com/561849.js?file=file3.aspx-cs'></script>
+
+
+
+This is easy to understand, we apply the passed Func&lt;T,bool&gt; to FirstOrDefault if the result is null we return the passed nullObject. 
+For completion we also need to create on that can be used to get the first element of the collection without applying any filtering.
+
+
+
+<script src='http://gist.github.com/561849.js?file=file4.aspx-cs'></script>
+
+
+
+You get the most value of this methods when filtering collections of complex objects, like your domain objects. You have to be careful to use them when expecting a null object is ok, sometimes is not and a null value should be treated as an error or an exception, but in other cases is perfectly normal to get a null object as the default. You should understand that the null object is different from a default implementation of the object (like a new instance). Default objects may return some default values in their properties. For those scenarios I like to create another extension methods where you pass an instance of a new T.
+
+
+
+<script src='http://gist.github.com/561849.js?file=file5.aspx-cs'></script>
+
+
+
+You may notice that the implementation is calling the methods we created before, the only difference is in the name of the methods and the parameters. But it's important to be clear on what the methods will do.
+
+Another approach is to use the same FirstOrDefault name for your new methods and you will end up with four methods, the two on Linq plus two implement by you with this signature.
+
+
+
+<script src='http://gist.github.com/561849.js?file=file6.aspx-cs'></script>
+
+
+
+And who knows, maybe that is the best approach. 

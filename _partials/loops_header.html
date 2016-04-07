@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head class="html5reset-kitchensink-clean">
+  <meta charset="utf-8" />
+  <meta name="google-site-verification" content="LirEfdzOpsT5fsjl0Di05wXm_agX47gPOVc8kZzsO8s" />
+  <title>{{site.name}} - {{site.author}}
+    {% if title %}
+     : {{ title }}
+    {% endif %}
+  </title>
+  <script type="text/javascript">  var disqus_developer = 0; </script>
+  {% if summary %}
+  <meta name="description" content="{{ summary }}" />
+  {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="{{site.author}}" />
+  <meta name="Copyright" content="Copyright {{site.author}} 2010 - 2012. All Rights Reserved." />
+  <meta name="DC.title" content="{{site.name}}" />
+  <meta name="DC.subject" content="Computer programming, music, open source." />
+  <meta name="DC.creator" content="{{site.author}}." />
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <!-- For third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{site.url}}/assets/img/apple-touch-icon-144x144-precomposed.png">
+  <!-- For iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{site.url}}/assets/img/apple-touch-icon-114x114-precomposed.png">
+  <!-- For first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{site.url}}/assets/img/apple-touch-icon-72x72-precomposed.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="{{site.url}}/assets/img/apple-touch-icon-precomposed.png">
+
+  <link href='http://fonts.googleapis.com/css?family=Comfortaa:400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{site.url}}/assets/css/master.min.css" />
+  <script src="{{site.url}}/assets/js/modernizr-1.5.min.js"></script>
+  <style>
+    body {
+      background-color: #2e2d2d;
+      font-family: 'Comfortaa', cursive, Georgia, serif;
+      font-weight: 400;
+      color: #ddd;
+    }
+  {% if body_style %}
+    body {
+      {{body_style}}
+    }
+  {% endif %}
+    header.main {
+      margin-bottom: 1em;
+      margin-top: 0.2em;
+    }
+    header.main h1 {
+      color: #BBB;
+      font-family: "Comfortaa", Georgia, serif;
+      font-size: 300%;
+      font-weight: 400;
+      width: 50%;
+      display: inline-block;
+      vertical-align: bottom;
+      padding-left: 0.1em;
+    }
+    header ul {
+      width: 10%;
+      vertical-align: bottom;
+      list-style: none outside none;
+      text-align: right;
+      float:right;
+      padding-right: 0.3em;
+    }
+    a {
+      color: #ddd;
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 65px;
+      display: inline;
+    }
+  {% if title_style %}
+    h1.title {
+      {{title_style}}
+    }
+  {% endif %}
+    #photos .item {
+      margin: 1px;
+      display: inline-block;
+      float: left;
+      height: 184px;
+      overflow: hidden;
+      width: 310px;
+      border-bottom-right-radius: 30px;
+    }
+    #photos .item img {
+      max-width: inherit;
+    }
+    #photos .item h4 {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: inherit;
+      font-family: 'Comfortaa';
+      font-weight: 400;
+      padding: 0 0 0 25px;
+      top: 150px;
+    }
+    .main-content {
+      margin: 0;
+      max-width: 100%;
+      padding: 0;
+      background-color: inherit;
+      box-shadow: inherit;
+    }
+    .single-image-wrapper {
+      overflow: hidden;
+      position: relative;
+      vertical-align: middle;
+      width: 100%;
+    }
+    .center-image {
+      text-align: center;
+    }
+    #single-image {
+      margin-left: 0.2em;
+    }
+    #single-image-text {
+      float: right;
+      padding-right: 0.2em;
+      top: 65%;
+      position: relative;
+    }
+    footer {
+      font-size: small;
+    }
+    .center-text h1.title {
+      float: left;
+      font-size: 42px;
+      line-height: 50px;
+    }
+    .center-text small {
+      float: right;
+    }
+    #slideshow {
+      position:relative;
+    }
+    #slideshow img {
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:8;
+      opacity:0.0;
+    }
+    #slideshow img.active {
+      z-index:10;
+      opacity:1.0;
+    }
+    #slideshow img.last-active {
+      z-index:9;
+    }
+    #slideshow-img-container {
+      margin: 0 0 0 28%;
+      position: relative;
+    }
+    #slideshow-text {
+      position: absolute;
+      z-index: 20;
+    }
+    #slideshow-text footer {
+      text-align: left;
+    }
+    {% if title_style %}
+    #slideshow-text {
+      {{ title_style }}
+    }
+    {% endif %}
+
+  .main-content {
+    max-width: 1266px;
+    margin: 0 auto;
+  }
+  @media only screen and (max-width: 1265px) {
+    .main-content {
+      max-width: 952px;
+    }
+  }
+  @media only screen and (max-width: 953px) {
+    .main-content {
+      max-width: 642px;
+    }
+  }
+  @media only screen and (max-width: 643px) {
+    .main-content {
+      max-width: 100%;
+    }
+    #photos .item {
+      width: 59%;
+      height: 153px;
+    }
+    #photos .item h4 {
+      display: none;
+    }
+    header.main h1 {
+      font-size: 151%;
+      line-height: 35px;
+      width:100%;
+      margin-bottom: 10px;
+      padding-left: 0px;
+    }
+    header ul {
+      width: 100%;
+      float: left;
+    }
+    header ul li {
+      float: left;
+      margin-right: 20px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <header class="main">
+      <h1>The d<span class="accent-font">y</span>namic programmer</h1>
+      <ul>
+        <li><a href="{{site.blog_url}}">Blog</a></li>
+        <li><a href="{{site.url}}/categories/photos.html">Loops</a></li>
+        <li><a href="{{site.music_url}}/">Music</a></li>
+      </ul>
+    </header>
+    <div id="photos-container">

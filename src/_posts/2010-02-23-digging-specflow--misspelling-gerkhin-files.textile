@@ -1,0 +1,16 @@
+---
+layout: post
+title: Digging SpecFlow, misspelling Gerkhin files
+summary: I'm a proponent of dynamic languages and I love Ruby and Cucumber but I have to admit that this is cool. I was writing a set of specifications with SpecFlow today and suddenly I saw this error in Visual Studio.
+categories: [Testing, Tools]
+---
+
+I'm a proponent of dynamic languages and I love Ruby and Cucumber but I have to admit that this is cool. I was writing a set of specifications with <a href="http://www.specflow.org/" target="_blank">SpecFlow</a> today and suddenly I saw this error in Visual Studio.
+
+<a href="../../../images/posts/DiggingSpecFlowmisspellingGerkhinfiles_95F2/Scenaio.png"><img border="0" alt="Scenaio" src="/images/posts/DiggingSpecFlowmisspellingGerkhinfiles_95F2/Scenaio_thumb.png" width="642" height="209"></a> 
+
+Double clicking the line takes you to the misspelling error in the Specification file.
+
+<a href="../../../images/posts/DiggingSpecFlowmisspellingGerkhinfiles_95F2/Mispelling.png"><img border="0" alt="Mispelling" src="/images/posts/DiggingSpecFlowmisspellingGerkhinfiles_95F2/Mispelling_thumb.png" width="674" height="216"></a> 
+
+I though that was really cool, specially for the slightly dyslexic programmers like myself. :-)

@@ -1,0 +1,18 @@
+---
+layout: post
+title: Speaking at Toronto Code Camp 2010 on BDD + User stories for end to end testing.
+summary: I finally got the courage and sent a proposal for speaking at the Toronto code camp. The good news is that it was accepted and I will be speaking this coming May 1st at this year code camp. 
+categories: [General, Talks]
+---
+
+I finally got the courage and sent a proposal for speaking at the Toronto code camp. The good news is that it was accepted and I will be speaking this coming May 1st at this year code camp. 
+
+This time around will be at Seneca college in front of another full house. 8 tracks of .Net goodness ranging from SharePoint development to JQuery, testing (Unit and BDD), Silverlight, OData, Win Phone 7, etc. Check all the details visiting the Code camp website: <a title="http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx" href="http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx">http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx</a>
+
+h3.  About my talk.
+
+I will describe what BDD is and give a brief introduction to user stories. I will de demoing how to use them to generate executable code that exercise your system and tells the clients that your program is working as expected.
+
+This technique can help you to increase the communication bandwidth between business, development and other stakeholders. I will explore this technique not just in the context of a green field application but will talk about how to use it around a legacy or existing app that has no specifications as a security net for modifying it. 
+
+As a code camp talk I will be showing a lot of code and examples with different tools so you can decide witch one fit best into your workflow.

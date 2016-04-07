@@ -1,0 +1,29 @@
+---
+layout: post
+title: Using Gestalt in a site that already uses prototype.js
+summary: Gestalt, the new js library release by the MIX Online labs, takes a dependency on jQuery. They use it to do some Dom manipulation (locate tags, modify the Dom).  But what happens if you already use prototype.js in your application?
+categories: [Programming]
+---
+
+Gestalt, the new js library release by the MIX Online labs, takes a dependency on jQuery. They use it to do some Dom manipulation (locate tags, modify the Dom).
+
+But what happens if you already use prototype.js in your application? For example RoR apps use prototype as their javascript library by default.
+Both jQuery and Prototype define the dollar sign function $(), in jQuery this is the short form of actually the jQuery() function, since the libraries define this function in the global namespace, the latest library included in order from top to bottom will have precedence. So if you already have some code based upon the prototype definition of $() you will need to add jQuery before prototype or your libraries will brake.
+
+The problem here is that Gestalt.js internally uses the short form (the $()) of jQuery in some places. So lets say you have this lines on top of your html file
+
+
+
+<script src='http://gist.github.com/561853.js?file=file0.html'></script>
+
+
+
+Once the page load you will see an error like this in your js console/debugger:
+
+
+
+<script src='http://gist.github.com/561853.js?file=file1.html'></script>
+
+
+
+Now, don’t panic the solution is very simple. You can open gestalt.js and replace all occurrences of $( with jQuery( or just get gestalt-proto.js from my <a href="http://gestaltkatas.codeplex.com/SourceControl/changeset/view/35135#510582" target="_blank">Gestalt katas in Codeplex</a>.

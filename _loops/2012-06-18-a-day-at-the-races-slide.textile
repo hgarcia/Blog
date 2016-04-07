@@ -1,0 +1,9 @@
+---
+layout: slide
+title: A day at the races
+home: 7395390922
+home_size: small320
+display_size: large
+slide: [7395390922, 7395381462, 7395386394, 7395396520, 7395395020, 7395400632, 7395398336]
+title_style: "font-family: Helvetica; font-size: 1.3em;"
+---

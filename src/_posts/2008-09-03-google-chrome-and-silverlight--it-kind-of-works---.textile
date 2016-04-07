@@ -1,0 +1,14 @@
+---
+layout: post
+title: Google Chrome and Silverlight- It kind of works!!!
+summary: If you were wondering I just try the MLB streaming in Google Chrome. Silverlight works and I even had video, but the frames don't update and there is an ugly scroll bar at the bottom of the video screen. The audio works fine with no problem, some...
+categories: [General]
+---
+
+If you were wondering, I just try the <a href="http://mlb.com" target="_blank" title="Major League Baseball">MLB streaming</a> in Google Chrome.
+
+Silverlight works and I even had video, but the frames don't update and there is an ugly scroll bar at the bottom of the video screen. The audio works fine with no problem, something I couldn't said about Silverlight and Firefox for this particular site.
+
+<img src="/images/posts/sp32-20080903-153200.png" border="0" alt="A mets game on chrome."/>
+
+If I keep moving the scrolling bar the video frames refresh but that is kind of silly, isn't it?

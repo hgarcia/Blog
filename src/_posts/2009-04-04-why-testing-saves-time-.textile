@@ -1,0 +1,40 @@
+---
+layout: post
+title: Why testing saves time.
+summary: Exploring why the detractors of TDD that seen it as a waste of time are just plain wrong.
+categories: [Programming, Testing]
+---
+
+Some of the detractors of TDD or testing in general is that you waste time writing test instead of writing "useful" code.
+
+Well, writing test just save me a few hours of debugging. Look at this very simple class, there is an stupid mistake in the code.
+
+
+
+<script src='http://gist.github.com/561845.js?file=file0.aspx-cs'></script>
+
+
+
+Did you see it? Good for you! I didn't but since I have my test and when I run it it fail.
+
+
+
+<script src='http://gist.github.com/561845.js?file=file1.aspx-cs'></script>
+
+
+
+<a href="../../../images/posts/Whytestingsavestime_932/ScreenHunter_01%202009-04-05%2000.31.28_2.jpg"><img border="0" alt="ScreenHunter_01 2009-04-05 00.31.28" src="/images/posts/Whytestingsavestime_932/ScreenHunter_01%202009-04-05%2000.31.28_thumb.jpg" width="760" height="51" /></a>
+
+Notice that the error mention that widget.Template.Rendered was null, but I'm mocking the ICache implementation and returning the template string when Get is called with the right key.
+
+Upon running the test in debug the error was evident, I was calling getTemplateView before setting the Key property of the object!
+
+Here is the code after been fixed, changing the position of lines 15 and 16 did it.
+
+
+
+<script src='http://gist.github.com/561845.js?file=file2.aspx-cs'></script>
+
+
+
+The good thing is that I caught the error immediately, while the logic that I use to write the code was still fresh in my mind, so I did not spend hours trying to figure out what's going on. Granted this is a very easy to spot issue, but believe that if you catch this error three or four days after writing the code you will spend more than the 5 minutes that took to write the unit test.

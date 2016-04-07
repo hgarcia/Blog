@@ -1,0 +1,58 @@
+---
+layout: post
+title: Are there a lot of programs for that?
+summary: This is a post on communication, on how developers and technically savvy people think in general and the differences with the archetypical user.  Two weeks ago I brought a Kobo.
+categories: [General, Methodology]
+---
+
+This is a post on communication, on how developers and technically savvy people think in general and the differences with the archetypical user.
+
+Two weeks ago I brought a Kobo. It's an e-reader device promoted by Indigo (a big Canadian bookstore chain). I'm very happy with it and I use it every day in my half hour commute in the subway. 
+
+Today while enjoying the second part of the RSpec book around 9:00 am in a half full subway car, the person standing besides me asks:
+
+_-Is it good?
+
+His chin pointing at the Kobo and an inquisitive look in his eyes. 
+
+ _-Yes, it's good.
+
+ _-So, it's easy to read? 
+
+ _-Yes, a bit slow turning pages but good.
+
+ _-Are there a lot of programs?
+
+At that moment I started to explain. No, there is not software for it yet, but it's an open platform, so maybe later onâ€¦ By the look in his face I knew that I lost him; and more important I wasn't answering his question, but I wasn't sure why.
+
+ _-But what are you reading them?
+
+And them it sunk on me, when he said software he meant books!!!
+
+ _-Oh, the book, of course, sorry. Yes, you can use pdf's or ePub, both open formatsâ€¦ - I was losing him again â€" Yes, there are lots of books you can read with it.
+
+He smiled, happy to get his question answered, and we continue our respective commutes without other word.
+
+h3. What's the point of telling you about my commute?
+
+You may be wondering.
+This conversation was a casual one, with a normal person that for sure can be characterized as the user for some of the software that we write every day.
+He was calling the books, programs.
+He has no idea what ePub of PDF's are. He has no clue about why open formats are an important consideration (at least for me) or what the hell are they.
+And I'm not saying that he should.
+What he needed to know was, can I actually read the books I want in that thing?
+
+Sometimes as programmers we can be as thick an literal as a computer. We make technical considerations based in our own knowledge and our experience but we struggle communicating the importance of those decisions. Maybe the problem is because of the work we do, trying to express as precise as possible a set of instructions for the computer.
+
+That is why Agile methodologies and practices like, Scrum, User Stories, short feedback loops, BDD, etc. are important.
+
+Practicing this methodologies force us to talk with the user (or a representative) constantly. We use the on going conversation to create part of our test suites (with BDD). This dialogue flush out a language that is share across the team and hopefully reflects in the software implementation itself (as a reach domain).
+
+Using semantic HTML, CSS, SOLID principles and a super-duper framework may be important for us. The client doesn't care.
+The client just want to have the software. We should use all those tools to give him the best software we can produce and more important the software he wants. But we should not made that the focus of the conversation.
+
+So stop talking about that with the client, stop asking permission to write tests or whatever is that you need to do, just do it.
+Do it as a way to improve the quality of the software.
+Create a high bandwidth communication channel and give him what he want.
+But use that channel to talk about what's really important, the software you are both creating together. Not how to write it.
+As a professional (as a craftsman if you want) do it the way you honestly think will produce the best results and everything will be fine.

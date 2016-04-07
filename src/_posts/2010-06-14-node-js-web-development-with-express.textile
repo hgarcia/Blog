@@ -1,0 +1,89 @@
+---
+layout: post
+title: Node.js web development with Express
+summary: I have been researching node.js and the ecosystem around it. Yes, node has an ecosystem, a very vibrant one if I may say. Today I tried a simple web framework that resembles Ruby's Sinatra by the name of Express.
+categories: [Frameworks, node.js, Programming, Tools]
+---
+
+I have been researching node.js and the ecosystem around it. Yes, node has an ecosystem, a very vibrant one if I may say. Today I tried a simple web framework that resembles Ruby's Sinatra by the name of Express.
+
+h3. Installation
+
+There are 2 ways to install it, one using Kiwi a node package manager, the other is cloning the github repo and doing make install on it. I first tried using Kiwi but it didn't work for me so I got the code with git and didn't have a problem.
+
+There is some documentation on the website, enough to get you started.
+
+h3. Characteristics
+
+Most of the time you will write your application in one file that acts as a front controller. Actually is not a controller just a module,lets call it main. In the module you write methods to handle requests according to the HTTP VERB used. You map them to url's passing the pattern as the first parameter. For example.
+
+
+
+<script src='http://gist.github.com/561866.js?file=file0.js'></script>
+
+
+
+Will handle a request to the root of your application. In the same module (file) you can have all the handlers for your site (if you want) even when they represent very different resources. I prefer to separate them in some more logic organization for most but the simple apps.
+For example I want to have the code that handles all calls to the route /admin/* in an admin module, so I create a new file called admin.js and place this file in the same folder as my app.js file
+
+Them at the top I just type.
+
+
+
+<script src='http://gist.github.com/561866.js?file=file1.js'></script>
+
+
+
+The unshifting of the paths is needed because we previously change it to the location of the express module you can also just type
+
+
+
+<script src='http://gist.github.com/561866.js?file=file2.js'></script>
+
+
+
+h3. Running the application and debugging.
+
+Once you have all your handlers done starting the app is as easy as type:
+
+
+
+<script src='http://gist.github.com/561866.js?file=file3.js'></script>
+
+
+
+If you have any mistakes in your code you will see an error in the command line:
+
+<img src="/images/posts/console_error.png" border="0" alt="Express errors in the console."/>
+
+If the error is found during run time, by default, Express provides a friendly 500 error page.
+
+<img src="/images/posts/500_error.png" border="0" alt="Express 500 error page."/>
+
+In this case the error is a view file missing.
+
+h3. Views
+
+Out of the box Express knows about Haml and Saas templates and will look for view files in the views folder. It also support layouts and partial views to compose complex ui.
+
+By default will try to get a layout by the name of "layout" for the same view engine you are using for the view, for example in our case that we are using haml, it will try to load a file by the name of layout.html.haml.
+You can disable layouts, setting layout: false in the hash passed to the render method of the request object.
+
+
+<script src='http://gist.github.com/561866.js?file=file4.js'></script>
+
+
+Or you can specify the name explicitly:
+
+
+<script src='http://gist.github.com/561866.js?file=file5.js'></script>
+
+
+h3. Plug-ins
+
+Express has a very simple plug-in architecture that make it very easy to extend. Express uses plug-ins to provide it's core services, so besides the 4 required core plug-ins you can add or remove services that you don't use.
+
+h3. Conclusions
+
+Express is a cool little framework that should help you to write simple applications without a lot of hassle.
+In a future post I will take a look at Geddy another web framework, but this one inspired by Rails.

@@ -1,0 +1,24 @@
+---
+layout: post
+title: Javascript, the good parts, the book.
+summary: I look at the table of contents and I knew that I have to have it. I ordered two copies right away, one from my team and one for my personal library. The book came two weeks ago and I'm loving it.
+categories: [JavaScript, Programming]
+---
+
+<a target="_blank" title="Douglas Crockford" href="http://crockford.com/">Douglas Crockford</a> is well known from his work on javascript, specially from tools like <a target="_blank" title="JSLint" href="http://www.jslint.com/">Jslint</a> and <a target="_blank" title="JSmin" href="http://javascript.crockford.com/jsmin.html">Jsmin</a>.
+
+He is working at Yahoo as a JavaScript Architect.He is somehow responsible for the architecture of the YUI library. He is also the creator? of <a target="_blank" title="JSON - Javascript Object Notation" href="http://www.json.org/">JSON</a>, Javascript Object Notation and one of the best ways to pass data when using AJAX.
+
+He gave a talk in 2007 at Yahoo that is available in the Yahoo developer network about The good parts of Javascript. Six or seven months ago I watched the video with my team and everybody love it. We do quiet a lot of Javascript and we are using more and more AJAX to drive and improve the user experience of our sites. We rapidly adapted most of the patterns and recommendations from Crockford in the re write of our extensive JavaScript library.
+
+Imagine my excitement when I saw a few months ago that O'reilly announced a book by <a target="_blank" title="Douglas Crockford" href="http://crockford.com/">Douglas Crockford</a> entitled, <a target="_blank" title="Javascript: The Good Parts" href="http://shop.oreilly.com/product/9780596517748.do">Javascript, the good parts.</a> I look at the table of contents and I knew that I have to have it. I ordered two copies right away, one from my team and one for my personal library.
+
+The book came two weeks ago and I'm loving it. It's a short book (170 pages) with just content, full of code examples, not just how to do stuff but also how not to do things. I really appreciate this because sometimes is easier to see the problem looking at code that smells. I certainly recommend that if you do any web UI development at all, read this book. I will recommend it to everybody, not matter how knowledgeable you are on the language. I'm embedding the video below, if you want to see more from Crockford visit the <a target="_blank" title="YUI Theatre" href="http://developer.yahoo.com/yui/theater/">YUI theatre</a>.
+
+<object height="323" width="512">
+	<param value="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.2" name="movie" />
+	<param value="true" name="allowFullScreen" />
+	<param value="id=2974197&amp;vid=630959&amp;lang=en-us&amp;intl=us&amp;thumbUrl=http%3A//us.i1.yimg.com/us.yimg.com/i/us/sch/cn/v/v1/w826/630959_100_70.jpeg%3Fx%3D158%26y%3D111%26sig%3DMUc0gpdIoywY3Yi7Bqgn1g--&amp;embed=1" name="flashVars" />
+	<embed flashvars="id=2974197&amp;vid=630959&amp;lang=en-us&amp;intl=us&amp;thumbUrl=http%3A//us.i1.yimg.com/us.yimg.com/i/us/sch/cn/v/v1/w826/630959_100_70.jpeg%3Fx%3D158%26y%3D111%26sig%3DMUc0gpdIoywY3Yi7Bqgn1g--&amp;embed=1" allowfullscreen="true" type="application/x-shockwave-flash" src="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.2" height="323" width="512">
+</embed>
+</object>

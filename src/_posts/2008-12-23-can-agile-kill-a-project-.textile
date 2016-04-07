@@ -1,0 +1,37 @@
+---
+layout: post
+title: Can Agile kill a project?
+summary: Mohammad Azam has a post entitled When Being Agile Kills the Project. He mentions a project were the client gave a one month deadline not negotiable and so, he had to go and start cutting corners to make the deadline ...
+categories: [Methodology]
+---
+
+<a href="http://www.azamsharp.com/" target="_blank">Mohammad Azam</a> has a post entitled "When Being Agile Kills the Project" (the post have been removed). He mentions a project were the client gave a one month deadline not negotiable and so, he had to go and start cutting corners to make the deadline since, he -wanted- +needed+ to keep his job (totally reasonable, keeping the job I mean).
+
+bq. Unfortunately, in this case the owner was fixed with the deadline and was not willing to move it further. The other option was to leave the project and search for a different one. This option was not reasonable for me as I was on a worker visa and finding another company to sponsor a new worker visa is like finding a needle in a hay stack.
+
+p. There is no discussion on this, but this post got me thinking. First the things that they have to sacrifice.
+
+bq. I said earlier that the reasonable deadline for the project was 3 months. This will include all levels of testing, clean separation of code, automated build etc. When the project was to be completed within a month I had to compromise many of the agile methods. The application was a simple 3-layer application with no unit tests and no automated deployment.
+
+p. All this make me think that the company, the development team/division and everything else in general weren’t Agile (in a sense of practicing Agile methodologies). Mohammad was in a non Agile company, with totally unrealistic deadlines and in a terrible position due to the sponsorship. He manage to keep his client happy and keep his job.
+
+bq. The project was finish in exactly 29 days. I had to work some late nights but the project was deployed successfully.
+
+p. But I had to disagree with the conclusions draw from his experience.
+
+bq. This experience led me to believe that all the projects cannot be agile projects. Sometime you will have to give up agile principles just to meet the deadline. Yes, the resultant code was messy but at the end I get to keep my job.
+
+p. This is only true in situations like the one he described. I will paraphrase and said: Not all companies are ready to work in an Agile manner. This is true and will be true for a while, maybe for ever. I think that been in Mohammad situation I will probably do the same, write the code the faster I can to have it shipped. This doesn’t mean that projects can’t be Agile, any and all projects can be Agile. This is a question of the people involved in the project and not the project per se.
+
+As a comment to the post mentions:
+
+<blockquote>
+
+by Domingos on 12/23/2008 6:07:49 AM
+That's why being agile is not only about engineering practices. In order to be Agile, a company needs to change the way it does business.
+At the end of the day, it is about what applies to your situation. No one should never adopt all practices blindly without consideration.
+I would have done exactly what you did: put everything in a balance and decide what practice to use in your specific case. And you were 'agile', but no Agile.
+And I think that it is the the former that really matters. <a href="http://www.codeinstructions.com" target="_blank">http://www.codeinstructions.com</a>
+</blockquote>
+
+p. Mohammad post reminded me how lucky I’m to be able to work in a company were not just Agile but even Lean principles are applied, and not only at the development level but by our clients.

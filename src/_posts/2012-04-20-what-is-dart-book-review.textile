@@ -1,0 +1,20 @@
+---
+layout: post
+title: What is Dart? by Kathy Walrath and Seth Ladd.
+summary: Published by O'Reilly this very short book attempt to explain what is Dart and why you may want to use it.
+categories: [Programming, Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920025887.do" target="_blank"><img class="img-float-right"  src="/images/posts/what_is_dart.gif" border="0" alt="What is Dart - book cover"/></a>This is a very short book that serves as a general introduction to Dart, the new language introduced by Google. The book explain the rationality behind Dart and the use cases for it.
+
+The book is mostly an overview of the main features of Dart and some of the tools you have available today. In it's only 20 pages (35 in the epub version on my iPad) this short book explains why the need for Dart and highlight some of the characteristics that made it a viable option for large web applications.
+
+The authors "Kathy Walrath":https://plus.google.com/105904968710974272643/posts and "Seth Ladd":http://www.sethladd.com/ complement the content with multiple links to on-line articles where you can get reacher, more technical information.
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__
+
+I think it's an OK book to get a general sense of the language, maybe can be used as a quick way to introduce it to some teams.
+
+I did learn a thing or two about Dart that I wasn't aware of, increasing my interest on it.

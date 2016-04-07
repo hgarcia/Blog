@@ -1,0 +1,232 @@
+---
+layout: post
+title: Building an iOS app with PhoneGap, Angular.js and the ionic framework (Part 1).
+summary: We will build an iOS app with web technologies to track outdoor activities.
+categories: [back]
+---
+
+In this series I plan to build a mobile application using primarily web technologies (HTML5, js and css). I will be targeting iOS since those are the devices I have access to at the moment, but the application should be deployable to a number of platforms without major changes due to the technologies I will be using.
+
+
+h3. Overview of the application.
+
+I decided to create yet another activity tracking App. On a first iteration I will try to focus on tracking ski sessions. Future iterations will add tracking tailored to other outdoor activities.
+
+The main reason to build this type of App is that it will give me a good excuse to use most of the available API's like geo-location, accelerometer, camera, media, file, notification, storage, etc.
+
+
+h3. Framework selection.
+
+I will be using PhoneGap as the mobile framework that will enable our application to access all the devices native API's.
+I will pair PhoneGap with Angular. I think that a single page app is perfectly suited to build mobile applications like this one.
+
+It took me some time to decide what UI library I wanted to use for the visual elements. It was tempting to just use Bootstrap (tried and true) once more but I wanted something focused on mobile applications.
+
+My main target device(s) are phone(s), so I only need some limited responsiveness.
+
+__I doubt anybody is going down the hill with the tablet on their pockets to track their speed.__
+
+I used jQuery mobile in the pass but I wanted something different, something that feels more modern. I took a look at several frameworks after deciding to give "ionic":http://ionicframework.com/ a try.
+
+It looks very clean, having most of the components I feel I will need and they have integration with angular out of the door. Ionic is not just a CSS framework but a JavaScript library of components as well.
+
+With the set of frameworks selected, is time to...
+
+
+h3. Getting started
+
+I will assume that you already have "node.js":http://nodejs.org/ installed in your system. If you don't you may need to "install it now":http://blog.dynamicprogrammer.com/2014/02/18/installing-node-js-on-mac-osx.html
+We will also need Xcode installed
+
+Install PhoneGap, bower and ios-sim via npm.
+
+<pre><code>
+
+    npm install phonegap -g
+    npm install bower -g
+    npm install ios-sim -g
+
+</code></pre>
+
+We will use Bower to manage our client dependencies and ios-sim is needed to launch the iOS emulator.
+
+
+h3. Setting up the project.
+
+We will create the project and install the client side dependencies.
+
+<pre><code>
+
+    phonegap create dynamic-sports
+
+</code></pre>
+
+We will create a bower.json file with the init command and install the ionic library with the -S flag to save the dependency in the bower file.
+
+<pre><code>
+
+    cd dynamic-sports/www
+    bower init
+    bower install ionic -S
+
+</code></pre>
+
+
+h3. Setting up karma and phantom.js.
+
+Moving to the root of the project we will create a package.json file
+
+<pre><code>
+
+    npm init
+
+</code></pre>
+
+When asking about the test command enter: <span class="code">node_modules/karma/bin/karma start tests/karma.config.js</span>
+
+Once the command finish we need to install karma and the next packages we will use to run the tests.
+
+<pre><code>
+
+    npm install karma-phantomjs-launcher -D
+    npm install karma-jasmine -D
+    npm install karma-ng-scenario -D
+    npm install karma-junit-reporter -D
+    npm install karma -D
+    npm install karma-coverage -D
+    npm install phantomjs -D
+
+</code></pre>
+
+We will create the folder for the tests and the configuration file for karma
+
+<pre><code>
+
+    mkdir tests
+    cd tests
+    touch karma.config.js
+
+</code></pre>
+
+Open the karma.config.js file and enter the following code.
+
+<pre><code>
+
+    module.exports = function(config) {
+      config.set({
+
+        // base path, that will be used to resolve files and exclude
+        basePath: '../www/',
+
+        // frameworks to use
+        frameworks: ['jasmine'],
+
+        // list of files / patterns to load in the browser
+        files: [
+          'bower_components/ionic/release/js/ionic.js',
+          'bower_components/angular/angular.js',
+          'bower_components/angular-animate/angular-animate.js',
+          'bower_components/angular-sanitize/angular-sanitize.js',
+          'bower_components/angular-ui-router/release/angular-ui-router.js',
+          'bower_components/ionic/release/js/ionic-angular.js',
+          'js/*.js',
+          '../tests/helper.js',
+          '../tests/*.spec.js'
+        ],
+
+        preprocessors: {
+          'js/*.js': 'coverage'
+        },
+
+        coverageReporter : {
+          type : 'html',
+          dir : '../coverage/'
+        },
+
+        plugins: [
+          'karma-jasmine',
+          'karma-phantomjs-launcher',
+          'karma-coverage',
+          'karma-junit-reporter'
+        ],
+
+        // test results reporter to use
+        // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+        reporters: ['progress', 'coverage'],
+
+        // web server port
+        port: 9876,
+
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
+
+        // level of logging
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_INFO,
+
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: true,
+
+        // Start these browsers, currently available:
+        // - Chrome
+        // - ChromeCanary
+        // - Firefox
+        // - Opera (has to be installed with `npm install karma-opera-launcher`)
+        // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
+        // - PhantomJS
+        // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
+        browsers: ['PhantomJS'],
+
+        // If browser does not capture in given timeout [ms], kill it
+        captureTimeout: 60000,
+
+        // Continuous Integration mode
+        // if true, it capture browsers, run tests and exit
+        singleRun: false
+      });
+    };
+
+</code></pre>
+
+After everything is set you should have a structure similar to this
+
+<pre><code>
+
+    -dynamic-sports
+      LICENSE
+      README.md
+      package.json
+      |-merges
+      |-node_modules
+      |-platforms
+      |-plugins
+      |-tests
+      | |
+      | karma.config.js
+      |
+      |-www
+        |
+        |-bower_components
+        |-css
+        |-img
+        |-js
+        |-res
+        |
+        bower.json
+        config.xml
+        icon.png
+        index.html
+
+</code></pre>
+
+
+h3. Hooking up Travis CI.
+
+You should sign up into "Travis":http://travis-ci.com and follow "the instructions":http://docs.travis-ci.com/user/getting-started/ to setup your project.
+
+
+h3. Next steps.
+
+"Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
+
+We will create a basic hello world application and deploy into the emulator.

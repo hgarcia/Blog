@@ -1,0 +1,84 @@
+---
+layout: post
+title: Improving your Git work-flow with aliases.
+summary: The art of reducing strokes, combining commands and improving your life as a developer.
+categories: [General, Programming]
+---
+
+It may not feel like much but if you use git (or any command line tool) all day long, you are typing lots and lots of extra keywords in a given day.
+
+If you commit regularly you will find yourself typing this every fifteen minutes or less.
+
+<pre>
+  <code>
+    git status
+    git add -A
+    git commit -m "Message...."
+  </code>
+</pre>
+
+That adds up to 36 keys plus the length of the message. Even if you commit every 15 minutes thats 144 keywords an hour, times 8 adds to more than 1000 keywords a day.
+
+Let's assume you are also pushing at least once an hour.
+
+<pre><code>
+    git pull --rebase
+    npm test
+    git push
+</code></pre>
+
+That's another 256 keys by the end of the day.
+You can replace the test line for anything you like, <span class="code">rake test:all</span> or similar.
+
+I actually push more than 8 times a day. In a good day I may be pushing after every commit or two so let's double that.
+I'm at 1664 keys pressed during the day just to make my tools do what I want.
+
+h3. Aliases to the rescue.
+
+If you are in a *nix system you can take advantage of command aliases and functions. I use bash and some of my dot files can be found in my repo on Github:https://github.com/hgarcia/DynamicProg/tree/master/dot_files
+
+Let's see what a commit looks like in my case
+
+<pre><code>
+    gst
+    gAc "Message"
+</code></pre>
+
+I reduce the fixed number of keys from 36 to 6 or 24 keys an hour, or 192 keys a day.
+
+My push scenario is a bit less efficient.
+
+<pre><code>
+    gpr
+    npm test
+    gpush
+</code></pre>
+
+It still reduced the keys 50% to just 128 keys pressed by the end of the day.
+
+In some cases I map a shortcut to perform all the operations at once. <span class="code">gprtpu</span>
+
+The reason <span class="code">gpush</span> is so long is to give me some time to thing while typing before pushing.
+
+h3. Some other savings.
+
+Even when those are the commands I use all day long, all the time. I also created aliases for a few other.
+
+<span class="code">gm</span> for <span class="code">git merge</span>
+<span class="code">gl</span> for <span class="code">git log</span>
+<span class="code">gco [branch-name]</span> for <span class="code">git checkout [branch-name]</span>
+<span class="code">gb</span> for <span class="code">git branch</span>
+
+I rarely use the next anymore, my current team gets really mad at me if I don't rebase
+
+<span class="code">gp</span> for <span class="code">git pull</span>
+
+This one will open the editor to modify the commit message.
+
+<span class="code">gca</span> for <span class="code">git commit --amed</span>
+
+I use the next one all the time when I forget to add a file or made a few additional changes that should be added to the same commit
+
+<span class="code">gcan</span> for <span class="code">git commit --amend --no-edit</span>
+
+It may not look like much but once you start counting each key and adding things up they do make a bit difference. Also fewer keystrokes make you faster and more productive.

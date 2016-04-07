@@ -1,0 +1,18 @@
+---
+layout: post
+title: The Onion Architecture and a layered aproach.
+summary: A few weeks ago Jeffrey Palermo published his notion of an Onion Architecture. The first time I saw it was during his MVC presentation at DevTeach Toronto and I really like it.
+categories: [Programming, .Net]
+---
+
+A few weeks ago Jeffrey Palermo published his notion of an <a href="http://jeffreypalermo.com/blog/the-onion-architecture-part-3/" title="Onion Architecture" target="_blank">Onion Architecture</a>. The first time I saw it was during his MVC presentation at DevTeach Toronto and I really like it.
+
+As he mentions in his posts this is not a revolutionary technique but mostly a way to clearly express good practices and patterns and a way to maximize decoupling in an intelligent way.I highly recommend that you go ahead and read the series, there is a lot of though put into this.
+
+h3. Layers instead of tiers.
+
+In the past Agile 2008 a have the great pleasure to assist to <a href="http://mariocardinal.com/" target="_blank" title="Mario Cardinal">Mario Cardinal</a> presentation on <a href="http://www.docstoc.com/docs/56774284/Separation-of-Concerns-The-power-of-modularity" target="_blank" title="Separation of concerns: Decreasing Coupling and Raising Cohesion">Separation of Concerns</a>.
+
+He mentions the use of "Layered Module" architecture style. What means design thinking about modules as unit of deployment and using IoC and DI between this layers but not internally in the same layer. He also make a good distinction about layers and tiers when he talks about this architecture.
+
+Mario mentioned that he will doing a presentation or a workshop at DevTeach Montreal so if you are planning to go, make a note to participate.

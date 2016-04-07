@@ -1,0 +1,28 @@
+---
+layout: post
+title: ClojureScript up and running - book review.
+summary: A short book with enough information to get you going with this flavor of Clojure that trans-piles into JavaScript.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920025139.do" target="_blank"><img class="img-float-right"  src="/images/posts/clojurescript-up-and-running.gif" border="0" alt="ClojureScript up and running - book cover"/></a>
+
+I really like the up and running series from O'Reilly and this book is not the exception.
+
+The authors, "Stuart Sierra"http://www.stuartsierra.com: and "Luke VanderHart":http://lukevanderhart.com , don't waste your time and get right away on how to setup your development environment to start working with ClojureScript.
+
+There is a very good chapter on the compilation process and the relation with the Google Closure Compiler. It's a very good chapter that together with chapter 7 will help you to write (and compile) code the proper way to avoid hours of debugging when something doesn't work as expected.
+
+There is a very thorough exploration of common constructs and data structures and (when relevant) how they are implemented on JavaScript.
+
+Chapter 9, in where they explore the development process and work-flow when working with the language is very interesting, specially the section that deals with the browser REPL.
+
+h3. Should I buy it?
+
+I think the book will be very helpful for anybody that is considering ClojureScript to decide if it's the right choice.
+
+There are lots of little nuggets of information that deal with internals and caveats that I found very informative.
+
+In the other hand if you want to learn the language this book will serve as a good introduction but may felt a bit short, specially on the examples use cases side of things and you may want to complement it with another book.

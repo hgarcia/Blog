@@ -1,0 +1,97 @@
+---
+layout: post
+title: WebMatrix, razor, Webpages and friendly urls.
+summary: I remember the time when WebMatrix was this tiny little web editor done in .net that the crazy guys like me used to edit their first asp.net pages (without code behind and moving away from classic asp).
+categories: [Programming, Tools]
+---
+
+I remember the time when WebMatrix was this tiny little web editor done in .net that the crazy guys like me used to edit their first asp.net pages (without code behind and moving away from classic asp).
+
+Today, Microsoft announced the release of WebMatrix Beta. This WebMatrix is a completely different beast while at the same time maintaining the spirit, little and simple to use.
+
+h3. A bit of nostalgia (just skip it).
+
+I never understood why they kill the original WebMatrix. Yes, Visual Studio is cool and allow you to do tons of heavy lifting and crazy good stuff, but a lot of time the only thing you need is a text editor and web matrix was a great text editor for asp.net pages. If you are as old as I am you may remember Microsoft presenting WebMatrix as an alternative IDE (go to the Language and IDE section of <a href="http://msdn.microsoft.com/en-us/library/aa478961.aspx" target="_blank">this post from 2003</a> to see what I'm talking about) There were even books written <a href="http://flylib.com/books.php?ln=en&amp;amp;n=3&amp;amp;p=257&amp;amp;c=4&amp;amp;p1=1&amp;amp;c1=1&amp;amp;c2=141&amp;amp;view=1" target="_blank">David Sussman's Beginning Dynamic Websites with ASP.NET Web Matrix</a> and <a href="http://www.dotnetspider.com/resources/26006-Inside-ASP-NET-Web-Matrix.aspx" target="_blank">Inside ASP.NET Web Matrix</a>. But then, newer versions of VS came up and the Express SKU and nobody remembered WebMatrix anymore.
+
+h3. Getting on with this post.
+
+So last night I installed and started playing with it. I was mostly interested in the WebPages concept (now, really who came with the name?). They are like classic asp pages or to be more accurate, like asp.net webforms with inline code, do you remember those days? ASP+ anybody? The reason I'm intrigue is because I think there is something really neat here if we can use it in a creative way.
+
+h3. Extension-less urls.
+
+Razor files use the .cshtml or .vbhtml extension but you don't need the extension in the url. For example given you create a page with the name some_crazy_handler.cshtml you can visit it with or without the extension, what is really cool and allow you to use some clean urls.
+
+You can even use urls like this: /some_crazy_handler/more-stuff/1256 and they still will be handled by the same .cshtml page. The extra data in the url can be accessed by index using the UrlData helper like this:
+
+<script src="http://gist.github.com/468993.js?file=gistfile3.rhtml"></script>
+
+A nice thing is that if the item you are looking for is not there you won't get an IndexOutOfBoundException but an empty string. Be aware that if you have a folder with the same name of an existing WebPage any WebPage inside that folder won't be found, other resources will be served normally.
+
+Ex: lets create a handler called images.cshtml and a folder with the same name.
+
+
+<a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/folder_handler_same_name.png"><img border="0" alt="folder_handler_same_name" src="/images/posts/WebMatrixredofirstimpressions_14D2D/folder_handler_same_name_thumb.png" width="212" height="244"></a>
+
+
+Both the image and the html page will be served correctly but the WebPage “Page.vbhtml” won't.
+
+__VBHtml uses visual basic with Razor syntax.__
+
+h3. Adding routing to the mix.
+
+What if you don't want to tie up the name of the page to the route? For example handle routes in different languages. Let's put routing to the task. Now, there may be a better way to do this but this is what I put together.
+
+First we need to add a reference to System.Web.Routing, then add an APP_CODE folder to the solution and create a class in there that inherits from IRouteHandler.
+
+_ATTENTION: this is a completely naive implementation and a lot of things can and will go wrong if you put this in production._
+
+
+<script src="http://gist.github.com/468993.js?file=WebPageRouteHandler.cs"></script>
+
+
+Now add a global.asax page to the solution and the following at the top below the language directive.
+
+
+<script src="http://gist.github.com/468993.js?file=gistfile4.cs"></script>
+
+
+Next, create a new method to do the route registration and call it from Application_Start (nothing new here, if you did any MVC or WebForms routing before you already saw some variation of this).
+And modify the Application_Start method to call it:
+
+
+<script src="http://gist.github.com/468993.js?file=global.asax.cs"></script>
+
+
+Nice, isn't it? Well, there is a problem. These routes won't work with extra parameters defined this way. We need to figured out a way to pass those values (identified using placeholders in the route) into the UrlData collection. One solution is to use Reflection to set the UrlData to the WebPageRenderingBase, so we modify our WebPageRouteHandler as follow.
+
+
+<script src="http://gist.github.com/468993.js?file=WebPageRouteHandler2.cs"></script>
+
+
+Notice that we need to set the Context as well or we will get a null Exception when calling the UrlData property. Yes, I used Reflector like crazy to figure some of this things out :-)
+
+_Note to Microsoft: Why is UrlDataList internal? that made my code way more complicate that it should have been, anyway._
+
+And once again, please do not use this code as is in production, notice that the data should be escaped and validated since urls are user input.
+
+Another, more nicer approach, is to create your own WebBase class with a RouteData method and modify the compilation options but I wanted to keep it simple.
+
+With all this in place we can create the movie.cshtml page to display the data:
+
+
+<script src="http://gist.github.com/468993.js?file=movies.cshtml"></script>
+
+
+And now when we can use localized urls to visit the same page. Of course you shouldn't have strings hardcoded in the view, since you want to localize them, but that is for another post that I may or not may write in the future.
+
+
+<a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/english.png"><img border="0" alt="english" src="/images/posts/WebMatrixredofirstimpressions_14D2D/english_thumb.png" width="388" height="215"></a>
+
+
+<a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/spanish_2.png"><img border="0" alt="spanish" src="/images/posts/WebMatrixredofirstimpressions_14D2D/spanish_thumb.png" width="391" height="221"></a>
+
+
+h3. Conclusion
+
+I think that Razor, WebPages and the other technologies packaged under WebMatrix can be used to do some rapid web development without sacrifice quality. Yes, the professional developer may not be the public that WebMatrix is intended for, but I wouldn't dismiss it as a toy. Yes, some of the demos are not showing code that I will consider Kosher and unit testing or TDD is not a feature in those demos (or even this article) either but I see the potential.
+I can see how some of this tools can serve as building blocks for some lightweight framework ala Sinatra or Padrino. Let's see what we, the community, can do with it.

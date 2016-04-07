@@ -1,0 +1,48 @@
+---
+layout: post
+title: The same template in the client and server side.
+summary: Prototype is one of the most popular javascript libraries out there and one of the features I really like is the template implementation. When you create an Ajax application there are multiple opportunities to use templates in the client side.
+categories: [Programming, JavaScript, .Net]
+---
+
+<a href="http://www.prototypejs.org/">Prototype </a>is one of the most popular javascript libraries out there and one of the features I really like is the template implementation.
+
+When you create an <a href="http://en.wikipedia.org/wiki/Ajax_%28programming%29">Ajax </a>application there are multiple opportunities to use templates in the client side, specially when you can consume services that return <a href="http://en.wikipedia.org/wiki/Json">Json </a>objects.
+
+For example you may want to present the data in some particular format, lets say you get a list of movies and want to present then in some appealing form using a div with a title and image for the dvd cover and some description; Prototype makes this fairly easy. From the <a href="http://www.prototypejs.org/api/template">Prototype API Docs.</a>
+
+
+<script src='http://gist.github.com/561819.js?file=file0.js'></script>
+
+
+Now you have this template in the client inside your page, witch is no good, so we better move that from there into an add hoc object, you may want to separate your templates based on witch part of the site are they going to be used on. You may also want to put them all together and take advantage of the browser caching them on the first load, etc. I like to create a javascript object that holds my client side templates on properties. (Please ignore the ugly string concatenation it just there for readability).
+
+
+<script src='http://gist.github.com/561819.js?file=file1.js'></script>
+
+
+But in most applications I also want to use the same template in the server side and I don't want to write the code twice, so I create this <a href="../../../images/posts/latrompalibraries.zip">very simple template engine</a>.<br/>The code that do the templating resides on LaTrompa.Templating.dll, this is a simple usage, once again please don't mind the concatenation.
+
+
+<script src='http://gist.github.com/561819.js?file=file2.aspx-cs'></script>
+
+
+The result will look like:
+
+<img src="/images/posts/SP32-20071226-002326.png" alt="" height="84" width="550">
+
+In real live the object containing the data will come from the database or your business layer, this object may contain a collection of objects, if you pass an object that implements IEnumerable the template system will iterate through all of the objects and concatenate the results (very useful for table representations). The Process method has three parameters (overloaded), the first one is either a single object and a collection that implement IEnumerable, the second and third parameters are booleans an indicate what to lock in the objects, you can look at public Properties and/or Public Fields.
+
+I want to keep the templates very simple and put no logic on them at all, like loops or things like that, for that type of stuff I think that using the aspx files will always be better.
+
+I have also created a base class and a set of interfaces for Template Compilers. The idea behind the template compiler is that they are the classes responsible for reading the template and strip or transform the string in a way that is meaningful for the template class. You can create your own Template Compilers, let's say to read a js file or a php file and get the string in the proper format, you may also want to read a template written for <a href="http://smarty.php.net/">Smarty </a>and transform it into something that this system understand.
+
+The template compilers are loaded using a <a href="http://www.c-sharpcorner.com/UploadFile/rajeshvs/FactoryPatternsinCS11202005231940PM/FactoryPatternsinCS.aspx">Factory class</a> that inside utilizes <a href="http://en.wikipedia.org/wiki/Dependency_injection">Dependency Injection</a>. My implementation utilizes a simple <a href="http://martinfowler.com/articles/injection.html">DI</a> class with a few conventions (take a look at the code in: Latrompa.Templating.TemplateCompilerFactory.cs). You may want to implement your own Factory to use whatever DI framework you fancy.
+
+In a future post I will show how to load the txt files on the client side for use with prototype without having to create the js classes manually.
+
+If you are familiar with Prototype's Template you may notice some unfamiliar notation on the templates #{name}.{property}, I did modify the original implementation so the properties of the object passed to the Template class can contain an object and reference in the template the property of that object, in the example it reads:
+
+Look for the property of name Property in the objects stored in the property of name Name in the object passed to the Template class.
+
+This is still a work in progress and some bugs need to be reviewed.

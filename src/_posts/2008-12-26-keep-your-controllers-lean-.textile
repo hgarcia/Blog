@@ -1,0 +1,26 @@
+---
+layout: post
+title: Keep your Controllers lean.
+summary: I was going to write a post about this but my thoughts are exactly the same as Fredrik Normen's.   For example, one thing that creeps me out is seen think like this in the Controller.
+categories: [Frameworks, Patterns, Programming]
+---
+
+I was going to write a post about this but my thoughts are exactly the same as <a href="http://weblogs.asp.net/fredriknormen/archive/2008/12/01/controllers-in-the-mvc-pattern-is-not-a-replacement-for-business-logic-layer.aspx" target="_blank">Fredrik Normen's.</a>
+
+For example, one thing that creeps me out is seen think like this in the Controller.
+
+
+
+<script src='http://gist.github.com/561831.js?file=file0.aspx-cs'></script>
+
+ 
+ 
+Or even worse:
+
+
+
+<script src='http://gist.github.com/561831.js?file=file1.aspx-cs'></script>
+
+
+ 
+I don't think that the controller should ever touch the repository and of course it shouldn't do any type of validation besides data entry from the view.

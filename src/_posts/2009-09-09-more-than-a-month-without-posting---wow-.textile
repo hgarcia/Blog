@@ -1,0 +1,10 @@
+---
+layout: post
+title: More than a month without posting - wow!
+summary: I think this has been the longest hiatus since I started the blog. I have been busy with life, talking some time of, finishing tons of renovations at home and re-focusing my priorities from a development point of view.
+categories: [General]
+---
+
+I think this has been the longest hiatus since I started the blog. I have been busy with life, talking some time of, finishing tons of renovations at home and re-focusing my priorities from a development point of view.
+
+I'm looking forward to renew the posting pretty soon with the usual frecuency of one to two post a week.

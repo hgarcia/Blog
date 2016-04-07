@@ -1,0 +1,60 @@
+---
+layout: post
+title: Some tomatoes an empty inbox and a todo list, a productivity sauce recipe.
+summary: For the last year or so I have been practicing a variety of techniques with different degrees of success. I found a recipe in the last four or five months that seems to work well so far, a mix of GTD, Inbox zero and the Pomodoro technique. 
+categories: [Methodology, General]
+---
+
+I have been looking for the perfect productivity tool for some time. As it happens with most of us today I have too much stuff to do and even more cool things I want to do. Resulting in lot of stress and not many things accomplished.
+
+This is the account of my journey to find a way to better manage my time. 
+
+h3. My daily workload.
+
+On a daily basis I have to deal with emails, phone calls, meetings, coaching and managing, coding, writing documentation and presentations, this blog, renovation projects at home, check tweeter and a lot of other "stuff".
+As you can see nothing really extraordinary. Lately the coding part at work occupies only 10 to 20 percent of my time, with the bulk of my time on lots of meetings, emails and writing documents.
+
+h3. The road to productivity.
+
+I first tried to organize myself using just todo lists. I try paper and electronic lists. Seemed to work ok for either the big stuff or the small stuff, once I started to put everything together, priorities started to get blurry and I found myself focusing in the stuff I wanted to do instead of what needed to be done.
+
+Then I attempted a pure GTD approach. I was terrible at it. There is nothing wrong with the methodology, I really think it's very good, it was just me that couldn't really get to implement it right, so I move on.
+
+Next was "the Pomodoro technique":http://www.pomodorotechnique.com/. I think I knew about it, but first came to really internalize it during "David Laribee's":http://laribee.com/ workshop at "Codemash":http://www.codemash.org/ last year. Using Pomodoro was somehow unrelated to my other efforts towards organization and the main reason was to be able to code for at least 25 minutes without getting distracted by email or phone calls. 
+I use an electronic timer "Pomodario":http://code.google.com/p/pomodairo/ that has a task list integrated, so you can track your pomodoros per task if you want, how many interruptions you suffer and you can even provide estimates for your task (in pomodoros). 
+
+__A big thank should go to "Anna Lear":http://annalear.ca/ since I found about Pomodairo thanks to one of her tweets.__
+
+That really worked well. Having the clock running in top of the screen forces me to concentrate on the task at hand and tune out distractions. 
+
+<em>I usually have no problems concentration wise, specially if I'm coding or doing something that I really enjoy. I'm able to tune out the world completely. My wife jokes with how alienated I can be when I get into "coding" trance. The concentration problems started at work where a hundred different things require my attention.</em>
+
+h3. Email entropy.
+
+I really hated the amount of junk I started to accumulate in my email Inbox. So I made a real effort to clean it up. I used to get 2 to 3 hundred emails a day and I dealt with them almost instantly. This was a problem, a distraction. On top of that I still had around a 100 emails sitting in the Inbox to deal with later. Some of those emails were 3 years old.
+
+So I dedicated a morning to follow up on those emails, delegate, solve or just delete them. Everything older than 6 month got deleted first, without even looking at them.
+
+Next step, only check emails between pomodoros and disable outlook notification. Suddenly I was an order of magnitude more productive.
+
+I created a few folders in Outlook to manage emails and made a habit not to left an email sitting in the Inbox without taking action for more than 10 days.
+
+__I have been thinking about getting rid of the multiple folders and just get a few clearly labeled ones. Not sure if or when I will do that.__
+
+That allows me to keep my Inbox at zero or almost zero most of the time.
+
+h3. Writing down commitments for the day.
+
+The todo lists are back in two different ways. At the start of the day I write down a quick list with just the most important things I need to get done that day. Try to prioritize as I write them down and keep and copy over the important stuff I couldn't do the day before. (I use just pen and paper for the list).
+
+If I found myself copying the same thing from one day to another and is actually something that need to get done (something that will get my in trouble if I drop ir) I just move it to the top of the list and handle it that day. If not I just drop it from that list into a project list to do later some time or in some cases I just forget about it all together.
+
+I use the pomodoro technique for anything that will take me more than 5 minutes to finish. I usually transfer the task into "Pomodairo" to help me keep track of time.
+
+h3. Project lists.
+
+I also keep a project list. This list keep names of projects that I need to work on. The different task for those projects will find their way into the daily commitments list as I work on them. The project list is kept electronically using "Remember The Milk":https://www.rememberthemilk.com/
+
+h3. Conclusion.
+
+This mix of Todo lists, Inbox zero and Pomodoro, with a pinch of GTD has served me right and helps to reduce the amount of stress of the modern life.

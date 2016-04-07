@@ -1,0 +1,52 @@
+---
+layout: post
+title: Catharsis, a complete framework for developing Web apps using MVC and NHibernate 2.0
+summary: Once in a while I like to browse around Codeplex to see what's new and if I found anything interesting. Today I found this Gem of a project called Catharsis. To be able to use it you will need VS 2008 with SP1.
+categories: [Architecture, Frameworks, Programming, Tools, .Net]
+---
+
+Once in a while I like to browse around <a href="http://www.codeplex.com" target="_blank">Codeplex</a> to see what's new and if I found anything interesting.
+
+Today I found this Gem of a project called <a href="http://www.codeplex.com/Catharsis" target="_blank">Catharsis</a>.
+
+To be able to use it you will need VS 2008 with <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=FBEE1648-7106-44A7-9649-6D9F6D58056E&amp;amp;displaylang=en" target="_blank">SP1</a>.
+
+The <a href="http://www.microsoft.com/downloads/details.aspx?familyid=B91066B3-D1D6-4990-A45F-34CF8DBDC60C&amp;amp;displaylang=en" target="_blank">Guidance Automation Toolkit</a> and I also installed the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=E28205C6-BB07-401B-9A76-804784598BF0&amp;amp;displaylang=en" target="_blank">GAX SP1</a>.
+
+The <a href="http://www.codeplex.com/aspnet/Release/ProjectReleases.aspx?ReleaseId=18593" target="_blank">ASP.NET MVC (BETA)</a> installed via the installer.
+
+What is Catharsis? You may ask. It's a complete application framework that uses ASP.NET MVC for the UI layer, they mention to support WPF projects as well but I haven't see it yet, maybe 1.0 version, the current release is 0.95.
+
+But it's more than that. It's also a set of tools that integrate with Visual Studio and provide several Wizards to do most task in a very simple way. The solution created is quite complicate but very well organized.
+
+<img height="571" alt="ScreenHunter_02 2009-01-01 23.13.49" src="/images/posts/Catharsisacompleteframeworkfordevelopi.0_14C6D/ScreenHunter_02%202009-01-01%2023.13.49_thumb.jpg" width="261" border="0" />
+
+h3. Installing Catharsis
+
+In the documentation of how to install Catharsis they recommend using the msi file, but I couldn't find it in the release, so I have to open the Guidance projects, do a build and them run the msi. This was a non issue, you will be prompted to remove the references to Source Control from the solution when you open it for the first time, just click yes.
+
+h3. Creating your first project.
+
+It's very simple open the Create new project dialog and you will see a new Catharsis type of project
+
+<img height="425" alt="ScreenHunter_03 2009-01-01 23.19.58" src="/images/posts/Catharsisacompleteframeworkfordevelopi.0_14C6D/ScreenHunter_03%202009-01-01%2023.19.58_thumb.jpg" width="582" border="0" />
+
+Enter the Name and click Ok, another window shows
+
+<img height="297" alt="ScreenHunter_04 2009-01-01 23.20.26" src="/images/posts/Catharsisacompleteframeworkfordevelopi.0_14C6D/ScreenHunter_04%202009-01-01%2023.20.26_thumb.jpg" width="696" border="0" />
+
+Click Finish, sit and wait.
+
+At this moment you should be able to set up you Web project as the startup project and the Default.aspx file as the Star up page, hit F5 and see it work. I had a few issues at this point.
+
+The first one was that the project did not compile:  The problem was an extra comma on the file BaseEntityControllers.cs in the Controllers project under the Project. Web folder. This comma is in the list of Interfaces the class implements.
+
+Once fixed the project compiled with no problems but when trying to run it I had my second issue, the tables in the database have not been created. So I had to run the scripts located at DB_SQLServer in order 01_ first and 02_ afterwards. Notice that the connection string I provide in the wizard was correct since NHibernate can connect to the database, so no sure why the scripts didn't run.
+
+_To run the scripts make sure you change the first line of them to point to your database (they are pointing to a Catalog called Project, maybe this is the problem during the setup wizard?)_
+
+Once you have done this, make sure you rebuild the project and hit F5 again and, another problem (the last one). The log4net.dll wasn't copy into the bin folder of the web solution, so copy it from Assemblies/Log4Net into the proper bin or add a reference from you web project to the log4net dll and rebuild.
+
+After that everything worked fine for me.
+
+There are several articles at "CodeProject(Catharsis)":http://www.codeproject.com/KB/applications/Catharsis.aspx on how to do different things and in more details about the architecture, Ioc, Tracking Changes and more.

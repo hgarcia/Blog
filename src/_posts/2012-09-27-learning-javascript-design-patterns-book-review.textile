@@ -1,0 +1,34 @@
+---
+layout: post
+title: Learning JavaScript Design Patterns by Addy Osmani.
+summary: Great book to learn about Patterns in general and how to write modern JavaScript that will result in more maintainable programs.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920025832.do" target="_blank"><img class="img-float-right"  src="/images/posts/learning-javascript-design-patterns.gif" border="0" alt="Learning JavaScript Design Patterns - book cover"/></a>
+
+I like to think about this book as 3 books in one. The first 8 chapters are dedicated to explore and explain patterns, their creation process. their utility and an insight into the pattern community.
+
+The design patterns exploration start on chapter 9 while dedicating chapter 10 exclusively to the different flavors of Model View patterns.
+
+_If the book was only that I will be very happy, but (like in a Sunday morning infomercial, there is more!)_
+
+Chapter 11 is an in depth discussion of the different modules systems in use today, with an special emphasis on "AMD":https://github.com/amdjs/amdjs-api/wiki/AMD
+
+It depends on your knowledge of module systems, but even if you use them you may find some nuggets of information in there. I did.
+
+Finally, the next two chapters are dedicated to design patterns in jQuery itself and exploring some of the patterns used for jQuery plug-in design.
+
+You may find this last two chapters redundant but I think that the inclusion in the book is very wise, specially with how ubiquitous jQuery is today.
+
+h3. Conclusion
+
+I would add this book to a recommended reading list for any programmer that want to write good and modern JavaScript code.
+
+"Addy Osmani":http://addyosmani.com/blog/ manage to write a very entertaining book packed with (what I think) is very relevant content on todays development.
+
+Absolutely recommended.
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__

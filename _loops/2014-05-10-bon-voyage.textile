@@ -1,0 +1,7 @@
+---
+layout: center
+title: bon voyage
+home: 14073029851
+home_size: small320
+display_size: medium640
+---

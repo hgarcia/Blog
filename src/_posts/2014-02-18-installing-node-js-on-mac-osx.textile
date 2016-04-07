@@ -1,0 +1,101 @@
+---
+layout: post
+title: Installing node.js on Mac OSX.
+summary: Installing node.js in two simple steps.
+categories: [General, node.js, JavaScript]
+---
+
+Installing "node.js":http://nodejs.org/ on Mac OSX or Linux is very simple. You can download a installer for OSX or packages for Linux, but I like to use nvm to manage all the versions installed in the system.
+
+h3. What's nvm
+
+"nvm":https://github.com/creationix/nvm stands for node version manager and is similar in concept to Ruby's rvm.
+
+You can easily install nvm running a one liner from the command line.
+
+<pre><code>
+
+    curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+
+</code></pre>
+
+Check out the documentation on the "nvm":https://github.com/creationix/nvm site
+
+h3. Why to use a version manager
+
+As I mentioned before node development happens at light speed and you may be working in multiple projects at the same time, each one having dependencies on different npm versions.
+Even if you are only working on a single project, nvm comes handy when it's time to upgrade to a newer version.
+It also makes the upgrade, install and un-install versions a simple one liner.
+
+h3. Quick reference
+
+To install a new version you can simple run the install command followed by the version number you want to install
+
+<pre><code>
+
+    nvm install v0.10.26
+
+</code></pre>
+
+__Notice that the version number starts with a lower case v__
+
+To list all installed versions in the system use the list command.
+In my system this is what you can see at the moment.
+
+<pre><code>
+
+    nvm ls
+
+    v0.10.21 v0.8.7
+    current:  v0.10.21
+    current -> 0.10 (-> v0.10.21)
+    default -> 0.10.21 (-> v0.10.21)
+
+</code></pre>
+
+To switch the version active in that terminal window run the use command
+
+<pre><code>
+
+    nvm use 0.8.7
+
+    Now using node v0.8.7
+
+</code></pre>
+
+__You may have noticed that to switch version the version number is missing the lower case v__
+
+Of course, the most helpful of all commands is the help command
+
+<pre><code>
+
+    nvm --help
+
+    Node Version Manager
+
+    Usage:
+        nvm help                    Show this message
+        nvm install <version>       Download and install a <version>
+        nvm uninstall <version>     Uninstall a version
+        nvm use <version>           Modify PATH to use <version>
+        nvm run <version> [<args>]  Run <version> with <args> as arguments
+        nvm ls                      List installed versions
+        nvm ls <version>            List versions matching a given description
+        nvm deactivate              Undo effects of NVM on current shell
+        nvm alias [<pattern>]       Show all aliases beginning with <pattern>
+        nvm alias <name> <version>  Set an alias named <name> pointing to <version>
+        nvm unalias <name>          Deletes the alias named <name>
+        nvm copy-packages <version> Install global NPM packages contained in <version> to current version
+
+    Example:
+        nvm install v0.4.12         Install a specific version number
+        nvm use 0.2                 Use the latest available 0.2.x release
+        nvm run 0.4.12 myApp.js     Run myApp.js using node v0.4.12
+        nvm alias default 0.4       Auto use the latest installed v0.4.x version
+
+</code></pre>
+
+
+h3. Alternatives to nvm.
+
+"n":https://github.com/visionmedia/n is an alternative to nvm in case you want to try it. I personally find nvm easy to use and straightforward.

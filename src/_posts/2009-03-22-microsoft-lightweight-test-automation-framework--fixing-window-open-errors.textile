@@ -1,0 +1,35 @@
+---
+layout: post
+title: Microsoft Lightweight Test Automation Framework- Fixing window.open errors
+summary: I have been playing with the Microsoft Lightweight Test Automation Framework, that's a mouthful for the Microsoft's Web testing framework.
+categories: [Programming, Testing, Tools]
+---
+
+I have been playing with the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Microsoft Lightweight Test Automation Framework</a>, that's a mouthful for the Microsoft's Web testing framework.
+
+I think that (in general) looks like a nice alternative to some of the other frameworks around (like Watir or Selenium). I will try to give a quick overview of what I have been using so far and what I like and don't like.
+
+For more information on the framework, take a look at the <a href="http://forums.asp.net/1193.aspx" target="_blank">Forum</a>.
+
+h3. What I like.
+
+<ol>
+	<li>Open Source (you can download the source from Codeplex). </li>
+	<li>A first sample is included </li>
+	<li>Since the library is written in c# you can write the test in your language of choice inside VS. This may encourage to write the UI test first. This can be even written by the same developer that is implementing the UI. </li>
+	<li>Nice API, providing methods, properties and objects that represent an HTML page and help to navigate the DOM. </li>
+	<li>No problem handling JavaScript's alert and confirm dialogs. </li>
+	<li>Look's to been able to handle asynchronous Ajax calls (I haven't tried it yet). </li>
+	<li>Cross browser, cross platform. </li>
+</ol>
+
+h3. What I think needs improvement.
+
+<ol>
+	<li>Documentation (*). </li>    <li>Some internal objects should be public, like the BrowserInfo. (*) </li>
+	<li>Setup, Teardown attributes (not very high on my list, but may be useful). (*) </li>
+	<li>Provide a way to attach to a new window, or even Assert that a new window was open. (The JavaScript engine already contains a collection of newly opened windows, so this should be easy to implement). </li> </ol>
+
+*. The Roadmap document mention these issues as forthcoming or in consideration.
+
+In following posts I will try to find solutions to some of these issues.

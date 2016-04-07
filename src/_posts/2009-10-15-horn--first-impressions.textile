@@ -1,0 +1,18 @@
+---
+layout: post
+title: Horn, First Impressions
+summary: Some time ago I heard about the intent of putting together a package manager for .net ala gems or pear. I wasn't aware that this project was actually under way. The name of the project, Horn.
+categories: [Frameworks, Programming, Tools]
+---
+
+Some time ago I heard about the intent of putting together a package manager for .net ala <a href="http://docs.rubygems.org/" target="_blank">gems</a> or <a href="http://pear.php.net/" target="_blank">pear</a>. I wasn't aware that this project was actually under way. The name of the project, <a href="http://code.google.com/p/hornget/" target="_blank">Horn</a>.
+
+Please check the links in the project home page on how to get started with <a href="http://code.google.com/p/hornget/" target="_blank">Horn</a>. It's very simple and actually works as promised. One thing you need to remember is that you will have to install a subversion client and a <a href="http://git-scm.com/" target="_blank">Git</a> client for Horn to check out the source code from the projects you want to build.
+
+I had two issues in my <a href="http://www.microsoft.com/windows/windows-7/" target="_blank">Win7</a> machine, where I tested. The first issue is related to <a href="http://git-scm.com/" target="_blank">Git</a> really and not to Horn and/or <a href="http://www.microsoft.com/windows/windows-7/" target="_blank">Win7</a>. Make sure that you have the path to your git.cmd into the PATH of your computer.
+
+It's usually %PROGRAMFILES%/Git/cmd, if you don't when trying to do a horn install on a project using <a href="http://git-scm.com/" target="_blank">Git</a>, <a href="http://www.castleproject.org/projects/windsor/" target="_blank">Windsor</a> (the <a href="http://en.wikipedia.org/wiki/Inversion_of_control" target="_blank">Ioc</a> container used by <a href="http://code.google.com/p/hornget/" target="_blank">Horn</a>) will throw an exception.
+
+The other issue seems to be a concurrency issue when trying to read a Temp file. Not sure how this files is been created just yet. This happens while trying to build complex projects like <a href="http://www.codeplex.com/MVCContrib" target="_blank">MvcContrib</a>. Re-issuing the install command will "resume" the build. It took me three attempts to build <a href="http://www.codeplex.com/MVCContrib" target="_blank">MvcContrib</a>.
+
+Even with this issue (that may not be a <a href="http://code.google.com/p/hornget/" target="_blank">Horn</a> issue at all) I think that this is a very important project for the .Net community. It makes building this complex projects with all the dependencies a routine task. You don't have to spend hours tracking down the project, the source code and pray that everything builds and works well together.

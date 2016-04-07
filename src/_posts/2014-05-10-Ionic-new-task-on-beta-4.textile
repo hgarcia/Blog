@@ -1,0 +1,24 @@
+---
+layout: post
+title: Ionic new serve task.
+summary: Improves your development cycle.
+categories: [PhoneGap, JavaScript, Mobile, Ionic]
+---
+
+I'm not sure when these tasks have been introduced but I just installed Ionic 1.0.0 beta 4 and after running the <span class="code">ionic</span> command I saw three new tasks that you can run:
+
+<pre><code>
+
+    serve - Start a local development server for easy app development and testing
+    login - Login to the Ionic Platform
+    upload - Upload an Ionic project to the Ionic Platform (requires login)
+
+</code></pre>
+
+I really appreciate the <span class="code">serve</span> task that make running a development server a bit easier than running <span class="code">python -m SimpleHTTPServer 8000</span> from inside the <span class="code">www</span> folder of the project.
+
+Now you just run <span class="code">ionic serve</span> from the root of the project and your default browser will open with the application loaded in it. It will also run a a live reload server, so when you change the files in your project the browser window will reload with the changes.
+
+This should improve your development cycle without having to set up any of this on your own.
+
+The other two task are related to the upcoming Ionic Platform.

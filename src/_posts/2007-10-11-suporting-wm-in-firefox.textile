@@ -1,0 +1,22 @@
+---
+layout: post
+title: Suporting WM in Firefox
+summary: WM 11 and Firefox don't like each other very much. The infamous squishy bug is plaging the web. It's almost imposible to find a custom player around the work as it's suppose to with WM embeded in Firefox.
+categories: [General, Programming]
+---
+
+WM 11 and Firefox don't like each other very much.
+
+The infamous squishy bug is plaging the web. It's almost imposible to find a custom player around the work as it's suppose to with WM embeded in Firefox. (Take a look at the player in mlb.com for example.)
+
+The problem is that the embed tag does not respect the height parameter. It does respect the width but resize the height to the original size of the video playing, this usually result in a disproportioned video window.
+
+There are some fixes around, for example in the Safari page for Safari on windows, you can download a Firefox plugin that solves this problem in most cases.
+
+There is also a plugin developed by the open source laboratory on Microsoft, <a target="_blank" href="http://port25.technet.com/archive/2007/04/16/windows-media-player-plug-in-for-firefox.aspx">Port 25.</a> (I can't confirm this but both downloads appear to be the same). I have installed this plugin with very good results but last week we saw some incompatibility problems with a new clean Firefox install. After installing the plugin Firefox died on us and them WM died too.
+
+We saw the problem in two different machines one is running XP and the other Vista. After that we decided that we needed to look at a different way to provide proper support for WM, we have another custom player that works really well and what that one does is detect if the user agent is Firefox (or Safari now) size the video window with the appropiate dimensions (the ones from the original video). We are also using a web service to reload the url (since it needs an authentication token) when people use a filmstrip to start the video from an specific point.
+
+The solution works really well and we are happy with the compromise, we still provide our users with a link to the plugin from Microsoft in case they want to installed, but it's not needed.
+
+Being myself a Firefox user, I don't want to install a plugin to support a video player that should work fine with a little bit of ingenuity from the programmers.

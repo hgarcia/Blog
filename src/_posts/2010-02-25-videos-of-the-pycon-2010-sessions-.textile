@@ -1,0 +1,16 @@
+---
+layout: post
+title: Videos of the PyCon 2010 sessions.
+summary: If you, like me, haven't been able to go to PyCon don't despair. The videos of the sessions are available at blip.tv.
+categories: [General, Programming]
+---
+
+If you, like me, haven't been able to go to PyCon don't despair. The videos of the sessions are available at <a href="http://blip.tv" target="_blank">blip.tv</a>, just visited <a title="http://pycon.blip.tv/" href="http://pycon.blip.tv/">http://pycon.blip.tv/</a> or <a title="http://pycon.blip.tv/posts?view=archive&nsfw=dc" href="http://pycon.blip.tv/posts?view=archive&nsfw=dc">http://pycon.blip.tv/posts?view=archive&nsfw=dc</a> for a list of all the videos.
+
+Some of my recommendation so far.
+
+Test and Testability, <a title="http://pycon.blip.tv/file/3261272/" href="http://pycon.blip.tv/file/3261272/">http://pycon.blip.tv/file/3261272/</a>
+
+Selenium RC with Python, <a title="http://pycon.blip.tv/file/3264579/" href="http://pycon.blip.tv/file/3264579/">http://pycon.blip.tv/file/3264579/</a>
+
+What every developer should know about database scalability: <a title="http://pycon.blip.tv/file/3261223/" href="http://pycon.blip.tv/file/3261223/">http://pycon.blip.tv/file/3261223/</a>

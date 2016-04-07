@@ -1,0 +1,10 @@
+---
+layout: post
+title: Microsoft MVC coming along.
+summary: Yesterday Scott Gu post again about the MVC framework. Don't miss his post about Passing View data from controllers to view.
+categories: [Programming, .Net]
+---
+
+Yesterday Scott Gu post again about the MVC framework. Don't miss his post about <a href="http://weblogs.asp.net/scottgu/archive/2007/12/06/asp-net-mvc-framework-part-3-passing-viewdata-from-controllers-to-views.aspx" target="_blank">Passing View data from controllers to view.</a>
+
+There was some talk about the release date being this week, but that wont be the case. I think that is just fair to tell that we are all waiting for it. I just want to get my hands on the code, and have an old asp classic site that can be a great candidate to migrate using the framework.

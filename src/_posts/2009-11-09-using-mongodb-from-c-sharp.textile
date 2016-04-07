@@ -1,0 +1,82 @@
+---
+layout: post
+title: Using MongoDB from C#
+summary: The NoSql movement is gaining more and more momentum. A year or two ago I took a look at CouchDb but this time I wanted to try MongoDB.
+categories: [Programming, Tools, .Net, MongoDB]
+---
+
+The <a href="http://en.wikipedia.org/wiki/NoSQL" target="_blank">NoSql</a> movement is gaining more and more momentum. A year or two ago I took a look at <a href="http://couchdb.apache.org/" target="_blank">CouchDb</a> but this time I wanted to try <a href="http://www.mongodb.org" target="_blank">MongoDB</a>. I have been hearing a lot of nice things about MongoDB, mostly about how simple is to query it and how fast is. So I decided that it was time to actually take it for a spin.
+
+A quick search point me to <a href="http://odetocode.com/blogs/scott/archive/2009/10/13/experimenting-with-mongodb-from-c.aspx" target="_blank">this odetocode post</a> that was a great starting point to have Mongo running in my dev machine using the defaults and the Driver for C#. So, go and read K. Scott Allen's post if you want to follow along with the code in the rest of this post.
+
+h3. Detour (some background on NoSql and MongoDB):
+
+_If you already know about this you can skip all this paragraph._
+
+The so called NoSql movement is based on the notion that using RDBMS may not be the right choice in some cases. They propose using alternative databases, like key-value pair storages and document databases. To perform operations on the data some make use of Map-Reduce, others like MongoDB use a query mechanism that resembles Sql. One of the most attractive features of this db's is the ability to easily run clusters and do <a href="http://www.codefutures.com/database-sharding/" target="_blank">data sharding</a>. Most of them support both features without a lot of fuss, or that I heard.
+
+MongoDB is a document based db, that stores the information as Binary Json.
+
+End of detour.
+
+h3. What's a document?
+
+A document is not the equivalent to a Row. A document can be seen as a key-value pair collection of objects. It's actually a complete object Graph, persisted as Json. Documents are organized into Collections.
+
+Now, to be usable in C# we need to have some mapping from the Document object to our object graph. We could use the Document directly but will be like going back to use DataTables, not very pretty.
+
+
+
+<script src='http://gist.github.com/561856.js?file=file0.aspx-cs'></script>
+
+
+
+The simple way to go from Json to an object should be to pass the load of a document to a JsonDeserializer like Json.Net and just get the object back, like this:
+
+
+
+<script src='http://gist.github.com/561856.js?file=file1.aspx-cs'></script>
+
+
+
+But while trying to do so I got an error in the id of the document. Looking at the payload of the document the Id looks like this:
+
+
+
+<script src='http://gist.github.com/561856.js?file=file2.console'></script>
+
+
+
+The problem is in the ObjectId function. But do not despair, there is an alternative.
+
+h3. From a document to a fully usable object graph.
+
+The alternative is not pretty but works and is easy to implement. Just pass the document to the root of your object graph, an access the underlying collection via the objects properties. Let's see how this can look like.
+
+_Yes there are some hard-coded strings in there that should be removed. I'm also never closing the connection to the Db, when I probably should._
+
+
+
+<script src='http://gist.github.com/561856.js?file=file3.aspx-cs'></script>
+
+
+
+IMongoEntity is a simple interface to force our entities to expose the Doc property.
+
+
+
+<script src='http://gist.github.com/561856.js?file=file4.aspx-cs'></script>
+
+
+
+And our Movie Entity will look like:
+
+
+
+<script src='http://gist.github.com/561856.js?file=file5.aspx-cs'></script>
+
+
+
+Notice I'm using JsonConverter to return a complex type, we should probably encapsulate that functionality in some kind of base class, maybe convert IMongoEntity into an abstract class that provides some basic utilities.
+
+I will try to dig deeper into MongoDB, seems to be really suited to a Domain first approach. I wasn't able to have anything but the most simple queries working, so I will have to take a closer look at the syntax.

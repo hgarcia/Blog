@@ -1,0 +1,18 @@
+---
+layout: post
+title: Ajax Hacks
+summary: I really like the Hacks series form O'Reilly, these are very simple references books. They present a problem and a solution in the form of quick articles and they are usually based on common issues for that technology.
+categories: [Books, Programming]
+---
+
+I really like the <a target="_blank" href="http://www.oreilly.com/catalog/ajaxhks/">Hacks </a>series form <a target="_blank" href="http://www.oreilly.com/">O'Reilly</a>, these are very simple references books.
+
+They present a problem and a solution in the form of quick articles and they are usually based on common issues for that technology.
+
+This book in the series presents 80 different hacks or techniques to create AJAX driven web sites. From simple stuff like a basic cross browser XHR library to more complex stuff like mash-ups, use of Prototype, Rico and Direct Remoting.
+
+The code examples are good but I found that some of them are not really ready to copy and paste into your application and you should look into them as starting points.
+
+For example in some demos using Prototype the make use of both the $() function and the DOM equivalent document.getElementById(), I could like to see some consistency in there.
+
+Besides that, the book is really good and you will find yourself flipping through its pages while putting together your next AJAX application.

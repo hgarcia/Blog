@@ -1,0 +1,14 @@
+---
+layout: post
+title: REST, a video about it, and a book to rule them all.
+summary: I seriously believe that REST is a simple and yet powerful architecture that can be used in most scenarios where web services need to be deployed. This week the good guys at infoq.com have an interview with Pete Lacey a fervent proponent of REST ...
+categories: [Architecture]
+---
+
+I seriously believe that REST is a simple and yet powerful architecture that can be used in most scenarios where web services need to be deployed.
+
+This week the good guys at <a href="http://www.infoq.com/interviews/pete-lacey-rest">infoq.com </a>have an interview with Pete Lacey a fervent proponent of REST where he explains the reasons behind his passion. He talk about it and about the WS* stack and why he things that is bloated and not very useful.
+
+I tend to agree with him in most of his opinions specially when talking about security and transactions. I do think that HTTPS is good enough (not actually is very good!) and you can on top of that roll your own security. On the issue of transactions I always thought that not just web services but services in general should be transaction agnostic.
+
+What I mean with transaction agnostic? The service may be part of a transaction but should have no knowledge of it. So the service will receive a request with a payload and sometimes, maybe, return a result. So when you delegate work on that service you should account for that maybe, what happens if the service is not available, etc.

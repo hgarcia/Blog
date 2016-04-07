@@ -1,0 +1,9 @@
+---
+layout: slide
+title: Navy pier
+home: 8905953990
+home_size: small320
+display_size: large
+slide: [8905953990, 8905341727, 8905971078, 8905359563, 8905988984, 8905415339, 8906066926]
+title_style: "font-family: Helvetica; font-size: 1.7em;"
+---

@@ -1,0 +1,41 @@
+---
+layout: post
+title: Ruby Koans, learning ruby the test driven way.
+summary: Probably you are aware of Edgecase Ruby Koans. In case you aren't, let me introduce you to them.
+categories: [General, Methodology, Patterns, Programming, Testing, Ruby]
+---
+
+Probably you are aware of <a href="http://github.com/edgecase/ruby_koans" target="_blank">Edgecase Ruby Koans</a>. In case you aren't, let me introduce you to them. 
+
+From Wikipedia, <a href="http://en.wikipedia.org/wiki/K%C5%8Dan" target="_blank">Koan</a>:
+
+??A <b>kōan</b> is fundamental part of the history and lore of <a href="http://en.wikipedia.org/wiki/Zen">Zen</a> <a href="http://en.wikipedia.org/wiki/Buddhism">Buddhism</a>. It consists of a <a href="http://en.wikipedia.org/wiki/Narrative">story</a>, <a href="http://en.wikipedia.org/wiki/Dialogue">dialogue</a>, question, or statement whose meaning cannot be accessed by <a href="http://en.wikipedia.org/wiki/Rationality">rational</a> thinking, yet it may be accessible by <a href="http://en.wikipedia.org/wiki/Intuition_%28knowledge%29#Intuition_and_spirituality">intuition</a>. A widely known kōan is "Two hands clap and there is a sound; what is the sound of one hand?"??
+
+The Ruby Koans are a set of failing test that you need to resolve. Of course the idea is not just to resolve the test as fast as you can but to read the code carefully and understand why it's failing and them provide the solution.
+
+Once you download the code you just run the rake command inside the folder where the Koans have been downloaded and you will be presented with a failing test and a message in the screen that indicates what you need to do to fix the test.
+
+You should take as much time as needed to contemplate the solution and internalize the code, the syntax and the constructs that Ruby use.
+
+I went through them once and I'm planning on do it again in a day of two. The Koans cover some important aspect in the following areas: asserts, arrays, arrays assignments, blocks. Classes, open classes and class methods. Inheritance, hashes, exceptions and so much more, this is the complete list of files in the Koans folder:
+
+
+
+<script src='http://gist.github.com/561859.js?file=file0.console'></script>
+
+
+
+Open your favorite editor, launch the console and start running the Koans, just type rake and you will be presented with messages like this,after fixing it your awareness will "expand".
+
+
+
+<script src='http://gist.github.com/561859.js?file=file1.console'></script>
+
+
+
+It's very addictive, the only complain/suggestion I have is to provide some answer to some of the question in the code. May be somthing like that? 
+
+
+
+<script src='http://gist.github.com/561859.js?file=file2.console'></script>
+

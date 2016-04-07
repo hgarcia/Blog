@@ -1,0 +1,101 @@
+---
+layout: post
+title: Refactoring the js code structure PhoneGap and Angular (Part 4).
+summary: We are refactoring the code to make sure the services, controllers and directives are well facored.
+categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
+collection: Ionic
+---
+
+__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+
+
+The last time we created our first services, controllers and directives. We can see that if we keep adding controllers to the <span class="code">controller.js</span> file things are going to get out of control soon.
+
+What we want is to create each entity on it's own file and concatenate all the js files together as part of the build process.
+We are going to create a <span class="code">js</span> folder under the root of the project and inside it three subfolders for each type of entity.
+
+<pre><code>
+	
+	js
+	|-controllers
+	|-directives
+	|-services
+
+</code></pre>
+
+We are going to move the files from <span class="code">www/js</span> inside the new folders. The <span class="code">app.js</span> file will be at the root of the new structure and the other files inside each folder.
+
+We will create a new <span class="code">home_controller.js</span> file and copy the code for the <span class="code">HomeController</span> to it.
+
+We will do the same for the service and diretcives.
+
+h3. Concatenation
+
+We open the <span class="code">gulpfile.js</span> file and we add a new task.
+
+<pre><code>
+	
+	gulp.task('scripts', function() {
+	  gulp.src(['./js/*.js', './js/**/*.js'])
+	    .pipe(concat('all.js'))
+	    .pipe(gulp.dest('./www/js/'));
+	});
+
+</code></pre>
+
+We will need to modify the paths object as well since the sass property doesn't make a lot of sense anymore.
+
+<pre><code>
+	
+	var paths = {
+  		all: ['./scss/**/*.scss', './js/*.js', './js/**/*.js']
+	};
+
+</code></pre>
+
+And we will add the new scripts task to the watch and default tasks.
+
+<pre><code>
+	
+	gulp.task('watch', function() {
+	  gulp.watch(paths.all, ['sass', 'scripts']);
+	});
+
+	gulp.task('default', ['sass', 'scripts']);
+
+</code></pre>
+
+We will also need to modify the <span class="code">package.json</span> file to call the default gulp task.
+
+<pre><code>
+	
+	"ios": "gulp && ionic emulate ios"
+
+</code></pre>
+
+Modify our <span class="code">karma.config.js</span> file for our test to load the new files.
+
+<pre><code>
+
+	files: [
+    	'lib/ionic/js/ionic.bundle.js',
+      	'lib/ionic/js/angular/angular-mocks.js',
+      	'../js/*.js',
+      	'../js/**/*.js',
+      	'../tests/**/*_spec.js'
+    ],
+
+</code></pre>
+
+Finally, we need to use the new concatenate file on our <span class="code">index.html</span> and remove the script tags for the all files.
+
+<pre><code>
+	
+	<script src="js/all.js"></script>
+
+</code></pre>
+
+
+h3. Next steps.
+
+We want to send the information we recorded to a server for saving and processing, but we can only do that while connected to a network. We will also want to give the user the option to only upload files when the device is using a Wi-Fi connection.

@@ -1,0 +1,24 @@
+---
+layout: post
+title: Effective monitoring and alerting - book review.
+summary: A book clearly intended for the ops and devops out there.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920025986.do" target="_blank"><img class="img-float-right" src="/images/posts/monitoring-and-alerting.gif" border="0" alt="Effective monitoring and alerting - book cover"></a>
+
+I'm having a hard time with this book. The author is clearly knowledgeable and experienced and the book is well written.
+
+But I don't think I'm the intended audience.
+
+If you are new to metrics, this book is a good primer that goes deep into some of the practices and tools to use to capture and interpret those metrics.
+
+I was expecting more of a cookbook with different tools I could leverage to capture those metrics. The book only deals with tools in the appendix and only deals with OpenTSDB a time series data base.
+
+So, if you are looking for a good and deep book on time series analysis that can help you to read and understand all those metrics you are capturing, this is the book.
+
+There are extensive case studies of different scenarios that will show you how to interpret those time series and find the problem in that stubborn web server that (should) be working well.
+
+If instead you want to learn how to capture those metrics and what tools to use, this is probably not the book you should be reading just yet, but keep it in your list and make sure to read it soon after you have your metrics set.

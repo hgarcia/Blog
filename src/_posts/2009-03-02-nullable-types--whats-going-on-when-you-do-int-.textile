@@ -1,0 +1,40 @@
+---
+layout: post
+title: Nullable types, whats going on when you do int?
+summary: As you know some types are not nullable like int, decimal, double or DateTime. So if for some reason we need a null int we need to use the nullable types.   To define a nullable type we use the question mark notation like this int?, decimal?...
+categories: [Programming]
+---
+
+As you know some types are not nullable like: int, decimal, double or DateTime. So if for some reason we need a null int we need to use the nullable types.
+
+To define a nullable type we use the question mark notation like this: int?, decimal?, double? or DateTime?.
+
+But what happened on the background? How are those types interpreted by the runtime?
+
+Let's take the following code.
+
+
+
+<script src='http://gist.github.com/561840.js?file=file0.aspx-cs'></script>
+
+
+
+Compile it and use Reflector to take a look at the result:
+
+Opening the resulting assembly with reflector shows no changes if we see the code as C# but take a look at the IL code:
+
+
+
+<script src='http://gist.github.com/561840.js?file=file1.aspx-cs'></script>
+
+
+
+Look at the type of the fields they are all of System.Nullable<T>. This type is defined in mscorlib as follow.
+
+
+
+<script src='http://gist.github.com/561840.js?file=file2.aspx-cs'></script>
+
+
+
+Interesting, isn't it?

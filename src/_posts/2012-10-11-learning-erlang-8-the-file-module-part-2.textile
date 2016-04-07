@@ -1,0 +1,134 @@
+---
+layout: post
+title: The file module (part 2). (Learning Erlang 8)
+summary: The last time we explored the functions of this modules that can be used to dynamically executed Erlang code. This time we will look at more common file operations like opening, reading or writing.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+h3. Let's start by creating a file.
+
+We can use the <span class="code">open/2</span> function with <span class="code">append</span> or <span class="code">write</span> as the mode.
+
+<pre><code>
+  1> {Result, Device} = file:open("/tmp/new", [append]).
+  {ok, <0.50.0>}
+  2> {Result2, Device2} = file:open("/tmp/2", [write]).
+  {ok, <0.34.0>}
+</code></pre>
+
+The <span class="code">Device</span> and <span class="code">Device2</span> variables contain an <span class="code">IoDevice</span> that can be a process id or a file descriptor, in this case is the process id that opened the file.
+
+h3. Adding some data.
+
+We can use <span class="code">write/2</span> to add some data to a file we opened in <span class="code">append</span> or <span class="code">write</span> mode.
+
+<pre><code>
+  3> file:write(Device, "Some data.").
+  ok
+  4> file:write(Device, "Some more data.").
+  ok
+  5> file:write(Device, "And some more...").
+  ok
+</code></pre>
+
+h3. Cleaning after ourselves.
+
+Closing the file passing the <span class="code">pid</span>.
+
+<pre><code>
+  6> file:close(Device).
+  ok
+</code></pre>
+
+h3. How about create the file and add some data to it all in one line?
+
+<span class="code">write_file/2</span> takes the file path and the data to write. It will create a file if it doesn't exist or override the content of the given file.
+
+<pre><code>
+  1> file:write_file("/tmp/2","Some data").
+  ok
+</code></pre>
+
+If the file exists and we don't want to override the content, we use <span class="code">write_file/3</span> instead, using the desired mode as the third argument.
+
+<pre><code>
+  2> file:write_file("/tmp/2","\n\rAnother line", [append]).
+  ok
+</code></pre>
+
+h3. Or deleting an existing file.
+
+<pre><code>
+  3> file:delete("/tmp/2").
+  ok
+</code></pre>
+
+h3. Remove the content of a file.
+
+We can call truncate with a IoDevice to remove all content.
+
+<pre><code>
+  4> file:truncate(Device).
+  ok
+</code></pre>
+
+h3. Rename a file
+
+This one works similar to the mv command. It can take paths to the files or IoDevice as both the source and the destination for the file.
+
+<pre><code>
+  5> file:rename("/tmp/3","/tmp/renamed-3").
+  ok
+</code></pre>
+
+h3. Writing is cool but let's do some reading.
+
+<pre><code>
+  6> file:read_file("/tmp/4").
+  {ok,<<"Data hereOverriding the file content.">>}
+</code></pre>
+
+You can easily read the content of a file using the <span class="code">read_file/1</span> function.
+
+If you opened the file with <span class="code">open/2</span> you should use <span class="code">read/2</span> instead.
+
+<pre><code>
+  7> {Status, IOD} = file:open("/tmp/4", [read]).
+  {ok,<0.49.0>}
+  8> file:read(IOD, 20).
+  {ok,"Data hereOverriding "}
+  9> file:read(IOD, 0).
+  {ok,[]}
+  10> file:read(IOD, 200).
+  {ok,"the file content."}
+  11> file:read(IOD, 20000).
+  eof
+</code></pre>
+
+The second argument is the number of bytes/characters to read.
+
+If you try to read passing the end of the file you get an <span class="code">eof</span> error.
+
+Also notice that if you read 0 characters you get an empty list as a result.
+
+__Remember, strings are nothing more than lists of characters in Erlang.__
+
+h3. Getting info about a file.
+
+You can use <span class="code">read_file_info/1</span> calling with a file name or <span class="code">read_file_info/2</span> calling it with the file name and some <span class="code">file_info_options</span>.
+
+<pre><code>
+  1> file:read_file_info("/tmp/4").
+  {ok, {file_info,37,regular,read_write,
+               { {2012,10,12},{0,25,17} },
+               { {2012,10,12},{0,18,44} },
+               { {2012,10,12},{0,18,44} },
+               33204,1,2049,0,3167603,1000,1000} }
+</code></pre>
+
+h3. There is more.
+
+The file module has a lot more to offer. You can copy files, create links, create and delete directories, change date and time file information for the file, change ownership and more.
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__

@@ -1,0 +1,22 @@
+---
+layout: post
+title: YAGNI it's not a excuse for badly designed applications.
+summary: YAGNI is short for You ain't gonna need it. It keep people like me to over design systems. Now, every time that I start to write some piece of code I always have that said in mind. You will be surprised how many times I found myself telling me, YAGNI.
+categories: [General, Programming]
+---
+
+YAGNI or "You ain't gonna need it", is great. It keep people like me to over design systems. Now, every time that I start to write some piece of code I always have that said in mind. You will be surprised how many times I found myself telling me, YAGNI.
+
+Although, sometimes, this can be misused. Sometimes this "rule" may be used as an excuse to write tightly couple systems, difficult to maintain in the long run. I know that this is not the spirit of "YAGNI", but a week ago somebody said that to me when we were talking about the importance of programming against interfaces.
+
+So let me tell you what my own interpretation of YAGNI is. Do not create that cool feature that nobody requested, but design your system in a way that when (or if) somebody request that cool feature, you will be able to implement it without rewriting the whole system.
+
+So what we do? Well, just apply solid OO design principles. Make your system extensible. This is not as difficult as it sounds. Design from the get go a modular system.
+
+Program against interfaces. This will facilitate the use of Dependency Injection to reduce friction. You should make sure that different compilation units do not depend on each other.
+
+Practice Test First (TDD or BDD) or at least have a good test suite in place so later on you can change your system with confidence.
+
+Make sure that you put your business rules in the right place and not scattered all over your system.
+
+Do not be afraid of aggressively refactor your code to make it more readable, even when the feature works, refactoring your code to make it extensible is not a violation of YAGNI.

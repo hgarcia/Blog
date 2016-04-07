@@ -1,0 +1,23 @@
+---
+layout: post
+title: CSS parser class in .NET.
+summary: We are changing our template system at work and my boss ask me to look around for a css parser class. The class needed to load a bunch of css files and parse them to be able to get a value from an attribute of a given key.
+categories: [Programming, .Net]
+---
+
+We are changing our template system at work and my boss ask me to look around for a css parser class. The class needed to load a bunch of css files and parse them to be able to get a value from an attribute of a given key. The class needs to be "intelligent" enough to apply some precedence rules so the latest css file will override or augment the previous ones. After doing a quick search in google I couldn't find something that could help us, we needed something simpler with little overheat, so it was time to write my own.
+
+So I went to the task and came up with this:
+It seems to work well enough, it's a very simple implementation, there is no validation for valid formatting and is quite permissive with the quality of your css, so it should parse well your file even if the formatting is not 100% correct.
+
+The algorithm is very naive, but I didn't find any major problems with it. The only issue that I see on this one is that the famous hack for IE (using the * selector) will be ignored and that style may be removed, but you shouldn't be hacking your css, should you? (irony there).
+
+
+
+<script src='http://gist.github.com/561823.js?file=file0.cs'></script>
+
+
+
+Some other solutions and articles related.
+
+<a href="http://ostermiller.org/findcomment.html">RegEx to find C style comments.</a>

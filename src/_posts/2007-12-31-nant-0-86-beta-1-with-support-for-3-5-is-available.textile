@@ -1,0 +1,12 @@
+---
+layout: post
+title: NAnt 0.86 beta 1 with support for 3.5 is available
+summary: I went today to the Nant site to check some documentation and I saw that the beta 1 of the new version is available, this version supports the .NET 3.5 framework, Mono 3.5, Silverlight 2.0 and Moonlight 2.0
+categories: [General, Tools, .Net]
+---
+
+I went today to the <a href="http://nant.sourceforge.net/">Nant site</a> to check some documentation and I saw that the beta 1 of the new version is available, this version supports the .NET 3.5 framework, <a href="http://www.mono-project.com/Main_Page">Mono 3.5</a>, Silverlight 2.0 and <a href="http://www.mono-project.com/Moonlight">Moonlight 2.0</a>
+
+The beta have been available since December 8, there are a bunch of changes, bug fixes and drop of some features that is important to take into consideration when migrating, some of your scripts may stop working if you are using some deprecated feature like the failure attribute, it have been replaced by the onfailure.
+
+I was hoping to see FTP support (ala Ant) between the new additions but I didn't saw it.

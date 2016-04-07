@@ -1,0 +1,43 @@
+---
+layout: post
+title: Opa up and running - book review.
+summary: Opa is a new intriguing language and framework for web development. This book will help you to make the most of it very fast.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920025436.do" target="_blank"><img class="img-float-right" src="/images/posts/opa_up_and_running.gif" border="0" alt="Opa up and running - book cover"></a>
+
+h3. Overview.
+
+You will learn about how to work with "Opa":http://opalang.org/ "the framework" and about some of the language features.
+The book achieves this with several hands on projects of varies and increasing complexity.
+There are only a few chapters that are not practical, ex: explaining the opa type system (chapter 7) and a few short introductory chapters at the beginning of the book. Read those chapters because they are packed with good information on some of Opa's strong points
+
+The three authors "Henri Binsztok":https://twitter.com/henri_opa  ,"Adam Koprowski":https://twitter.com/akoprowski and "Ida Swarczewskaja":http://dribbble.com/creatrice manage to balance the code examples with well written and clear explanations of the code is doing.
+
+h3. The good.
+
+The book is targeted to developers of an intermediate level, without leaving in the dark beginners.
+
+The authors don't waste to much time describing concepts outside Opa itself, a beginner may have to do some reading on the side to supplement knowledge, but it should be able to get to work with the framework regardless.
+
+I think it's a good compromise since keep the book focused on the task and keep it short.
+
+
+h3. The bad.
+
+No tests.
+
+There are no tests at all in the book nor mention of unit test, assertions or testing libraries/modules. For me this is not a good thing. A book written today should (at least), describe how to test your system. Even if it's in an appendix of the book, so to keep the examples clean.
+
+
+h3. Conclusion.
+
+Opa is an intriguing framework and I will have to take it for a spin to make my mind about it. The book convinced me that I should at least spend some time with it.
+
+There are a few other things that bother me, but those are regarding the code examples and the framework and may not be really the book to blame (ex: not external templates, to separate html from the view code).
+
+I also recommend taking a look at some of "Adam Koprowski's repos on Github":https://github.com/akoprow
+

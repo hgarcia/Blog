@@ -1,0 +1,20 @@
+---
+layout: post
+title: Mediocrity should scare you.
+summary: A month ago or so I was talking to this developer on a party at a friends house.  He was telling me how much he hated his work. The guy was telling me about some of his coworkers.  The story goes like this.
+categories: [General]
+---
+
+A month ago or so I was talking to this developer on a party at a friends house. 
+
+He was telling me how much he hated his work. The guy was telling me about some of his coworkers. 
+
+The story goes like this. They had a new boss, and this new guy wanted to bring XP, pair programming and some other things like DI, DDD, etc. He also wanted to try MonoRails.
+
+The guy at the party was furious. He loved his drag and drop web forms and he saw no point wasting time sitting with another developer to do a data grid based report. Why they needed to move the code outside of the code behind to another project? Code reuse? What that's think about Unit test? He tested his pages all right hitting F5 and clicking the submit button. 
+
+I was trying to be polite but I couldn't avoid to ask him: Don't you have problems during the maintenance phase, or each time you need to change something, something else brakes and you never find it until it goes to production?  
+
+He looked at me like I was crazy and said: "Yeah, but there is nothing you can do about it. And besides if it's perfect they won't need me anymore."   
+
+He wasn't joking.

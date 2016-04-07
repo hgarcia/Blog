@@ -1,0 +1,20 @@
+---
+layout: post
+title: Big Visible Cruise- Cruise control project status in a big screen
+summary: Lava lamps, Orbs, led displays, they all have been used and are still being used to show the build status of projects under Continuous Integration. What about using a big flat panel TV? Cruise Control provides information via xml ...
+categories: [Continuous Integration, Methodology]
+---
+
+Lava lamps, Orbs, led displays, they all have been used and are still being used to show the build status of projects under Continuous Integration. 
+
+What about using a big flat panel TV? Cruise Control provides information via xml as a service and leveraging that information is fairly easy, so why not to present not just the status but also the name of the project in the screen? Well, that is exactly what <a href="http://code.google.com/p/bigvisiblecruise/" target="_blank">Big Visible Cruise</a> does.
+
+<a href="../../../images/posts/BigVisibleCruiseCruisecontrolprojectstat_14B95/image_2.png"><img height="284" alt="Big visible cruise" src="/images/posts/BigVisibleCruiseCruisecontrolprojectstat_14B95/image_thumb.png" width="393" border="0" /></a>
+
+This is a WCF application, you just put it in a computer connected to a TV. Double click in the exe file, provide the URL for your dashboard and there you go.
+
+It has a property in the configuration file to provide a Regular Expression to indicate witch projects to include in the screen. I prefer to just specify the projects explicitly, so I made a small change in the code to load a list of projects from a txt file and filter the projects using this list. I'm not super happy with the quality of the code, so I will work a little bit more on it before sending a path in case somebody find it useful. I want to use the configuration file to set the projects instead of a text file and probably filter the projects in a different way.
+
+We put the TV near the development team but visible by all the company. We haven't make a public announcement yet, but I saw some of the guys on the marketing team to looking at it when they walked by and one of them asked me about it. This is exactly what you want great visibility, hopefully will help us to improve communication with the other divisions.
+
+And besides all that, It looks really great.

@@ -1,0 +1,66 @@
+---
+layout: post
+title: Super simple Silverlight video player in 20 minutes with a text editor and Gestalt.
+summary: A few hours ago I saw a Tweet by @shanselman about having Ruby and Python scripts tags in your html pages.
+categories: [Frameworks, Programming]
+---
+
+A few hours ago I saw a Tweet by <a href="http://twitter.com/shanselman" target="_blank">@shanselman</a> about having Ruby and Python scripts tags in your html pages. Clicking in the URL took me to <a title="http://visitmix.com/labs/gestalt/" href="http://visitmix.com/labs/gestalt/" target="_blank">http://visitmix.com/labs/gestalt/</a>. I didn't have to read much to understand the potential.
+I'm myself an old web guy that still love to craft my JavaScript, Html and PHP code using a text editor. (My old time favourite was <a href="http://www.pspad.com/" target="_blank">PSPad</a> but lately I have been using <a href="http://www.e-texteditor.com/" target="_blank">e</a>, a "clone" of <a href="http://macromates.com/" target="_blank">TextMate</a> for windows.
+
+My team make fun of me since sometimes I even fire up e to fix some bug in C# files.
+
+Don't get me wrong, I love a good IDE and there is no way I can be as productive as I am writing C# without Visual Studio and add ins like R# or CodeRush. This post is not about IDE's vs. Text editors anyway.
+
+This post is about Gestalt. What is Gestalt? It's a JavaScript library that act as a bootstrapped to load Silverlight and the DLR engine to interpret Ruby, Python and Xaml code embedded directly in your pages. (Ok, It doesn't need to be embedded you can use linked files, what is the recommended way anyway.)
+
+Of course, been the ADD person that I am, and such a geek, I needed to try it and see how long would take me to create a simple (emphasis on simple) video player.
+
+11:25  PM Make a mental list of the requirements:
+
+<ol>
+	<li>Add a MediaElement that loads a video into a page (Xaml file linked, not inline).</li>
+	<li>Add three html input buttons, one for play, one for pause and one for stop. (These are in the html page).</li>
+	<li>Wire up the control of the MediaElement to the input buttons using python. (Since I'm learning the language).</li>
+	<li>Have it working before midnight or go to bed.</li>
+</ol>
+
+11:26 PM  Download Gestalt and extract to my Development folder.
+
+11:27 PM  Download the TextMate bundles provided by the Gestalt team and extract them into the Bundles folder of e (e can use TextMate bundles, if you don't know what this bundles are, let's put it this way, are like Resharper templates+macros+code snippets ).
+
+11:28 PM  Create a folder under wwwroot (not a virtual directory), copy the Gestalt library and folders into it, and added a few more folders to keep the structure clean.
+Start to download the<a href="http://channel9.msdn.com/shows/The+Knowledge+Chamber/Gestalt-Nishant-Kothary-and-Joshua-Allen/" target="_blank"> interview from channel 9 program "The knowledge chamber"</a> where Nishant Kothary and Joshua Allen present Gestalt.
+
+11:30 PM  Launch e, create a new HTML (Gestalt) file. Check the menu to try to get a grasp on the bundles shortcuts. Type skelg+Tab and a basic html skeleton get's generated for me.
+Remove the link to the CSS file since I want be using any in this test.
+
+11:32 PM  Open the <a href="http://visitmix.com/labs/gestalt/downloads/xaml.playground.html" target="_blank">"Designer"</a> that the Gestalt team offers online, select a MediaElement and change the size, type something in the source and change AutoPlay to False.
+Check the XAML, copy and paste inside e in a new Xaml file. (Syntax highlighter works as expected.)
+Change the source to the absolute location of the video previously downloaded.
+Save the file inside a Xaml subfolder.
+
+11:35 PM  Create a link to the Xaml file in the html file (needed to consult the documentation, sample files).
+Create three input elements, give them names and id's (Id's is the way you will access them from your code later on).
+
+11:40 PM  Create a new Python file inside a python subfolder.
+Create three methods (ClickPlay, ClickPause, ClickStop), to handle the onclick event on the input elements. (have to consult the documentation for the method signature).
+Attach the this method to the proper event for each of the input elements, the code is very similar to the way that both prototype and JQuery do this.
+
+11:43 PM  Launch the page in my browser, I got an error message that told me that I have to put the correct path for the gestalt.xap files (I remember reading about that in the Faq's).
+There is two ways to change the default path, I decided to open Gestalt.js and edit the file directly. You can also change the path programmatically.
+
+11:44 PM  Try again, video playing, but not showing completed. Half of the frame is hidden. Open the html file adjust the size of the xml tag.
+Refresh the browser. Success!
+
+11:45 PM  Click in the buttons, nothing happens. Open FireBug Net tab to check for the traffic in the network, my python file is red. I guess IIS doesn't know how to handle .py files. Open location in new tab, and sure enough, need to add a mime type or specify a handler.
+I don't want to do that. The good thing is that source code is text, so let's change the name from hdplayer.py to hdplayer.py.txt.
+Refresh the browser one more time. Click the button. Success!
+
+11:47 PM  Right click on the video opens the Silverlight preferences dialog, like it should.
+
+In no more than 21 minutes I was able to create a Silverlight player that is controlled via html controls without opening either Blend or VS. Also notice that I didn't have to expose any properties as Scriptable, since Python code is running inside the same sandbox (I'm guessing here, but I'm pretty sure that I'm close enough :-)).
+
+It took me longer to write this post that write the simple video player. So, what are you saying, we don't need blend and VS to write Silverlight applications? No, I'm not saying that. I'm pretty sure that there may be scenarios where writing you code in c# a deploy a XAP file are the way to go. But I see a lot of other scenarios where Gestalt is the way to go.
+
+I may be do some more on top of it or something else, maybe investigate how difficult will be to implement drag and drop.

@@ -1,0 +1,16 @@
+---
+layout: post
+title: On Sergio Pereira's - Don't tell me you did that with JavaScript
+summary: First let me said, thanks for this post.I always sustained that you can't do modern web development without using JavaScript. I never understood when in some user group presentation or a Microsoft product launch somebody drag and drop a control ...
+categories: [General, Programming]
+---
+
+First let me said, thanks <a href="http://devlicio.us/blogs/sergio_pereira/archive/2008/08/22/don-t-tell-me-you-did-that-with-javascript.aspx" title="Don't tell me you did that with JavaScript" target="_blank">for this post</a>. 
+
+I always sustained that you can't do modern web development without using JavaScript. I never understood when in some user group presentation or a Microsoft product launch somebody drag and drop a control from the AJAX tool kit into a webform to provide some dynamic capability and exclaim "and you haven't wrote a line of JavaScript!".
+
+My though always was, aren't you guys web developers? If you are a database developer, don't you want/need to learn T-SQL or P-SQL or whatever the SQL flavor of the database product you are using? I will concede that some developers may be better on the backend (I consider myself a bad designer), but that is not excuse not to know your way on HTML, JavaScript and CSS.
+
+That is your presentation layer, even if you don't design it, you may have to maintain it and prpgram on it. Please don't misunderstand me, I'm not saying that you should know every little CSS trick or every possible browser implementation of HTML standard (does IE put the margins outside or inside the box?). I'm not even saying that you should be a javascript ninja. What I'm saying is that you shouldn't be afraid of those technologies, you should embrace them and learn them.
+
+JavaScript in particular is an amazing language with a lot of power and following a few simple rules will help you to discover the joy of working with such a language. And please if you haven't do it yet, take the time to learn how AJAX works, remember that there is not such thing as an update panel in HTML.

@@ -1,0 +1,31 @@
+---
+layout: post
+title: Ta-Da List and Chrome, or how to do good products.
+summary: I have looking for a simple to use, fast, ubiquous to do list for a long time. I used several different solutions. Web and desktop application. So far none of them really worked for me. Some of them are too simple, others too complex. ...
+categories: [Tools]
+---
+
+I have been looking for a simple to use, fast, ubiquous to do list for a long time. I used several different solutions. Web and desktop application. So far none of them really worked for me.
+
+Some of them are too simple, others too complex. One that I still use is Task Coach. A nice little application that allows me to create sets of task (projects) and set deoendencies between tasks. 
+
+I usually use it when I start a new project on my own. It's a nice tool to just add requirements in a very easy and fast way.
+But for my everyday task I needed something different. I always went back to the pen and paper or the notepad document open on the desktop.
+
+h3. Enter Ta-Da Lists
+
+This is a product from <a target="_blank" title="37 signals" href="http://www.37signals.com/">37 signals</a>, the same guys that gave us rails. <a target="_blank" title="Ta-Da list home page" href="http://www.tadalist.com/">Ta-Da List </a>is easy to use.
+
+<ol>
+	<li>Create an account, a simple process, with a short form.</li>
+	<li>You are done.</li>
+</ol>
+
+Now you can create one or more lists, add task to your lists, reorder the tasks (AJAX, so no round trip to the server). 
+
+Once you are done, check off the task and it's moved to the bottom with all the other checked off task (AJAX again so you can keep working).
+
+Since is on the web, no need to synchronize anything between computers. My only issue is that I didn't want to have to click in a link or open the browser and go to my favorites, or change the home page as it is today. Chrome comes to the rescue. 
+I opened Ta-Da list in chrome and I created an "application". I added the shortcut to my launch bar and now it's another icon, like Visual Studio or PSPad.
+
+This may sound silly. I know that if somebody mentioned this to me I would said something on the line off, what's the matter with open Firefox and navigate to the page? The true is, there is nothing wrong with that, but this is more convenient. I can't really explain how, but it works great for me.

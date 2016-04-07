@@ -1,0 +1,18 @@
+---
+layout: post
+title: Pragmatic Thinking and Learning book review.
+summary: The tag line of the book is refactor your wetware, and after reading it, you will.  Andy Hunt explores how the brain works and try to point us (the readers) into ways to improve our use of it.
+categories: [Books]
+---
+
+The tag line of "the book(Pragmatic thinking and learning)":http://pragprog.com/titles/ahptl/pragmatic-thinking-and-learning is refactor your wetware, and after reading it, you will.
+
+"Andy Hunt(Andy Hunt)":http://en.wikipedia.org/wiki/Andy_Hunt_%28author%29 explores how the brain works and try to point us (the readers) into ways to improve our use of it.
+
+For me the first five parts; Introduction, Journey from novice to expert, This is your brain, Get in your right mind and Debug your brain; is where I found the book most useful. This is not to say that the last four parts weren’t interesting, but for whatever the reason I took some effort on my part to concentrate and finish them.
+
+The book had several a-ha moments. The Dreyfus model was specially interesting and the idea of carry around a pad to write any idea you may have has serve me well so far. 
+
+_My journalism teachers all insisted that we always carry a pad to take notes and make observations, but I never extended the practice as a developer._
+
+If you are into continuous improvement this is a book that you should read. I’m sure you will find some or all of it useful.

@@ -1,0 +1,74 @@
+---
+layout: post
+title: Codemash Precompiler, Web automation with Selenium
+summary: Adam Goucher gave a good presentation on the use of Selenium for web automation. These are my notes taken during the session.
+categories: [Programming, Codemash]
+---
+
+<blockquote>This post is mostly a set of notes that I took live during the session.</blockquote>
+
+Presenter: "Adam Goucher":http://adam.goucher.ca/ 
+"@adamgoucher":http://twitter.com/#!/adamgoucher
+
+h3. General notes.
+
+When you write automation tests, you are actually writing checks no tests.
+Do not hard code stuff, reach into the database programmatically for stuff stored there. Credentials, authentication tokens, etc.
+Use Selenium IDE to write quick prototypes, if you spend a lot of time in IDE you are doing something wrong. At some point you need to drop into code so, export scripts to a language you feel comfortable with.
+Use the Export function not Save as.
+Leverage the best language to write your test. You don't necessary need to use the same language as your applications.
+
+Use/write IDE user extensions to define variables that need to be used in your scripts. XPath locators are good candidates to do so. Variables are define in a hash named storedVars. Reference them using $["keyname"]
+Abstracts values provided to the script as much as you can to avoid changing the script later.
+Ex: use a csv file to load values for the script or load them directly from the db.
+
+Use Selenium 2.0b1, has lots of bug fixes.
+Develop scripts using the old style (Selenium), not the WebDriver API's.
+In V2 Selenium Grid is included in server each server instance is a node on a grid. .
+
+
+h3. Finding stuff.
+
+* Put id's to everything you need to interact with.
+* If you can't have id's use Xpath and force yourself to use short paths.
+* If Xpath is slow use css selectors.
+* Link locator link=profile (doesn't work with multilingual sites)
+
+
+h3. Patterns.
+
+xUnit: Use an xUnit framework to run/write your tests.
+
+Page object: Create objects that represent the pages of your site, each page contains properties and methods that represents the interactions and attributes of that page. Page objects are not necessarily pages but can also be just parts of a page, like a login widget. Encapsulate locator information inside the object.
+
+Tags: For organizing tests. Based on the language, xUnit framework you use to run your tests.
+
+CI: Always run your Selenium scripts from your CI server. Chain your jobs to run in the proper environment and at the proper time.
+
+Randomness: Use it for everything. User names don't have to be real names, just follow some specific rules, so generated user names randomly. Use it to click random links and move around your site automatically.
+
+Login: Make sure you log what you are doing and what values you were using to be able to debug failing scripts later.
+
+Checking: Only one hard assert per script (similar to proper unit testing), but may have more than one verify. Having several verification per page allows us to get more of the problems with that page/workflow at once.
+
+
+h3. Code smells.
+
+No locators inside your scripts.
+Do not automate everything with Selenium if you don't need it. (Verification emails, out of browser processes, etc.) 
+Turn off HTTPS in any environment that is not production.
+Don't trust anything the server is saying.
+Make your scripts as small as possible.
+Do not test more than one thing at a a time.
+Don't use anything platform specific.
+Never put sleeps in your code for Ajax synchronization.
+
+
+h3. Timing.
+
+Web 2.0 makes writing these checks very difficult. We need to check for elements presents and available. Now we even have Comet. We create a latch. So, when the loading is actually done the event handler or the callback changes an attribute in the DOM that Selenium can check to continue with the testing.
+
+
+h3. Make good use of the extension on IDE.
+
+Encapsulate specific needs for your site or company, writing plugins that encapsulate some. Formatters, etc. Handles updates using the same mechanism of any other Firefox extension.

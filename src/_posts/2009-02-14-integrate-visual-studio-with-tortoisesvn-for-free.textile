@@ -1,0 +1,36 @@
+---
+layout: post
+title: Integrate Visual Studio with TortoiseSVN for free.
+summary: Now there is another choice and is a set of configuration options to access TortoiseSVN from inside Visual Studio. The set of configurations provide a tools menus, context menu, and menu bar.
+categories: [Tools, .Net]
+---
+
+We all know that <a href="http://www.visualsvn.com/" target="_blank">VisualSVN</a> is a really good plug-in to integrate with Subversion from inside Visual Studio. The free plug-in alternative is <a href="http://ankhsvn.open.collab.net/" target="_blank">Ankhsvn</a>.
+
+Now there is another choice and is a set of configuration options to access TortoiseSVN from inside Visual Studio. The set of configurations provide a tools menus, context menu, and menu bar.
+
+<blockquote>
+
+The following Subversion/TortoiseSVN features are covered in the integration:
+
+* Commit - Commit the files to the repository
+* Update - Update the current working version
+* History - Get the history for the selected file
+* Diff - Get the diff compared to the base version
+* Blame - Find out who committed the crimes in the file
+* Revert - Undo local changes
+* Modifications - Check to see if any files have been modified
+* Edit Conflicts - Edit the conflicts that arise from merging/updating
+* Resolve - Mark the file as resolved for conflicts
+* Repository - View the repository on the server
+* Project History - Get the history of the entire project
+* Add Solution - Add the solution being edited to source control
+* Branch/Tag - Perform a branch or tag on the current working copy
+* Settings - Set up TortoiseSVN
+
+
+</blockquote>
+
+The menu bar uses the right logos and everything works very well. The only missing piece is marking the files with a little icon the way that Ankhsvn or VisualSVN do.
+
+The true is that this set of configurations was easy to install and provides all the functionality you will ever need. I recently use them in my old laptop to commit from inside Visual Studio into <a href="http://code.google.com/p/latrompa/downloads/list" target="_blank">Google code</a> and I'm very pleased with the way it works.

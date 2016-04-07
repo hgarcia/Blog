@@ -1,0 +1,52 @@
+---
+layout: post
+title: PartCover the Code Coverage tool for me
+summary: A free tool to do code coverage with a nice GUI for the developers to use, that can be run on the command prompt, that generates nice xml based reports (to integrate with your CC server) and best of all for me) that works fine with Static methods...
+categories: [Methodology, Testing, Tools, .Net]
+---
+
+A free tool to do code coverage with a nice GUI for the developers to use, that can be run on the command prompt, that generates nice xml based reports (to integrate with your CC server) and best of all for me) that works fine with Static methods.
+
+This gem is called <a href="http://sourceforge.net/project/screenshots.php?group_id=175733&amp;amp;ssid=40823">PartCover</a>.
+
+In the continuous quest to improve my team code quality I'm pushing hard to move more and more into a TDD approach. (I should make a side note here and indicate that at this moment my main concern is have a nice battery of unit test in place even if they are written after the fact). We are having clinics and the senior developers teach the junior guys how to use Nunit, Nant and now we are playing with some Code coverage tools.
+
+We were going to jump into NCover since is the one that most of us have experience with, but there was a problem and it was that our massive Utility library is mainly a collection of static methods and NCover doesn't seem to like Static methods, so there are no metrics of how much code have been tested in those libraries. That is a bit of a problem for us.
+
+Another issue was that now NCover seems to come in two flavors (or two projects) the free one in <a href="http://ncover.sourceforge.net/">sourceforge</a> and a commercial version at <a href="http://www.ncover.com/">Ncover.org</a>. The price for the commercial version is not terrible (169 to 199 USD + service plan if you want) and we thought that we may run it just in the integration server in the worse case scenario. The free project have a note in the home page that discourage us from use it, and that is that the project to cover needs a reference to a Ncover library. We are not sure if they are talking about the testing project (the one with the test fixtures or the actual library that is been tested, something that sounds crazy), but in any case having to include another dependency was a big deterrent for us.
+
+The commercial version was fine, fairly easy to set up (even without a lot of documentation, why is documentation for this tools so cryptic?!) and worked well enough, but the lack of measurement in static methods was bad for us.
+
+You can argue that you shouldn't use static methods in such a liberal fashion and that make for a bad OO design (something that I agree) and makes your programming model look more and more like procedural and you will be right, only that in this cases there is no major implementation and besides a Network library and a serialization library that needs to be re-written the lions share resides in our Utils class.
+
+h3. PartCover to the rescue.
+
+I was upset with the compromise and took me almost no time (the second search on google) to stumble upon this free awesome tool. The interface is similar to NCover but more frugal.
+
+There is a File menu with four options:
+
+Run target (to generate the report)
+Open Report
+Save report as
+Exit
+
+It can be more straightforward.
+To generate the report you will to enter the same data as in NCover.
+
+Executable file: should point to the console exe for your testing framework in my case nunit-console.exeWorking Directory: This is the folder where the dll with your test fixture resides, for example C:\Project\Project1\UnitTesting\bin\Debug
+Working arguments: Depends but in the case of nunit is the dll where with the test fixtures (ex: UnitTesting.dll)
+
+The tricky part is the fourth text box (a text area really), where you enter "Rules", this rules tell PartCover witch assemblies/classes to look for coverage and what to left out.
+
+For example if you have to dll one called Mainframe.dll and another one called desktop.dll and you want to check both of them you will enter a Rule like this
+
++[Mainframe]*
++[Desktop]*
+
+To exclude the mouse class from the desktop dll you add the following
+
+-[Desktop]*mouse*
+
+Another nice feature is that the dll with the fixture is not included (another thing that bothered me from NCover). The tool has a command prompt option, so running from Nant is no problem, and the report is generated as xml, so integrate it with CC.net should not be an issue, the even provide two xslt files to display the report based on the assembly or based on the class very neat!!!.
+
+_Two days after writing this post I found the <a href="http://www.icsharpcode.net/OpenSource/SD/">SharpDevelop </a>will be (is) using PartCover in SharpDevelop 3.0 and beyond._

@@ -1,0 +1,66 @@
+---
+layout: post
+title: Node BitBucket adds support for the user and users endpoint.
+summary: More refactorings and initial support for the users endpoint in version 0.0.6.
+categories: [node.js, Programming, JavaScript]
+---
+
+The internals have been refactored even more in this release and the <span class="code">remove(cb)</span> method always returns a <span class="code">null</span> result in the callback.
+
+This change makes the API more consistent.
+
+h3. User
+
+This endpoint supports a series of operations in the logged user.
+In all the examples below, <span class="code">client</span> is a new bitbucket client.
+
+<pre><code>
+  var client = bitbucket.createClient(options);
+</code></pre>
+
+You can get a list of repositories the user follows with:
+
+<pre><code>
+  client.user().follows(cb);
+</code></pre>
+
+If you need to access the user details and his repositories, use the <span class="code">get</span> method.
+
+<pre><code>
+  client.user().get(cb);
+</code></pre>
+
+We can update some of the users properties calling the <span class="code">update</span> method.
+
+<pre><code>
+  client.user().update({"first_name": "Joe"}, cb);
+  // Changes the first name for the user to Joe.
+</code></pre>
+
+h3. User repositories.
+
+You can get information about all to all the user repositories using the same endpoint.
+
+<pre><code>
+  client.user().repositories().getAll(cb);
+</code></pre>
+
+If you want to get some details on the repositories the use is following you call the <span class="code">following</span> method on the repositories.
+
+<pre><code>
+  client.user().repositories().following(cb);
+</code></pre>
+
+Finally, <span class="code">dashboard</span> return the same information you see in a user dashboard when visiting BitBucket.
+
+<pre><code>
+  client.user().repositories().dashboard(cb);
+</code></pre>
+
+h3. Users end point.
+
+Partially implemented at the moment, only support for account and emails have been implemented.
+
+h3. Improved documentation
+
+The documentation have been updated to cover the current API and have been significantly simplified.

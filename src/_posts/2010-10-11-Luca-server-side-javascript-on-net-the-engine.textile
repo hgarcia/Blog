@@ -1,0 +1,93 @@
+---
+layout: post
+title: Luca - server side JavaScript websites in .Net, choosing the engine.
+summary: I wanted a very simple framework more like Sinatra than Rails. Something that make very easy to put together some simple Restful websites. And I wanted to use JavaScript to write my code and be able to run it inside .Net and IIS. But first I needed to find my JavaScript engine.
+categories: [Luca, Frameworks, Programming, .Net]
+---
+
+For the last month or two I have been working a few hours at a time in this new pet project that I decided to call "Luca":http://lucajs.com/ . The idea is to use JavaScript on the server side but inside IIS and .Net.
+
+I wanted a very simple framework more like Sinatra than Rails. Something that make very easy to put together some simple Restful websites.
+
+h3. Selecting a JavaScript engine.
+
+I started thinking about this a few years ago. Microsoft was talking about Managed JavaScript and a JavaScript version for the DLR as well, but so far nothing is really available. 
+
+A year ago or so "IronJS":http://github.com/fholm/IronJS came around and even when the project is going strong, is still in flux. I have great hopes for it and keep an eye on the project since the performance benchmarks are really good. IronJS is implemented in F# and runs in the DLR.
+
+I though about writing my own implementation but then I woke up and realize how stupid that idea was.
+
+Five months ago I found Jint. Jint is implemented in C# using ANTlr for the parser and runs in the CLR not the DLR. I took it for a ride, wrote some test and a very simple proof of concept against it. It proved to be what I was looking for.
+
+"Jint":http://jint.codeplex.com/ has a very simple API. You create an engine, pass a bit of JavaScript to it and it returns a result.
+
+
+<script src="http://gist.github.com/619801.js?file=test-jint.cs"></script>
+
+
+h3. Extending the engine.
+
+I wanted to be able to use some of my favorite libraries while writing code for Luca. For example, I wanted to have the extensions to the language provided by prototype.js at the tip of my hand.
+
+I have two options. The simple one was to modify prototype.js to only contain the javascript extensions in it, removing any DOM specific code, and include the js file into the context for Jint to run.
+
+I started doing that but I have some problems with the way Jint was interpreting the code. 
+I got the source for Jint to debug these problems. I found a bug in Jint in the way it dealt with the .substr method, so I wrote a few test and fixed it.
+ 
+In doing so I got to understand how Jint works and an idea started to take form.
+Instead of rely on external js files to extend the language why not to extend Jint itself.
+
+I wanted those extensions to be available all the time and make them part of the engine maked more sense than load an interpret some js files each time.
+
+I wanted to have those extensions to JS separate from the Jint core. I created two new overload constructors that take an IList of IExtensionRegister. 
+
+
+<script src="http://gist.github.com/619801.js?file=jint-constructors.cs"></script>
+
+
+The list of registers is passed on time to the JsGlobal context that expose them as a property.
+
+IExtensionRegister is a new interface that comes with a default implementation as an abstract class.
+This implementation will scan the assembly, find all the classes that implement the new IExtension interface and register them in an Extensions property.
+
+
+<script src="http://gist.github.com/619801.js?file=IExtensionRegister.cs"></script>
+
+
+IExtension is as well a very simple interface.
+
+
+<script src="http://gist.github.com/619801.js?file=IExtension.cs"></script>
+
+
+This is the implementation of IExtensionRegister include in the Assembly that implements some of the prototype extensions.
+
+
+<script src="http://gist.github.com/619801.js?file=prototype.cs"></script>
+
+
+And here the code to extend the Array object. I removed the actual implementation of the extensions since there is nothing really interested there.
+
+
+<script src="http://gist.github.com/619801.js?file=Array.cs"></script>
+
+
+Finally I need to modify the Constructor object for the type, in this case the JsArrayConstructor.
+
+
+<script src="http://gist.github.com/619801.js?file=jsarrayconstructor.js"></script>
+
+
+I want to abstract this last part a bit more, so I dont have to modify all the constructor objects.
+
+h3. Returning dynamic objects.
+
+The last modification I did to Jint was the ability to return javascript objects as Dynamic objects. So I can do things like this.
+
+
+<script src="http://gist.github.com/619801.js?file=dynamic-test.cs"></script>
+
+
+h3. Moving on.
+
+With an engine in place is time to take a look at how to interact with the asp.net pipeline and IIS. But that is coming in a future post.

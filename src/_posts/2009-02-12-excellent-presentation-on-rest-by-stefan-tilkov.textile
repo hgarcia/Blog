@@ -1,0 +1,12 @@
+---
+layout: post
+title: Excellent presentation on REST by Stefan Tilkov
+summary: Stefan Tilkov is one of the guys behind the fabulous info.com and is a big REST proponent. The talk is titled REST, an alternative to Web Services.
+categories: [Architecture, Methodology, Programming]
+---
+
+Stefan Tilkov is one of the guys behind the fabulous <a href="http://www.infoq.com" target="_blank">info.com</a> and is a big <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm" target="_blank">REST</a> proponent. The talk is titled REST, an alternative to Web Services.
+
+You can watch here or go right to <a href="http://tinyurl.com/atdfvz" target="_blank">Parleys.com</a>
+
+<object width="474" height="443"><param name="movie" value="http://www.parleys.com/download/attachments/5443/parleysshare.swf?pageId=6451"></param><param name="allowFullScreen" value="true"></param><param name="pageId" value="6451"></param><embed src="http://www.parleys.com/download/attachments/5443/parleysshare.swf?pageId=6451" type="application/x-shockwave-flash" allowfullscreen="true" width="474" height="443"></embed></object>

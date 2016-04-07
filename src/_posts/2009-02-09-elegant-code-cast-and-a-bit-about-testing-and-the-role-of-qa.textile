@@ -1,0 +1,14 @@
+---
+layout: post
+title: Elegant Code Cast and a bit about testing and the role of QA.
+summary: On episode 20 of the Elegant Code Cast Matt Heusser talks about testing in general and the role of QA in an agile team.
+categories: [Programming, .Net]
+---
+
+On <a href="http://elegantcode.com/2009/02/02/code-cast-20-matt-heusser-on-agile-testing/" target="_blank">episode 20 of the Elegant Code Cast</a> Matt Heusser talks about testing in general and the role of QA in an agile team. This may very well be the best episode so far. Heusser not only talks about testing but how testers should be counted during all phases of the development process.
+
+It's not the Heusser is saying anything new on the subject, but maybe the way he presents the concepts that make his points very compelling. Even if you are already aware of the importance of a good QA team, I recommend to listen and <a href="http://craftingsw.blogspot.com/" target="_blank">read</a> to Matt Heusser.
+
+If you are interest on the subject, there is also this nice video on Google about Agile testing with Elisabeth Hendrickson from 2005 where some of the same issues as discussed.
+
+<embed id="VideoPlayback" src="http://video.google.com/googleplayer.swf?docid=-3054974855576235846&amp;hl=en&amp;fs=true" style="width:400px;height:326px" allowfullscreen="true" allowscriptaccess="always" type="application/x-shockwave-flash"></embed>

@@ -1,0 +1,42 @@
+---
+layout: post
+title: Implementing the Each method in C# collections.
+summary: The Javascript library Prototype make use of prototypes to extend some internal JavaScript objects like the Array. One of the extension methods that I find myself using the most is the each method.
+categories: [JavaScript, Programming]
+---
+
+The Javascript library Prototype make use of  "prototypes" to extend some internal JavaScript objects like the Array. One of the extension methods that I find myself using the most is the each method.
+
+h3. Examples
+
+
+<script src='http://gist.github.com/561821.js?file=file0.js'></script>
+
+
+We also have the each method in Ruby.
+
+
+<script src='http://gist.github.com/561821.js?file=file1.rb'></script>
+
+
+Using Alex suggestions I'm changing the delegates by Action<T> and Func<T,T> and using yield allow me to extend IEnumerable now. The code is way more elegant this way, thanks Alex.
+
+
+
+<script src='http://gist.github.com/561821.js?file=file2.cs'></script>
+
+
+
+This example will output the ToString() method of each object into the string. You can also modify the content of the Collection using the overload method and the delegate that returns an object.
+
+
+
+<script src='http://gist.github.com/561821.js?file=file3.cs'></script>
+
+
+
+This is the output:
+
+<img alt="" src="/images/posts/SP32-20071230-220529.png" height="116" width="413" />
+
+Pretty cool, isn't it? The power of using a delegate should not be overlooked since you could tie the delegate to multiple methods to further process each element of the collection.

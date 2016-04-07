@@ -1,0 +1,8 @@
+---
+layout: post
+title: Continuous Integration Do's and Don't.
+summary: Igor Brejc with a set of valid points when implementing Continuous Integration.
+categories: [General, Methodology]
+---
+
+A post by <a href="http://igorbrejc.net/development/continuous-integration/continuous-integration-builds-dos-and-donts" target="_blank">Igor Brejc</a> with a set of valid points when implementing Continuous Integration.

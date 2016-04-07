@@ -1,0 +1,25 @@
+---
+layout: post
+title: Nant custom task to delete more than once.
+summary: We were having a problem with our build in the CC.Net server.  The problem was that when doing the clean of the build folder sometimes it was failing with the following error. "Can't delete folder is not empty".  The first thing was to check that...
+---
+
+We were having a problem with our build in the CC.Net server. 
+
+The problem was that when doing the clean of the build folder sometimes it was failing with the following error. "Can't delete folder is not empty".  The first thing was to check that not other process was accessing the folder. The second step was to make a search on google to figure out if somebody else had the same problem. We only found one case but was too all and they were mentioning to use Nant 0.84 to solve the problem, that is not an option for us since we need support for .Net 3.5.  
+
+We have several projects running in the same server with almost identical build scripts, but only three projects have this problem. They have in common that all of them have a large and deep folder structure. Another characteristic of the problem was that the error wasn't always in the same folder, it seemed totally random. 
+
+Forcing the build usually solve the problem, but sometimes we have to force the build more than one time, since it keep failing in different folders.<br/>A build that fails randomly is not a good thing to have in a Continuous integration environment. You want your build to fail for good reasons, like a failing test or a threshold on simian or FxCop, in a few words, you want that when a build fails people pay attention to it. (Actually the ideal situation is that your build never fails because developers are running the build on their machines first, but you may have integration errors).  
+
+So after hitting my head into the wall for a few hours I decided to write a custom nant task to solve the problem.  
+
+The idea is that we have a task (forceDelete) that take two parameters, a target directory and a number of attempts.  Internally the task will try to delete recursivelly the given folder and any folder below it, if there is an error will try again for as many times as indicated in the attempts parameter. 
+
+I'm including a zip file with the compile dll and another one with the source code. To being able to compile the source code you will need to add a reference to Nant.Core.dll, located in the bin folder of your Nant location. 
+
+To use the task you just need to copy LaTrompa.NantTasks.dll inside the bin folder of your Nant install (or whatever is that Nant.Core.dll is in your machine).  
+
+<a href="http:../../../images/posts/latrompananttasks.zip" target="_blank">LaTrompa.NantTasks.zip</a><br/><a href="../../../images/posts/latrompananttaskssource.zip" target="_blank">LaTrompa.NantTasks.source.zip</a>
+
+h3. NotesThis task is super simple and at this moment it's not raising and error, something that you may want to do to make your script fails if you still can't delete the given folder after all the attempts.

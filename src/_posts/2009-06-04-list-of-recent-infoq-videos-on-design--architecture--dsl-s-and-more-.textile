@@ -1,0 +1,18 @@
+---
+layout: post
+title: List of recent InfoQ videos on design, architecture, DSL's and more.
+summary:  This is a list of videos I recently watched or have the intention to watch over the next few days.  An interview with Eric Evan's at Qcon San Francisco on the State of DDD. Kent Beck on Responsive Design.    Jeremy Miller on the joy and...
+categories: [General]
+---
+This is a list of videos I recently watched or have the intention to watch over the next few days.
+
+<a href="http://www.infoq.com/interviews/eric-evans-ddd-interview" target="_blank">An interview with Eric Evan's at Qcon San Francisco on the State of DDD</a>.
+<a href="http://www.infoq.com/presentations/responsive-design" target="_blank">Kent Beck on Responsive Design</a>.
+<a href="http://www.infoq.com/presentations/Lessons-Learned-Jeremy-Miller" target="_blank">Jeremy Miller on the joy and pains of a long lived codebase</a>.
+<a href="http://www.infoq.com/presentations/REST-Stuart-Charlton" target="_blank">Designing enterprise IT systems with REST</a>.
+<a href="http://www.infoq.com/presentations/robinson-restful-enterprise" target="_blank">RESTful enterprise development</a>.
+<a href="http://www.infoq.com/presentations/REST-Erlang-YAWS-Steve-Vinoski" target="_blank">RESTful web services with Erlang and YAWS</a>.
+<a href="http://www.infoq.com/presentations/Practice-Based-Design-L-Suchman" target="_blank">Practice based design</a> (not really sure about this one, I haven't watch it yet).
+<a href="http://www.infoq.com/presentations/Design-Matters-Pete-Goodliffe" target="_blank">Design matters</a>.
+<a href="http://www.infoq.com/presentations/remy-sharp-jquery-javascript" target="_blank">JQuery presentation</a>.
+<a href="http://www.infoq.com/presentations/vanderburg-state-of-dsl-ruby" target="_blank">The DSL Art on Ruby</a>.

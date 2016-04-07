@@ -1,0 +1,96 @@
+---
+layout: post
+title: Three weeks of real node.js development.
+summary: I have been playing with node.js for the last year and half, maybe more, but for the last three weeks I have been doing real work with it. We are developing a new product and we decided to give node a try. These are my findings and my experience so far.
+categories: [Programming, node.js, JavaScript, Frameworks]
+---
+
+If you don't know what "node.js":http://nodejs.org is, go to the "website":http://nodejs.org now and watch Ryan's introduction. In a few words, is a non blocking framework, you write your code in javascript and is run on top of V8. All IO is (or should) be non blocking to take advantage of the insane speed the framework gives you.
+
+This means that you need to understand asynchronicity and be comfortable passing around callbacks, but I'm getting ahead of myself.
+
+h3. Node ecosystem and packages.
+
+I knew the ecosystem from before since I have been playing with node.js for a while now, but even with that knowledge I'm surprised how mature is in most areas.
+
+Installing node is fairly simple in most *nix systems. After installing node the next step should be to install the package manager "npm":http://npmjs.org/ .
+
+One of the problems you may encounter is not the lack of libraries but exactly the oposite. There are quite a few packages to help you deal with a given task. The issue with this is that you may need to try a few until you find the one that really works well.
+
+It helps to visit the project page for the package before installing it or take a look at the readme file. I found that the good packages have somehow good documentation and even example projects that help you to understand their usage.
+
+h3. Web development.
+
+This is one area that node is fairly mature for a 2 years old technology. "Connect":http://senchalabs.github.com/connect/ seems to be the de facto middleware framework. You can think of it as an equivalent of Rack or wsgi. Connect abstract all the server, request and response implementations giving you a consistent api.
+But you don't even need to deal with connect directly. You can use "express.js":https://github.com/visionmedia/express and build on top of it. That have been my aproach. ExpressJs takes it's inspiration from Sinatra.
+
+If you are looking for something at an even higher level, you may want to check out "geddy":https://github.com/mde/geddy . Geddy (as express) have been around for a while now. It comes packed with generators and helpers that favored RAD.
+
+BTW: There are more than 30 different web frameworks out there. These are the two I'm more familiar with.
+
+h3. TDD in node land.
+
+I do consider myself a Test first guy. My methodology for using Test as a design tool have been evolving with time and I was certainly worry about finding a good tool for node.js.
+
+Javascript has several testing frameworks and some of them (actually a lot) have been ported or modified to be able to run in node.js and other commmon.js environments.
+
+At the time I'm using "expresso":https://github.com/visionmedia/expresso (comes bundle with expressjs but you can install it on it's own) with "should":https://github.com/visionmedia/should.js and I'm ok with it.
+
+I'm also looking at "cucumis":https://github.com/noblesamurai/cucumis to drive some outside in development when the moment comes.
+
+I personally think that having a good harness of test surrounding your system is fundational to any software that hopes to have any future. This is even more so when using a dynamic language.
+
+Check out this "github page":https://github.com/joyent/node/wiki/modules#testing for a comprehensive list of testing tools.
+
+h3. Productivity
+
+If you are proficient with JavaScript node have to be one of the most productive stacks out there. I was able to acomplish "A LOT" in a very short period of time, without cutting corners or sacrificing code quality.
+
+h3. Deploying to a "real" server/environment.
+
+You have several alternatives. You could build your own EC2 instance (they have a free tier for a year) based on your favourite Linux distro (I choose Ubuntu).
+
+Utilize some of the cloud offerings available (most of them are on Beta are you will need to request an invitation).
+
+"Nodester":http://nodester.com/, "Joyent":http://www.joyent.com/products/joyent-cloud , "Dotcloud":http://www.dotcloud.com/ and "nodejitsu":http://www.nodejitsu.com/#/home are some of the offerings out there (If I'm missing somebody just ping me).
+
+I so far tried "DotCloud":http://www.dotcloud.com/ and they have been very good and responsive whenever I found a problem. I really like the way their api work and how I can use different stacks in the same sytem. I as well use the EC2 alternative with Ubuntu for some custom installs.
+
+h3. Clean that code!
+
+Javascript has bad rept with some developers, specially those that come from an static language. I will be the first to admit that it's not for everyone and that there is a lot of terrible code out there. We all know the horrors of the 90's when we copy each other code and we polute the global namespace while writing our silly rool over menues.
+
+I will admit it. I wrote code like that. But that was a long time ago. Today there is practically no reason to write bad JavaScript as there is no reason to write bad Ruby, Perl, Python, C#, you name it.
+
+A good testing strategy is good but not enought. Code may work but still can be bad code. I recommend getting a copy of "Javascript: the good parts":http://oreilly.com/catalog/9780596517748 and also watch the "videos by Douglas Crockford":http://www.youtube.com/watch?v=hQVTIJBZook on the subject.
+
+The use of "JSlint":https://github.com/reid/node-jslint can also help you to find common problems in your code before is too late. I recommend running jslint as part of your "build" process.
+
+h3. Your code may be clean but it's so difficult to read.
+
+Another common complain/concern is that the way that you see most node.js code writen (and JQuery code for that matter) is very difficult to follow.
+
+I understand the concern but at the same time I disagree. I don't think this is an issue with node.js in particular.
+
+What I'm talking about is the temptation to pass anonymous functions as callbacks in every single call.
+
+This can get ugly really fast.
+
+My solution is to only use anonymous functions in the simples of cases and pass function names other wise. As a rule if I found that I'm repeating myself and writing the same function in more than one place I refactor and just pass the name.
+
+Instead of this:
+
+
+<script src="https://gist.github.com/985180.js?file=complicate-callback.js"></script>
+
+
+I prefer to write something like this:
+
+
+<script src="https://gist.github.com/985180.js?file=simplified-callback.js"></script>
+
+
+h3. Conclusion.
+
+So far my experience have been really positive. I find myself writing very little plumbing code and focusing more in the business domain. In a few cases I have to change strategies or completelly scratch out one library from another, but that's ok. It happens in any stack.
+

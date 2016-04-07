@@ -1,0 +1,37 @@
+---
+layout: post
+title: Test driven infrastructure with Chef (2nd edition)
+summary: A good book to get your feet wet on the world of Chef and infrastructure as code.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+h3. Overview.
+
+A really good book on the, sometimes arcane and frustrating as hell, world of Chef and infrastructure in general.
+
+The author "Stephen Nelson-Smith":https://twitter.com/LordCope proposes a very hands on approach as a way to learning, inspired by Zed Shaw series of books, "Learn X the hard way..."
+
+I wasn't sure about this approach but I found it very refreshing and well suited for the subject, so a big plus there.
+
+<a href="http://shop.oreilly.com/product/0636920030973.do" target="_blank"><img class="img-float-right" src="/images/posts/test_driven_infrastructure_with_chef.gif" border="0" alt="Test Driven Infrastructure with Chef - book cover"></a>
+
+__The version I read was an Early Release so things may change on the final one, so I expect to be even better.__
+
+There are two chapters in the book that I think can be easily skipped, chapter 3 and 4. They provide an introduction to Ruby (chapter 3) and the concepts of TDD and BDD (chapter 4).
+Of course, if you are new to both the language and those testing concepts you will find value on them.
+
+Chapter 5 reads more like a good white paper on the concepts of Test Driven Infrastructure than a chapter on a hands-on practical book. I did enjoy reading it, but I think the chapter is misplaced, more on this on my conclusions below.
+
+There are also a lot of pages that printout the complete output of running chef (or some tests) into the console. I think some reduction and highlight of the important parts could be welcome.
+
+h3. Conclusion
+
+The material on the book is great and I will highly recommend to anybody that is using Chef or plan to use Chef to get a copy.
+
+Somehow I found the parts on testing (that I was the most interested in) not as good as the introductory chapters on using Chef. I think this is not a problem with the book/content but mostly an issue on how new (and by extension immature) is this field (infrastructure testing).
+
+The chapters on tool selections (for testing) can use some work too, they feel a bit long and verbose.
+
+Again, the version I was able to read is the very Early Edition (Raw and Unedited) so I expect the book to significantly improve in the final one.

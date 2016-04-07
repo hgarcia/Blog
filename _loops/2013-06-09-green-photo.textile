@@ -1,0 +1,7 @@
+---
+layout: single
+title: green
+home: 8998367058
+home_size: small320
+display_size: large
+---

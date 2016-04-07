@@ -1,0 +1,19 @@
+{% include "./_partials/default_header.html" %}
+<ul class="archive">
+{% for entry in archive %}
+  <li>{{entry.year}}
+    <ul class="archive">
+    {% for month in entry.months %}
+      <li>{{month.name}}
+        <ul class="archive">
+        {% for post in month.data %}
+          <li><a href="{{post.permaLinkUrl}}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
+{% include "./_partials/default_footer.html" %}

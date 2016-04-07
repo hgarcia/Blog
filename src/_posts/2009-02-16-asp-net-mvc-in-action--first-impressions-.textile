@@ -1,0 +1,18 @@
+---
+layout: post
+title: ASP.NET MVC in Action, first impressions.
+summary:  I got a copy of the MEAP edition for ASP.NET MVC in Action. This is the book on the (new?) ASP.NET MVC framework written by Jeffrey Palermo, Ben Scheirman, and Jimmy Bogard.
+categories: [Books, Patterns]
+---
+
+I got a copy of the <a href="http://www.manning.com/about/meap.html#meapfaq" target="_blank">MEAP</a> edition for <a href="http://www.manning.com/palermo/" target="_blank">ASP.NET MVC in Action</a>. This is the book on the (new?) ASP.NET MVC framework written by <a href="http://jeffreypalermo.com/" target="_blank">Jeffrey Palermo</a>, <a href="http://flux88.com/" target="_blank">Ben Scheirman</a>, and <a href="http://www.lostechies.com/blogs/jimmy_bogard/" target="_blank">Jimmy Bogard</a>.
+
+I have been looking forward to both the final release of the framework and the book. Palermo has been very involved in the <a href="http://www.codeplex.com/MVCContrib" target="_blank">MvcContrib</a> project as well, and all the authors have been posting about the framework since the early releases.
+
+Yesterday I went over the first four chapters. So far so good. As always with any book, depending on the level of your knowledge in the subject, there are things that you could like to be deal with more in depth and other stuff that since you can skip over. 
+
+The really good points for me is that they put some emphasis in working with an architecture that will scale in a complex web site. Even when the code examples may be based on a simple model, they don't treat them as trivial and the focus put on showing the testing is very good.
+
+Specially this last few days (week) with the controversy created about SOLID principles and Tests is nice to see that a book about a framework that should allow us to improve our coding of .net applications is paying special attention to this details.
+
+I will keep reading and waiting for updates on the book, I'm specially high on my expectations for *Chapter 13 - IronRuby, IronPython, and the DLR,* that is not available yet.

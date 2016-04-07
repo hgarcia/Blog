@@ -1,0 +1,29 @@
+---
+layout: post
+title: What is ProngHorn and why I'm doing it?
+summary: Pronghorn is still a work in progress and the architecture+design is changing very fast. At this moment the main focus is on the ViewEngine because...
+categories: [Frameworks, Programming, Tools]
+---
+
+You can find this text in the the wiki for Pronghorn on Codeplex. <a href="http://pronghorn.codeplex.com">http://pronghorn.codeplex.com</a>
+
+Pronghorn is still a work in progress and the architecture+design is changing very fast.
+At this moment the main focus is on the ViewEngine because is what will provide most of the value for my actual employer. 
+
+Most LOB applications can be done using just one or two master pages and one area of content per URL. In this context ASP.NET MVC can be used out of the box with no or just a few changes. HTML.RenderAction can be used in lieu of widgets in the page without a big penalty on composition.
+
+But there is also a need for more complex applications, those where web pages are build from a collection of discrete components (widgets). These widgets should be added or removed in a dynamic fashion without the involvement of a developer. Those are the scenarios where CMS frameworks come to play. Pronghorn is not a CMS but it provides the tools to make this type of composition on top of ASP.NET MVC.
+
+To accomplish that much, Pronghorn has “some opinions" on the way you should build composite applications using MVC. These opinions are expressed via the use of interfaces and base classes that extend and sometime constrain the MVC framework.
+
+Controllers should be small and map to only one resource. They should be Rest-like (use the HTTP verbs for the actions names, enforced via the ControllerBase.ExecuteCore).
+
+The ControllerBase.OnActionExecuted adds "Areas" for a given view based upon the Controller, Action and SiteContext. This Area loads a collection of widgets in a specific order, that can change from area to area between pages.
+
+At this point is where the ProngHorn.ViewEngine kicks in. ProngHorn.ViewEngine is an html based view engine, that uses a similar syntax to the one used in the prototype.js templates.
+
+Composition is achieved via some Injection mechanism using DI.
+
+Widgets "publish" to the page, called skin in Pronghorn witch css, js files will need. These resources should be minified and combined to reduce network traffic and # of http calls from the browsers to improve performance and load time.
+
+To keep up with the project you can subscribe to the <a href="http://pronghorn.codeplex.com/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fwiki%2fProngHorn">project's wiki RSS</a>. Where you can get all the updates, a bit chatty but may be useful or visit the <a href="http://pronghorn.codeplex.com">project's home page</a> periodically.

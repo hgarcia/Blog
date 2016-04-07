@@ -1,0 +1,24 @@
+---
+layout: post
+title: A personal retrospective on WindyCityDb
+summary: Last Saturday I had the opportunity to assist the first WindyCityDb. A one day, single track conference on databases technologies that are usually grouped under the NoSql umbrella.   In general the conference was very good.
+categories: [MongoDB, Programming]
+---
+
+Last Saturday I had the opportunity to assist the first <a href="http://windycitydb.org/" target="_blank">WindyCityDb</a>. A one day, single track conference on databases technologies that are usually grouped under the NoSql umbrella. 
+
+In general the conference was very good. I appreciated the Lab installed in the break room. A bunch of Apple computers with different NoSql offerings installed for the attendants to play and get familiar with.
+The sessions were good as well. I was specially impressed by <a href="http://www.slideshare.net/slidarko/graph-windycitydb2010" target="_blank">The Graph Traversal Programming Pattern</a> by <a href="http://markorodriguez.com/" target="_blank">Marko Rodriguez</a> and <a href="http://www.slideshare.net/jwoodslideshare/polyglot-persistence-two-great-tastes-that-taste-great-together-4625004" target="_blank">Polyglot Persistence: Two Great Tastes That Taste Great Together!</a> by <a href="http://twitter.com/johnpwood" target="_blank">John Wood</a>. 
+The former was a very academic talk explained in layman terms that made it very accessible and enjoyable, instead of dry and boring. The latest, was a very entertaining talk with a pragmatic flair to it, showing how NoSql is not a replacement for RDBMS but an alternative.  
+
+The third most interesting talk for me was the keynote by <a href="http://twitter.com/jnunemaker" target="_blank">John Nunemaker</a>, <a href="http://www.slideshare.net/jnunemaker/why-is-nosql-so-darn-popular" target="_blank">Why NoSql?</a>. 
+Nunemaker explored why a lot of us are looking at this alternatives. I personally think that this talk should be shown to all those out there that are feeling threatened by the NoSql movement, or just discredit it without taking the time to listen and learn. John also lament the name of the movement. NoSql. 
+
+This remind me a little bit to the discussions around the Alt.Net movement and it's name. A name that makes sense in context sometimes lose it's meaning and get miss-interpreted once removed from it.
+It's very important to notice that nobody made fun of relational databases during the conference. There was no bashing of those tools. I will even go as far as to say that pragmatism was in the air. 
+
+This is obviously a very young movement. Some early adopters here and there. A lot of pilot projects in some big companies among the participants, and a lot of questions. The exchange of information during lunch was really good. I had the opportunity to share the table with some guys with a lot of experience with <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> in production and the exchange was great. 
+
+There was an after party that I didn't attend since I was beat from driving all day on Friday. I will make sure to be more rested next time. I was amaze, although not really surprised, to notice that maybe 95 percent of the laptops were Mac's (maybe more like 98). At least I was running Ubuntu in my Dell :-). I only saw three Windows machines in the audience. The main language was ruby followed by Java. I only spoke with five other .net developers in the conference. 
+
+I certainly plan to attend again next year. A great conference of a movement that I think will be very important as more and more web applications try to incorporate social features and incredible large sets of data. As a bonus I get to go to a Cubs game and enjoy the very good Chicago pizza.

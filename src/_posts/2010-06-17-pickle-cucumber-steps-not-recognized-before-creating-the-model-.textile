@@ -1,0 +1,30 @@
+---
+layout: post
+title: Pickle cucumber steps not recognized before creating the model.
+summary: The title kind of tell it all. I started to use pickle now for filling up and managing my test with cucumber. Fill up data, etc. Pickle creates some step definitions for you to make things easy, what it's much appreciated.
+categories: [General, Programming, Ruby]
+---
+
+The title kind of tell it all. I started to use pickle now for filling up and managing my test with cucumber. Fill up data, etc.
+
+Pickle creates some step definitions for you to make things easy, what it's much appreciated. There is a great RailCast on setting things up, you can <a href="http://railscasts.com/episodes/186-pickle-with-cucumber">watch it</a> or <a href="http://asciicasts.com/episodes/186-pickle-with-cucumber">read about it</a> .
+
+The problem I got was that I wrote the following Cucumber scenario:
+
+
+<script src="http://gist.github.com/561767.js?file=gistfile1.feature"></script>
+
+
+And when running cucumber I got a message that indicates that I have an undefined step for the Given step and this bit of code:
+
+<img src="/images/posts/missing_step.png" border="0" alt="Missing steps."/>
+
+Now that was a bit disconcerting since the Given step match this pickle steps:
+
+
+<script src="http://gist.github.com/561767.js?file=steps.rb"></script>
+
+
+Or so I though. The problem was that I didn't have the model or the db table yet. That was a bit disconcerting, I could expect the error message to tell me something more in the line of: Ups, we couldn't find a model for the User or something like.
+
+Once you think about it make sense, since capture_plural_factory will be evaluate on runtime and won't much any existing model.

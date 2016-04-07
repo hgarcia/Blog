@@ -1,0 +1,27 @@
+---
+layout: post
+title: Keeping the global namespace clean with $script loader.
+summary: This script has a nice feature that make it very easy to keep the global namespace clean.
+categories: [JavaScript, Programming]
+---
+
+My latest side project requires that I put together a script to be consumed by third parties. This is similar to the scripts you need to import when using Google Analytics or Disqus in your site.
+
+The most important thing when working in these types of scripts
+ is to keep the global space clean.
+
+h3. The problem
+
+I wanted to use a script loader that allow for asynchronous loading of my dependencies.
+
+After looking around in the web to some of the usual suspects I decided to try "$script":https://github.com/ded/script.js this time but I wanted to internalize it into my own code.
+
+The script creates a <span class="code">$script</span> global function that you use to import the scripts, check for ready status and a few more things.
+
+h3. The solution
+
+I was ready to start reading and making changes to the code to create the function inside my own object instead of the global context when I noticed that the function that creates the object takes a third parameter named <span class="code">context</span>.
+
+Sure enough, passing a variable as the context (in my case the literal I use as a namespace) and the <span class="code">$script</span> function is created on it while keeping the global context unmodified.
+
+I really like when things are this easy. Big kudos to the authors of the library.

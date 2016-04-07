@@ -1,0 +1,53 @@
+---
+layout: post
+title: Google Chrome, The new kid in the browsers block.
+summary: As you may already know by now, Google released Google Chrome a new web browser. The launch was announce on monday and today everybody I know was going crazy trying to get it.
+categories: [General]
+---
+
+As you may already know by now, Google released <a href="http://www.google.com/chrome" title="Google chrome" target="_blank">Google Chrome</a> a new web browser. The launch was announce on monday and today everybody I know was going crazy trying to get it.
+
+I was able to download and install it around 2 Pm Eastern time. In the meantime I read <a href="http://www.google.com/googlebooks/chrome/" title="Comic book about Chrome" target="_blank">the comic used by Google</a> to explain the rationale behind the browser. This got me very exited, this comic book talks a lot about the technology used in this browser.
+
+One of the things that really got me interested was the <a href="http://code.google.com/p/v8/" title="V8 Javascript Virtual Machine" target="_blank">JavaScript Virtual Machine, called V8</a>. This is extremely important, since this means that the JavaScript loaded in a page will be "compiled" and them run as a compiled language and not an interpreted language. This should provide more stability and performance.
+
+We still need to evaluate compatibility.Talking about V8 is something for a whole new post, since it should be able to run stand alone and is supported in Windows (XP/Vista), Mac OS X 10.5 (Leopard) and Linux systems. This may bring JavaScript to a whole new level.
+
+Installing Chrome can't be any simpler. You download a loader that weights less than 455K, you run it and it downloads the rest of the application for you and start installing it. By default will import settings from your default browser (Firefox in my case) but won't over write any of your configurations, like for example setting
+itself as the default.
+
+<img src="/images/posts/sp32-20080902-231021.png" title="Installing Chrome dialog" border="0" alt="Installing Chrome dialog."/>
+
+You can easily customize the default settings clicking in the link. This will present you with a more elaborate dialog box.
+
+<img src="/images/posts/sp32-20080902-231056.png" title="Chrome advanced install options" border="0" alt="Chrome advanced install options"/>
+
+As you can see by default Google chrome won't force itself as the default, what is really polite and a good example for other software manufactures to follow. The actual install time was just a few seconds. If you have Firefox open when Chrome tries to import the setting will throw an error like this.
+
+<img src="/images/posts/sp32-20080902-231119.png" title="Error when trying to import Firefox settings." border="0" alt="Error when trying to import Firefox settings."/>
+
+Closing Firefox and hitting continue fix the problem and Chrome installs and launches. Notice the help dialog that indicates witch is your default Search engine (this configuration is imported from Firefox) and <a href="http://weblogs.asp.net/dwahlin/archive/2008/09/02/another-new-player-in-the-browser-wars-google-s-chrome-browser-released.aspx" title="Dan Wahlin's post about Chrome." target="_blank">Dan Wahlin's posted</a> that respects whatever you have there even if it's not Google.com.
+
+<img src="/images/posts/sp32-20080902-231152.png" title="Chrome home page" alt="Chrome home page" border="0" />
+
+The home page is nice and you will notice right away a quick set of link to your Bookmarks and the recently closed tabs.
+
+<img src="/images/posts/sp32-20080902-231444.png" title="Chrome home page" alt="Chrome home page" border="0" />
+
+The six grey panels will be replaced by captions of your recently visited sites after you browse for a little bit.
+
+<img src="/images/posts/sp32-20080903-000433.png" title="Recently visited pages." alt="Recently visited pages." border="0" />
+
+There is also a convenient link to Show the full history.
+
+<img src="/images/posts/sp32-20080902-231535.png" title="Chrome Full History page" alt="Chrome Full History page" border="0" />
+
+On top of the history for each day you have a link to delete all the items on that day and on top of the page itself you have a search bar that should make a breeze to find anything in the history.
+
+<img src="/images/posts/sp32-20080902-231708.png" title="History searh in chrome" alt="History searh in chrome" border="0" />
+
+Notice that after visiting the page a caption and a description gets populated. This happens because the items in the history have been imported from Firefox, from now on each time you visit a page the history will keep a thumbnail and a short description, similar to a Google search result page.Adding a bookmark can't be any easier. You just click in the start besides the location/search box and voila, item added to your Bookmarks.
+
+<img src="/images/posts/sp32-20080902-234239.png" title="Adding a bookmark" alt="Adding a bookmark" border="0" />
+
+There is a lot more and you can visit the <a href="http://tools.google.com/chrome/intl/en-US/welcome.html" title="Chrome welcome page" target="_blank">welcome page</a> and the <a href="http://www.google.com/chrome/intl/en/features.html" title="Chrome learn more page" target="_blank">videos</a> to learn more.

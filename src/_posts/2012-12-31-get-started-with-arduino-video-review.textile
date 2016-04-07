@@ -1,0 +1,34 @@
+---
+layout: post
+title: Get started with Arduino, A hands-on introductory workshop - video review.
+summary: A very well written book that will instill the need to write some F# code.
+categories: [General]
+---
+
+__Disclaimer: I got this video as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920027973.do" target="_blank"><img class="img-float-right"  src="/images/posts/get-started-with-arduino-video.gif" border="0" alt="Get Started with Arduino: A Hands-On Introductory Workshop - video"/></a>
+
+In less than 3 hours "Philip Lindsay":https://twitter.com/rancidbacon will get show you the basics on working and programming Arduino.
+
+The video is organized in 23 little segments that can be watched independently.
+
+It starts with the basics on what is Arduino the components and the layout of the circuit, what tools and components you will need to complete the tutorial and how to install the development environment in your computer.
+
+__They cover Windows, Mac OX and Linux__
+
+
+You will learn how to create a series of simple projects that make some LEDs blinks or take inputs from pushing buttons, but those projects are the basics for any other from of interaction with the Arduino.
+
+One of the videos that I particularly enjoyed was Exploring the hardware ecosystem to give you an idea of the depth and breath of the Arduino world.
+
+If you have any background on electronics you may find yourself skipping some parts, ex: explanation on reading resistors code, how a led works, etc.
+At the same time those, basics make for a set of nice videos to share with the youngsters in the family that may want to get into electronics.
+
+You will work on four projects in total, increasing the level of difficulty just a bit in each one, while introducing a new concept.
+
+The production of the videos is very good, with nice long sequences taking from the top of the circuit where you can easily follow the connections and what's going on in each project.
+
+h3. Conclusion
+
+I certainly would recommend the series as a good way to get started.

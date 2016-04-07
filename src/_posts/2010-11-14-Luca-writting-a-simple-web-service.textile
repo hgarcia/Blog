@@ -1,0 +1,54 @@
+---
+layout: post
+title: Luca, writing a simple web service.
+summary: As a first simple example of using Luca I wanted to write a simple web service that returns json or plain text.
+categories: [Luca, Programming, .Net, JavaScript]
+---
+
+As a first simple example of using Luca I wanted to write a simple web service that returns json or plain text. Keep in mind that Luca is extremely "Alpha" at this moment and some of the API's will surely change in the future.
+
+If you want to try it and follow this example along, you will need to download and compile "Luca from Github":http://github.com/hgarcia/luca.
+
+h3. Getting right into it.
+
+Create a new IIS application and make sure that the Application Pool is set to "ASP.NET v4.0".
+Copy all the dll's from Luca.Core into a bin folder inside the newly created IIS application.
+Add a web.config with the following content at the root level.
+
+
+<script src="https://gist.github.com/673746.js?file=web.xml"></script>
+
+
+Let's create a "controllers" folder and add a new javascript file inside it. The name of the file is not important, in this case I will call it main.js.
+The folder structure of your website should look something like this now.
+
+
+<script src="https://gist.github.com/673746.js?file=gistfile1.txt"></script>
+
+
+Open the main.js file and register your first handler function.
+
+
+<script src="https://gist.github.com/673746.js?file=main01.js"></script>
+
+
+We are registering in the global object app a function to handle a GET request to a url that match the regular expression passed as the first argument.
+This is similar to the way Sinatra works in Ruby of Express in node.js. It's not really routing per se, but you can think about it a similar way.
+The object "app" also have methods to handle the other HTTP verbs as well, like Post, Put and Delete. The signature is the same in all cases.
+
+When we call the function handler we will pass the request object as the only parameter. This is not the HttpRequest object but a Luca request object. I will explore this object in a future post. In this example we are reading a parameter called id passed into the query string. 
+
+In this case, we are registering a function to handle a call to a route that match "/talk". The function will try to read a query string parameter with the key "greet" and output a greeting to the screen.
+
+
+<img border="0" alt="Greeting without parameter" src="/images/posts/luca-ws/greet01.png" width="276" height="140" />
+
+<img border="0" alt="Saying hello world" src="/images/posts/luca-ws/greet02.png" width="295" height="141" />
+
+
+h3. Content negotiation.
+
+Luca will check for the Accept header and try to find a Encoder that knows how to handle that type of content.  If it can't find an adecuate handler, will use the default encoder (TextEncoder). At the moment, Luca pays no attention to the extension passed in the url for the purposes of encoding.
+Luca will come with a JsonEncoder (already in the code), a plain/text encoder (in the code but partially functional), an Xml encoder and an HtmlEncoder.
+
+In future posts I will look at the Request object, Encoders and configuration options.

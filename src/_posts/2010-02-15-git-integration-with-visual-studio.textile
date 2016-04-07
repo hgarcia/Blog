@@ -1,0 +1,47 @@
+---
+layout: post
+title: Git integration with Visual Studio
+summary: I started to use Git seriously 5 months ago when I sign up for my Github account on September 1st 2009. Before that I was a very happy subversion user. One of the things that I really like about Git is the speed.
+categories: [Programming, Tools]
+---
+
+I started to use "Git(Git)":http://git-scm.com/ seriously 5 months ago when I sign up for my <a href="http://github.com/" target="_blank">Github</a> account on September 1st 2009. Before that I was a -very- happy subversion user. One of the things that I really like about Git is the speed. 
+
+I decided to use Git from the command line to learn and understand the commands really well. I occasionally used the GUI to perform some tasks that seemed easier to do that way.
+
+h3. Git within VS.
+
+Even when I really enjoy working from the command line I know that some developers prefer to stay within the IDE and I understand that. Yesterday while installing VS 2010 RC in my newly paved laptop I decided to check out the <a href="http://sourceforge.net/projects/gitextensions/" target="_blank">Git Extensions</a>. 
+
+After installing it VS presents a new menu item for Git.
+
+<a href="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/git_menu_item.png"><img border="0" alt="git_menu_item" src="/images/posts/GitandMercurialintegrationwithVisualStud_EFE9/git_menu_item_thumb.png" width="400" height="83"></a> 
+
+From this menu you have access to the most common commands for Git.
+
+<a href="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/menu_items.png"><img border="0" alt="menu_items" src="/images/posts/GitandMercurialintegrationwithVisualStud_EFE9/menu_items_thumb.png" width="233" height="470"></a> 
+
+For example you can commit after doing some work on your project. It looks like you have to be at the project level and not at the solution level in the solution explorer for the commands to work. Although they work in the whole solution as expected.
+One thing to notice is that the dialog pick up changes to files modified or added outside the IDE as well.
+
+<a href="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/commit_screen.png"><img border="0" alt="commit_screen" src="/images/posts/GitandMercurialintegrationwithVisualStud_EFE9/commit_screen_thumb.png" width="678" height="512"></a> 
+
+This is the push dialog box, you can select the Remote to push to and the branch from where you want to push.
+
+<a href="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/push_pull_dialog.png"><img border="0" alt="push_pull_dialog" src="/images/posts/GitandMercurialintegrationwithVisualStud_EFE9/push_pull_dialog_thumb.png" width="631" height="354"></a> 
+
+If you need to enter a passphrase a command prompt window pops up:
+
+<a href="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/asking_passphrase.png"><img border="0" alt="asking_passphrase" src="/images/posts/GitandMercurialintegrationwithVisualStud_EFE9/asking_passphrase_thumb.png" width="655" height="96"></a> 
+
+After entering the passphrase you get a confirmation dialog:
+
+<a href="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/Pushed.png"><img border="0" alt="Pushed" src="/images/posts/GitandMercurialintegrationwithVisualStud_EFE9/Pushed_thumb.png" width="608" height="281"></a> 
+
+You can also pull from remote, where you can select to merge, do a rebase or just pull changes.
+
+<a href="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/pull_dialog.png"><img border="0" alt="pull_dialog" src="/images/posts/GitandMercurialintegrationwithVisualStud_EFE9/pull_dialog_thumb.png" width="624" height="319"></a>
+
+h3. Conclusion.
+
+I don't see myself moving away from the command line but I think is a good alternative.

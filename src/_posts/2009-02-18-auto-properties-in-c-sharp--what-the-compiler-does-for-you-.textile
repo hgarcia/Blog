@@ -1,0 +1,31 @@
+---
+layout: post
+title: Auto properties in c#, what the compiler does for you.
+summary: If you ever wonder what the compiler does to make the auto properties work let's take a look at the code the way Reflector sees it.
+categories: [General, Programming]
+---
+
+If you ever wonder what the compiler does to make the auto properties work let's take a look at the code the way Reflector sees it. Let's write some very useful code :-)
+
+
+
+<script src='http://gist.github.com/561837.js?file=file0.aspx-cs'></script>
+
+
+
+Compiler this hitting F5 and them open the dll using Reflector. And this is what you will see.
+
+
+
+<script src='http://gist.github.com/561837.js?file=file1.aspx-cs'></script>
+
+
+
+Of course this is not exactly what the compiler does, since that will be IL. But is the way Reflector shows it as C# code. Interesting, isn't it?
+
+If you are wondering changing the settings in Reflector to actually shows IL get this:
+
+
+
+<script src='http://gist.github.com/561837.js?file=file2.aspx-cs'></script>
+

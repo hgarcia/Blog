@@ -1,0 +1,14 @@
+---
+layout: post
+title: Research on TDD by Microsoft.
+summary: There is a nice video on Channel 9 about a study done by Microsoft Research about TDD and it's impact on a real industry scenario. The study was done post mortem, so the developers were not influenced while developing the product.
+categories: [Methodology, Testing]
+---
+
+There is a nice <a href="http://channel9.msdn.com/posts/Peli/Experimental-study-about-Test-Driven-Development/" target="_blank">video</a> on Channel 9 about a study done by Microsoft Research about TDD and it's impact on a real industry scenario.
+
+The study was done post mortem, so the developers were not influenced while developing the product. The results indicate that the Quality of the code is substantial, but there is a slight penalty (on ma hours) due to time spend writing the test.
+
+In any case the defect rates drops between 50 to 90 percent, so subsequent development and maintenance should be cheaper.
+
+You can download the paper on the <a href="http://research.microsoft.com/en-us/groups/ese/" target="_blank">Empirical Software Engineering Group site</a> make sure you click in the Local Copy link and not the title and you will save $34 .

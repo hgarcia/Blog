@@ -1,0 +1,38 @@
+---
+layout: post
+title: Validator moves to it's own package
+summary: Today I move the code of LaTrompa.Validation into it's own package, with no external dependencies (besides the framework of course). I added a class to validate XmlNodes.
+categories: [Programming, Tools]
+---
+
+Today I move the code of LaTrompa.Validation into it's own package, with no external dependencies (besides the framework of course).
+
+I added a class to validate XmlNodes.
+
+The string validation now has a IsOneOf method to match the string against a list of options.
+
+
+
+<script src='http://gist.github.com/561839.js?file=file0.aspx-cs'></script>
+
+
+    
+I still need to add a generic version for this method, I guess it pass by me.
+
+Also in the string validation there are two new validations to check if a string can be converted into an Int32 or a Boolean.
+
+
+
+<script src='http://gist.github.com/561839.js?file=file1.aspx-cs'></script>
+
+
+
+The whole conversion validation looks like a good candidate for refactoring and generalize it into a base class. that way it will be easy to offer conversion checking against all types. I added the ThrowFirst method into the Validator class. This method was available only in the CheckThat classes.
+
+
+
+<script src='http://gist.github.com/561839.js?file=file2.aspx-cs'></script>
+
+
+
+I moved all the Throw methods into their own class ErrorThrower (I should rename this to ExceptionThrower). Previously I was doing almost the same thing in two different places. Not very <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">DRY</a>. 

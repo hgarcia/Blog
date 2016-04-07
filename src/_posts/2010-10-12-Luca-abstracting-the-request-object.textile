@@ -1,0 +1,22 @@
+---
+layout: post
+title: Luca, abstracting the request object.
+summary: The JavaScript engine allows for the use of .Net objects inside JavaScript, but I wanted to completelly abstract Luca from anything related to the HttpContext.
+categories: [Luca, Programming, JavaScript, .Net, Frameworks]
+---
+
+Applications written with Luca will need access to the Request object. Jint allows for the use of .Net objects inside JavaScript, but I wanted to completely abstract Luca from anything related to the HttpContext.
+
+The Request object in Luca at the moment has only a few properties that expose only a few of the collections and properties of the HttpRequest. This is the object literal structure.
+
+
+<script src="http://gist.github.com/621552.js?file=request.js"></script>
+
+
+The request is available as a property of the Luca application object. For example to access the query id you would write code like this:
+
+
+<script src="http://gist.github.com/621552.js?file=request-usage.js"></script>
+
+
+Of course you should always check for nulls.

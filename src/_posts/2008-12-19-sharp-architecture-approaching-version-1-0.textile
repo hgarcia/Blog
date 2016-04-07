@@ -1,0 +1,59 @@
+---
+layout: post
+title: Sharp Architecture approaching version 1.0.
+summary: Pronounced Sharp Architecture, this is a solid architectural foundation for rapidly building maintainable web applications leveraging the ASP.NET MVC framework with NHibernate.
+categories: [Programming, Frameworks, .Net]
+---
+
+On December 2nd <a href="http://code.google.com/p/sharp-architecture/" target="_blank">Sharp Architecture</a> released <a href="http://code.google.com/p/sharp-architecture/downloads/detail?name=SharpArchitecture%200.9.114.zip&amp;can=2&amp;q=" target="_blank">version 0.9.114</a>.
+
+Sharp Architecture is a project created by <a href="http://devlicio.us/blogs/billy_mccafferty/default.aspx" target="_blank">Billy McCafferty</a>. It?s an architecture framework for web application that uses ASP.NET MVC, NH 2.0.1, NHibernate.Validator, Fluent NHibernate, and Castle Windsor.
+
+From their site:
+
+<blockquote>
+Pronounced "Sharp Architecture," this is a solid architectural foundation for rapidly building maintainable web applications leveraging the ASP.NET MVC framework with NHibernate.
+
+The overall goal of this is to allow developers to worry less about application "plumbing" and to spend most of their time on adding value for the client by focusing on the business logic and developing a rich user experience.
+
+* Focused on Domain Driven Design
+* Loosely Coupled
+* Preconfigured Infrastructure
+* Open Ended Presentation
+
+</blockquote>
+
+There is of course a strong focus on TDD as well. New on this version (from the change log)
+
+<blockquote>
+
+* A Visual Studio 2008 template project has been added under /TemplatesAndCodeGen
+to get your own S#arp Architecture project up and running quickly
+* Replaced Ninject with Castle Windsor
+* Added support for behavior driven unit testing
+* Unit tests now use an in-memory SQLite database for testing data access methods
+along with providing an integration verification mechanism to check mappings against
+a live database
+* This will likely be the last interim release before version 1.0
+
+</blockquote>
+
+I think that the project templates and wizards are a big plus on this package. In the roadmap for version one this is what we can look for:
+
+<blockquote>
+
+* WCF integration
+* Hone CRUD capabilities
+* Support for multiple databases
+* Example of using a Unit of Work to encapsulate non-trivial controller logic
+* Scaffolding generators!
+
+</blockquote>
+
+There is a discussion group on <a href="http://groups.google.com/group/sharp-architecture?hl=en" target="_blank">Google groups</a> to provide support and ask for help.
+
+Another thing that really impress me was the 34 pages Word document included with the release. It?s very detailed, from configuration to usage. There is a explanation for each of the Tiers in the architecture, a tutorial to develop with it that covers the TDD cycle and a set of best practices.
+
+The documentation is very detailed, specially on thing that may seem of minor importance as on how to configure the IDE to be consistent with the sample code!!!
+
+If you haven?t do so, go download it and play with it.

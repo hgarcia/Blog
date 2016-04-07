@@ -1,0 +1,33 @@
+---
+layout: post
+title: Adding changeset and followers support to node BitBucket.
+summary: In version 0.0.5 I added support for changesets and followers.
+categories: [node.js, Programming, JavaScript]
+---
+
+In version 0.0.4 I made a change on the node-bitbucket api to make sure that callbacks all respond to the <span class="code">cb(err, result)</span> format.
+
+I refactored the code a bit more and moved the transport concerns into it's own module, so I hope to remove the dependency on <span class="code">curl</span> at some point without having the need to touch the parser.
+
+The code to parse the response was also moved into it's own module. At the moment it's very crude and I will need to spend some time on it once all the end points are implemented.
+
+As always install with npm.
+
+<pre><code>
+    npm install bitbucket-api
+</code></pre>
+
+
+h3. Changesets
+
+The repository has two methods <span class="code">.changesets()</span> and <span class="code">.changeset(hash)</span>.
+
+The <span class="code">changesets()</span> return an object with two methods to get a list of changesets or details on an individual one.
+
+The <span class="code">changeset(hash)</span> needs the full hash a given changeset and will give you access to stats, diff, likes and comments for the changeset.
+
+The <span class="code">comments()</span> method returns and object that allow you to create, list, upddate or delete comments for the changeset.
+
+h3. Followers
+
+As an extra, I added suport for the repository followers end-point. Very simple, just takes a cb and returns and object with the count and an array of followers for a given repository.

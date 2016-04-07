@@ -1,0 +1,163 @@
+---
+layout: post
+title: First steps with Dart
+summary: A little language with lots of appeal that should not be relegate to the browser but enjoy in the back end as well.
+categories: [Dart, Programming]
+---
+
+I have to admit that I wasn't very impressed when I took my first look at Dart during the original announcement (a year or so ago, maybe more?).
+
+I remember to mentally categorize it in the "useless" category.
+
+<blockquote>
+  "You see," he explained, "I consider that a man's brain originally is like a little empty attic, and you have to stock it with such furniture as you choose. A fool takes in all the lumber of every sort that he comes across, so that the knowledge which might be useful to him gets crowded out, or at best is jumbled up with a lot of other things so that he has a difficulty in laying his hands upon it. Now the skillful workman is very careful indeed as to what he takes into his brain-attic. He will have nothing but the tools which may help him in doing his work, but of these he has a large assortment, and all in the most perfect order. It is a mistake to think that that little room has elastic walls and can distend to any extent. Depend upon it there comes a time when for every addition of knowledge you forget something that you knew before. It is of the highest importance, therefore, not to have useless facts elbowing out the useful ones."
+  <br/><br/>
+  Sherlock Holmes to Watson "A Study in Scarlet"
+</blockquote>
+
+It may have been that the language was very immature at the moment or (more probable) the claim that is very difficult to write complex web applications with JavaScript and Dart was here to solve the problem.
+
+On April this year "I reviewed":http://blog.dynamicprogrammer.com/2012/04/20/what-is-dart-book-review.html a very short book from O'Reilly "What is Dart":http://shop.oreilly.com/product/0636920025887.do and I liked what I saw.
+
+A few month went by and I got to watch some of the recent Google IO videos on Dart. It was time for me to take it for a spin and see how I felt working with it.
+
+There are many things to like about Dart. This is a quick list with some of the things I find most interesting.
+
+h3. Community.
+
+The Google group is getting a lot of traffic and the guys on the Dart team are active in it. They are very responsive to problems and helpful with most questions.
+
+I haven't see (read) any trolling even when some questions may be considered completely out of place.
+
+This is very important to develop a big an engaging community that will hopefully help with the language adoption.
+
+h3. Small language.
+
+I have been gravitating more and more towards simple and elegant languages for my personal use. Dart fits the bill.
+
+There are only five build in types in the language itself: String, Number, Boolean, List (arrays) and Maps.
+
+Number can be either an int or a double.
+
+_Integers can have any size and are converted to BigInt in the background without concerns on usage_
+
+Strings are immutables like in many other languages, so operations on string or concatenation of strings return a new string.
+
+Dart multi-line strings using triple quotes is really nice. Interpolation is another great feature, concatenation looks a bot funny and you need to get used to read it.
+
+If you need to build long string the StringBuffer class comes to the rescue.
+
+h3. Collections.
+
+I mentioned that there are only two collection types. List and Maps.
+
+Both are Generic, so you can specify the type on creation to force to hold a given type, of course types are optional so you don't really need them.
+
+The List has all the methods you would expect and also implements the Collection interface so you can use map and reduce on it.
+
+The Map is a Key/Value store. Since values can be null there is a pulIfAbsent method that you should use if you want to distinguish between a real null value and a null return from a non existing key.
+
+h3. Anonymous, first class functions and closures.
+
+Functions have all the power of a functional language.
+
+You can declare a function anywhere in a module.
+
+You can pass a function as a parameter to another function, assign to a variable, or return a function from a function.
+
+Declaring a function is so easy that hurts.
+
+<pre><code>
+    String asMoney(int amount, String symbol) {
+      return "$symbol $amount";
+    }
+</code></pre>
+
+Or the short form:
+
+<pre><code>
+    String asMoney(int amount, String symbol) => "$symbol $amount";
+</code></pre>
+
+Remove the types:
+
+<pre><code>
+    asMoney(amount, symbol) => "$symbol $amount";
+</code></pre>
+
+Functions can also be closures and close over the scope.
+
+h3. Named and optional parameters.
+
+You define an optional parameter using brackets around it.
+
+<pre><code>
+    String asMoney(int amount, [String symbol]) {
+      if (symbol == null) {
+        return "\$ $amount";
+      }
+      return "$symbol $amount";
+    }
+</code></pre>
+
+You can provide a default value to an optional parameter so is not null:
+
+<pre><code>
+    String asMoney(int amount, [String symbol = "$"])
+</code></pre>
+
+If the function is called without the optional parameter the value assigned will be the default value. If you pass a value (even null) for the optional parameter, that value override the default.
+
+h3. Constructor member variable initialization.
+
+You can avoid the initialization of fields in constructors using the this notation.
+
+<pre><code>
+    Constructor(this.name, [this.description = '']);
+</code></pre>
+
+Instead of:
+
+<pre><code>
+    var name, description;
+
+    Constructor(name, [description = '']) {
+      this.name = name;
+      this.description = description;
+    }
+</code></pre>
+
+h3. Named constructors.
+
+Named constructors help to make your code more expressive.
+
+    Constructor.fromMap(Map map) : name = map[name], description = map[desc];
+
+    var const = new Constructor.fromMap(....);
+
+h3. Automatic getters and setters.
+
+I'm always for typing less. You can still define getters and setters explicitly if you need something more than setting or getting a value.
+
+   string name;
+
+   string get name() => 'This is my: ${name}';
+          set name(value) => name = value;
+
+h3. Type annotations.
+
+Dart is a dynamic language but type annotations to make your life easier if you feel you need types around.
+
+I like the idea since you can of get the best of both worlds.
+
+h3. Isolates
+
+The Dart answer to concurrency. I really like the latest API, super clean.
+
+h3. Editor.
+
+Dart editor is a lightweight Eclipse based editor available for free. There are plug-ins coming out for Eclipse proper and most notable for IntelliJ and other JetBrains products.
+
+h3. Mirrors.
+
+Not ready for consumption yet but promised for M1 (I think). They will provide reflection on top of Dart. You can play with some of the early implementations. Looking good!

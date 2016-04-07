@@ -1,0 +1,25 @@
+---
+layout: post
+title: xVal a good validation framework for ASP.NET MVC
+summary: I found this project on CodePlex called xVal. It's Steve Sanderson's take on validation for the ASP.NET MVC framework, more to the point on how to use validation across tiers (validate on the server side, present errors to the client, etc....
+categories: [Frameworks, Programming]
+---
+
+I found this project on <a href="http://www.codeplex.com" target="_blank">CodePlex</a> called <a href="http://www.codeplex.com/xval" target="_blank">xVal</a>. It's <a href="http://blog.codeville.net/" target="_blank">Steve Sanderson's</a> take on validation for the ASP.NET MVC framework, more to the point on how to use validation across tiers (validate on the server side, present errors to the client, etc.)
+
+bq. xVal is a validation framework for ASP.NET MVC applications. It makes it easy to link up your choice of server-side validation mechanism with your choice of client-side validation library, neatly fitting both into ASP.NET MVC architecture and conventions.
+
+It's extensible so you can use whatever validation framework you want in the server and client side.
+
+<blockquote>
+
+  * Define your validation rules using attributes on model properties, e.g.,
+  * Designed to fit into ASP.NET MVC conventions for handling form posts and storing and retrieving error information in ModelState
+  * Use your choice of server-side validation framework. Out of the box, xVal lets you use .NET 3.5's built-in "DataAnnotations":http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx classes or Castle Validator (or both). If you want to use something different, you can create your own provider just by implementing IRulesProvider.
+  * Use your choice of client-side validation library. Out of the box, xVal lets you use "jQuery Validation":http://docs.jquery.com/Plugins/Validation or ASP.NET's native client-side validation library (a.k.a. WebUIValidation.js, as used by WebForms). Or, use any other client-side validation library by writing a plug-in to configure it using xVal's standard JSON rules description format.
+  * Supports localized error messages using resource files. Vary the language of your validation messages according to the current thread's culture.
+  * Add custom validation logic that runs both on the server and on the client, either by sub classing an existing rule or by referencing a custom JavaScript function
+
+</blockquote>
+
+p. It just released version 0.5 and you can find a quick tutorial on <a href="http://blog.codeville.net/2009/01/10/xval-a-validation-framework-for-aspnet-mvc/" target="_blank">Steve's blog</a>.

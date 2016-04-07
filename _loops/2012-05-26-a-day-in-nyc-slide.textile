@@ -1,0 +1,9 @@
+---
+layout: slide
+title: A day in NYC
+home: 9109927669
+home_size: small320
+display_size: large
+slide: [9109927669, 9109892437, 9112146622, 9109925247, 9112143320, 9109911379, 9112131340, 9112127270, 9109900855, 9109894877]
+title_style: "font-family: Helvetica; font-size: 1.7em;"
+---

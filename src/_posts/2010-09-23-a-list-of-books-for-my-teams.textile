@@ -1,0 +1,107 @@
+---
+layout: post
+title: A list of books for my team.
+summary: Today I started to put together a list of books that I will like my team to read. The list started to grow so I have to do some triage. Here is the result.
+categories: [Programming, Books]
+---
+
+A little bit more than 2 weeks ago I started to work at a new company. One of the goals is to help in the adoption of Agile, specifically Scrum and some XP practices.
+
+So today I started to put together a list of books I will like my team to read. The list started to grow so I decided to do some triage.
+
+First, let me stat that I think that all the books in these lists are extremely valuable and the only reason I divided them in different lists is because of time concerns.
+
+I'm leaving some very process oriented books out of the list. I'm trying to keep it fairly technical and technology agnostic.
+
+<em>There are two .net specific books since thats the platform we use. At the same time I consider CSS, HTML and JavaScript universal technologies. They are the foundation of the modern web, aren't they?</em>
+
+I'm pretty sure that I'm missing some good ones from the list, but I think this is a good start (see below some suggestions from you, my dear readers).
+
+
+h3. List of books that should be read.
+
+"Clean Code: A Handbook of Agile Software Craftsmanship":http://www.amazon.ca/gp/product/0132350882/ref=s9_qpf_gw_i1?pf_rd_m=A3DWYIK6Y9EEQB&pf_rd_s=right-2&pf_rd_r=045XJ4WGE3VCZD9NE8DJ&pf_rd_t=101&pf_rd_p=1255588022&pf_rd_i=915398
+Robert C. Martin
+
+"Test Driven Development: By Example":http://www.amazon.ca/Test-Driven-Development-Kent-Beck/dp/0321146530/ref=pd_sim_b_2
+Kent Beck
+
+"The Art of Unit Testing: With Examples in .Net":http://www.amazon.ca/Art-Unit-Testing-Examples-Net/dp/1933988274/ref=pd_sim_b_5
+Roy Osherove
+
+"Refactoring: Improving the Design of Existing Code":http://www.amazon.ca/Refactoring-Improving-Design-Existing-Code/dp/0201485672/ref=pd_bxgy_b_img_b
+Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
+
+"Agile Principles, Patterns, and Practices in C#":http://www.amazon.ca/Agile-Principles-Patterns-Practices-C/dp/0131857258/ref=pd_sim_b_3
+Robert C. Martin, Micah Martin
+
+"JavaScript: The Good Parts":http://www.amazon.ca/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=pd_bxgy_b_text_c
+Douglas Crockford Douglas
+
+
+h3. List of books that (also) should be read.
+
+"Refactoring to Patterns":http://www.amazon.ca/Refactoring-Patterns-Joshua-Kerievsky/dp/0321213351/ref=pd_sim_b_7
+Joshua Kerievsky
+
+"The Pragmatic Programmer: From Journeyman to Master":http://www.amazon.ca/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/ref=pd_sim_b_5
+Andrew Hunt, David Thomas
+
+"Design Patterns: Elements of Reusable Object-Oriented Software":http://www.amazon.ca/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=pd_bxgy_b_img_c
+Erich Gamma, Richard Helm, Ralph Johnson, John M. Vlissides
+
+"Domain-Driven Design: Tackling Complexity in the Heart of Software":http://www.amazon.ca/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/ref=pd_sim_b_6
+Eric Evans
+
+"xUnit Test Patterns: Refactoring Test Code":http://www.amazon.ca/xUnit-Test-Patterns-Refactoring-Code/dp/0131495054/ref=pd_sim_b_2
+Gerard Meszaros
+
+"Succeeding with Agile: Software Development Using Scrum":http://www.amazon.ca/Succeeding-Agile-Software-Development-Using/dp/0321579364/ref=pd_bxgy_b_text_c
+Mike Cohn
+
+"User Stories Applied: For Agile Software Development":http://www.amazon.ca/User-Stories-Applied-Software-Development/dp/0321205685/ref=pd_bxgy_b_text_b
+Mike Cohn
+
+"Growing Object-Oriented Software, Guided by Tests":http://www.amazon.ca/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627/ref=pd_sim_b_6
+Steve Freeman, Nat Pryce
+
+"Restful Web Services":http://www.amazon.ca/Restful-Web-Services-Leonard-Richardson/dp/0596529260/ref=pd_sim_b_32
+Leonard Richardson, Sam Ruby
+
+
+h3. For designers and/or developers that work in UI
+
+"Designing the Obvious: A Common Sense Approach to Web Application Design":http://www.amazon.ca/Designing-Obvious-Common-Approach-Application/dp/032145345X/ref=sr_1_1?ie=UTF8&s=books&qid=1285295739&sr=1-1 and "Designing the Moment: Web Interface Design Concepts in Action":http://www.amazon.ca/Designing-Moment-Interface-Design-Concepts/dp/0321535081/ref=pd_sim_b_1
+Robert Hoekman
+
+"Don't Make Me Think: A Common Sense Approach to Web Usability":http://www.amazon.ca/Dont-Make-Me-Think-Usability/dp/0321344758/ref=pd_sim_b_7
+Steve Krug
+
+"Designing with Web Standards":http://www.amazon.ca/Designing-Web-Standards-Jeffrey-Zeldman/dp/0321616952/ref=pd_sim_b_32
+Jeffrey Zeldman, Ethan Marcotte
+
+"Handcrafted CSS: More Bulletproof Web Design":http://www.amazon.ca/Handcrafted-CSS-More-Bulletproof-Design/dp/0321643380/ref=pd_bxgy_b_text_b
+Dan Cederholm, Ethan Marcotte
+
+
+h3. The missing books
+
+Suggested by "Jack Carlton":http://twitter.com/JakCharlton
+
+"Code Complete 2: A Practical Handbook of Software Construction":http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/ref=sr_1_1?s=gateway&ie=UTF8&qid=1285299653&sr=8-1
+Steve McConnell
+
+"Ship it! A Practical Guide to Successful Software Projects":http://www.amazon.com/Practical-Guide-Successful-Software-Projects/dp/0974514047/ref=sr_1_1?s=books&ie=UTF8&qid=1285299830&sr=1-1
+Jared Richardson
+
+"Release It!: Design and Deploy Production-Ready Software":http://www.amazon.com/Release-Production-Ready-Software-Pragmatic-Programmers/dp/0978739213/ref=pd_bxgy_b_text_b
+Michael T. Nygard
+
+"The Mythical Man-Month: Essays on Software Engineering":http://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959/ref=pd_bxgy_b_text_b
+Frederick P. Brooks
+
+
+Suggested by Ron Myers:
+
+"Pro JavaScript Techniques":http://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273/ref=sr_1_1?s=books&ie=UTF8&qid=1285375965&sr=1-1
+John Resig

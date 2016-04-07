@@ -1,0 +1,61 @@
+---
+layout: post
+title: Test driven outside in, starting with Cucumber and RubyMine.
+summary: On my new project I want to start using end to end testing.  The idea is to write an specification run it against an outer interface. Gui, Web service, etc. It fails. So you start implementing the feature using TDD until the Spec pass.
+categories: [Frameworks, Methodology, Programming, Testing, Tools, Ruby]
+---
+
+On my new project I want to start using end to end testing.
+
+The idea is to write an specification run it against an outer interface. Gui, Web service, etc. It fails. So you start implementing the feature using TDD until the Spec pass. 
+
+You write a second scenario and you start again. If everything works as supposed I should have a fairly well tested application, not only at the unit level but at the integration and user acceptance level as well.
+
+Since the application will be written in c# I look around for some tool to write the Scenarios in the same language. There are some options but none of them was as elegant as using Cucumber. So I tried cuke4nuke but I have no luck with it. I kept getting an error about server not running or something. It looks like a permission problems with win 7. 
+
+I'm sure I could have figure it out (some confidence I have on my abilities :-)) but after giving it a second though I decided to go with Cucumber and RSpec for those test. Drive the browser with Watir and hit the web services end points with webrat, sometimes even script the UI with webrat when the browser is not really need it.
+
+Installing all the gems is easy just 
+
+
+
+<script src='http://gist.github.com/561860.js?file=file0.console'></script>
+
+
+
+and you are done (at least in my case). Of course you need to have ruby installed in your system. I have 1.8.6
+
+Since I haven't really used Cucumber before and my Ruby is still very flaky, I decided to use RubyMine as my IDE to write the specs, specially because you can generate the step definitions from the features in a similar way as how you generate code with R# in VS.
+
+You start writing an Spec with one scenario like this:
+
+<a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot001_2.png"><img border="0" alt="ScreenShot001" src="/images/posts/Testdrivenoutsidein_14256/ScreenShot001_thumb.png" width="379" height="173"></a> 
+
+Then you run it via the console and have this result.
+
+<a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot008_2.png"><img border="0" alt="ScreenShot008" src="/images/posts/Testdrivenoutsidein_14256/ScreenShot008_thumb.png" width="459" height="395"></a> 
+
+Note the yellow squiggly lines on the step definitions for the scenario? If you move the mouse over them a prompt will indicate that the step haven't been created yet:
+
+<a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot002_2.png"><img border="0" alt="ScreenShot002" src="/images/posts/Testdrivenoutsidein_14256/ScreenShot002_thumb.png" width="382" height="190"></a> 
+
+Hit Alt+Enter to see a suggested solution:
+
+<a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot003_2.png"><img border="0" alt="ScreenShot003" src="/images/posts/Testdrivenoutsidein_14256/ScreenShot003_thumb.png" width="377" height="138"></a> 
+
+Click enter and you have some options, to use an existing step definition file or create a new. If you hit create a new one and you don't have an step_definitions folder RubyMine will create it for you.
+
+<a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot004_2.png"><img border="0" alt="ScreenShot004" src="/images/posts/Testdrivenoutsidein_14256/ScreenShot004_thumb.png" width="315" height="202"></a> 
+
+In this case I select the existing bing_steps.rb file
+
+<a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot005_2.png"><img border="0" alt="ScreenShot005" src="/images/posts/Testdrivenoutsidein_14256/ScreenShot005_thumb.png" width="344" height="99"></a> 
+
+Notice that the values between quotes are replaced by a regular expression, hit tab to modify the different tokens of the method template. After generating all the methods and adding the necessary code, this is the result.
+
+<a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot006_2.png"><img border="0" alt="ScreenShot006" src="/images/posts/Testdrivenoutsidein_14256/ScreenShot006_thumb.png" width="354" height="202"></a> 
+And when running via the console this is the result:
+
+<a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot007_2.png"><img border="0" alt="ScreenShot007" src="/images/posts/Testdrivenoutsidein_14256/ScreenShot007_thumb.png" width="403" height="185"></a>
+
+In this case we are running this specs against an existing piece of software, in my case I will run this against a new un-written site. So to see the scenario pass I should write the feature as well.

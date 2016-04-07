@@ -1,0 +1,32 @@
+---
+layout: post
+title: Learning about the new stabby lambda syntax in Ruby
+summary: This is a very quick post where I highlight my findings on why the new lambda syntax has been introduced on Ruby 1.9 and what are the use cases for it.
+categories: [Programming, Ruby]
+---
+
+After reading Davy Brion "review on Metaprogramming Ruby":http://davybrion.com/blog/2010/09/highly-recommended-book-metaprogramming-ruby/ and since I had the book in my desk I decided to move it up in my reading queue and I started on Monday.
+I'm almost half way through it and so far is exactly as Davy describes it in his review. Once I finish it I will write down my own impressions, not that anybody cares.
+
+This post is not really about the book but about a new syntax on lambda called stabby lambda. The book mentions the new syntax but doesn't goes in depth about why the new syntax have been introduced. Of course that picked my curiosity so I decided to do some research on the subject.
+
+??Note the book has a Typo stubby lambda when it should be stabby lambda. Check the "erratas for the book":http://pragprog.com/titles/ppmetr/errata .??
+
+<em>Warning, warning, take everything in this post with a <strike>grain</strike> pound of salt. I'm not expert in ruby, these are just my findings in a very quick research of the subject.</em>
+
+My first stop was at "Rails Spikes":http://railspikes.com/2008/9/8/lambda-in-ruby-1-9 and it was a good one since it pretty much covers the why of this new syntax. The first reason for the new syntax seems to be support of default values for parameters:
+
+
+<script src="http://gist.github.com/581892.js?file=lambda.rb"></script>
+
+
+A second reason is to make for a nicer syntax when passing a lambda and a block to a method.
+
+
+<script src="http://gist.github.com/581892.js?file=methods.rb"></script>
+
+
+You know what the fun part of all this is? The -> reminds me a bit of PHP, where you call methods in objects with that same notation.
+
+
+<script src="http://gist.github.com/581892.js?file=objects.php"></script>

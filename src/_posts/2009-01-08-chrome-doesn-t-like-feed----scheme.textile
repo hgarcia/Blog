@@ -1,0 +1,12 @@
+---
+layout: post
+title: Chrome doesn't like the feed scheme
+summary: A coworker uses Google Chrome as her primary browser and she sent me and email about my feeds not working. So I went to her computer and yes, inside Chrome when clicked the Icon on the top of the blog nothing happened.
+categories: [General]
+---
+
+A coworker uses Google Chrome as her primary browser and she sent me and email about my feeds not working. So I went to her computer and yes, inside Chrome when clicked the Icon on the top of the blog nothing happened. I remembered that I enable the feed:// scheme in my blog engine (this way if you have a Feed reader it will be picked up) and most browsers (IE, Firefox) will also pick this up.
+
+But nothing happened, so I have to disable it. We all know about the lack of support for feeds inside Chrome, so I did a quick search and I found <a href="http://sites.google.com/a/chromium.org/dev/user-experience/feed-subscriptions" target="_blank">this document</a> where they describe how they are going to support Feed discovering and subscription inside in the future.
+
+You can tell from the document that it's still a work in progress, (lot of TODO's in it) lets hope they go to work on it soon. So far Chrome is my browser for web apps <a href="/2008/11/27/ta-da-list-and-chrome--or-how-to-do-good-products-.html" target="_blank">as I posted before</a>, but for real world browsing I still use my faithful Firefox with my favorite extensions.

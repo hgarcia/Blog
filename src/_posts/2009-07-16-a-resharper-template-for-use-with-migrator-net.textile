@@ -1,0 +1,21 @@
+---
+layout: post
+title: A Resharper template for use with Migrator.net
+summary: I have been playing at home for the last few days with different migrations strategies for db development. The one that I like the most so far is Migrator.Net. Here are the things I really like.
+categories: [Continuous Integration, Methodology, Programming, Tools]
+---
+
+I have been playing at home for the last few days with different migrations strategies for db development. The one that I like the most so far is Migrator.Net. Here are the things I really like.
+
+The migration project/code is independent from the technology you use to persist your data, so changing persistence strategies does not affect your migrations.
+You have a good migration history, since each new migration is it's own class. It provides an Up and a down method to run the migration or undo it. You mostly don't have to write SQL, but you can if you need/want. 
+
+Let me clarify that point. I'm not one to mind writing SQL, I rather enjoy it and take pride to been able to write some clever statements. At the same time I recognize that most of the time you write very boring and repetitive task, but what bother's me the most is the constant context switching from VS to Enterprise Manager. That has to affect your productivity.
+
+The fluent interface is very easy to use, and I only had to consult the documentation to set up the MSBuild file to run the migrations from inside VS, mostly because my experience with MSBuild is very limited. I was tempted to use Nant that I'm very familiar with and they provide a custom task for it, but I use this opportunity as a way to get my hands dirty with MSBuild.
+
+Writing migrations involves creating a new class that derives from Migrations and implement two methods Up and Down, you also need to add a [Migration()] attribute and specify the migration number in it. I decided to use a date+time migration number of the form "yyyyMMddhhmmss" that translates to something like: 20090726120152.
+
+You can also use numbers like 1,2,3,etc… I prefer the date time format to work in a team, less chances of two people creating migrations at the same time.
+
+But the title of the post is about a template for Resharper to create most of the work for you. So that was what I did, and you can download this <a href="../../../images/posts/AResharpertemplateforusewithMigrator.net_B218/tmpCDF9.zip" target="_self">Zip file with the template in it.</a>

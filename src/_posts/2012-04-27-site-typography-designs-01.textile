@@ -1,0 +1,29 @@
+---
+layout: post
+title: Typographic site design, The wayward irregular.
+summary: I decided to start a series showcasing some sites based on the use of typography. Not sure how regular (or irregular) the series will be.
+categories: [Design]
+---
+
+Typographic site design is getting more and more attention. I will show some sites that I find particularly interesting.
+
+h3. The Wayward irregular.
+
+h6. Url
+
+"The wayward irregular":http://www.waywardirregular.com/
+
+h6. Fonts
+
+Web font: "Droid Serif":http://www.google.com/webfonts/specimen/Droid+Serif
+Fall back: serif
+
+h6. Palette
+
+<span class="palette" style="background-color: #000;">&nbsp;</span> <span class="palette" style="background-color: #333;">&nbsp;</span> <span class="palette" style="background-color: #8b8b8b;">&nbsp;</span> <span class="palette" style="background-color: #fff;">&nbsp;</span> <span class="palette" style="background-color: #f00;">&nbsp;</span>
+
+h6. Images
+
+Monochromatic images for navigation. Some colour in the different article illustrations.
+
+<a href="../../../images/posts/waywardirregular-com.png" target="_blank"><img src="/images/posts/waywardirregular-com-thumb.png" border="0" alt="Wayward irregular front page thumbnail"/></a>

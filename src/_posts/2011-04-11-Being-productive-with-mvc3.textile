@@ -1,0 +1,81 @@
+---
+layout: post
+title: Being productive with MVC 3.
+summary: On how using MVC 3, NuGet, MvcScaffold, EF code first, Git and AppHarbor make me have fun again using the Microsoft stack.
+categories: [Programming, .Net, Tools]
+---
+
+Two weeks ago I had to put together a very small and simple site. I had the design already done by the designer with most of the content, images, styles and all.
+
+I just needed to move it over a framework/system that could provide some editing capabilities. Nothing fancy, I just needed a simple CMS.
+
+I didn't want to spend time trying to setup any of the existing CMS platforms out there. They are all too big and complex for what I need it.
+
+Two months ago in a similar situation I was able to put together a similarly simple site using Webmatrix and the Quickedit helper.
+
+It worked ok, but the editor that comes with the helper is not very nice.
+
+I also didn't want to spend any time in the admin section of the site, or at least as little time as possible.
+
+h3. When subscribing to more than 100 blogs pays.
+
+It was at the point, and when I was ready to fire up my Ubuntu box to do the project on Rails, that I remembered reading about the MvcScaffold project and I decided to give it a try.
+
+So, I fire up VS, create a new MVC 3 project and I add the MvcScaffold package. It brought along the EF Code First and the T4Scaffold packages. No problem.
+
+Next, I wrote my first model (a simple MenuItem) using the DataAnnotations attributes to enforce validation.
+
+<pre><code>
+	Scaffold controller MenuItem
+</code></pre>
+
+This connected to my local SQLExpress instance, generated a DbContext, a controller for the Model and all the views for the CRUD operations.
+
+It was time to go ahead and create a Git repo for the project. This time I tried the contextual menu inside VS provided by Visual Git.
+
+This creates a .gitignore file and initializes the repo.
+
+I decided to edit the default .gitignore provided and add the /packages folder to the ignore list.
+
+I them launched the Git bash (again from the contextual menu inside VS) and run the following commands to add and commit the work done.
+
+<pre><code>
+	git add -A
+	git commit -m"Witty but valuable comment"
+</code></pre>
+
+h3. Moving away from SQL Express.
+
+SQL Express is all good for development but I wanted to deploy to AppHarbor so I went ahead and connected to a local SQL instance and start writing my DDL scripts. You don't need to do this and use the automatic database generation from the DbContext if you don't care about losing the data on the db during developing. Make sure to comment this out before deploying thought.
+
+There is a last step needed to wire things up. Create a new connection string pointing the SQL server and use the same name of the DbContext object for the connection string.
+
+Once this is done, you dbcontext will start using the connection string instead of searching for a local SQL Express.
+
+At this point with everything set, I started to move faster, and I was able to concentrate on what was important, incorporate the templates, making sure that I have the exact amount of customization, etc.
+
+I need a new field, change a type, modify the length? No problem, just change the model, the DDL and re-run the scaffold.
+
+This also force you to keep your controllers very lean and move your logic into the model (where it should be) so you can blow your controllers away and re-create them without a sweat and keep the pace.
+
+h3. The role of Razor and Git.
+
+I think using Razor as the view engine also contributes to the speedy development pace. You can focus on the task at hand and the markup, without getting distracted by the code.
+
+If on top of that you use Git (or Hg) to make frequent commits, you will feel like you are on fire.
+
+h3. So you get done really fast, so how about going live?
+
+Appharbor to the rescue.
+
+You probably already know about Appharbor. If you haven't you should go and check it out.
+
+I created the app and a database, added the remote repository to the solution, changed the web.config to pick up the new connection string and did a simple push.
+
+<pre><code>
+	git push appharbor master
+</code></pre>
+
+Voila! Appharbor will run your test and if everything is ok (all projects builds and all test pass) will deploy automatically.
+
+It was a fun week-end project and I really enjoyed the workflow.

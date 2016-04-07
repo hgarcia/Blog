@@ -1,0 +1,56 @@
+---
+layout: post
+title: Using includes with Angular.js to organize your UI modules.
+summary: Complex web applications will rarely need only one view per screen. Using includes help to separate concerns in your Angular.js apps.
+categories: [Programming, JavaScript, Angular]
+---
+
+If you are writing any non trivial web application you will surely notice that using a single view for your main page doesn't allow for a good separation of concerns.
+
+Most screens will deal with a few concerns, specially if our application wants to provide some notification area or summary information. This is specially problematic if you are working in a dashboard or control center type of application.
+
+Angular have a nice directive to help you to separate your UI in discreet components in the way of include files.
+
+__This example is very contrive but should suffice to illustrate the point.__
+
+Let's take the following code for example:
+
+<pre><code>
+    <div class="row-fluid">
+        <div data-ng-controller="RepositoriesCtrl">
+            <ul>
+                <li data-ng-repeat="repository in repositories">{{repository.name}}</li>
+            </ul>
+        </div>
+        <div data-ng-controller="IssuesCtrl">
+            <ul>
+                <li data-ng-repeat="issue in issues">{{issue.id}} - {{issue.name}}</li>
+            </ul>
+        </div>
+    </div>
+</code></pre>
+
+We want to move the list of repositories into it's own file and the same for the list of issues. We will create to partial files, <span class="code">repository-list.html</span> and <span code="code">issues.html</span> and we move the relevant code in there.
+
+For example, the repository-list.html file now looks like this:
+
+<pre><code>
+    <ul data-ng-controller="RepositoriesCtrl">
+        <li data-ng-repeat="repository in repositories">{{repository.name}}</li>
+    </ul>
+</code></pre>
+
+We change our main view to use those includes.
+
+<pre><code>
+    <div class="row-fluid">
+        <div data-ng-include data-src="'partials/repository-list.html'"></div>
+        <div data-ng-include data-src="'partials/issues.html'"></div>
+    </div>
+</code></pre>
+
+As you can see is as easy as add the <span class="code">data-ng-include</span> attribute and point it to the partial file using the <span class="code">data-src</span> attribute.
+
+_Notice the quotes in the path to the view, if you don't add then, Angular will treat it as an expression and try to evaluate it instead of include the template._
+
+I found this a good approach to separate my UI in composable widgets.

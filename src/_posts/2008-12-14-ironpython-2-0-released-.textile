@@ -1,0 +1,10 @@
+---
+layout: post
+title: IronPython 2.0 released!
+summary: On Dec 10 the IronPython team made available the version 2.0 on Codeplex.   Go download it now and start playing! ...
+categories: [Programming]
+---
+
+On Dec 10 the <a href="http://www.codeplex.com/IronPython/Release/ProjectReleases.aspx?ReleaseId=8365" target="_blank">IronPython</a> team made available the version 2.0 on <a href="http://www.codeplex.com/IronPython/Release/ProjectReleases.aspx?ReleaseId=8365" target="_blank">Codeplex</a>.
+
+Go download it now and start playing!

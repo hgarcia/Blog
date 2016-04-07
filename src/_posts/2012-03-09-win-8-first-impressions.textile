@@ -1,0 +1,58 @@
+---
+layout: post
+title: Windows 8 - first impressions.
+summary: During the weekend I decided to go ahead and get the Windows 8 consumers preview release installed on my side laptop. It has been a nice experience so far.
+categories: [Programming, General]
+---
+
+A few months ago, I tried to install the Windows 8 developers preview. At the time I used a Virtual Box VM but my experience wasn't very good. I did think on using a bootable VHD but I was really busy with multiple projects and never got back to it.
+
+h3. Windows 8 consumer preview
+
+<a href="../../../images/posts/win8/fish.png" target="_blank"><img class="img-float-right"  src="/images/posts/win8/fish.png" border="0" alt="Windows 8 fish" style="width: 30%"/></a>So when this came up and every body was talking about it, I decided to give it a try.
+This time I didn't make the same mistake and I used "Scott Hanselman instructions":http://www.hanselman.com/blog/HowToGuideToInstallingAndBootingWindows8ConsumerPreviewOffAVHDVirtualHardDisk.aspx to install it right off the bat on a bootable vhd.
+I was surprised how straight forward the whole process was. The new installer is even simpler than Windows 7's, making the installation process completely painless.
+
+h3. Internet (cloud) integration
+
+When installing you are required / asked to enter an existing windows account or create a new one.
+
+__I didn't pay enough attention (since I have a windows account), so I'm not sure if you can just create a normal machine account.__
+
+This account will not only be used to login into your machine but to hookup some applications with some Microsoft services. For example the Photos app will show photos not only on your hard drive but also on Skydrive, pulls down your avatar and more.
+
+h3. Going Metro.
+
+Upon start you will be presented with the new lock screen. It reminds me a bit to Bing due to the use of a full screen picture with just a timer on the left corner. Once you hit enter you will be presented with a simple login screen.
+
+<a href="../../../images/posts/win8/start.png" target="_blank"><img class="img-float-left" src="/images/posts/win8/start.png" border="0" alt="Windows 8 start screen" style="width: 45%"/></a>The start screen follows the now ubiquitous Metro style. In the screen capture you can see the icons created by default after installing Visual Studio 2011.
+I don't have a touch screen in this laptop, and I was expecting to find the Metro experience a bit daunting with the mouse. That's not really the case. I actually found it perfectly usable and for the most part very intuitive.
+
+__Keep in mind that a lot of paradigms have been broken. This is not your old PC. I think that the complete change on UI makes for an easier transition than a gradual shift.__
+
+You know right away that this is a different game, so you don't start messing around, trying to find the start menu. You just start exploring this new landscape.
+
+<a href="../../../images/posts/win8/desktop.png" target="_blank"><img class="img-float-right" src="/images/posts/win8/desktop.png" border="0" alt="Windows 8 desktop" style="width: 45%"/></a>Of course you can always drop to the desktop if you want or need to. I found myself doing so to use IE, not sure why since you can use IE as a Metro app as well.
+You can see in the image that the start menu is gone.
+The closer thing you have is hidden beside the tray bar, clicking those little arrows now open a "menu" with access to some programs, common utilities and folder shortcuts.
+
+<img src="/images/posts/win8/desktop_programs.png" border="0" alt="Programs contextual menu on windows 8"/>
+
+If you want to go back to the Start screen move the mouse to the lower left corner and a little pop up will show you the Start screen, click in it and you are back.
+
+Moving the mouse to the top left side of the screen, will reveal a ribbon that contains thumbnails of the running programs, for example the desktop. You can click any of those programs to go to them directly.
+Yes, the desktop is treated as a program, what it probably makes sense in the Metro UI paradigm.
+
+__This feature reminds me a bit of the Unity task bar. Just hope is better receive by the community.__
+
+Move the mouse to top or bottom right side of the screen and you will have access to some utility programs. Search, share, Start, Devices and Settings.
+
+h3. General performance and final thoughts.
+
+I'm running it in an old Dell Studio 1737, with an Intel Core 2 Duo and 4 Gigs of ram.
+In general performs well, maybe a little slower than Windows 7 in the same machine, but I can't be sure.
+
+Taking in consideration that this is a preview release, looks like a solid one. So far my only issue is a very slow wireless connection. I attribute that to drivers issues, what is perfectly understandable.
+Launching some of the applications on Metro takes a bit too long for my taste, again 'Preview' so I don't want to read much into it.
+
+I'm looking forward to start playing around with VS 2011 in the next few weeks and see what's the experience developing Windows apps using the JavaScript API's.

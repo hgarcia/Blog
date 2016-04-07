@@ -1,0 +1,74 @@
+---
+layout: post
+title: Refactoring an OS project- take 1
+summary: An exercise on improving code we found in a project that we want to use.
+categories: [Programming, Testing]
+---
+
+First thing first. This is not bad code. This is a drop that is there and the developer make a point to clarify all the problems "he" has with the code at the moment. I needed to make it work in a more generic way and since most of the work is done for me, it's better I refactor the existing code than start from scratch. I will send my changes to the original developer once I'm happy with them.
+
+I mentioned on Sunday about how I reorganized the code inside the solution and the refactoring I did, let's take a look. Upon downloading this is how the solution looked like:
+
+<a href="../../../images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_01%202009-02-23%2000.00.10_2.jpg"><img height="220" alt="ScreenHunter_01 2009-02-23 00.00.10" src="/images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_01%202009-02-23%2000.00.10_thumb.jpg" width="242" border="0" /></a>
+
+After my changes this is what I have:
+
+<a href="../../../images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_02%202009-02-23%2000.00.44_2.jpg"><img height="396" alt="ScreenHunter_02 2009-02-23 00.00.44" src="/images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_02%202009-02-23%2000.00.44_thumb.jpg" width="241" border="0" /></a>
+
+Notice that most of the classes have been moved into a class library and the console just has the entry point. This reorganization have in mind the reuse of the common library code with a GUI.
+
+Also notice the UnitTests project.
+
+h3. Extract method
+
+My first refactoring was to remove as much code as possible from the Program.cs file, from this:
+
+
+
+<script src='http://gist.github.com/561838.js?file=file0.aspx-cs'></script>
+
+
+
+To this:
+
+
+
+<script src='http://gist.github.com/561838.js?file=file1.aspx-cs'></script>
+
+
+
+I them move GetCodeCoverage into a new class called CoverageAnalyzer in the class library project. Now I want to get ride of all the parameters for GetCodeCoverage.
+
+h3. Introduce Object Parameter
+
+
+
+<script src='http://gist.github.com/561838.js?file=file2.aspx-cs'></script>
+
+
+
+I start looking at the constants and deciding what I actually need to pass and what can have default values. I will keep everything configurable but I think that I can assume a lot of defaults and everything will continue working.
+
+So I write a bunch of test to validate my assumptions and test the CodeCoverageParams class default. At this moment as well I do a lot of renaming to better indicate the variables purpose.
+
+The code in main looks like this now:
+
+
+
+<script src='http://gist.github.com/561838.js?file=file3.aspx-cs'></script>
+
+
+
+You can't tell on the code but R# is telling me that: vsinstrLocation, vstsCoverageOutputFile, symbolsPath, exePath, outputXml, coverageXslt and htmlOutputFile are not been used.
+
+So I can delete them and now the code on main looks even nicer:
+
+
+
+<script src='http://gist.github.com/561838.js?file=file4.aspx-cs'></script>
+
+
+
+Now my next task will be to parse the arguments passed on the command prompt and eliminate all the const and hardcoded strings for good. Some validation of the minimum set of parameters will be needed. This validation is already in place thanks to the Unit tests written for the CodeCoverageParams class.
+
+Let's continue tomorrow.

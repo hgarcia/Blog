@@ -1,0 +1,13 @@
+---
+layout: post
+title: ASP.Net Development server in a custom port
+summary: During Scott's Hanselmann presentation on Dynamic Data at the TVBUG he show a little trick that I didn't know about and I want to show it here.It always annoy me that every time you click run in a web application using VS it runs using ...
+categories: [Programming, Testing, Tools]
+---
+
+During Scott's Hanselmann presentation on Dynamic Data at the TVBUG he show a little trick that I didn't know about and I want to share here.
+It always annoyed me that every time I click run in a web application using VS it runs using the ASP.Net development server and starts in a random port.
+So if you want to make sure that the project starts always at the same port, all you need to do is right click on the solution and select properties. 
+In the property sheet for the solution click on the Web tab and then change the default Auto-assign Port to Specific port and type a port of your liking.
+
+<img src="/images/posts/sp32-20080517-140354.png" alt="" border="0"/>

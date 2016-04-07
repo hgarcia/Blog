@@ -1,0 +1,87 @@
+---
+layout: post
+title: Migrating the blog from dasblog to jekyll.
+summary: Dasblog worked ok, but I wanted more control on the html and something that was more than a blogging platform. Since I have been playing a lot with ruby lately I also wanted my new solution to be based on ruby.
+categories: [General]
+---
+
+I started writing this blog back in 2007. I used Wordpress at the time since it was/is the most popular platform.
+By the end of 2008 I was having some issues with my hosting provider running PHP and I decided to "change both hosting provider and blogging platform":http://blog.dynamicprogrammer.com/2008/12/12/goodbye-books-and-bits--hello-dynamic-programmer-.html. I switched to dasblog in part because it does not relies on a db and uses XML files to store both posts and comments.
+
+"Dasblog":http://www.dasblog.info/ worked ok, but I wanted more control on the html and something that was more than a blogging platform.
+
+Since I had been playing a lot with ruby lately I also wanted my new solution to be based on ruby.
+
+h3. Let me introduce you to Github pages.
+
+"Github pages":http://pages.github.com/ is a git based platform to serve just simple static html pages or, if you need more power, a site powered by "Jekyll":http://github.com/mojombo/jekyll/. This sounded like a good place to start.
+
+_Before we move forward, let me explain what Jekyll is. Jekyll is a ruby engine that generates static sites from content written in textile or markup and a simple templating engine._
+
+h3. Migrating the posts.
+
+Once I decided to use Jekyll, the first thing I did was to create a simple Ruby script to migrate the content of the posts from the XML file into "textile":http://textile.thresholdstate.com/ files that Jekyll could use to generate the html for each post.
+
+It took me a few tries and some refinements to get the scripts to do most of the work but after a few hours I was able to get most of my posts converted into textile.
+
+The main problems I faced was that the content on my previous blog have been generated in three or four different ways. Migration from Wordpress, directly using the DasBlog editor, Windows Live Writer and a few others offline editors.So the html was not consistent, specially tricky was to clean up the code examples.
+In some cases the tools used the pre tag to indicate code in other cases just div's and span tags with style applied to them.
+
+h3. Migrating all code snippets into Gists.
+
+Once I have all the post cleaned up I decided to fix the coding example problem once and for all.
+
+My first attempt was to use the provided code highlighting tools included in Jekyll. They are based on "Pygments":http://pygments.org/ and work fairly well, but in some cases it had problems recognizing some constructs in the code and the result wasn't very good.
+
+So I decided to move all the code examples to embedded "Gists":http://gist.github.com/. This was fairly easy since Gists has a public Api, so another bit of scripting, some trial and error and all my code examples where created in Gists and the posts updated with the necessary bits of JavaScript to do the embed.
+
+h3. Using Disqus for comments.
+
+A BIG problem I had with DasBlog was the non existing comments management tool. I don't like to have to validate or approve comments before hand but I want to have the power to delete spam or advertising and there is not an easy way to do so in DasBlog.
+
+Since Jekyll is an static engine, there isn't a comment platform in it, I thought about writing one but I decided to outsource it to "Disqus":http://disqus.com/. At least for now, let's see how this work.
+
+h3. Creating the categories pages.
+
+Once again been Jekyll an static pages engine I have to pregenerate the categories pages that list all posts in a given category. To do so I wrote another Ruby script to extract all the categories from all the post and them It generates a bunch of templates for all the categories.
+Those templates are run each time the site is generated using the Jekyll command.
+
+h3. From GitHub to Heroku with Rack.
+
+At this point I needed to worry about existing links in the wild that where going to be broken after the migration. One solution was to provide some kind of redirect, but GitHub pages only serve static content.
+
+After a little bit of searching I found this article "on how to host Jekyll on Heroku":http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free and how to create a simple "Rack":http://rack.rubyforge.org/ midleware to add the extension to a URL.
+
+So, I installed rack, changed the configuration, created a free account on "Heroku":http://heroku.com/ and push the blog into it.
+
+I had a few issues just because I'm very impatience and didn't follow all the steps, but after slowing down I got everything working.
+
+The next step was to create redirects for my existing links out there to the new URLs.
+
+h3. Preserving existing links.
+
+The solution is not elegant (actually is quite ugly) but works well. I got the complete RSS feed from dasblog and saved the xml file to disk.
+I wrote another Ruby script to parse the links and permalinks and generate a bunch of ruby statements that ended up in the try_next method of the Rack middleware class.
+
+I will probably refactor this one later, to have some better looking code in here, but does the work.
+
+h3. Html 5 complaint (or quasi) markup and new design.
+
+I didn't validate it yet, so I'm not sure if I'm 100% html 5 complaint, but if not I'm pretty sure I'm close enough.
+
+I wrote the templates on top of the excellent "html 5 kitchen sink reset":http://html5reset.org/. I tried to keep the markup as semantic as possible. I really like how "the new article":http://html5doctor.com/the-article-element/, "header":http://html5doctor.com/the-header-element/, "footer":http://html5doctor.com/the-footer-element-update/ and "aside":http://html5doctor.com/aside-revisited/ tags allow for some meaningful markup.
+
+By the way I love rounded corners in css3, if you are seen this post in IE I'm very sorry for you :-)
+
+I tried to keep the design very clean. I used "Color Scheme Designer 3":http://colorschemedesigner.com/ to build a simple three colours palette and instead of using black I use three different shades of gray in the text.
+
+h3. Search capabilities.
+
+One of the things I lose with an static site is the search capabilities. Or not. I went with Google embedded search. It has several options, and one of them is to just search in a given set of domains. Customizing the look and feel was extremely easy as well. I got the CSS file from google, I modified it, and I'm serving it from my domain.
+
+h3. Todo's
+
+* Migrate the old comments into disqus using disqus API
+* Improve the work flow for writing and publishing new posts.
+* Fix some formats issues in some posts, mostly related to some encoding problems.
+* Come up with a way to schedule post to display in the home page

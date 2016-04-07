@@ -1,0 +1,42 @@
+---
+layout: post
+title: Metaprogramming ruby, book review.
+summary: This is one of the best books I read this year. What can be a fairly complicate subject, explained in such a way that make for a good and very entertainned reading.
+categories: [Ruby, Books]
+---
+
+Two weeks ago "Davy Brion wrote this great review of Metaprogramming Ruby":http://davybrion.com/blog/2010/09/highly-recommended-book-metaprogramming-ruby/. The review is so good that, since I had the book in my queue list, I decided to jump on it right away.
+
+I wasn't disappointed. The book is really that good. 
+
+h3. Structure.
+
+The book has 3 distinctive parts plus the introduction. Metaprogramming Ruby, metaprogramming Rails and the Appendixes. I suggest you don't skip the introduction is very brief and provide some valuable context for reading the book. for example, why there are not any unit test to be found in the examples.
+
+h3. Part I: Metaprogramming Ruby.
+
+This part is divided in five chapters one for each day of the week, where you are introduced to the secrets of metaprogramming by your new mentor Bill.
+
+I was surprised how well some of the concepts are explained by the author (Paolo Perrota). We are talking of really complicated stuff like for example 'Eigenclasses', he make it sound fairly simple.
+
+The book progress in what looks like a very logical way from simple techniques, called "Spells" in the book, like open classes and method missing, to more more esoteric things, like the previously mentioned eigenclasses, aliases, singleton methods, to finalize to the somehow feared eval family of methods.
+
+I particularly enjoyed the exercise on writing a simple DSL.
+
+h3. Part II: Metaprogramming in Rails.
+
+This part is interesting from the point of view of looking at some real world scenarios on the usage of the metaprogramming techniques that we learned in the previous part. 
+
+And what better to do it but with some parts of the premium Ruby framework. The book takes a look at ActiveRecord (an ORM library). If you have done some Rails, you may already know that most of the methods provided by ActiveRecord classes are generated on demand, now you can take a look at the code that does that, guided by the author.
+
+The third and last chapter of this section deals with best practices, the importance of testing and security considerations.
+
+h3. Appendixes
+
+I usually skim through the appendixes of most books but in this case it was different. I appreciated the catalog of spells that act as a quick reference for future projects.
+
+Common idioms (appendix A) will really help you (and me) to write ruby code that is more ruby like.
+
+h3. Conclusion.
+
+This is one of the best books on programming that I read so far this year. If you are into Ruby I highly recommend it.

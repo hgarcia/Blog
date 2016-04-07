@@ -1,0 +1,92 @@
+---
+layout: post
+title: Using Microsoft ASP.NET MVC with DooDads
+summary: I have been using DooDads, a free, open source ORM architecture for a while now. I like that I can easily use it with any database structure, not matter how bad it is.
+categories: [Programming, Frameworks, .Net]
+---
+
+I have been using <a target="_blank" href="http://www.mygenerationsoftware.com/portal/dOOdads/Overview/tabid/63/Default.aspx">DooDads</a>, a free, open source ORM architecture for a while now. I like that I can easily use it with any database structure, not matter how bad it is.
+
+When I come across such designs DooDads is the tool that allows me to create a layer of abstraction pretty fast into the application, that will later on allow me to make changes and refactor the database with minimal impact in the upper layers.
+
+I'm also a sucker for the MVC pattern and I downloaded as soon as was avalable, I have been playing around with it and one of the things I wanted to do was test it's extensibility using my favorite ORM tool.
+
+h3. Setting things up.
+
+So I fired up VS and create a new MVC application.
+
+I create a db with one table and I call it Movies.
+
+I open <a target="_blank" href="http://www.mygenerationsoftware.com/portal/default.aspx">MyGeneration</a> and generate the code for the business entity for the table and the Stored Procedures that the object will use.
+
+<img src="/images/posts/SP32-20071223-015910%281%29.png" alt="" height="287" width="320"/>
+
+<img alt="DooDads Stored Procedures" src="/images/posts/SP32-20071223-015926.png" height="149" width="338"/>
+
+h3. The Model.
+
+Then I added the code into the Model folder in the solution opened in Visual Studio 2008 and create the concrete class for the Movie object, Doodads generated code use abstract classes.
+
+<img alt="Model classes in the MVC project" src="/images/posts/SP32-20071223-020248.png" height="313" width="280"/>
+
+I like to separated the generated code from my implementation using two different folders but you don't need to do so if you don't want. I think that is easier to maintain this way.
+
+My next step was to modify the menu to create a Movies item, so I opened the master page and added the following line.
+
+
+
+<script src='http://gist.github.com/561817.js?file=file0.aspx-cs'></script>
+
+
+
+You will need to add the connection string as and appSetting in the web.config for Doodads to pick it up. The key should be dbConnection.
+
+
+
+<script src='http://gist.github.com/561817.js?file=file1.xml'></script>
+
+
+
+h3. The Controller.
+
+I added a reference to MyGeneration.Doodads.dll and create a new Controller class named MovieController
+
+<img alt="" src="/images/posts/SP32-20071223-022349.png" height="341" width="252"/>
+
+The code for this class is very simple. I added the using statement for the namespace of my Model classes and I create a custom ViewData object using the new simpler properties.
+Declaring the type of the property will give me a strongly typed ViewData in the View.
+
+
+
+<script src='http://gist.github.com/561817.js?file=file2.cd'></script>
+
+
+
+
+h3. The View.
+
+I created a folder called Movie under View and inside a Movie page (I made this page of the MVC Content page type to use the same master page).
+
+<img src="/images/posts/SP32-20071223-023153.png" alt="" height="112" width="215"/>
+
+<img src="/images/posts/SP32-20071223-023202.png" alt="" height="91" width="218"/>
+
+I added a using for the controllers namespace and set the type of the ViewPage<T> object to my custom viewdata object.
+
+
+
+<script src='http://gist.github.com/561817.js?file=file3.cs'></script>
+
+
+
+I opened the aspx page and added the following.
+
+
+
+<script src='http://gist.github.com/561817.js?file=file4.aspx-cs'></script>
+
+
+
+And that is all you need.
+
+<img src="/images/posts/SP32-20071223-023852.png" alt="Final result" height="451" width="426" />

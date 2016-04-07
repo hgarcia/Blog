@@ -1,0 +1,61 @@
+---
+layout: post
+title: Beautiful new typography, the work of Pablo Impallari.
+summary: A list of some beautifully designed (new) fonts created by Pablo Impallari.
+categories: [General]
+---
+
+I really enjoy nice typography and this interest make me explore some of the several font providers out there. Sometimes for inspiration and other times is just like visiting an art gallery.
+
+I try to keep track of new fonts that I like and I noticed that a few of the fonts I favored have been created by the same typographer.
+
+This on it's own is not that surprising, I obviously like his style, so is perfectly understandable I like several of his fonts.
+
+The typographer is "Pablo Impallari":http://www.impallari.com/ and I will show some of my favorite fonts.
+
+
+h3. Quattrocento
+
+I like it so much that I use Quattrocento for all the content in this blog (except headers, navigation and cut outs where I choose Gentium Book Basic).
+
+<a class="anchor-float-center" href="http://www.impallari.com/quattrocento/" target="_blank"><img class="img-float-center" src="/images/posts/quattrocento.png" border="0" alt="The quattrocento roman font"/></a>
+
+It's a classy font with a vintage feel without sacrificing readability.
+
+I like the Roman version better than the Sans but of course there is a place for both.
+
+
+h3. Milonga
+
+I already mentioned this one in a "previous post":http://blog.dynamicprogrammer.com/2013/04/19/buenos-aires-inspired-fonts.html a few days ago.
+
+<a class="anchor-float-center" href="http://www.google.com/fonts/specimen/Milonga" target="_blank"><img src="/images/posts/milonga.png" border="0" alt="The Milonga font"/></a>
+
+
+h3. Dosis, elegant sans-serif
+
+This one come in seven different weights and include a few alternates.
+I really like the light and medium weights due to the minimalistic design without losing personality.
+
+<a class="anchor-float-center" href="http://www.impallari.com/dosis/" target="_blank"><img src="/images/posts/dosis-weights.png" border="0" alt="The dosis font"/></a>
+
+
+h3. Cabin, where the lower case q, e, r, and m make an impression.
+
+A very nice and balance sans. I particularly like the personality in some of the lower case letters.
+
+The stem and termination for the r is fairly unique, as well as the termination of the letter e.
+
+<a class="anchor-float-center" href="http://www.impallari.com/cabin/" target="_blank"><img src="/images/posts/cabin.gif" border="0" alt="The cabin font"/></a>
+
+
+h3. Lobster, a new classic
+
+I leave this one for the end of the post since I'm pretty sure you saw it.
+It have been used a lot latelly, specially in the start-up community (Codeacademy, Bayanumba, Camera tag and others).
+
+<a class="anchor-float-center" href="http://www.impallari.com/lobster/" target="_blank"><img src="/images/posts/lobster.png" border="0" alt="The lobster font"/></a>
+
+It's a very elegant and playful font, probably victim of it's own success. It have been used so much that I would stay away from it at least for a little while. The font has such personality that jump at you (in a good way).
+
+Check "the site":http://www.impallari.com/lobster/ to learn more about the process and the inspiration behind it.

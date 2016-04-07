@@ -1,0 +1,14 @@
+---
+layout: post
+title: Microsoft MVC framework available
+summary: The CTP release of the Microsoft MVC framework is available with the ASP.NET 3.5 extensions.
+categories: [Programming, Frameworks, .Net]
+---
+
+The CTP release of the Microsoft MVC framework is available with the <a target="_blank" href="http://asp.net/downloads/3.5-extensions/">ASP.NET 3.5 extensions</a>.
+
+<a target="_blank" href="http://www.hanselman.com/blog/ASPNET35ExtensionsPlusMVCHowToScreencast.aspx">Scott Hanselman </a>has a post on this release so does <a target="_blank" href="http://weblogs.asp.net/scottgu/archive/2007/12/09/asp-net-3-5-extensions-ctp-preview-released.aspx">Scott Gu</a>, don't miss the 40 minutes video on Hanselman's, it's a quick introduction to the MVC framework and is worthy even if you already saw the original presentation at Alt.Net that started it all.
+
+I didn't download it yet, since the machines I have at home at this moment don't have VS 2008 but I will do first thing tomorrow morning. There is an extra download for the MVC framework with HTML helpers and data support (not sure what is in it).
+
+I can't be more exited about it.

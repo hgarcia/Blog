@@ -1,0 +1,76 @@
+---
+layout: post
+title: Building just an application or a framework?
+summary: Thinking out loud on these two different ways to approach the problem of building software.
+categories: [Programming]
+---
+
+On the early stages of any project you choose technologies, tools and frameworks that hopefully will help you to deliver the desired product.
+
+And then you start building...
+
+At this point in time, when you start thinking in the overall architecture, is when you may the decision (maybe without knowing it) of what you will build.
+
+You can go one way or another. You can build just an application(s) or an application on top of a supporting framework.
+
+__I'm not talking about ivory tower architecture type of framework here, or RoR, ASP.NET MVC.__
+
+The differences can be very subtle.
+
+In the case of building an application, you just start solving the problem at hand and delivering a solution for it.
+
+In the case of building a framework, you build little pieces of code that support the business and reduce the amount of code to write as the project progress.
+
+They are those little helper classes and routines that made your code more expressive and your life as a developer much better.
+
+You encapsulate some common patterns specific to your application.
+You develop some kind of internal DSL.
+You standardize error handling.
+You create a library of snippets to simplify some repetitive task.
+The list goes on.
+
+h3. Sounds awesome, doesn't it?
+
+Of course it does!
+
+Building a framework is more technical and way more fun than dealing with the usual invoice, details boring tasks.
+
+h3. But....
+
+We need to understand that it takes time away from delivering the real solution.
+
+I think that our first attempt should always be to build the simples possible working solution.
+
+I also believe that building a framework to reduce friction and increase productivity is very important but should be relegate to deliver business value.
+
+I guess that what I'm saying is not to start building a framework from the get go.
+
+h3. So, how you go about it?
+
+This is what worked for me in the past, while building application while growing a framework organically.
+
+Apply "the rule of three":http://en.wikipedia.org/wiki/Rule_of_three_%28computer_programming%29
+
+Wait until you can identify patterns and start building you framework and tooling around those patterns.
+
+_I'm using DSL very loosely here, I should probably refer to it as a set of helper libraries._
+
+Keep your code clean at all times and refactor mercilessly to extract those common constructs and build your "DSL" around them.
+
+If you find yourself doing the same task for a third time, automate it. (see the rule of three again :-)).
+
+In some cases you can automate from the start, like data base migrations, since you know for a fact that you will be doing that all the time.
+
+Specially try to automate code generation.
+
+I'm not talking about drag and drop or wizard type of automations.
+
+Micro code generation. For loops, function and / or class declarations. UI scaffolding (specially data entry forms).
+
+Leverage the tools provided by your code editor or IDE for this. Or write your own console scripts.
+
+Automation will help you to save brain cycles to solve the real complex problems.
+
+After a while this sets of tools, scripts and libraries will be the core of the development for the application.
+
+They should simplify your code and keep it consistent.

@@ -1,0 +1,229 @@
+---
+layout: post
+title: Functional arrays. (Learning Erlang 11)
+summary: The array module is part of the Erlang STLIB. They work a bit differently that you would expect.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+The array module allow us to create and manipulate arrays in a functional manner. We can create both fixed and variable size arrays in a few different ways.
+
+The simples way to create a variable size array is using the <span class="code">new/0</span> function. It will create an array of size 0 using the atom <span class="code">undefined</span> for uninitialized entries.
+
+<pre><code>
+  1> array:new().
+  {array,0,10,undefined,10}
+  2> array:size(A).
+  0
+  3> B = array:set(5, "a", A).
+  {array,6,10,undefined,
+         {undefined,undefined,undefined,undefined,undefined,"a",
+                    undefined,undefined,undefined,undefined}}
+  4> array:size(B).
+  6
+</code></pre>
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
+Using <span class="code">new/1</span> we can make things a bit more interesting. Let's start by creating a fixed size array with 5 elements.
+
+<pre><code>
+  1> A = array:new(5).
+  {array,5,0,undefined,10}
+  2> array:size(A).
+  5
+  3> array:set(5,"a",A).
+  ** exception error: bad argument
+       in function  array:set/3
+  4> array:set(4,"a",A).
+  {array,5,0,undefined,
+         {undefined,undefined,undefined,undefined,"a",undefined,
+                    undefined,undefined,undefined,undefined}}
+</code></pre>
+
+If we try to assign an element over the boundary of the array an exception is thrown. <span class="code">new/1</span> can also take an option or a set of options. Each option is a 2 elements tuple.
+
+<pre><code>
+  1> A = array:new({fixed, false}).
+  2> array:set(2, "a", A).
+  {array,3,10,undefined,
+         {undefined,undefined,"a",undefined,undefined,undefined,
+                    undefined,undefined,undefined,undefined}}
+  3> B = array:new({default, -1}).
+  {array,0,10,-1,10}
+  4> array:size(B).
+  0
+  5> C = array:set(4, "b", B).
+  {array,5,10,-1,{-1,-1,-1,-1,"b",-1,-1,-1,-1,-1}}
+  6> array:size(C).
+  5
+  7> D = array:new([{fixed, true}, {default, 0}, {size, 5}]).
+  {array,5,0,0,10}
+</code></pre>
+
+Instead of passing size as an option we can use <span class="code">new/2</span>, according to the documentation this function is more efficient.
+
+<pre><code>
+  1> A = array:new(10, {fixed, false}).
+</code></pre>
+
+_As with other languages, size can't be a negative number._
+
+h3. Other ways to create arrays and back again.
+
+We can also create arrays from lists, the array will be of the size of the list and the values will be set in the array entries. We can use <span class="code">from_list/2</span> to set the default value.
+
+<pre><code>
+  1> A = array:from_list(["hello", "world", "erlang"]).
+  {array,3,10,undefined,
+         {"hello","world","erlang",undefined,undefined,undefined,
+          undefined,undefined,undefined,undefined}}
+  2> array:size(A).
+  3
+  3> B = array:from_list(["hello", "world", "erlang"], 5).
+  {array,3,10,5,{"hello","world","erlang",5,5,5,5,5,5,5}}
+  4> array:size(B).
+  3
+</code></pre>
+
+We can also use an ordered list of pairs to create an array, the index of the pair will be the position of the value in the array.
+
+<pre><code>
+  1> P = array:from_orddict([{1, "hello"},{5, "world"}]).
+  {array,6,10,undefined,
+         {undefined,"hello",undefined,undefined,undefined,"world",
+                    undefined,undefined,undefined,undefined}}
+  2> Q = array:from_orddict([{1, "hello"},{5, "world"}], -1).
+  {array,6,10,-1,{-1,"hello",-1,-1,-1,"world",-1,-1,-1,-1}}
+</code></pre>
+
+We can also go back from the array to the list or a list of pairs using the <span class="code">to_list/1</span> and <span class="code">to_orddict/1</span> functions.
+
+<pre><code>
+  1> array:to_list(Q).
+  [-1,"hello",-1,-1,-1,"world"]
+  2> array:to_orddict(Q).
+  [{0,-1},{1,"hello"},{2,-1},{3,-1},{4,-1},{5,"world"}]
+  3> array:to_list(P).
+  [undefined,"hello",undefined,undefined,undefined,"world"]
+  4> array:to_orddict(P).
+  [{0,undefined},
+   {1,"hello"},
+   {2,undefined},
+   {3,undefined},
+   {4,undefined},
+   {5,"world"}]
+</code></pre>
+
+When doing so the default values are added into the result, we can avoid this using the <span class="code">sparse</span> version of this functions instead.
+
+<pre><code>
+  1> array:sparse_to_list(P).
+  ["hello","world"]
+  2> array:sparse_to_orddict(P).
+  [{1,"hello"},{5,"world"}]
+  3> array:sparse_to_orddict(Q).
+  [{1,"hello"},{5,"world"}]
+  4> array:sparse_to_list(Q).
+  ["hello","world"]
+</code></pre>
+
+h3. Checking for size.
+
+If you are paying attention you may have notice that we used the <span class="code">size/1</span> function a few times before.
+
+We can also use <span class="code">sparse_size/1</span>. This function checks the content and remove the unset items from the top of the array before returning the size.
+
+<pre><code>
+  1> A = array:new(5).
+  {array,5,0,undefined,10}
+  2> array:size(A).
+  5
+  3> array:sparse_size(A).
+  0
+  5> B = array:set(3, "a", A).
+  6> array:sparse_size(B).
+  4
+</code></pre>
+
+h3. Are we sure we are dealing with an array?
+
+We can check if a variable is bounded to an array or if is a fixed size one with the <span class="code">is_array/1</span> and <span class="code">is_fix/1</span> functions.
+
+<pre><code>
+  1> A = array:new(5).
+  2> array:is_array(A).
+  true
+  3> array:is_fix(A).
+  true
+  4> B = 1.
+  5> array:is_array(B).
+  false
+  6> C = array:new().
+  7> array:is_fix(C).
+  false
+</code></pre>
+
+h3. Fixing, relaxing and resizing.
+
+We can create a fixed array from a variable size one and the other way around.
+
+<pre><code>
+  1> A = array:new().
+  2> array:is_fix(A).
+  false
+  3> B = array:fix(A).
+  4> array:is_fix(B).
+  true
+  5> C = array:relax(B).
+  6> array:is_fix(C).
+  false
+</code></pre>
+
+We can resize an array easily with the <span class="code">resize/2</span> function.
+
+<pre><code>
+  1> A = array:new(5).
+  {array,5,0,undefined,10}
+  3> B = array:resize(10, A).
+  {array,10,0,undefined,10}
+  4> array:is_fix(B).
+  true
+  5> array:is_fix(A).
+  true
+</code></pre>
+
+h3. Mapping, folding and getting values out.
+
+The signature for <span class="code">map/2</span> takes a function as the first argument and the array as the second one.
+
+<pre><code>
+  1> A = array:from_list([1,2,3,4,5,6,7]).
+     {1,2,3,4,5,6,7,undefined,undefined,undefined}}
+  2> array:map(fun(Index, Value) -> Value * 2 end, A).
+     {2,4,6,8,10,12,14,undefined,undefined,undefined}}
+</code></pre>
+
+To avoid the need to check for an unset value in the middle of the array we can use <span class="code">sparse_map/2</span>
+
+<pre><code>
+  1> B = array:from_list([1,2,3,undefined,undefined,5,undefined]).
+   {1,2,3,undefined,undefined,5,undefined,undefined,undefined,
+          undefined}}
+  2> array:map(fun(Index, Value) -> Value * 2 end, B).
+  ** exception error: bad argument in an arithmetic expression
+       in operator  */2
+          called as undefined * 2
+       in call from array:map_3/7
+       in call from array:map_1/5
+       in call from array:map/2
+  3> array:sparse_map(fun(Index, Value) -> Value * 2 end, B).
+   {2,4,6,undefined,undefined,10,undefined,undefined,undefined,
+        undefined}}
+</code></pre>
+
+There are similar functions to fold both right and left.
+
+h3. Next?
+
+Planning to spend some time playing with mnesia, the object/relational databases included with Erlang.

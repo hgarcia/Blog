@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>The Dynamic Programmer</title>
+ <link href="http://blog.dynamicprogrammer.com/atom.xml" rel="self"/>
+ <link href="http://blog.dynamicprogrammer.com/"/>
+ <updated>{{ site.time }}</updated>
+ <id>http://blog.dynamicprogrammer.com/</id>
+ <author>
+   <name>Hernan Garcia</name>
+   <email>hernan@dynamicprogrammer.com</email>
+ </author>
+ {% for post in posts limit:20 %}
+   <entry>
+    {% say_hello post.title %}
+     <title>{{ post.title }}</title>
+     <link href="http://blog.dynamicprogrammer.com{{ post.permaLinkUrl }}"/>
+     <updated>{{ post.date }}</updated>
+     <id>http://blog.dynamicprogrammer.com{{ post.permaLinkUrl }}</id>
+     <content type="html">{{ post.contents }</content>
+   </entry>
+ {% endfor %}
+</feed>

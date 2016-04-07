@@ -1,0 +1,20 @@
+---
+layout: post
+title: PSPad, editors and other tools that I can't leave without.
+summary: I usually use PSPad as my fire up and hack something together editor. I also use it to do a lot of maintenance, I have been even using it to do some c# editing here and there and relying more and more in Nant to do the builds, it even has a plug-in to synchronize with subversion if you want.
+categories: [Tools, General]
+---
+
+I usually use "PSPad":http://www.pspad.com/en/ as my fire up and hack something together editor. I also use it to do a lot of maintenance, I have been even using it to do some c# editing here and there and relying more and more in "Nant":http://nant.sourceforge.net/ to do the builds, it even has a plug-in to synchronize with subversion if you want.
+
+When I need something a little bit more powerful I jump to use "Eclipse":http://www.eclipse.org/ and the myriad of extensions that make this my favorite IDE.
+
+I used to renegade from IDE's but I never was able to completely get rid of them, the reality is that in a lot of cases make development easier, faster and allow the developer to concentrate in some productive task instead of trying to remember the exact casing or syntax to any given language. Of course, as a developer using Microsoft technologies I have been using VS since version 5.0, specially for Visual Basic. The only two things I hate from the line was Interdev in the pre-net era and the first version of VS.NET, It was so buggy. VS 2003 was a lot better even when it has some strange behaviors, specially when dealing with html files in edit mode, controls the mysteriously disappear and the odd generated code. VS 2005 and the new 2008 are a lot better and I find them really good to work with.
+
+I keep installed in my development machines a copy of "Editor4Nant":http://download.cnet.com/Editor4NAnt/3000-2352_4-10531916.html even when I'm not using it a lot lately I find it a little too constraining. It's helpful while you are learning your way around Nant though.
+
+To edit Javascript I found the new support presented by VS 2008 really good, but when I need to do some heavy AJAX stuff I use the Eclipse based "Aptana IDE":http://www.aptana.com/, their support for auto completion and documentation is incredible.
+
+On the pure text editors front I have used "Crimson":http://www.crimsoneditor.com/ and still use "EditPad Lite":http://www.editpadpro.com/editpadlite.html and "EditPlus":http://www.editplus.com/, specially powerful when you need to do some text based manipulation. About that, you need "The RegEx coach":http://www.weitz.de/regex-coach/ in your machine, to test your regular expressions.
+
+"Top Style":http://svanas.dynip.com/topstyle/ used to be my choice when dealing with css but again Aptana have capture my heart in that area.

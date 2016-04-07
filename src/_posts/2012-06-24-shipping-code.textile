@@ -1,0 +1,77 @@
+---
+layout: post
+title: Shipping as the measure of success.
+summary: A not very articulate collection of thoughts on shipping, architecture and development practices.
+categories: [Programming]
+---
+
+I was recently thinking on the different projects I worked so far in my career.
+
+I was trying to weight the success rate of those projects.
+
+The motivation behind the exercise was to understand my personal evolution as a software developer while trying to find any relation between the development practices I have been using and adopting during the last 14 years and the outcome of those projects.
+
+_I consider a project successful if the code gets into production on a reasonable amount of time, people start using it to solve the problem it was designed to solve and it actually solves it._
+
+The first thing I discovered is that I have been very lucky. Most projects I was involved with can be considered to be successful. I was surprised by it, specially due to the industry metrics.
+
+In some of those projects I was a factor for the success of the project, but in most cases was a team effort and my particular contributions was of equal importance to every body else involved.
+
+h3. No many things in common.
+
+I couldn't find many similarities in the projects.
+They were all over the place both with regards of the technologies used and the methodology exercised.
+
+On the web side of things alone most projects involved some of the following.
+Classic ASP, PHP (4 and 5), ASP.NET Web forms, JSP, Spring, Cold-fusion, ASP.NET MVC, Rails, and node.js, with a pinch or PERL to spice things up a bit.
+On the desktop side I primarily used VB (6 and .Net), C# and some Java.
+
+Methodology wise they varied almost as much. On my earlier projects the use of testing was mainly an after the fact thought. On my later projects, we use TDD and / or BDD with different levels of rigor, some type of pair programming and Continuous Integration.
+
+Some projects were the product of a solo effort or in collaboration with a designer. Other projects involved multiple teams, across multiple time zones.
+
+h3. What went wrong on the failed ones.
+
+I can easily identify a common problem with the failed projects. Over engineering, over planning, under (or late) delivering.
+
+h4. Over engineering.
+
+I think that over engineering was probably the worst problem in those failed projects. It's even more dangerous than excessive planning.
+
+We expended so much time worrying about engineering problems and having a nice, clean, elegant architecture, that we forgot that delivery working code was the goal.
+
+h4. Over planning.
+
+Failing to apply YAGNI was probably the second worst sin. An unlimited number of features piled over another set of useless ones made the application over complicate and pretty much useless.
+
+I notice that this happened when the sponsor of the project have no knowledge of the problem domain or over estimate his understanding of the customers.
+
+More often than not most of these features were not what the users need. So, they asked for more and more features.
+
+h4. Under delivering.
+
+I could blame under delivering to the previous two problems, and is surely related.
+
+But some times we under deliver because we don't manage expectations and we don't communicate properly.
+
+It's usually pretty obvious when something is not going to get done.
+
+Sometimes we work overtime and try to pull a few all nighters in what turns to be a death march.
+
+We foul ourselves and think that we will get it done, and sometimes we do.
+
+But that only hides the true, that our velocity is actually lower than what we are measuring. We should acknowledge this and change our release plans and estimations accordingly. (Or change scope)
+
+h3. Deliver on time and succeed.
+
+The (obvious) conclusion is that delivering working software on time will increase your changes for success.
+
+Sure, CI and Testing and TDD help you to not only deliver but to deliver what you intended.
+
+All the practices that a lot of us like to rave about and talk for hours at a time are "very" important but they are never as important as deliver software.
+
+_Today I won't even dream on writing code without some type of Integration server (or script) and I feel dirty when I don't use some type of Test first approach to design my application._
+
+We need to understand that the product (the software) is what we are getting paid for and not the practices we utilize.
+
+I'm not proposing to "just" write code and disregard technical debt, security or any good practice, but making sure that we make conscious and balanced decisions and always favored to "get it done".

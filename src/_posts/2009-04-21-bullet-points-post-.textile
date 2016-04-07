@@ -1,0 +1,21 @@
+---
+layout: post
+title: Bullet points post.
+summary: Common List E-book (free online) Apparently you can also download it from the Apress website's book page but the link was down for maintenance when I tried.
+categories: [Books, Programming, Tools]
+---
+
+* <a href="http://gigamonkeys.com/book/" target="_blank">Common List E-book (free online)</a>.
+* <a href="http://opendbiff.codeplex.com/" target="_blank">OpenDBDiff</a>
+* The latest release was a month ago and is looking really good. I plan to give it a try later this week or next week.
+* <a href="http://ioke.org/download.html" target="_blank">Ioke</a>
+* Now runs on the <a href="http://olabini.com/blog/2009/04/ioke-for-the-clr-released/" target="_blank">CLR</a>. Ola Bini has also a few posts about writing the implementation in <a href="http://olabini.com/blog/2009/04/opinions-on-c-and-net/" target="_blank">C#</a> and <a href="http://olabini.com/blog/2009/04/opinions-on-f/" target="_blank">F#</a>. Ioke is a very interesting young language and Ola have been posting about the decision made and the though process behind the design of it.
+* <a href="http://github.com/olabini/ioke/tree/ac530e7ed74751c9bc5ceed09500ea87275c7d7d/src/ikc/main/NRegex" target="_blank">NRegex</a> and <a href="http://github.com/olabini/ioke/tree/ac530e7ed74751c9bc5ceed09500ea87275c7d7d/src/ikc/main/Ioke.Math" target="_blank">Ioke.Math</a>
+
+As a side effect of implementing Ioke on the CLR, Ola Bini created NRegex. According to the author NRegex is:
+??"a perl5.6 compatible regular expression engine. It supports named groups, is thread safe, supports look ahead and look behind, and is compliant with level 1 of Unicode Regular Expression Guidelines."??
+
+Thanks, Ola. To download NRegex just download Ioke and you will find the NRegex.dll in the bin folder or get the source code from the Git repository.
+Bini also implemented BigNumbers and other nice types in the Ioke.Math library.
+
+??"One thing that really surprised me about .NET was that there is still no support for arbitrary precision math - neither big nums nor big decimals. I ended up implementing that myself, so now there is at least one open source library with liberal license that people can use."??

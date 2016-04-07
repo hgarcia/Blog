@@ -1,0 +1,7 @@
+---
+layout: center
+title: rib
+home: 13679937935
+home_size: small320
+display_size: large1600
+---

@@ -1,0 +1,48 @@
+---
+layout: post
+title: Luca, a quick look at the request object.
+summary: I decided to completely isolate Luca from the HttpRequest object and define my own. The main advantage of this approach is that having a pure javascript object, mocking and stubbing is extremely easy, making testing a breeze.
+categories: [Luca, Programming, JavaScript, .Net, Frameworks]
+---
+
+h3. Characteristics.
+
+I decided to completely isolate Luca from the HttpRequest object and define my own. The main advantage of this approach is that having a pure javascript object, mocking and stubbing is extremely easy, making testing a breeze.
+
+The Request object in Luca exposes the following collections: Query, Form, Headers, Server and Cookies. It also exposes the Path for the request and the Method, these two properties are used by the application to get a function handler to deal with the request.
+
+
+h3. Collections.
+
+|_. Luca Request|_. ASP.NET Request|
+|query|QueryString|
+|form|Form|
+|cookies|Cookies|
+|server|ServerVariables|
+|headers|Headers|
+
+
+The ASP.NET collections are transformed into object literals, so to access an id parameter passed in the QueryString you can access it in two different ways.
+
+
+<script src="https://gist.github.com/704595.js?file=request-collections-params.js"></script>
+
+
+The keys are all lowercase, no matter if you pass them uppercase, mixed case or whatever, at the moment of encoding into an object Luca will make everything lowercase.
+
+
+<script src="https://gist.github.com/704595.js?file=lowercase-params.js"></script>
+
+
+If you pass the same key more than once, you will get an array as the value of the key.
+
+
+<script src="https://gist.github.com/704595.js?file=collections-params.js"></script>
+
+
+At the moment Luca will return a strings or an array of strings as the value of any of the parameters for these collections (it may change in the future).
+If the key doesn't exist null will be returned. It's good form to use a guard to read from these collections with a default value when appropriated.
+
+h3. What happened with the rest of the request?
+
+As I develop the framework most and most of the properties of the request will be implemented, (ex: Files collection, IsAuthenticated, Referer, UserAgent, etc.)

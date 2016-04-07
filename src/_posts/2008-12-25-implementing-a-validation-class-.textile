@@ -1,0 +1,38 @@
+---
+layout: post
+title: Implementing a validation class.
+summary: Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way. ...
+categories: [Programming, .Net]
+---
+
+Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way.
+
+Instead of writing?
+
+
+<script src='http://gist.github.com/561830.js?file=file0.aspx-cs'></script>
+
+
+Now you can write
+
+
+<script src='http://gist.github.com/561830.js?file=file1.aspx-cs'></script>
+
+
+If the parameter is null an Exception of type NullReferenceException will be thrown. Of course, this is not the right Exception in this context, so you should do this.
+
+
+<script src='http://gist.github.com/561830.js?file=file2.aspx-cs'></script>
+
+
+Of course, I may want to check more than one thing at a time, and I may not want to throw an Exception but look at the errors and pass them all at once to a higher tier, maybe a UI so the user can fix the problem. In that case I can use it like this.
+
+
+<script src='http://gist.github.com/561830.js?file=file3.aspx-cs'></script>
+
+
+At this moment the Check class has methods to validate String, IEnumerable, IEnumerable<T>, object, int, decimal, double and DateTime. This is not complete by any stretch of the imagination but I like it so far.
+
+You can download a Release of my base library on <a href="http://code.google.com/p/latrompa/downloads/list" target="_blank">Google code</a>.
+
+You can also download the code from: <a title="http://code.google.com/p/latrompa/source/checkout" href="http://code.google.com/p/latrompa/source/checkout">http://code.google.com/p/latrompa/source/checkout</a>

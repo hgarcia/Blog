@@ -1,0 +1,36 @@
+---
+layout: post
+title: The importance of code review
+summary: I have been working in different companies where the practice of an Agile methodology is in place, but in most of them the part that is always left behind is pair programming and/or code review.
+categories: [Methodology, Programming]
+---
+
+I have been working in different companies where the practice of an Agile methodology is in place, but in most of them the part that is always left behind is <a href="http://www.extremeprogramming.org/rules/pair.html">pair programming</a> and/or <a href="http://en.wikipedia.org/wiki/Code_review">code review</a>.
+
+Let me explain the factors I usually see affecting this decisions.
+
+Pair programming:
+
+It's usually difficult for managers to grasp the concept, they see having two developers working in the same code as a waste, no matter how you explain this to them they just see two head counts doing th work of one, and that is not good for them.
+
+Code review:
+
+Time is of the essence and the believe of some managers is that if the code pass unit testing, integration testing and QA, the code is good and there is nothing to be gain with code review, because the code "works".
+
+In same cases even the developers involved in the project have a hard time with the concept of other developers looking over their shoulders why their work. They are intelligent enough or experienced enough to do the task at hand without any help. They also have a hard time taking critic on their code.
+
+The problem seems to be that managers need productivity and sometimes is difficult to show the benefit of this two practices when a project start, just telling the manager that the code base will be easier to maintain in the future and more robust doesn't cut. It's true that code writing in this way usually goes through the QA cycle faster, since all developers involved have time to fix and improve the code along the way, but you need to have good metrics to show those gains to the management team.
+
+And on the developers side, our larger than normal egos are easily bruised, so the need to present this practices in a way that make then look atractive to the parties involved.
+
+I'm lately encouraging pair programming in my team and we try to mix and match developers with different backgrounds, the idea is that the though process will be different in both of them and this have resulted in some very creative solutions. It also makes it easy for the developers to accept the practice, now they are both teaching and learning from the experience.
+
+We are also doing code review but we changed the name, we now call it "The Refactoring Phase". Of course some refactoring is done while writing the code but this semantic change has made everything easier.
+
+If you are one of those developers that have a hard time with code review I suggest you read two of my previous post about extension methods, thanks to the comments I was able to improve the code, found some bad practices in it, and even found a duplication of functionality in one of the methods.
+
+The code was working before and was able to pass all test, the job was done and fine but thanks to the code review now we have better and more performace code.
+
+Of course this will never happens to you, because all the code you write is perfect :-) That is a normal feeling and it's ok, we need that to be able to deal with the every day  issues of a developer life (l<a href="http://video.yahoo.com/video/play?vid=529579">ook at this video to find out more</a>).
+
+To conclude this rant, if you are a manager: start implementing both this methodologies in some pilot project, you will see the benefits after a while. If you are a developer embrace this practices and try to use them, talk with your colleagues about the problem at hand and try to put something together sitting in the same desk using the same computer you will be amaze of the code that you write and how well this all works.

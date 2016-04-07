@@ -1,0 +1,22 @@
+---
+layout: post
+title: Building the right team.
+summary: They talk about LINQ and the changes needed to support it in c#. There is a very interesting point on Extension methods a feature that fascinate myself and scare me a little bit. It's so cool that I know that we will overuse it at the beginning.
+categories: [General, Methodology]
+---
+
+One of the most difficult tasks as a team lead is to find the right people. 
+
+I'm happy to say that at this moment our team seems to be working well together, but it took almost three years to get to this point. I have been thinking about why it's so difficult to find the right people and I will try to put down my thoughts here. The hiring process for the company may not be adequate for you team, it's not the same to hire a developer that a designer or a marketing person. 
+
+HR should suggest practices but should not impose a pre defined hiring process. Each department should use it's own selection criteria (as far as the general guidelines are the same for the company). The recruiters companies may not understand what you need. 
+
+We worked with several recruitment agencies and there is only one of them that take the time to sit with me to understand what I'm looking for, they ask about our development process, the environment and other details, so they can find the right candidate. This saves me a lot of time, since most of the resumes they send are from candidates that I wish to interview.
+
+It can also be that when I put the job description together, I'm not expressing my needs or the spirit of the company.
+The team change with time (hopefully). The developers get better and your development process should evolve as well (continuous Improvement).
+The company change so the expectations on performance will change. In this case a team member that look as a good fit a few months ago, may not be so today.There is no place for the Primma Donna Developer in a modern development team. A cohesive team is very important. It's good to have different personalities and cultural backgrounds but they should all work well together.
+
+This is even more important on an agile team. You. The team leader may not find the proper way to communicate to the team, and this is difficult to diagnose on your own. You will need somebody from outside to tell you.
+
+What do you think?

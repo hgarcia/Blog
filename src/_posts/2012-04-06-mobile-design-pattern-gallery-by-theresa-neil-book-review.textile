@@ -1,0 +1,43 @@
+---
+layout: post
+title: Mobile design pattern gallery by Theresa Neil, book review
+summary: UI patterns for iOs, Android and other mobile devices by Theresa Neil.
+categories: [Programming, Design, Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920026419.do" target="_blank"><img class="img-float-right"  src="/images/posts/mobile_design_patterns.gif" border="0" alt="RMobile design patterns - book cover"/></a>This book by "Theresa Neil":http://www.theresaneil.com/ covers pretty much any common need you will have while creating a mobile application. It covers a large variety of platforms, clearly illustrating the differences of each one and how to implement a given pattern efficiently and properly due to those differences.
+
+There are at least two (and often more), screen captures from real live application to illustrate how those patterns have been implemented.
+In some cases, there are screens illustrating how not to implement a given pattern as well.
+
+In all cases, each illustration is accompanied by a brief comment to further explain the concepts.
+
+The content is clearly organized, each chapter covering one specific aspect.
+
+* Navigation
+* Forms
+* Tables
+* Search, sorting and filters
+* Tools
+* Charts
+* Invitations (hints to discover features)
+* Feedback & Affordance
+* Help
+
+The last chapter covers some common anti-patterns.
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__
+
+At the beginning of each chapter there is a quick list of the different patterns with a sketch of each one. This give you a nice overview up front and can be really helpful on subsequent uses to quickly find a particular design.
+
+The appendix list all the patterns once more, this time using a bigger version of the sketch, the name and a few description lines. I find myself using the appendix as a quick reference in the e-book version to find a given pattern quickly I only need to skim over a few pages.
+
+h3. The anti-patterns
+
+I particularly enjoyed the anti patterns chapter and the bad implementation examples. Sometimes is easier to understand way a given patterns is suggested when contrasted again a poor implementation or a bad idea.
+
+h3. Conclusion
+
+It's a fast read, fill with good information that will be valid for a long time. I expect that if you get this book, you will be using it as a reference for a long time.

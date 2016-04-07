@@ -1,0 +1,14 @@
+---
+layout: post
+title: ASP.NET MVC RC 1 coming next January.
+summary: At least two really good post today about the future RC1 for the ASP.NET MVC framework.
+categories: [General, Frameworks, .Net]
+---
+
+At least two really good post today about the future RC1 for the ASP.NET MVC framework. <a href="http://weblogs.asp.net/scottgu/archive/2008/12/19/asp-net-mvc-design-gallery-and-upcoming-view-improvements-with-the-asp-net-mvc-release-candidate.aspx" target="_blank">Scott Gu</a> has a very detailed post with some of the new features expected in RC1. <a href="http://haacked.com/archive/2008/12/19/a-little-holiday-love-from-the-asp.net-mvc-team.aspx" target="_blank">Phil Haack</a> talks about the delay and the improvements with the Views.
+
+Scaffolding, views without code behind (yeah!), new HtmlHelper<TModel> and AjaxHelper<TModel> types to build strongly typed HTML and AJAX helpers (this should remove the need for magic string.
+
+The feature that got most exited was the changes to the Views, no code behind is, IMHO the way the Views should be.
+
+I can?t wait to put my hands in this release.

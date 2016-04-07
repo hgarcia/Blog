@@ -1,0 +1,20 @@
+---
+layout: post
+title: DevTeach - The best sessions - 1 (MVC submersion)
+summary: Jeffrey Palermo gave a great presentation about the ASP.NET MVC framework. If you read my blog you know that MVC is kind of an obsession with me. The presentation used the codecampserver project that use the last drop of the code for MVC
+categories: [Architecture, Frameworks, Patterns]
+---
+
+"Jeffrey Palermo":http://jeffreypalermo.com/ gave a great presentation about the ASP.NET MVC framework.
+
+If you read my blog you know that MVC is kind of an obsession with me.<br/> The presentation used the codecampserver project that use the last drop of the code for ASP.NET MVC and the last version of Palermo's MvcContrib as well.
+
+The talk was concise and covered the most important topics (at least from my point of view), it was fast paced and good fun.<br/> There was a very nice moment where he shows up how to use a controller to render different views. <br/>Sometimes return Json data amd sometimes return a web page.
+
+You can also see something similar at <a href="http://www.iridescence.no/Posts/ASPNET-MVC-ActionResult-for-Rendering-JSON-using-JSONNET.aspx" title="ActionResult to render JSON">Iridescence</a>.
+
+It was very interesting to see the architecture of codecamp, he uses a Layered onion architecture, very interesting concept.<br/> I think that you may have used something like this but I never saw this graphical representation and makes a lot of sense. The most traditional representation doesn't work as well as this one. At least for this type of applications.
+
+I recommend that you download the slides for the presentation and take a look at it. One of the things I liked the most is that he include the Test as a layer of the architecture.<br/> This is important because It make the tests first class artifacts on the solution and not an after though or something that can be considered as trivial.
+
+Palermo posted the material for this presentation on his <a href="http://codebetter.com/blogs/jeffrey.palermo/archive/2008/05/16/devteach-session-materials-posted.aspx" title="DevTeach session materials posted">blog</a>.

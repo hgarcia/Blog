@@ -1,0 +1,34 @@
+---
+layout: post
+title: Converting my iPad into a portable office.
+summary: I recently got the Logitech keyboard folio for my trusty iPad 2; couldn't be happier.
+categories: [General, Tools]
+---
+
+I have been using the iPad to do a lot of my peripheral work as a developer and some writing (ex: some of the posts in this blog) and while I have been very happy with it I still have to feel comfortable writing with the screen keyboard.
+
+I tried a few external keyboards without luck. I found them either too flimsy or the key arrangement was odd or they stopped working after a few days.
+
+Two weeks ago I walk into Best Buy looking to buy the Logitech keyboard-cover. I heard really good things about it. Once in the store, one of the guys suggested to try the Logitech Keyboard folio instead.
+
+I played with both of them for a while and I decided to go with the folio.
+
+They both felt good but the folio keyboard feels more "real".
+The key arrangement is "almost" perfect and the way the iPad is hold in place makes for a great experience while writing.
+
+<a href="http://www.flickr.com/photos/theprogrammer/9037070179/in/photostream/" target="_flickr"><img class="img-float-right" src="/images/posts/folio_typing_position.jpg" border="0" alt="Logitech Keyboard folio in typing position"></a>
+
+The iPad is hold into the back with a nice rubber frame that has a magnetic lock in the keyboard just over the first key row.
+
+I was able to type on my lap sitting in a chair or the coach and it make for the perfect arrangement to type while on a place. As a matter of fact I'm writing this post while on a plane.
+
+The only issue I see with the keyboard is that the key for the letter "a" double as the caps lock with the function key.
+
+Also the key for the "q" doubles as the tab key. I find myself hitting the "s" when I try to type "a" for a few minutes each time I came back to it after working in a real computer for a while.
+
+<a href="http://www.flickr.com/photos/theprogrammer/9037073721/in/photostream/" target="_flickr"><img class="img-float-right" src="/images/posts/folio_keyboard.jpg" border="0" alt="Logitech Keyboard folio - keyboard"></a>
+
+Besides those little issues, I'm really happy with the keyboard and the experience of working in the iPad with it have been really good.
+
+I noticed that I'm using it more and more to edit files, make small changes on code directly on Github and a lot of writing. Ex: this post.
+

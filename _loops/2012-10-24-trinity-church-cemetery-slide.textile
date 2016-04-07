@@ -1,0 +1,9 @@
+---
+layout: slide
+title: Trinity church cemetery
+home: 8123909854
+home_size: medium
+display_size: large
+slide: [8123909854, 8123891527, 8123908910, 8123890479, 8123907878]
+title_style: "font-family: Helvetica; font-size: 1.2em;"
+---

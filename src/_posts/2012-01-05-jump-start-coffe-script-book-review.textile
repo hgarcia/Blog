@@ -1,0 +1,15 @@
+---
+layout: post
+title: Jump start cofee-script - book review.
+summary: A very well written book that will instill the need to write some F# code.
+categories: [Books]
+published: false
+---
+
+__Disclaimer: I got this video as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/9780987247827.do" target="_blank"><img class="img-float-right"  src="/images/posts/jump-start-coffee-script.gif" border="0" alt="Jump start cofee-script - book cover"/></a>
+
+"Earle Castledine":http://www.mrspeaker.net/
+
+h3. Conclusion

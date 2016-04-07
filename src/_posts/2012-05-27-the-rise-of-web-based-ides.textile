@@ -1,0 +1,76 @@
+---
+layout: post
+title: The rise of web (and browser) based IDE.
+summary: Run them in you computer or hosted, integrate with your source control provider and extend them with plug-ins as needed.
+categories: [Tools]
+---
+
+As developers we have been involved for the last 15 years in the rapid shift from desktop applications to web based, hosted, rich websites, aka, web apps.
+
+Ironically, the tools we use to accomplish that are mostly desktop bound.
+
+Little by little some of them have been migrated to the web. We can all enjoy the freedom and easy of use of Github, Codeplex or Bitbucket for source control.
+
+Travis or CloudBees for CI and a myriad of project management and bug tracking options.
+
+These are good tools that allow us to get new projects up and running in less time and more efficiently,  but we are still lacking good hosted solutions to create content (code).
+
+That is rapidly changing thanks to some great hosted and web based IDE's.
+
+h3. Cloud 9 IDE
+
+I think that they probably are the first company to successfully create a hosted IDE.
+It's extremely easy to "sign up":http://c9.io/ for Cloud 9 or just use your Github or Bitbucket account to sign in and start editing and writing code immediately.
+
+They offer most of the features you would expect on an IDE and support up to 24 languages at the moment. (Sadly not Erlang in the list at the moment)
+
+_I haven't tried Bitbucket integration, so not sure how good it is._
+
+The integration with Github is fantastic.
+They support not only public repository, but also private ones now. It's free for Open Source projects.
+
+I think that one of the nicer features is the command line integration.
+
+It has great support for keyboard shortcuts, code completion, spell checking and more. You really feel like you are using a native IDE.
+
+You can even provision and deploy your code directly from the IDE into Joyent, Heroku, CloudFoundry or Azure.
+
+_Deploying directly from the IDE may not be a great idea but it's certainly very handy on some cases_
+
+They "open sourced the editor":https://github.com/ajaxorg/cloud9 , so you can download an run locally if you wish, or write plug-ins to customize it's behaviour or appearance.
+
+You can also "install" Cloud-9 as a Chrome app.
+
+h3. Eclipse Orion
+
+The Eclipse foundation, responsible for the IDE/framework of the same name, have been working on their own web based IDE, named "Orion":http://www.eclipse.org/orion/.
+
+They offer a hosted version at "orionhub.org":http://orionhub.org/ or you can download the code and run it locally.
+
+It also ntegrates with Git or you can just upload a zip file with the code you want to edit.
+There are already a series of plug-ins that you can install from a plug-ins management page. This is very similar to the plug-in system on Eclipse.
+
+It's a very alpha product, so use with care.
+
+h3. Cloud-ide
+
+I remember trying this one some time ago. "cloud-ide.com":http://cloud-ide.com is a bit different than the two above.
+
+You need to install the editor in chrome as an application.
+Since it supports local storage, you can work off-line (limited).
+
+Cloud-ide also integrates with Github. It has a lot of similarities with Cloud 9.
+
+h3. ShiftEdit
+
+"ShiftEdit":http://shiftedit.net/ looks to sit between Orion and Cloud 9. Check out the video presentation on their website.
+
+h3. Conclusion.
+
+Not one of the editors I tried is perfect, or feels completely native. They stretch the limits of your browser and CPU, so in older machines sometime they lag a bit.
+
+Cloud 9 is my favorite editor in the category so far and I use it sometimes to write posts for the blog when not at home.
+
+The integration with github is really seamless and the integrated command line window is super handy.
+
+Besides the editors mentioned above, there are some other options for Chrome based editors with different capabilities and languages, just search for IDE in the Chrome web store.

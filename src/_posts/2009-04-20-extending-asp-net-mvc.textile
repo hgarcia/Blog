@@ -1,0 +1,68 @@
+---
+layout: post
+title: Extending ASP.NET MVC
+summary: I want to be positive in this post. So I will just mention this once. The framework is very extensible but It's more difficult that It should. I guess that the problem is not really with the framework, but me trying to make it do something that is not in the spirit of it.
+categories: [Programming, .Net]
+---
+
+I want to be positive in this post. So I will just mention this once. The framework is very extensible but It's more difficult that It should. I guess that the problem is not really with the framework, but me trying to make it do something that is not in the spirit of it.
+
+I had two main requirements: Composed views and dynamic layouts. This means that the same action can use two (or more) completely different layouts, and the content of the different areas on any of those layouts can change from site to site as well.
+
+Besides that, I want my views to be pure html. That means writing my own engine. The good thing is that the framework allows you to plug any view engine that implements IViewEngine.
+
+h3. How to deal with the composition of the view.  
+
+There are two questions here, how and where. 
+
+How: After executing an action in a controller we need to select a view that will be rendered, that view depends not just on the action we just run but in the site we are viewing. It can also depend on some of the context content (like sessions, query string, form post data, cookies, etc.).
+
+We also need to know the widgets that will be in each area of the view layout. That represents a problem since each layout can change between sites and therefore, the number of areas in each layout and the number and type of widgets in those areas will change as well. The view engine can implement a GetLayout method but I don't believe this is the proper place for this logic. Why? Because the widgets classes are mini controllers. They need to load specific data that they need to render or interact with some services to perform a given task.
+
+So I decided to create an ILayoutLocator: The layout locator class has a method GetLayout that returns a layout class.
+
+
+
+<script src='http://gist.github.com/561847.js?file=file0.aspx-cs'></script>
+
+
+  
+The ProngHornLayout class is very simple:
+
+
+
+<script src='http://gist.github.com/561847.js?file=file1.aspx-cs'></script>
+
+
+   
+And check the IProngHornLayoutArea.
+
+
+
+<script src='http://gist.github.com/561847.js?file=file2.aspx-cs'></script>
+
+
+ 
+So the layout locator will use all relevant information in the controller context to find the layout. Layouts are configured in the database, so from there It gets, the layout path, the keys for the Areas and a list of Widgets for each area. The widgets are resolved using an IOC that is injected into the base controller by a custom controller factory.
+
+The widgets interface is simple:
+
+
+
+<script src='http://gist.github.com/561847.js?file=file3.aspx-cs'></script>
+
+
+
+I plan on leave only one or two Render methods but I haven't decided yet on the right API. The Widgets will load the proper template (View) to render and coordinate with the necessary services to get the model they need. They will also use the caching service to reduce the number of calls to the database.
+
+The IProngHornLayout is them pass into a custom ViewDataDictionary the IProngHornViewDataDictionary.
+
+
+
+<script src='http://gist.github.com/561847.js?file=file4.aspx-cs'></script>
+
+
+ 
+Note the Scripts and StyleSheets properties, the Widgets can register in this properties their own dependencies and the ViewEngine should combine all them into one file to minimize load time.
+
+Where: All this happens in the OnActionExecuted method that we override in the ProngHornControllerBase class.

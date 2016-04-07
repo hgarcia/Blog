@@ -1,0 +1,18 @@
+---
+layout: post
+title: Heroes happen here - Toronto
+summary: I'm not always exited about Microsoft launches but the 2008 series (Server, Sql, VS) is quite good. So I went to this event with the highest expectation, hoping, for once, to be able to learn something. I chose the Architect track...
+categories: [General]
+---
+
+I'm not always exited about Microsoft launches but the 2008 series (Server, Sql, VS) is quite good. So I went to this event with the highest expectation, hoping, for once, to be able to learn something.
+
+I chose the Architect track, since I have been playing (and using) VS 2008 since the beta 2 version and I have time to at least give a try to most of the new features, the developer trackwasn't promising, since they were going to demoed all the featuresI already know about.<br/>The architect trackseemedmore promising, the first sessions was about SOA and how to implement an SOA in your company with the new tools, something that I'm actually doing right now.
+
+I should have known better. It started very good but rapidly became clear that was mostly a marketing pitch on how wonderful the new products are and how they are the perfect tools to implement this type of architecture, without given any example or covering any real topic. It was a shame since the presenter looked like a very intelligent and articulate person.<br/>The next session was as wasteful as the first one, and once again I bet that the presenter was dying to give more details, but nothing.
+
+Both sessions ended up calling a Microsoft Partner to present a solution they developed using the new stack, so I lightened up and open my ears hoping to learn, see something. Once again a bunch of slides where, instead of give a problem and a solution to it, they keep repeating the same bullet points that I saw during the whole day.
+
+I want to make clear that I wasn't expecting to see a demo, I was counting with these sessions to be highly theoretical, similar to the sessions you can get in <a href="http://www.infoq.com">infoq.com</a> or some of the chats on <a href="http://channel9.msdn.com/shows/ARCast.TV">ArcastTV</a>, but no, both sessions were a waste of time, at least for me. No real discussion or ideas presented.<br/>I will give it to Microsoft that may be if you are a professional that didn't have time to play with the tools, the presentations may serve as a way to open your eyes, so you go and give them a try, but it wasn't good for me in any level.
+
+Well, that's not completely true, I got a mini basketball hoop and a mini basketball ball for my kid.

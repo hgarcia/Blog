@@ -1,0 +1,15 @@
+---
+layout: post
+title: Goodbye Books and Bits, Hello Dynamic Programmer!
+summary: As you may have noted, the blog changed name, domain and engine. My previous hosting company wasn't able to fix a problem they created with their install of PHP.
+categories: [General]
+---
+
+As you may have noted, the blog changed name, domain and engine. My previous hosting company wasn't able to fix a problem they created with their install of PHP.
+This cause that an annoying Warning pop up at the bottom of each page of my blog, but the real serious problem was that the comments post wasn't working. So I decided to change for Go Daddy. This was a good opportunity to start using a domain a register some time ago: dynamicprogrammer.com.
+
+Since I was switching hosting I decided to move from Wordpress to DasBlog. Nothing wrong with Wordpress. I just wanted to play with DasBlog, I specially like the idea of not having to use a db. (DasBlog use xml files to store all the data).
+
+At the moment I'm using one of the default themes provided with the install. I will need to work on that.
+
+Another change is on the syndication feed, I decided to start using feedburner, so in case I decide to switch to another platform, subscribers to the feed will not be affected.

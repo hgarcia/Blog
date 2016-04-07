@@ -1,0 +1,30 @@
+---
+layout: post
+title: My BDD Session at Toronto Code Camp - slides, code and retrospective.
+summary: Yesterday I presented at Toronto code camp a session on BDD + User Stories and what frameworks to use in the .net work to support the practice.
+categories: [Frameworks, General, Talks, Tools]
+---
+
+Yesterday I presented at Toronto code camp a session on BDD + User Stories and what frameworks to use in the .net work to support the practice. The session went well and most of the feedback was extremely positive, even the negative points have been offered in a very constructive way and I really appreciate that.
+
+The slides and all the code can be downloaded from my github repo here: <a title="http://github.com/hgarcia/DynamicProg/downloads" href="http://github.com/hgarcia/DynamicProg/downloads">http://github.com/hgarcia/DynamicProg/downloads</a>
+
+These are my opinions from the feedback received and how I felt given the talk:
+
+57 persons in attendance that stay through the whole presentation, even with how hot it was in the room.
+
+Lot’s of interest and questions at the end of the talk and one on ones after it.
+
+I need to remember to speak louder. What kills me is that I know about that but can’t seem to be able to manage my voice level. For the next time I will need to use some kind of amplification. More on that later.
+
+I was a bit to ambitious and went overboard with the demos and the frameworks I showcase. I really didn’t want to leave any framework out so people can make their choice, but that may have actually been a bad thing, since I really didn’t focus deeply in any of them.
+
+I show demos with SpecFlow, StoryQ, StorEvil and MSpec.
+
+I didn’t cover/explain user stories as deeply as I should.
+
+Some of attendees mentioned I was to fast, others to slow. I get that it depends when they wrote the feedback. I know I started slow and them I speed up to my normal speed (too fast). So I need to work hard on that as well and manage my speed.
+
+I realize now that the title of the talk should have been more like: BDD frameworks in .net
+
+Thanks to the organizers for the opportunity and everybody that attend my session.

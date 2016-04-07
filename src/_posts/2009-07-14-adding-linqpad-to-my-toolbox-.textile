@@ -1,0 +1,23 @@
+---
+layout: post
+title: Adding LinqPad to my toolbox.
+summary: Tonight I added LinqPad to my toolbox. I did try this before but I guess I wasn't very inspired because I didn't stick with it. Let me tell you, that was a mistake. I have been playing with it for an hour or so and I'm loving it.
+categories: [Tools]
+---
+
+Tonight I added <a href="http://www.linqpad.net" target="_blank">LinqPad</a> to my toolbox. I did try this before but I guess I wasn't very inspired because I didn't stick with it. Let me tell you, that was a mistake. I have been playing with it for an hour or so and I'm loving it.
+
+What is LinqPad you may ask? The name comes from the ability to write Linq queries in it, but it's actually much more.
+I will just use this snipped from their home page:
+
+bq. It's a highly ergonomic <a href="http://www.linqpad.net/CodeSnippetIDE.aspx">code snippet IDE</a> that instantly executes any C#/VB expression, statement block or program ??" the ultimate in dynamic development. Put an end to those hundreds of Visual Studio Console projects cluttering your source folder!
+
+One of the options that impressed me the most of the ability to write small programs directly in LinqPad, hit F5 and they are running. No more open VS to write a quick console app to do some admin task. (Yes, I know that I can use PowerShell or some dynamic language for that.) But using this tool brings this feature to your favourite language C# or VB.
+
+Add this as an external tool to VS and doing quick exploratory testing will be a non issue.
+
+You can also execute SQL if you need to and you can add references to your own types to do complex queries on them or just to consume them from a program.
+
+<a href="http://www.dimecasts.net" target="_blank">Dimecasts.net</a> has <a href="http://www.dimecasts.net/Casts/ByTag/LinqPad" target="_blank">a series of videos on how to use the tool</a> and some other video links can be found in the external links section of LinqPad's site.
+
+Just don't make my mistake, download it, install it and start using it. The tool is free, if you want auto completion you have to shell just 19 bucks (I'm seriously considering it).

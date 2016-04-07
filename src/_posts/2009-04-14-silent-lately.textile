@@ -1,0 +1,65 @@
+---
+layout: post
+title: Silent lately
+summary: I have been silent lately because I have been working on a project based on ASP.NET MVC. The idea is to have the bare minimum to create highly configurable sites.
+categories: [Programming]
+---
+
+I have been silent lately because I have been working on a project based on ASP.NET MVC. The idea is to have the bare minimum to create highly configurable sites.
+
+The main obstacles I saw with the framework “out of the box” is how to create composite views.
+
+This project is driven by a real need in the company I'm working right now. Let's explore together the design and development process that we follow. Please note that I'm not saying the all the decisions taken so far are final or even the right decisions. I have changed my mind several times and there are still some things that I know I need to change to make it better.
+
+Here are the basic requirements:
+
+<ol>
+	<li>Separation of concerns, specially separation between presentation and business logic. </li>
+	<li>Views (web pages) should be written in html and they should validate before compiling. </li>
+	<li>Layouts should be pluggable, supporting different sites with one installation. </li>
+	<li>Content on the pages should be modular, think widgets. </li>
+	<li>Different sites should be able to use different combination of widgets in the same url. </li>
+</ol>
+
+h3. 1. Separation of concerns
+
+The code needs to be easy to maintain and extend. <a href="http://www.lostechies.com/blogs/jason_meridth/archive/2008/03/26/ptom-single-responsibility-principle.aspx" target="_blank">Separation of concerns</a> and the rest of the <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod" target="_blank">S.O.L.I.D.</a> principles helps to achieve this.
+
+The first way to achieve this is to use some of the well know presentation patterns. I'm partial to MVC but I decide to take another look at MVP. I have to admit that both of them were suitable for this project, but at the end of the day, I choose MVC just because I like it better and I have more experience with other frameworks that implement it (<a href="http://struts.apache.org/" target="_blank">Struts</a>, <a href="http://cakephp.org/" target="_blank">CakePHP</a>, <a href="http://rubyonrails.org/" target="_blank">RoR</a>, <a href="http://www.symfony-project.org/" target="_blank">Symphony</a>).
+
+h3. Why ASP.NET MVC?
+
+We choose .Net as our development technology, that left me with a few choices:
+<a href="http://www.castleproject.org/projects/monorail/" target="_blank">MonoRails</a>, <a href="http://www.asp.net/mvc/" target="_blank">ASP.NET MVC</a>, <a href="http://code.google.com/p/fubumvc/" target="_blank">FubuMVC</a>, <a href="http://www.codeplex.com/SharpArchitecture" target="_blank">Sharp Architecture</a>, <a href="http://promesh.codeplex.com/" target="_blank">ProMeshMVC</a> and a few others.
+
+I decided to go with ASP.NET MVC (note that Sharp Architecture is based on it and is more of a complete architecture). I was very tempted with ProMesh. I use it in a few pet projects and I really like it, but the community that is building behind ASP.NET MVC is a very appealing feature.
+
+h3. 2. Views should be valid html.
+
+Ok, I know that this is controversial. I consider myself a pragmatism. I'm a proponent of semantic html and Css based layouts instead of tables.
+
+At the same time I'm not totally against using tables in some situations. But I despise written invalid html. I'm not talking about XHTML strict (although there is not a big deal to do so), I'm just talking about valid HTML 4.0.
+
+That is a problem with most template systems out there. They all include code somehow inside the html, making the html invalid. One of the works around is to write the html, validate it and them moved into the template system of your choice, with the risk of breaking it.
+
+The solution was to create a simple html based view engine. I considered using <a href="http://sparkviewengine.com/" target="_blank">Sparks</a>, that is the closest thing I found to what I was looking for, but It has stuff like this:
+
+
+
+<script src='http://gist.github.com/561846.js?file=file0.html'></script>
+
+
+
+Sparks is awesome, and I will use it in my next project for another site that I'm doing but It won't fit the bill for this one.
+
+h3. 3. Support different sites with one installation.
+
+This is a content management system, so different domains point to the same install but they should support different layouts for the same url:
+
+ex: <span class="code">www.domain.com/movies/list</span> should use the same code but look different to <span class="code">www.anotherdomain.com/movies/list</span>
+
+h3. 4 and 5. Widgets on pages.
+
+The idea is that a layout defines different areas and each can contain different widgets. Again each site should be able to define the widgets per area per layout. The code for the widgets should be independent for the controllers and the actions mapped to a url.
+
+Enough analysis, in a next post some of the code.

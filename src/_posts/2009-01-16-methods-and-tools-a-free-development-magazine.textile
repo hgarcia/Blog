@@ -1,0 +1,8 @@
+---
+layout: post
+title: Methods and Tools a free development magazine.
+summary: Methods and Tools its a free online magazine
+categories: [Programming]
+---
+
+<a href="http://www.methodsandtools.com/mt/download.php" target="_blank">Methods and Tools</a> its a free online magazine, download as pdf, the winter issue has a very good article about BDDD (Behavior Driven Database Development) and the value of Test. They edit four numbers a year and you can have all the issues on the website since 1999.

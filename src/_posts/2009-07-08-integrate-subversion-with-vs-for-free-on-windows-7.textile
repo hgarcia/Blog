@@ -1,0 +1,11 @@
+---
+layout: post
+title: Integrate Subversion with VS for free on Windows 7
+summary: In a previous article I mentioned how to integrate VS 2008 with Subversion for free using a few settings and a script. .When I run the script in Windows 7 all the menu items were grayed out.
+categories: [Tools]
+---
+
+<br>In a <a title="previous" href="/2009/02/14/integrate-visual-studio-with-tortoisesvn-for-free.html">previous</a> article I mentioned how to integrate VS 2008 with Subversion for free using a few settings and a script. (go read the previous article to get all the code).
+When I run the script in Windows 7 all the menu items were grey out. The problem was that the script use the variable %PROGRAMFILES%. For whatever reason in Windows 7 this doesn't work and you have to replace with the hard coded path C:Program files and them everything works.
+
+I guess that you should be able to do the changes in the vb script file before running it.

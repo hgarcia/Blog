@@ -1,0 +1,22 @@
+---
+layout: post
+title: Big Visible Cruise patch to specify projects in the configuration file
+summary: Download the patch to add projects via the configuration file to Big Visible Cruise.
+categories: [Continuous Integration, Tools]
+---
+
+Ok, the patch can be downloaded from the <a href="http://code.google.com/p/bigvisiblecruise/issues/detail?id=32" target="_blank">Issue tracker of the project</a>.
+
+This support the following notation in the app.config.
+
+
+
+<script src='http://gist.github.com/561829.js?file=file0.xml'></script>
+
+
+
+Where each <string> is the name of a project. The project names are case sensitive. If you set a RegEx to filter the projects, the expression will be evaluated first.
+
+This patch have been done over the Revision 125 of the Trunk.
+
+Enjoy!

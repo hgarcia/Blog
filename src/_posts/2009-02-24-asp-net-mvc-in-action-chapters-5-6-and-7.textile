@@ -1,0 +1,10 @@
+---
+layout: post
+title: ASP.NET MVC in Action chapters 5,6 and 7.
+summary: I enjoyed this chapters as well, specially chapter 6 and 7 about extending the framework and preparing your site so it scale. Some of the code examples are using a previous (old) version of the framework. I hope they will be updated for the print version.
+categories: [Programming, .Net]
+---
+
+I enjoyed this chapters as well, specially chapter 6 and 7 about extending the framework and preparing your site so it scale. Some of the code examples are using a previous (old) version of the framework. I hope they will be updated for the print version.
+
+I will like to see examples on using the MvcContrib code whenever is mentioned. 

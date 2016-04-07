@@ -1,0 +1,30 @@
+---
+layout: post
+title: Gamification by design by Gabe Zichermann and Christopher Cunningham.
+summary: If you are looking to add some game mechanics to your next project you need this book.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920014614.do" target="_blank"><img class="img-float-right"  src="/images/posts/gamification-by-design.gif" border="0" alt="Gamification by design - book cover"/></a>A very meaty book. Lots of content packed in 336 pages (e-book version for iPad). I have been intrigue by the subject for the last two years, so when I saw this book I jump into it with renovated interest.
+
+The first six chapters of the book cover multiple aspects of how and why to design a game experience as part of your application in increasing details.
+
+You will learn about player motivations, game mechanics and dynamics, leader-boards, badges, levels, case studies and so much more.
+
+Along the way the authors, "Gabe Zichermann":http://www.oreillynet.com/pub/au/4682 and "Christopher Cunningham":http://www.oreillynet.com/pub/au/4794 will give you some exercises that will help you to design your own gaming experience while following the book.
+
+The case studies are based on Nike Plus, Yahoo answers, Quora and Health month. You will learn what worked and didn't on this applications and see how some of the concepts of previous chapters are applied here.
+
+In the last two chapters, they dig deeper into implementation details. Coding some basic game mechanics, points, rules, levels and badges. Very interesting if you are in charge of implementing it. They also explore the use of a third party platform to gamify your system.
+
+Depending on your technical knowledge these two chapters may be the weaker ones for you.
+
+h3. Conclusion
+
+After reading it I bet you will start finding places where you can implement some of these techniques to make your application more enjoyable and engaging.
+
+This book is very well written and very enjoyable, but is not a light read. You need to sit and be ready to absorb the concepts on the book. I will keep it on my iPad as a reference while implement some of this concepts in some of my side projects.
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__

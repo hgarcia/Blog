@@ -1,0 +1,58 @@
+---
+layout: post
+title: Check.That validation framework reworked
+summary: I just finished a complete re write of my validation framework. This re write was due to feedback received from some of my co workers so I owe to them my thanks. 
+categories: [Programming, Tools, .Net]
+---
+
+I just finished a complete re write of my validation framework. This re write was due to feedback received from some of my co workers so I owe to them my thanks. The validator is not an static class anymore, so you need to create an instance of it.
+
+This allow to do multiple checks at once. Like this.
+
+
+<script src='http://gist.github.com/561834.js?file=file0.aspx-cs'></script>
+
+ 
+In this case I call the execution method List() to return a list that contains all the exceptions found. Actually it returns an IDictionary<string,List<Exception>> where the key is the name of the variable we are checking. In this case I’m using the CheckCondition that returns a custom Exception per error, this are Generic methods that need an object[] for the constructor parameters to use in the custom exceptions and a Type that inherits from Exception.
+
+The framework also has a simple signature, where the CheckCondition will raise a pre defined Type of Exception, building the Exception message with enough detail in it, like variable name, actual value and expected value or value range.
+
+
+<script src='http://gist.github.com/561834.js?file=file1.aspx-cs'></script>
+  
+ 
+This will return the following exceptions with these messages:
+
+
+<script src='http://gist.github.com/561834.js?file=file2.aspx-cs'></script>
+
+
+The new validator also allows us to check multiple variables at the same time, like this.
+
+
+<script src='http://gist.github.com/561834.js?file=file3.aspx-cs'></script>
+  
+
+Throw will throw an exception of type ErrorsCollectionException, this class inherits from Exception but contains a property called ErrorsCollection that exposes the same IDictionary<string,List<Exception>> you can access using List().
+
+This is useful in cases where you want to communicate all errors at once, for example when an end user is entering data in a form and you want to send all the errors back so he doesn’t have to fix each one at a time.
+
+Sometimes you want to check only one thing and throw the specific exception for that given check and not the ErrorsCollectionException, this is very useful to program by contract, where each exception should be handled independently.
+
+
+<script src='http://gist.github.com/561834.js?file=file4.aspx-cs'></script>
+
+ 
+What if you want to do multiple checks and throw only one custom exception? Well you do it like this:
+
+
+<script src='http://gist.github.com/561834.js?file=file5.aspx-cs'></script>
+
+
+This also applies when checking more than one variable.
+
+
+<script src='http://gist.github.com/561834.js?file=file6.aspx-cs'></script>
+
+
+The code can be download as always from: <a href="http://code.google.com/p/latrompa/" target="_blank">http://code.google.com/p/latrompa/</a>

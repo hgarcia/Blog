@@ -1,0 +1,40 @@
+---
+layout: post
+title: Maximum number of attendees for an effective stand-up meeting.
+summary: This post have been inspired by a tweet I saw today, asking that question.
+categories: [General]
+---
+
+Today on tweeter I saw the question about what was the maximum number of attendees for an effective stand-up meeting.
+
+A few answers suggested that number was 7. It's not the wrong answer, but I think there is more to it.
+
+I though on posting back on tweeter but it was obvious that 140 characters weren't enough.
+
+h3. Seven, the magic number and Scrum.
+
+In Scrum we say that the optimum number of team members is 7 plus, minus two. The team is the people doing the work. In some literature the Scrum master and the Product Owner as regarded as members of the team. In other, they are roles that may or may not be part of the team.
+
+I personally consider the Product Owner to be outside of the team, specially when defining the team as those normally referred as "Pigs" in Scrum. (see "The classic story of the pig and the chicken":http://www.implementingscrum.com/2006/09/11/the-classic-story-of-the-pig-and-chicken/)
+
+h3. On where we all stand-up and answer the three questions.
+
+Every day the team meet and, in no more than 15 minutes, answer the 3 questions.
+
+* What I did yesterday?
+* What I will be working on today?
+* Do I have any blocks?
+
+It's very important that every member of the team be present at the stand-up. We use this meetings to keep the team in sync and to encourage communication.
+
+We make sure that the time limit is respected and that the three questions get answered. We avoid rambling on discussing specifics.
+
+h3. So the number was seven!
+
+Well, not really. When it's true that the only people that can speak during the stand-up are the members of the team, there is no problem inviting other stakeholders to it as observers.
+
+As far as they don't try to use these meetings as status reports, having non team members involved can be very beneficial.
+
+h3. Can we answer the question already?
+
+So the number of attendees doesn't have a minimum. The team size is the important thing here, and making sure this size is kept inside the boundaries of the formula of 7 members plus, minus 2.

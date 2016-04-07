@@ -1,0 +1,9 @@
+---
+layout: slide
+title: Sun light in Central Park
+home: 8110013057
+home_size: small320
+display_size: large
+slide: [8110013057, 8110031934, 8110025454, 8110028196, 8110030252]
+title_style: "font-family: Helvetica; font-size: 1.2em;"
+---

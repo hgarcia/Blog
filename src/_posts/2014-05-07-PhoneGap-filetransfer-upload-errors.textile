@@ -1,0 +1,35 @@
+---
+layout: post
+title: PhoneGap errorCode 1 on FileTransfer upload.
+summary: The solution (a solution) for the error code 1 when using the FileTransfer object.
+categories: [PhoneGap]
+---
+
+h3. FileTransferError.code = 1
+
+This seems to be a common error (at least for all the questions about it in the Internet). 
+I hope this short post will save some time to others.
+
+When you follow the documentation for the <span class="code">FileTransfer</span> plug-in you end up with code that looks like this.
+
+<pre><code>
+	
+	var ft =  new FileTransfer();
+    ft.upload(fileEntry.fullPath, encodeURI("http://domain.com/uploads"), onSuccess, onError, getFileUploadOptions(fileEntry.fullPath));
+
+</code></pre>
+
+If you do this you will get an error with code 1.
+
+The solution can actually be found in the documentation of the <span class="code">file</span> plug-in. They introduced a new method to the <span class="code">FileEntry</span> object to help with this problem.
+
+The new revised code looks like this.
+
+<pre><code>
+	
+	var ft =  new FileTransfer();
+    ft.upload(fileEntry.toURL(), encodeURI("http://domain.com/uploads"), onSuccess, onError, getFileUploadOptions(fileEntry.fullPath));	
+
+</code></pre>
+
+You will notice that for the first argument to the upload method we now use the <span class="code">toURL()</span> method of the <span class="code">FileEntry</span>, everything else stays the same.

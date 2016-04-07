@@ -1,0 +1,63 @@
+---
+layout: post
+title: Untokenize, a super simple template for node.
+summary: This one is intended to be used in simple apps and libraries.
+categories: [node.js]
+---
+
+h3. Purpose
+
+This is a very simple library to use in libraries and small application that don't need a full fledge template system.
+
+If you are planning to build large documents with it, you are out of luck. For those cases use some of the existing templating systems in node. eg: ejs, jade, mustache.
+
+This library is mostly to template short strings or small paragraphs.
+
+h3. Install
+
+ <span class="code">npm install untokenize</span>
+
+
+h3. Usage
+
+Create untokenize calling create.
+
+<pre><code>
+
+  var untokenize = require('untokenize').create();
+
+</code></pre>
+
+Replace tokens in code given values as an object literal (or hash) where the tokens in the string are the properties (keys) in the object.
+
+<pre><code>
+
+  untokenize.render("The fox jumped over the {{site.lcb}}barrier{{site.rcb}}", {barrier: "fence"});
+  //The fox jumped over the fence.
+
+</code></pre>
+
+You can also use positional tokens and use an array to pass the values.
+
+<pre><code>
+
+  untokenize.render("The {{site.lcb}}1{{site.rcb}} jumped over the {{site.lcb}}0{{site.rcb}}", ["fence", "fox"]);
+  //The fox jumped over the fence.
+
+</code></pre>
+
+Replaces are globals so you can use the token or position multiple times in the string and all occurrences will be replaced.
+
+h3. Customizations
+
+There is only one customization, but should be used with care. You can replace the token delimiters when creating a new untokenize.
+
+Be careful, some characters may not work well as delimiters, so try and test before settling on a new set.
+
+<pre><code>
+
+  var untokenize = require('untokenize').create({startToken: '<%', endToken: '%>'});
+	untokenize.render("Using the new <%name%>", {name: "tokens"});
+   //Using the new tokens
+
+</code></pre>

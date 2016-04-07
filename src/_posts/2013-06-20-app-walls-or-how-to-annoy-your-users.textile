@@ -1,0 +1,60 @@
+---
+layout: post
+title: App walls or how to annoy your mobile users.
+summary: The ridiculous push of native apps for content sites is ruining the mobile experience for a lot of users.
+categories: [General, Mobile]
+---
+
+I usually complain about the sites that are using pay walls as ways to monetize their content and how frustrating some of these implementations can be.
+
+I understand the need to monetize the content on those sites and I don't blame then for trying. I think that is just annoying and there are probably better ways to do so.
+
+There is another annoying trend growing in the web community and is what I like to call the use of "app walls".
+
+h3. What's an App wall?
+
+You probably encountered app walls multiple times while browsing the web from a mobile device (usually following a link from an external source).
+
+You clicked the link and were grated by a full page modal window that completely covered the content you are looking for.
+
+The modal window is usually and add for the mobile (native) app of the site, with a link to the app store of the device you are using.
+
+h3. Penalizing the user with large downloads and load times.
+
+You are using a mobile device and this "app walls" are extra bytes that you have to download from (in general) a connection with limited bandwidth, and to make things worse, most of these windows are very reach on graphics.
+
+h3. Are you really, really sure you don't want our app?
+
+The "app walls" are in many cases insidious and keep showing up each time you hit a link to the site, in some terrible cases, even while navigating between pages.
+
+This totally disrupts the flow and it will more certainly convince you to stop using that site and move on to something else.
+
+There are many ways to prevent this and is probably one of the places where the use of a cookie makes sense.
+
+Bear in mind that most of this app walls actually set cookies in your machine for tracking purposes.
+
+h3. Our app is tailored for the mobile experience!
+
+A lot of these sites are content sites and not applications, thus the value of a native app is debatable at best.
+In many cases the native experience is worse than the full website in the sense that you can only access a limited portion of the content or the navigation follows a totally new paradigm that you may have to re-learn.
+
+h3. We have a a mobile version for you fully capable full size screen tablet!
+
+You manage to navigate into the site and you are redirected to a "mobile friendly" version. This is "again" a reduced version of the full site with only a portion of the content instead of a responsive version of the main application.
+
+Can somebody explain to me why some sites direct tablet users to the mobile site at all?
+The only difference is that you are in a touch device and just using a few meta tags and sensible CSS brake points should deal with most of the cases for simple content heavy sites.
+
+I will grant that applications are a different story, but even in those cases paying just a little bit of attention while working on the app will help you in 90% of the use cases.
+
+I'm aware that is not really that simple, but I prefer a not optimized desktop website in my iPad than a cripple version intended for my iPhone.
+
+h3. Be a good on-line citizen
+
+If you really think that a native app is a good idea, find a different way to promote it. One example is suggesting to the user to install the native app the first time they ever visit the site in a given mobile devise but without hiding your content.
+
+Maybe one of those little top banners that some sites use.
+
+Even better, add a link to download the app (or a small banner if you want to use graphics) at the end of the article.
+
+That way you guarantee that the audience is somebody that really like the content you offer.

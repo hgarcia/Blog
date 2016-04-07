@@ -1,0 +1,19 @@
+---
+layout: post
+title: tmux, productive mouse-free development - book review.
+summary: A short book packed with information that will make you more productive in little to no time.
+categories: [Books]
+---
+
+<a href="http://pragprog.com/book/bhtmux/tmux" target="_blank"><img class="img-float-right"  src="/images/posts/bhtmux_xlargecover.jpg" border="0" alt="tmux: productive mouse-free development - book cover"/></a>
+
+Two weeks ago "The Pragmatic Bookshelf":http://pragprog.com/ had an offer on shell related books.
+I had my eyes on two of the books included in the offer for a while. The tmux and the Vim books. Combine the offer with a long bus trip ahead or me to New York city and the time was right to go ahead and increase my library.
+
+If you spend any time in the shell of a *nix system you likely have tried multiple ways to increase productivity.
+
+After reading the book and implementing only a few of the things in it I already started to see a significant improvement.
+
+The book is well written, packed with information and very easy to follow.
+
+If you are not already using tmux or if you struggle with it and don't get into building custom configurations I highly recommend you get yourself a copy, spend a day or two with it and you will be happy you did.

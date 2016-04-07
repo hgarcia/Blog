@@ -1,0 +1,20 @@
+---
+layout: post
+title: ASP.NET Mvc in Action. Book review
+summary: Some time ago I wrote a first impressions about ASP.NET MVC in Action from Manning. It was after downloading an reading a few chapters available via the Manning early access program (MEAP).
+categories: [Books]
+---
+
+Some time ago I wrote a first impressions about ASP.NET MVC in Action from Manning. It was after downloading an reading a few chapters available via the Manning early access program (MEAP). The book was written by Jeffrey Palermo, Ben Scheirman and Jimmy Bogard.
+
+A month ago or so I finally got my print copy and I started reading it right away. Let me put it simple, this book is fantastic. If you are planning to do any development with the framework you need to have it in your book shelves.
+
+The content span over just 352 pages and it covers pretty much every single aspect of the framework. It follows a very clear path explaining how the pieces fit together. I think that It can be useful for both the experienced and the novice programmer.
+
+One of the remarkable aspects of the book is the constant focus on testability and customization of the different pieces of the framework to help you reduce friction and improve the design of your application. 
+
+I also felt that the authors took a very pragmatic approach while exposing users to different options on implementing web applications with the framework.
+
+I can see the book as having 3 parts. The first 6 chapters explain and show how to use and extend the framework. Chapters 7 to 10, explore more complex scenarios, like complex sites, use of AJAX, how to leverage existing asp.net features and hosting/deploying your final app.
+
+The last part is a compendium of Best practices, Recipes and an study or other two MVC frameworks, Monorails and Ruby on Rails.

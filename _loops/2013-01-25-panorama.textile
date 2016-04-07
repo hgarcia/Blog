@@ -1,0 +1,7 @@
+---
+layout: center
+title: panorama
+home: 9113592562
+home_size: panoramic
+display_size: large1600
+---

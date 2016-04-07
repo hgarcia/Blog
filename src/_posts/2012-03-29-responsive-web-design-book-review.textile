@@ -1,0 +1,37 @@
+---
+layout: post
+title: Responsive web design, book review.
+summary: Responsive Web Design is more than a buzzword, is almost a necessity for any site that wants to reach the mobile and tablet market.
+categories: [Design, Books, Programming]
+---
+
+<a href="../../../images/posts/marcotte-responsive-web-design.jpg" target="_blank"><img class="img-float-right"  src="/images/posts/marcotte-responsive-web-design.jpg" border="0" alt="Responsive Web Design - book cover" style="width: 26%"/></a>I remember reading "Ethan Marcote's":http://ethanmarcotte.com/ article about "Responsive web design":http://www.alistapart.com/articles/responsive-web-design/ on "A list apart":http://www.alistapart.com back in the day, and getting really excited about it.
+
+Finally, last year, when "the book":http://www.abookapart.com/products/responsive-web-design came out, I got a copy, downloaded to my iPad a Friday evening and couldn't put it down until I finished.
+
+h3. What's in the book.
+
+As is the case with other technical books, the author takes on a project and use it as a case study to demonstrate the different techniques used to create a responsive site.
+
+Starting from a simple grid and how to make it fluid all the way to the use of media queries to adapt your layout and presentation for different devices and screens.
+
+Along the book there are multiple links to resources, articles and examples to complement the different topics.
+I recommend getting the eBook version, that way you will be able to jump to one of the articles or resources while reading the book.
+I did that for topics I didn't know enough or sounded really interesting. It was a good think and keep me engaged.
+
+h3. Lots to learn.
+
+There are lots of tricks in this book. Lots of things to learn or to refresh.
+It presents a well balanced view on how and when to use responsive websites.
+It touch on mobile first briefly (there is a book for that) and covers some of the challenges on working with media (video) and what solutions exit for that.
+
+After reading the book I was able to retrofit some of the code I use in older sites and to redesign my blog (this site).
+
+h3. Conclusions
+
+The book is very well structured and is not for beginners. It's not complicate, but the author make some fair assumptions. You should (at least) know your CSS and HTML to be able to follow along.
+I think those assumptions contribute on making it such a good book.
+
+I keep coming back and using the book as a reference.
+
+A must read for anybody involve in modern web designing or front end programming.

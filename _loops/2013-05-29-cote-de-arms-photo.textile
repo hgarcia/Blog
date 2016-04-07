@@ -1,0 +1,7 @@
+---
+layout: single
+title: Cote D'arms
+home: 8905898236
+home_size: small320
+display_size: large
+---

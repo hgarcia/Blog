@@ -1,0 +1,41 @@
+---
+layout: post
+title: Using the Connection String section for Log4Net and NHibernate
+summary: The other day at the office my boss took a look at our configuration files and he expressed his concern about breaking DRY with all the ConnectionStrings. One for Ado.Net, one for NHibernate, one for our caching db and another for Log4Net.
+categories: [Programming, .Net]
+---
+
+The other day at the office my boss took a look at our configuration files and he expressed his concern about breaking DRY with all the ConnectionStrings. One for Ado.Net, one for NHibernate, one for our caching db and another for Log4Net. Not only that but they are all over the place in the file, not all together.
+
+On top of that,, some of those are the same, so changing a username or a password means changing them all over. Of course he was right.
+
+h3. NHibernate solution
+
+For NHibernate I just use the connection.connection_string_name property instead of the connection.connection_string. This points to a connection string defined in that section of the configuration file with the provided name.
+
+
+<script src='http://gist.github.com/561855.js?file=file0.xml'></script>
+
+
+h3. Log4Net solution
+
+For Log4Net was not so easy. I found references to a patch that provides similar functionality to the one observed in NHibernate and references to that patch been applied to the latest release, but It doesn't seem to be there.
+
+So the solution I came with is to extend the default AdoNetAppender and in the constructor of the new class try to read the connection string from the configuration file, the only problem with this approach is that I'm hard coding the expected name of an AppSetting that will contain the name of the connection string.
+
+_Utils.GetAppSetting and Utils.GetConnectionString are utility methods that I use to read from the configuration files._
+
+
+<script src='http://gist.github.com/561855.js?file=file1.aspx-cs'></script>
+
+
+In your configuration file you need to have and appSetting that look like this:
+
+
+<script src='http://gist.github.com/561855.js?file=file2.xml'></script>
+
+
+Them you will need to tell Log4Net to use this appender for logging so in your log4net.config file you should do something like this:
+
+
+<script src='http://gist.github.com/561855.js?file=file3.xml'></script>

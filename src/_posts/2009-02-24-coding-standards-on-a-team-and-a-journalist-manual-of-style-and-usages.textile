@@ -1,0 +1,43 @@
+---
+layout: post
+title: Coding standards on a team and a journalist Manual of Style and Usages
+summary: If your team is comprised by more than one developer you should have some coding guidelines and standards in place. (I can make the case to have this guidelines even if you code along but that can be another post).
+categories: [Methodology, Programming]
+---
+
+If your team is comprised by more than one developer you should have some coding guidelines and standards in place. (I can make the case to have this guidelines even if you code along but that can be another post).
+
+I'm not talking about software design or things like the S.O.L.I.D principles, but more “down to the code” styles. Ex: how to name private fields, Constants, Methods, etc. 
+
+Let me talk a little bit about my other profession. Journalist. As a young journalist I was teach and trained on how to write (in my case mostly write for radio and print media). I was teach about theory.
+
+h3. Style and usages in the media
+
+I was taught on how long time ago the journalist wrote a news with a "square model"; telling a story usually starting from the beginning of it from a chronological point of view an moving forward.
+I was taught about the invert pyramid style or how you write (and read) news today. Start writing the most novel event and move back in time, give some context as the news develop.
+I was taught about the questions that you need to answer in your story, <a href="http://www.amazon.com/Journalism-Who-What-When-Where/dp/020537204X" target="_blank">Who, What, When, Where, Why and How?</a>
+I was taught about the importance of the order in witch those questions need to be answered. You need to learn those things to be a good journalist. 
+
+And them you start working as an intern, typing like crazy the notes that a more seasoned, older, and wiser journalist through to you with a few minutes to spare until the deadline. You apply what you learned and you learn more from the critics this “old guy” will give you. With time you learn to make exceptions, you learn when some of the questions don't need to be answered and when they can be answered out of order.
+
+Now there is one set of rules that doesn't matter how much you learn and how experienced you are, you will need to follow. Those are the editorial line of the medium you are working on, the Manual of Styles and Usages. (See <a href="http://www.amazon.com/York-Times-Manual-Style-Usage/dp/0812963881" target="_blank">New York Times</a>, <a href="http://www.amazon.com/Washington-Post-Deskbook-Style/dp/0070684146" target="_blank">The Washington Post Manual of Style</a> and others).
+
+Why should you follow this rules? You are a good journalist, you probed yourself in the field. Well you still have to follow this style guidelines because the newspaper, radio or TV network have to appeal to certain demographic. They are expecting to read a newspaper that reads like a book, with pretty much the same style. They expect certain perspective in the way the news is treated. 
+
+There are exceptions and that's what the opinion columns are for. But even those columnist are selected by the editor.
+
+h3. Style and usages in software development
+
+You can be a programmer without learning any of the design patterns or O.O. design concepts. You can a programmer without caring about the S.O.L.I.D principles. And of course you can be a programmer having complete disregard for any style on your code. Your code may work. Your code may even work well enough to do the trick, to solve the problem at hand.
+
+Of course you want to be a good programmer. And so you will need to learn about all those things, and refactoring techniques, and other languages besides the one you use in a daily basic, and tools. 
+
+And them you will notice that you read your code way more than you write it. And you share your code with other developers and you read their code as well.
+
+So you want them to understand your modules and you been able to understand their code (or the changes they made to yours). You want to spend your time following the code, reading it and not deciphering it. 
+
+So you will realize that you need those coding guidelines. Of course you want to draw from the common knowledge and advise of more experienced programmers and you don't want to create rules that will look foreign to other developers that use the same programming language. You don't want to use java conventions on C# code for example, the code will look strange for other c# developers.
+
+Rules should be as detailed as needed. And rules should be allowed to evolve with time and with a better understanding of what works and what doesn't for the team. Consistency among your code base will increase productivity, prevent mistakes (since understanding the code is easy) and increase maintainability. All these will led to higher quality.
+
+And higher quality is what we want.

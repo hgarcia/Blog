@@ -1,0 +1,28 @@
+---
+layout: post
+title: Programming Computing Vision with Python by Jan Erik Solem.
+summary: A fairly in depth book that is better read with a computer open beside you to follow along.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920022923.do" target="_blank"><img class="img-float-right"  src="/images/posts/programming-computer-vision-with-python.gif" border="0" alt="Programming Computing Vision with Python - book cover"/></a>
+
+If you ever wondered how to analyze and image to recognize shapes and objects, how to search on them or how to build a panoramic view from a series of pictures (among other things) this is the book for you.
+
+"Jan Erik Solem":http://www.janeriksolem.net/ takes the challenge and with the help of a bunch of Python modules show you how to solve those and other problems.
+
+There is a lot of math in the book and you should be comfortable reading it or at least understanding it at a high level.
+
+I found myself skipping some paragraphs and sometime whole pages here and there when the author went a bit to deep for me to follow along.
+
+_This is a math heavy book on a math heavy subject._
+
+The problem on doing so is that the math will help you to understand what the code is doing, so you will have to go back and read the parts you skipped if you really want to understand what's going on.
+
+h3. Conclusion
+
+This is not a casual read. If you are serious about image processing and computer vision this book is great. If you only care about learning a few tricks the book is not for you.
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__

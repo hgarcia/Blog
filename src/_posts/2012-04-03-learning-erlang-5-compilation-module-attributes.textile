@@ -1,0 +1,107 @@
+---
+layout: post
+title: Module attributes and compilation (Learning Erlang 5).
+summary: There are a myriad of directives you can use in your Erlang modules, even define your owns.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
+We saw some attributes in "the previous post in this series.":http://blog.dynamicprogrammer.com/2012/03/26/learning-erlang-4-modules-and-functions.html
+
+An attribute take the form of: <span class="code">-Tag(Values).</span> where Tag should be an atom and Value a literal term.
+Let's see what types of attributes we have and how we use them.
+
+h3. Predefined module attributes.
+
+Predefined attributes need to be located on top of the module and before any function declaration.
+
+h4. Module.
+
+The only mandatory attribute is the <span class="code">module</span> attribute and should be used first. The module attribute take one argument that's the name of the module. The name of the module is the same as the name of the file without the .erl extension.
+Ex: if you write the code for your module in a file by the name dateformatter.erl the attribute will be:
+
+<span class="code">
+  -module(dateformatter).
+</span>
+
+h4. Exports.
+
+The exports attribute will take a list of functions and arity to export for consumption by other modules. It will define the module interface.
+
+<span class="code">
+  -exports([isoformat/0, isoformat/1, utc/0]).
+</span>
+
+h4. Import.
+
+The import attribute is use to import functions from another module to use it as local.
+
+__According to my readings the use of the import attribute is frown upon in the Erlang community. See below.__
+
+For example, when doing this.
+
+<span class="code">
+  -import(list, [last/1, max/1, merge/1, merge/2]).
+</span>
+
+We can then use those functions directly in our code like this,
+
+<span class="code">
+  L = last(['first', 'second', 'last']).
+</span>
+
+Instead of
+<span class="code">
+  L = list:last(['first', 'second', 'last']).
+</span>
+
+The use of import tends to reduce code readability, since you won't be able to know where a function have been defined without scrolling to the top of the file each time. For that reason, it's use is discouraged. I think it's a fair concern.
+
+h4. Vsn.
+
+You can use the vsn attribute to indicate the version of a module. This attribute will default to the md5 checksum of the file.
+
+h4. Compile.
+
+This attribute is used to pass parameters for the compiler, you can pass a single parameter or a list.
+
+<span class="code">
+  -compile([export_all]).
+</span>
+
+Will export all functions in a module, do not use this for production unless you really mean it. Remember that the functions that you export represent the interface of your module.
+
+h3. Custom attributes.
+
+You can easily create custom attributes. Custom attributes can only take one argument.
+
+<span class="code">
+  -company({name, "Dynamic Programmer"}).
+  -author("Hernan Garcia").
+  -awesome_module(true).
+</span>
+
+h4. File and Line.
+
+File and Line are predefined macros than can be ovewriten using the file/2 attribute.
+This attribute is used by code generation tools to map the generated code to the code input by the programmer. This will help with debugging.
+
+<span class="code">
+  -file('template.erl', 35).
+</span>
+
+h4. Module info functions.
+
+The compiler inserts and exports two special functions that you can call to access the module information. module_info/0 and module_info/1
+
+This is the output on calling those functions in our "htmltags module.":http://blog.dynamicprogrammer.com/2012/03/26/learning-erlang-4-modules-and-functions.html
+
+<script src="https://gist.github.com/2292553.js?file=module_info.erl"></script>
+
+h4. Preprocesor, behaviours, macros and records.
+
+For the sake of completeness you may want to check some of the other attributes used to "define behaviours":http://www.erlang.org/doc/design_principles/des_princ.html#id56732, "insert files or define macros":http://www.erlang.org/doc/reference_manual/macros.html and "records.":http://www.erlang.org/doc/reference_manual/records.html
+
+We will be dealing with them in future posts when we address those subjects.

@@ -1,0 +1,113 @@
+---
+layout: post
+title: PartCover.Net and CC.Net Part 2 - Making it pretty.
+summary: In my previous post I show how to integrate PartCover reports into CC.Net and promise to look into make the reports look a bit nicer and try to integrate the Coverage metrics into the statistics reports. So I dust off my xslt ...
+categories: [Continuous Integration, Methodology, Testing, Tools, .Net]
+---
+
+In my previous post I show how to integrate PartCover reports into CC.Net and promise to look into make the reports look a bit nicer and try to integrate the Coverage metrics into the statistics reports. So I dust off my xslt, pick up two of my favorite books on XML (XML Hacks and XML for the world wide web) open PSPad and started to play around until I got something that I like.
+
+Click <a href="../../../images/posts/partcoverccnetxsl.zip" title="Click here to download the stylesheets." target="_blank">partcoverccnetxsl.zip</a> to download the stylesheets. 
+
+h3. The summary report
+
+The for the summary I want to show a coverage percentage per each assembly in the project so I based my xsl in the assembly.report.xslt provided with PartCover.First I changed the table tag and the first row from this:
+
+
+
+<script src='http://gist.github.com/561827.js?file=file0.html'></script>
+
+
+	
+To:
+
+
+
+<script src='http://gist.github.com/561827.js?file=file1.html'></script>
+
+
+	
+Then I modified the colours used to identify the different percentage of coverages and made the fonts bold.
+
+_I made move all the styles into a stylesheet later on, for now some stuff is hardcoded in the xsl file, what I don't particulary like. When possible I used pre-defined classes already available in the existing cc.net css files_
+
+
+
+<script src='http://gist.github.com/561827.js?file=file2.xslt'></script>
+
+
+
+Then I added this lines of code to alternate the style for each row in the summary.
+
+
+
+<script src='http://gist.github.com/561827.js?file=file3.xslt'></script>
+
+
+
+This code needs to be added after opening the table row (tr element) inside the for-each loop and before creating the cell (td element) or you will have an error on runtime when the server tries to generated the report. 
+
+I also decided to modify the colour used for 0% coverage, in the original stylesheet it used the same colour for coverage between 0 and 20 percent. I wanted to use a bright red for assemblies with no coverage, so I added the following line after we calculate the coverage percentage.
+
+
+
+<script src='http://gist.github.com/561827.js?file=file4.xslt'></script>
+
+
+
+And I modified this line:
+
+
+
+<script src='http://gist.github.com/561827.js?file=file5.xslt'></script>
+
+
+
+to look like this:
+
+
+
+<script src='http://gist.github.com/561827.js?file=file6.xslt'></script>
+
+
+
+Notice that now I'm checking for $coverage greater than 0 and I deal with $coverage = to 0 in my new line.
+
+Here is the end result:
+
+<img src="/images/posts/sp32-20080612-224357.png" alt="PartCover coverage per assembly" border="0"/>
+
+h3. Adding more details to the details report.
+
+Again I started using the supplied stylesheet and I made the same changes (or very similar changes as in the previous file). I wanted to provide not just measures by class, but also have detailed measures by method and I wanted this to work the same way as the Nunit report does.
+You have an arrow besides the class name than when clicked displays the details for the class. To do so I copy some of the code from the unittest.xsl style from cc.net. First you need to declare the applicationPath parameter:
+
+
+
+<script src='http://gist.github.com/561827.js?file=file7.xslt'></script>
+
+
+
+Them you include the javascript to show and hide the details and the code to display the arrow; finally a for each to select all the methods inside the class and calculate the coverage.
+
+I decided to mark anything less than 100% as red. It's not because I think that we should achieve 100% of test coverage and if not the project is not complete, it's just that I wanted and easy way to find methods that may need to be tested in more details.
+
+Here is an image of the result with no details showing.
+
+<img src="/images/posts/sp32-20080612-234824.png" alt="PartCover coerage per method - hidding details" border="0" />
+
+And here with details open
+
+<img src="/images/posts/sp32-20080612-234848.png" alt="PartCover coerage per method - showing details" border="0"/>
+
+h3. Adding the statistics
+
+This actually went very well, open your ccnet.config file and add the following under the statistics tag of your project.
+
+
+
+<script src='http://gist.github.com/561827.js?file=file8.xml'></script>
+
+
+
+The only part that I have to give it any thought at all was in the xpath expression to calculate the project coverage percentage, but I think that I got it, notice the +1 in the second part of the expression, this is to prevent division by zero errors, this shouldn't affect the coverage percentage calculation in any meaningful way.

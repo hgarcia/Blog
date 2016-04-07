@@ -1,0 +1,14 @@
+---
+layout: post
+title: Architecture by Baseball
+summary: I just came across this series of posts, Architecture by Baseball.This series seems to be writting for me. I'm a baseball fanatic and I use techniques borrowed from baseball to manage my teams.If you are in a Team lead position or doing some arch...
+categories: [Architecture, Books]
+---
+
+I just came across this series of posts, <a href="http://eraserandcrowbar.com/ArchitectureByBaseball.aspx" title="Architecture by Baseball" target="_blank">Architecture by Baseball</a>.
+
+This series seems to be writting for me. I'm a baseball fanatic and I use techniques borrowed from baseball to manage my teams.If you are in a Team lead position or doing some architecture work as part of a team (specially if work in an Agile team) I suggest you read this serie.
+
+I also want to recommend the book <a href="http://www.amazon.com/Joe-Torres-Ground-Rules-Winners/dp/0786884789/ref=pd_bbs_sr_1?ie=UTF8&amp;amp;s=books&amp;amp;qid=1220674868&amp;amp;sr=1-1" title="Joe Torre's Ground Rules for Winners: 12 Keys to Managing Team Players, Tough Bosses, Setbacks, and Success" target="_blank">Joe Torre's Ground Rules for Winners: 12 Keys to Managing Team Players, Tough Bosses, Setbacks, and Success</a>.
+
+It doesn't matter if you are a Red Sox fan or you hate the Yankees, this is a good book about management in a very competitive and stressful position.Good readings!

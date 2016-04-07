@@ -1,0 +1,24 @@
+---
+layout: post
+title: Super Scratch programming adventure by The LEAD Project.
+summary: A very entertaining book to introduce young kids to programming.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/9781593274092.do" target="_blank"><img class="img-float-right"  src="/images/posts/super-scratch-programming-adventure.gif" border="0" alt="Super Scratch programming adventure - book cover"/></a>
+
+I started to show Scratch to my son a few months ago. He is just 5 and even when he can't really read he had a lot of fun moving the blocks around and doing some of the exercises in the Scratch website.
+
+So, when I saw this book from O'Reilly I got a copy and we sat together with it. He got immediately into it. He enjoys the format of the book with the full color illustrations and the overarching story.
+
+I found that is a good way to combine reading, comics and programming in a fun and educative way.
+
+The book is targeted for older kids what I think is clever since they can take full advantage of it. But even with the age difference he is having lots of fun.
+
+h3. Conclusion
+
+I will certainly recommend this book for any parent that want to introduce their kids to the subject. If you are not a programmer don't worry, the book is easy to follow along and very well written.
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__

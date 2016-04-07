@@ -1,0 +1,50 @@
+---
+layout: post
+title: Using tests as a learning tool
+summary: I try to practice TDD most of the time these days. I don't write new code without a test first. A few years ago write the test first was something that I understood from an intellectual point of view but it sounded impractical.
+categories: [Methodology, Programming, Testing]
+---
+
+I try to practice TDD most of the time these days. I don't write new code without a test first. A few years ago write the test first was something that I understood from an intellectual point of view but it sounded impractical. Today I can imagine going back to my old practices.
+
+So, now I'm one of those advocates that try to convert other developers to the practice. I try to draw from my experience and I try to address their concerns as a challenge to discover new practices and improve mines.
+
+Recently I came across this challenge. How you can write your test first when you are learning a new API of a library? If you practice TDD you will said something like, but that s the perfect scenario to use TDD! Now, that's true but is not immediately evident to a developer that is just starting on the practice.
+
+What we need to understand is that sometimes we can use the test as a learning tool. We also need to understand that we will refactor the test code. We can even use code that we originally used in our test and move that into our implementation.
+
+Today I had the perfect example: we needed to convert a string into a DateTime object, the string is in the following format: 2009-01-07-23-15-09. 
+
+Our first implementation looked something like this:
+
+
+
+<script src='http://gist.github.com/561836.js?file=file0.aspx-cs'></script>
+
+
+
+This worked but was messy, and besides adding some more test will make it fail easily. For example passing a malformed string. In those cases we wanted to have an exception raised that was meaningful. We imagine that we should be able to use DateTime.ParseExact() but we didn't really know how it worked. So we changed our test like this.
+
+
+
+<script src='http://gist.github.com/561836.js?file=file1.aspx-cs'></script>
+
+
+
+And the test to check for the exception
+
+
+
+<script src='http://gist.github.com/561836.js?file=file2.aspx-cs'></script>
+
+
+
+We run the test and we see it pass, so them we just copy and paste the code into the implementation of the client function and we change the test back.
+
+
+
+<script src='http://gist.github.com/561836.js?file=file3.aspx-cs'></script>
+
+
+	
+This is a trivial example and you may think that we probably should change the code in the implementation right away, and that may be ok in this case, but using this practice all the time make it natural later on when you have to deal with a more complex API, like using some third party component.

@@ -1,0 +1,33 @@
+---
+layout: post
+title: Dealing with errors on node.js.
+summary: JavaScript has the usual try catch construct. In node, that's not always enought.
+categories: [Programming, JavaScript, node.js, Frameworks]
+---
+
+You may be use to handle exceptions/errors in javascript using the try catch construct.
+
+
+<script src="https://gist.github.com/985180.js?file=try-catch.js"></script>
+
+
+In node.js (since is javascript), you have this construct available and works, most of the time, as expected.
+
+<em>Actually try/catch works exactly as expected all the time, but keep reading.</em>
+
+Things change when you use some modules, specially async modules, that raise an 'error' event.
+The default action of an 'error' event is to print the stack and exit the program. "Go ahead check the docs I will wait.":http://nodejs.org/docs/v0.4.7/api/events.html#events.EventEmitter
+
+In that case even if you surround the offending code on a try catch block your program will exit while complaining very loudly of whatever happened to brake it.
+
+
+<script src="https://gist.github.com/985180.js?file=non-efective-try-catch.js"></script>
+
+
+I bet that, that's probably not what you will like so, "always" provide a handler for the error event and handle the error accordingly in that handler.
+
+
+<script src="https://gist.github.com/985180.js?file=proper-error-event.js"></script>
+
+
+Once you know about it is obvious, it can be tricky sometimes not knowing all the api's of the different modules.

@@ -1,0 +1,30 @@
+---
+layout: post
+title: Async in c# 5 - book review.
+summary: A good overview of asynchronous programming in c# 5 with the help of the new async and await keywords.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920026532.do" target="_blank"><img class="img-float-right"  src="/images/posts/async-in-csharp-5.gif" border="0" alt="Async in c# 5.0 - book cover"/></a>
+
+This short book (139 pages in the ePub version) serves as a good introduction and quick reference on how to utilize the new <span class="code">async</span> and <span class="code">await</span> features in C# 5.0
+
+It also explains in detail how asynchronous programming works in .NET when using these features and some of the consideration to have when designing an asynchronous API.
+
+If you are experienced with asynchronous programming in .NET or any other platform you can very well skim over the first three chapters. They serve as an introduction for what asynchronous programming is and some of the gotchas you will find if you are not used too.
+
+The book gets to the meat of it on chapter 4 and keeps progressing nicely into more complex and real world scenarios.
+
+__I'm particularly glad to see a chapter on how to address testing with asynchronous code.__
+
+Aside from the main content some of the chapters I really enjoyed are Chapter 13 that deals with Async in WinRT applications and Chapter 14.
+
+Chapter 14 explains how the compiler transform your code and how some of those "magic" trick work. I think is very important we get an understanding of it, specially if we have to debug some obscure bug later on.
+
+Not sure if I will remember those details, but at least I know I have a place to go back and use as a reference during some of those debugging sessions.
+
+All and all a very nice read.
+
+__I have to admit that some of the language in the first three chapters of the book put my slightly off, specially the constant complaining on the use of callbacks. If the same happens to you keep reading it gets much better.__

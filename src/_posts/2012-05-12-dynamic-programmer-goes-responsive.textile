@@ -1,0 +1,113 @@
+---
+layout: post
+title: A walk through the redesign process (and evolution) of the site.
+summary: What it took me (a programmer), to redesign the site and incorporate some responsive elements.
+categories: [Programming, Design]
+---
+
+The site have been around since august 2007. During these almost five years it went through four major redesigns and three different engines. If you just care about the latest responsive re-design "skip the next sections":#responsive
+
+h3. The beginnings
+
+When I started blogging in English I launched the site in a self hosted Wordpress installation.
+
+I used some free template I found on line with some minimal customization. The site used to have a black background and white text.
+
+At first I only have articles in it but thanks to how easy it is in Wordpress to install plug-ins, I added a books section with links to books in my library. A tag cloud. A poll and a few other things.
+
+At didn't take long for the site to feel cluttered. At the same time I started to get some nasty MySql errors due to some changes made by my hosting provider that weren't solve in time.
+
+It was time to move the blog to a new home.
+
+h3. The .Net era
+
+After looking around for an alternative I decided that I was a good time to switch engines and re-design the blog at the same time.
+
+I was also looking for a db less solution, so "DasBlog sounded like a good alternative.":http://blog.dynamicprogrammer.com/2008/12/12/goodbye-books-and-bits--hello-dynamic-programmer-.html
+
+I was able to port all the post using a nice little export utility from my rss feed into xml.
+
+I did customize the design for the site a bit but nothing to get crazy about.
+
+DasBlog worked really well and I really liked using Microsoft Live Writer to write my posts off line and push into the blog.
+
+It was my platform for the next year and a half.
+
+h3. Ruby, Jekyll and HTML 5
+
+I was playing with ruby a lot at the time and getting really into HTML5. I always care about semantic HTML but somehow neglected on my personal blog until them. "It was time to change that.":http://blog.dynamicprogrammer.com/2010/09/02/migrating-the-blog-from-dasblog-to-jekyll.html
+
+The design was nice (in general), specially after changing the default fonts with web fonts.
+
+<a href="../../../images/posts/blog_old_desgin_small.png" target="_blank"><img src="/images/posts/blog_old_desgin_small.png" border="0" alt="Previous design"/></a>
+
+h3. Clutter, screen sizes and really boring.
+
+As I said the design was "OK" but not great. It was busy. The search by Google, while functional, was really ugly. The twitter feed didn't help either, and the place of the badges add clutter.
+
+This was also my first attempt to create a typography based design without much luck.
+
+The color schema was dated and I feel the site design was boring.
+
+On top of that, it didn't work in screens to big or to small.
+
+I started using the Mipin service to produce a mobile version of the site long time ago. It was a stopgap solution and I new I need to address the issue. I didn't have an answer for the most modern, bigger screens.
+
+<a name="responsive"></a>
+
+h3. Going responsive.
+
+Or adaptive if you wish.
+
+I started by scraping all the custom CSS, just keeping the reset and IE hacks.
+Set a baseline for the body and switch to clean up the template markup.
+
+I wanted to make the content the main focus of the site and keep it as minimalistic as possible.
+
+For the main layout. I redid the markup for the header and navigation section.
+
+Also added a "fat footer" using a div, leaving the footer element as a semantic footer for the main site. I decide to bury category navigation in the footer as well to some external links. I may do some more work in here at a later date, for now it looks OK.
+
+I completely remove the aside section and simplified all the markup to keep it really simple with the minimum nesting need it.
+
+For the color scheme I decided to go monochromatic for most of the site with a touch of colour in the title and a tint on the footer. The rest are different shades of gray. There isn't either white or black anywhere on the site.
+
+Once the structure was in place I started to work on the styles. I decided to start designing for a big screen first instead of going small screen (or mobile) first, for no specific reason.
+
+I establish my main content area width to just 60% (equiv to 740 px on my screen), from there I set most of my dimensions in percentage and em's.
+
+It took me some time to get a font set that I was happy with, without going too exotic.
+
+I decided to use League for the header and menus, article headers use Raleway, the rest of the site uses Helvetica with fall backs to Verdana, Arial and sans-serif.
+
+I establish the proper dimensions for the headers, paragraphs and other elements after getting the proper fonts.
+
+At this point I had most of the site in place. I decided to offset the main article and use an artificial left column to display emphasis, quotes, italic or article badges.
+
+With the main styles in place I started to set the cutoff points where the design brake. I started re-sizing the browser and taking note of the brake points. I compare them with the most common display resolutions and decided to set my transitions as follow.
+
+* 1200 and up
+* 1024
+* 960
+* 950
+* 764
+* 640
+* 565
+
+Go ahead resize the browser and check the transitions for yourself.
+
+Debugging the media queries was a bit of work, I was using firebug on Firefox and was only seeing the computed CSS value and not the media query in effect, so when you make a mistake on setting them it can be a bit difficult to find what's going on.
+
+h3. The homepage and Jekyll
+
+One of the to-do items I never got to after originally switching the blog to Jekyll was to improve the home page.
+
+I use the redesign as an opportunity to finally do it. It took a few minutes of trial and error and I got the home page to display the latest post complete and the title and teaser for the previous six.
+
+I entertain scrapping Jekyll in favour of a custom made node.js engine, but I regain reason in time.
+
+h3. Conclusion
+
+The process was fairly straight forward for a simple site like this. I think that media queries and the responsive "movement" give us lot's of power to address the challenge presented for the many screens out there, specially when dealing with content heavy sites.
+
+There are many more challenges when trying to go responsive, media and advertise been probably the most significant.

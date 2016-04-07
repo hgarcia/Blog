@@ -1,0 +1,89 @@
+---
+layout: post
+title: Introducing Time Traveller, date library for node.js (and javascript).
+summary: Dates are a pain. So I started to put together time traveller to try to alleviate that paint while working on node.js.
+categories: [Programming, JavaScript, node.js]
+---
+
+Javascript has the Date object that exposes a series of methods to create new dates, modify them and get the different "parts" of a date. It's not bad but is certainly fairly limited.
+
+I wanted to create a simpler, easier way to work with dates.
+
+h3. Introducing Time Traveller
+
+Time traveller is my attempt to provide a better api to work with date and time operations. My hope is to grow this library to make working with dates as enjoyable as possible.
+
+You can get time traveller using npm:
+
+<pre><code>
+    npm install timeTraveller
+</code></pre>
+
+Or you can get the code from "the github repo":https://github.com/hgarcia/TimeTraveller
+
+h3. Objects
+
+h4. TimeTraveller
+
+Factory object that returns an extended Date with some utility methods to do comparison and perform common operations on dates.
+
+As of version 0.2.1 only has a now() factory method that's equivalent to doing new Date().
+
+The returned date object is enhanced with some utility methods as described below.
+
+
+<script src="https://gist.github.com/1344152.js?file=1tt.js"></script>
+
+
+h4. Add methods
+
+The available add methods are:
+
+
+<script src="https://gist.github.com/1344152.js?file=2tt.js"></script>
+
+
+These methods can take either a positive or a negative number. A negative number will result in the substraction of the given period.
+
+For example:
+
+
+<script src="https://gist.github.com/1344152.js?file=3tt.js"></script>
+
+
+The add* methods are chainable, so you could call
+
+
+<script src="https://gist.github.com/1344152.js?file=4tt.js"></script>
+
+
+h4. isSame** methods
+
+There is a main isSame() method that takes a date and can also have a single character that indicates precision.
+
+Character|Precision
+y|Year
+M|Month
+d|Day
+h|Hour
+m|Minute
+s|Second
+
+There are also methods for every precision that make a cleaner API.
+
+
+<script src="https://gist.github.com/1344152.js?file=5tt.js"></script>
+
+
+h4. TimeSpan
+
+A simple object tha represents a period of time. As of version 0.2.1 a TimeSpan object can be created in 3 ways.
+Calling the differenceFrom(secondDate) method on an enhanced Date object, passing milliseconds into the constructor, or passing two dates into the contructor
+
+
+<script src="https://gist.github.com/1344152.js?file=6tt.js"></script>
+
+
+h4. Coming
+
+Sometime in the near future I will have to add formatting capabilities and string date parsing capabilities to the main object.

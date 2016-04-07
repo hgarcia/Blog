@@ -1,0 +1,12 @@
+---
+layout: post
+title: Los Techies is having a very interesting series on Kanban
+summary: Derick Bailey is doing a very good series on Kanban. So far he posted about- The board, queues, order points, pipelines, handling bugs and emergency fixes. You can find all the posts under the Kanban tag. ...
+categories: [Methodology, Tools]
+---
+
+<a href="http://www.lostechies.com/blogs/derickbailey/default.aspx" target="_blank">Derick Bailey</a> is doing a very good series on Kanban. 
+
+So far he posted about: The board, queues, order points, pipelines, handling bugs and emergency fixes.
+
+You can find all the posts <a href="http://www.lostechies.com/blogs/derickbailey/archive/tags/Kanban/default.aspx" target="_blank">under the Kanban tag</a>.

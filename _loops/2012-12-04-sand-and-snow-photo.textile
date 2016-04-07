@@ -1,0 +1,7 @@
+---
+layout: single
+title: Sand and snow
+home: 8235449955
+home_size: small320
+display_size: large
+---

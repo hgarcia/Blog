@@ -1,0 +1,49 @@
+---
+layout: post
+title: MongoDB provider for Blogengine.net, saving a Post - Part 2
+summary: Yesterday we created our first method in the MongoDbProvider, our implementation of BlogProvider. We created a few supporting classes, but we don't have test for those classes.
+categories: [MongoDB, Programming]
+---
+
+Yesterday we created our first method in the MongoDbProvider, our implementation of BlogProvider. We created a few supporting classes, but we don't have test for those classes. We recognize that we went a little bit too far in our coding. We got carry away and we started to implement a little bit more than needed to make the test pass.
+
+So let's fix that. First we need to see our first test passing. We run it expecting to fail to save and load the post but we have a different Exception thrown.
+
+<a href="../../../images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/server_null_failing_test.png"><img border="0" alt="server_null_failing_test" src="/images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/server_null_failing_test_thumb.png" width="545" height="182"></a> 
+
+If we look at the code we notice that we made a big mistake in the Mongo class. We declared a _server private field but we are initializing a local server variable.
+So when calling Disconnect on _server inside the Dispose method we get the NullReferenceException.
+Let's write a test to reproduce that bug at the unit level and see what else we can fix in that class.
+
+Looking at it we discover a few dependencies that can be brake. First we create an IMongoMapperFactory interface and we make MongoMapperFactory to implement it.
+There is another dependency, the name of the database to use. We made both parameters for the constructor <a href="http://en.wikipedia.org/wiki/Dependency_inversion_principle" target="_blank">inverting the dependencies</a>.
+
+
+
+<script src='http://gist.github.com/561862.js?file=file0.aspx-cs'></script>
+
+
+
+We also changed the Insert method:
+
+
+
+<script src='http://gist.github.com/561862.js?file=file1.aspx-cs'></script>
+
+
+
+Notice that the private Db method now takes an Action<Database>
+
+
+
+<script src='http://gist.github.com/561862.js?file=file2.aspx-cs'></script>
+
+
+
+And the newly created getServer() helper method to clean up the code. We also made some changes on the query method but I will leave that for the next post.
+
+Our passing test result indicates some success.
+
+<a href="../../../images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/passing_test.png"><img border="0" alt="passing_test" src="/images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/passing_test_thumb.png" width="576" height="108"></a>
+
+Next: Mapping from Document to Entity and back.

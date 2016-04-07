@@ -1,0 +1,38 @@
+---
+layout: post
+title: Insert route, route registration after the fact on ASP.NET MVC
+summary: Kazi Manzur Rashid has a post about registering Areas dynamically after the registration of other routes and the problems this has since the order the routes are registered is very important.
+categories: [Programming, .Net]
+---
+
+Kazi Manzur Rashid has a post about registering Areas dynamically after the registration of other routes and the problems this has since the order the routes are registered is very important. Go <a href="http://weblogs.asp.net/rashid/archive/2009/12/30/asp-net-mvc-2-and-why-dynamic-area-is-not-supported.aspx" target="_blank">read his post</a> and come back for a possible solution to the problem.
+
+Ok, based on his post I decided to try to implement exactly what he is looking for. After poking around with reflector and brushing up my Reflection skills I came up with a first implementation that does the trick.
+
+
+
+<script src='http://gist.github.com/561857.js?file=file0.aspx-cs'></script>
+
+
+
+After posted this solution as a comment on Kazi's post I decided to polish this a little more and to actually provide a similar API as the MapRoute extension from the MVC framework. The idea is to provide a set of InsertRoute and InsertRouteAfter. 
+
+So for the InsertRoute, this is the final code:
+
+
+
+<script src='http://gist.github.com/561857.js?file=file1.aspx-cs'></script>
+
+
+
+The problem with this is that you probably don't know the index of the routes and those index will change with each route that get's registered. So InsertRouteAfter is better since we can insert a route after another route by name. The code is very simple, I won't display all the overloads just the actual implementation.
+
+
+
+<script src='http://gist.github.com/561857.js?file=file2.aspx-cs'></script>
+
+
+
+h3. Warning!!!
+
+If you decide to use this code make sure that you have tests in place since we are relying in things like the name of a internal field that can be changed without affecting the public API so this extensions are fragile from that point of view. Besides that, reflection is slow, but since route registration should happens only once per application I'm not worry about that part. 

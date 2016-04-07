@@ -1,0 +1,254 @@
+---
+layout: post
+title: String manipulation in Erlang. (Learning Erlang 9)
+summary: Strings in Erlang are represented as a list of characters, but don't despair the String module is here to help you with all your string manipulation needs.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+Yesterday I was asked how you do string manipulation in Erlang, since they are treated internally as a list of numbers that represent characters.
+
+I suspected that there should be such a think as a string module but I didn't really know so I say as much.
+
+After coming back home I decided to open the Erlang docs and sure enough, there is a string module.
+
+Let's take a look.
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
+h3. Some basic operations.
+
+<pre><code>
+  1> Str = "this is a string".
+  "this is a string"
+  2> string:len(Str).
+  16
+  3> length(Str).
+  16
+</code></pre>
+
+We can easily check for the string length using the <span class="code">len/1</span> function.
+
+__Notice that we can also use length on Str since it's actually a list.__
+
+We can also check for the number of words using <span class="code">words/1</span> that uses a space as the word separator or <span class="code">words/2</span> that takes a character as the word separator.
+
+<pre><code>
+  1> string:words("this is a string").
+  4
+  2> string:words("this is a string", $a).
+  2
+</code></pre>
+
+h3. Building strings.
+
+We can create new strings using a number of functions.
+
+<span class="code">join/2</span> takes a list of tokens and a string as a separator and "stitch" them together.
+
+<pre><code>
+  1> string:join(["this", "is", "a", "string"], " ").
+  "this is a string"
+</code></pre>
+
+<span class="code">concat/2</span> join two strings together.
+
+<pre><code>
+  1> string:concat("this is a string", ", and now is longer.").
+  "this is a string, and now is longer"
+</code></pre>
+
+We can copy a string a given number of times with <span class="code">copies/2</span>.
+
+<pre><code>
+  1> string:concat("de",string:copies("do", 3)).
+  "dedododo"
+</code></pre>
+
+We can use <span class="code">chars/3</span> to build a string using the same character multiple times.
+
+<pre><code>
+  1> string:concat("this is g", string:chars($r, 10, "eat")).
+  "this is grrrrrrrrrreat"
+</code></pre>
+
+There is another variation without the tail.
+
+<pre><code>
+  1> string:chars($+, 20).
+  "++++++++++++++++++++"
+</code></pre>
+
+You can use a number of functions to pad a string with either spaces or some character.
+
+<pre><code>
+  1> Msg = "To be continued".
+  2> string:left(Msg, string:len(Msg)+3, $.).
+  "To be continued..."
+  3> string:left(Msg, string:len(Msg)+3).
+  "To be continued   "
+  4> string:centre(Msg, string:len(Msg)+3, $.).
+  ".To be continued.."
+  5> string:centre(Msg, string:len(Msg)+4, $.).
+  "..To be continued.."
+  6> string:right(Msg, string:len(Msg)+3, $.).
+  "...To be continued"
+</code></pre>
+
+h3. Splitting and slicing.
+
+We can easily split a string into a list of tokens using the <span class="code">tokens/2</span> function.
+
+<pre><code>
+  1> Tokens = string:tokens("this is a string", " ").
+  ["this","is","a","string"]
+</code></pre>
+
+Notice that <span class="code">token/2</span> will return a list of tokens without the separator.
+
+<pre><code>
+  1> string:tokens("this is a string", "i").
+  ["th","s ","s a str","ng"]
+</code></pre>
+
+You can get parts of a string using the familiar <span class="code">substr</span> and <span class="code">sub_string</span> functions.
+
+<pre><code>
+  1> string:substr("abcdefghijklm", 5).
+  "efghijklm"
+  2> string:substr("abcdefghijklm", 5, 3).
+  "efg"
+  3> string:sub_string("abcdefghijklm", 5).
+  "efghijklm"
+  4> string:sub_string("abcdefghijklm", 5, 8).
+  "efgh"
+</code></pre>
+
+Both <span class="code">substr/2</span> and <span class="code">sub_string/2</span> are equivalent but <span class="code">substr/3</span> takes the start and length while <span class="code">sub_string/3</span> takes the start and ending index instead.
+
+You can find a given word in a string by index with <span class="code">sub_word/2</span>.
+
+<pre><code>
+  1> string:sub_string("this is a string of characters", 4).
+  "string"
+</code></pre>
+
+Sometimes a string is not a human language and we want to use a different character as the word separator using <span class="code">sub_word/3</span>.
+
+<pre><code>
+  1> string:sub_word("this is a string of characters", 4, $i).
+  "ng of characters"
+</code></pre>
+
+h3. Finding and comparing strings.
+
+String equality is easy, just call <span class="code">equal/2</span>.
+
+<pre><code>
+  1> string:equal("equality", "equality").
+  true
+  2> A = "equality".
+  3> B = "equality".
+  4> string:equal(A, B).
+  true
+</code></pre>
+
+In most cases you may want to normalize the strings before comparing them.
+
+You can use <span class="code">to_lower</span> or <span class="code">to_upper</span> to normalize the capitalization of a string.
+
+<pre><code>
+  1> A = "EQ".
+  2> B = "Eq".
+  3> string:equal(A, B).
+  false
+  4> string:equal(string:to_lower(A), string:to_lower(B)).
+  true
+  5> string:equal(string:to_upper(A), string:to_upper(B)).
+  true
+</code></pre>
+
+Using the <span class="code">strip</span> functions you can remove spaces or filled characters from the string.
+
+<pre><code>
+  1> string:strip("    no blank    ").
+  "no blank"
+  2> string:strip("    no blank    ", left).
+  "no blank    "
+  3> string:strip("    no blank    ", right).
+  "    no blank"
+  4> string:strip("    no blank    ", both).
+  "no blank"
+  5> string:strip("+++++++no plus signs++++++", both, $+).
+  "no plus signs"
+  6> string:strip("+++++++no plus signs++++++", left, $+).
+  "no plus signs++++++"
+  7> string:strip("+++++++no plus signs++++++", right, $+).
+  "+++++++no plus signs"
+</code></pre>
+
+We can check for inclusion of a character or a string in another string using the <span class="code">chr/2</span> and <span class="code">str/2</span> functions and their reverse versions.
+
+They will return the position in the string or <span class="code">0</span> if not found.
+
+<pre><code>
+  1> Str = "this is a string".
+  2> string:str(Str, "n").
+  15
+  3> string:str(Str, "p").
+  0
+  4> string:rstr(Str, "n").
+  15
+  5> string:rstr(Str, "s").
+  11
+  6> string:str(Str, "s").
+  4
+  7> string:chr(Str, 116).
+  1
+  8> string:rchr(Str, 116).
+  12
+  9> string:rchr(Str, 11).
+  0
+</code></pre>
+
+h3. Float and integer conversion.
+
+These functions are very interesting.
+
+If the string starts with an integer it will parse that part of the string returning the Integer and Rest in a tuple <span class="code">{Integer, Rest}</span>.
+
+<pre><code>
+  1> string:to_integer("98.87").
+  {98,".87"}
+  2> {Ia, Irest} = string:to_integer("09.10").
+  {9,".10"}
+  3> Ia.
+  9
+  4> Irest.
+  ".10"
+  5> string:to_integer(Irest).
+  {error,no_integer}
+  6> {Ic,_} = string:to_integer("+3").
+  {3,[]}
+  7> {Id,_} = string:to_integer("-3").
+  {-3,[]}
+</code></pre>
+
+The <span class="code">to_float/1</span> function has a similar behaviour.
+
+<pre><code>
+  1> string:to_float("2.67").
+  {2.67,[]}
+  2> string:to_float("2.67 - 10").
+  {2.67," - 10"}
+  3> string:to_float("-10").
+  {error,no_float}
+  4> string:to_float("-10.2").
+  {-10.2,[]}
+  5> string:to_float("-10.").
+  {error,no_float}
+  6> string:to_float("-10.0").
+  {-10.0,[]}
+</code></pre>
+
+This covers the string module that give us most of the tools we are used to have in some other languages.

@@ -1,0 +1,10 @@
+---
+layout: post
+title: CruiseControl.NET Build Station or how to run CC.net in a development machine without IIS
+summary: I just saw this project in Codeplex; CruiseControl.Net build station sounds interesting and very useful if you happen to work in a machine without IIS.
+categories: [Continuous Integration, Tools]
+---
+
+I just saw this project in Codeplex; "CruiseControl.Net build station(CruiseControl.Net build station)":http://www.codeplex.com/CCNetBuildStation sounds interesting and very useful if you happen to work in a machine without IIS.
+
+_UPDATE: I had a comment for this post, promoting another build system (not open source, not free) because it does not required IIS. I think that my quick and dirty post should be more clear. You actually do not need IIS to run cc.net in your local computer, just to run the dashboard. There are other systems like TeamCity from JetBrains, that have a free version for developers that it doesn’t need IIS either and is very powerful. You can also use Hudson, another one that doesn’t requires IIS, free, open source and very extensible. But sometimes you need to use cc.net and I thought that this was a nice alternative on those situations._

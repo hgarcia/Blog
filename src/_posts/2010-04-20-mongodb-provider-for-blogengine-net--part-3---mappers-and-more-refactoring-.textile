@@ -1,0 +1,36 @@
+---
+layout: post
+title: MongoDb provider for BlogEngine.net, part 3 - Mappers and more refactoring.
+summary: In the previous post on this series we manage to get our Insert and a basic Select methods working. Today we need to implement the mapper class for Post.
+categories: [MongoDB, Programming]
+---
+
+In the previous post on this series we manage to get our Insert and a basic Select methods working. Today we need to implement the mapper class for Post. But first let's check what we have done so far and see if we can improve this a bit. We notice some duplication on the MongoDb class.
+
+This code is triplicate.
+
+<script src='http://gist.github.com/561863.js?file=file0.aspx-cs'></script>
+
+First we modify the semantics in the first routine to make it identical to the other two. Them we do Extract method on it and replace all the instances with a call to this new method.
+
+<script src='http://gist.github.com/561863.js?file=file1.aspx-cs'></script>
+
+Now that our code is better, let's create the first mapper.
+
+<script src='http://gist.github.com/561863.js?file=file2.aspx-cs'></script>
+
+
+
+That's an ugly piece of code. And the worst thing is that we still have a lot of work ahead of us to finish this mapper. We haven't dealt with any of the collections in the Post, for example the Comments, or the Tags. We didn't write any error handling either, this will grow ugly fast.
+
+A better way to deal with it will be to start leveraging conventions and mappers to deal with it as automatically as possible.
+
+h3. Conclusion.
+
+As you can see using MongoDb in an existing application is possible. I purposely didn't touch the code of the application what could have made some of this changes easier.
+
+NoRM is looking very good and if you are starting from scratch I will use that driver that provides serialization and deserialization out of the box.
+
+Today I saw that MongoHQ release a free version of their hosted solution and paying accounts start for as little as $5/month.
+
+Go ahead and give Mongo a try. You will be happy.

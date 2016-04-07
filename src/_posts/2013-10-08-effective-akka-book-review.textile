@@ -1,0 +1,23 @@
+---
+layout: post
+title: Effective Akka (book review)
+summary: Much more than a book on Akka.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+h3. Overview.
+
+
+"Jamie Allen":https://twitter.com/jamie_allen tackles the problems of writing concurrent/distribute applications and expose some patterns that can help to found solutions to those problems.
+
+All the examples in the book are written on top of the Akka framework (as is obvious in the title of the book), but the patterns can be easily extrapolate to other frameworks and languages.
+
+<a href="http://shop.oreilly.com/product/0636920028789.do" target="_blank"><img class="img-float-right" src="/images/posts/akka.gif" border="0" alt="Effective Akka - book cover"></a>
+
+It was a great read, even for a person like me, not very familiar with Akka. I really appreciate how each problem is clearly expressed and the different solutions are explored with ample samples and detailed analysis of the pros and cons of each approach.
+
+h3. Conclusion
+
+I highly recommend this book for anybody involved on designing or developing these type of applications.

@@ -1,0 +1,9 @@
+---
+layout: slide
+title: water planter
+home: 14020404899
+home_size: small320
+display_size: large
+slide: [14020404899, 14207169575, 14183963316, 14227269373, 14227300553, 14020508317, 14204672742, 14183985396, 14204600052]
+title_style: "font-family: Helvetica; font-size: 1.4em;"
+---

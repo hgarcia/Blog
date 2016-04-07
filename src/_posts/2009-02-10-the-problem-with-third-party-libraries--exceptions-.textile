@@ -1,0 +1,60 @@
+---
+layout: post
+title: The problem with third party libraries; Exceptions..
+summary: In this post I wrote about wrapping log4net (as an example) in your own logging class and define an interface for the log object that better reflects your domain.
+categories: [Programming, .Net]
+---
+
+In a recent post I talked about <a href="/2009/01/14/isolate-yourself-from-external-libraries-using-the-facade-pattern-.html" target="_blank">isolating your code from third party libraries using the facade pattern</a>. In the post I wrote about wrapping log4net (as an example) in your own logging class and define an interface for the log object that better reflects your domain.
+
+The main benefit of doing this is that your client code (the one that needs a logger) won't have a dependency on an interface defined by an external library, given you the desired flexibility to change the library that implements the logger later on. All your client code will keep using your abstraction.
+
+But what happens if the external library defines it's own exceptions? What if one of this exceptions may be thrown during usage and you want to catch it and do something to fix the problem?
+
+Let's assume the 3rd party library is an html parser library that contains the following classes:
+
+
+
+<script src='http://gist.github.com/561835.js?file=file0.cs'></script>
+
+
+
+Notice the MalFormedHtmlException class, this is an exception that this library may throw. At this point just wrapping the library alone won't help you. What you need to do is catch the exception in the wrapper library and raise you own exceptions.
+
+This exceptions may have the same meaning but for sure the name will more closely reflects your domain.
+
+Let's create a simple wrapper that returns all images url's in an HtmlDocument given an id:
+
+
+
+<script src='http://gist.github.com/561835.js?file=file1.cs'></script>
+
+
+
+Now the problem is that GetImagesUrls needs to parse the document and at that moment the MalFormedHtmlException. Knowing this your client code will have to do something like this to protect the application from crashing.
+
+
+
+<script src='http://gist.github.com/561835.js?file=file2.cs'></script>
+
+
+
+A this moment our UI holds a reference to the original library to brake that dependency. We need to modify the code for the wrapper and provide our own exception.
+
+
+
+<script src='http://gist.github.com/561835.js?file=file3.cs'></script>
+
+
+
+Now the client can be change as well
+
+
+
+<script src='http://gist.github.com/561835.js?file=file4.cs'></script>
+
+
+
+Notice how you just removed any dependency to the original library, but you can also use the message from the exception to display to the end user. Since you know your domain, the message can be tailored in a way that explain what just happened and even provide alternative solutions on how to fix the problem.
+
+Next time we will talk about attributes.

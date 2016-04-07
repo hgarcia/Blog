@@ -1,0 +1,10 @@
+---
+layout: post
+title: Lightweight Test Automation Framework June Update
+summary: These guys are working hard and given us releases almost every month. I'm happy to see some of the feedback from the community incorporated into the Framework.
+categories: [Testing]
+---
+
+These guys are working hard and given us releases almost every month. I'm happy to see some of the feedback from the community incorporated into the Framework.
+
+Go ahead download it from <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=28536" target="_blank">CodePlex</a> and give it a try to test your web application.

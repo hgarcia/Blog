@@ -1,0 +1,224 @@
+---
+layout: post
+title: Building an iOS app with PhoneGap, Angular.js and the ionic framework (Part 1).
+summary: We will build an iOS app with web technologies to track outdoor activities.
+categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
+collection: Ionic
+---
+
+__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+
+
+__<strong>UPDATE</strong>: I updated this article to align with Ionic 1.0.0-beta1 that makes starting with Ionic much simpler. The previous version of the article can still be found "here":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework-back.html__
+
+In this series I plan to build a mobile application using primarily web technologies (HTML5, js and css). I will be targeting iOS since those are the devices I have access to at the moment, but the application should be deployable to a number of platforms without major changes due to the technologies I will be using.
+
+
+h3. Overview of the application.
+
+I decided to create yet another activity tracking App. On a first iteration I will try to focus on tracking ski sessions. Future iterations will add tracking tailored to other outdoor activities.
+
+The main reason to build this type of App is that it will give me a good excuse to use most of the available API's like geo-location, accelerometer, camera, media, file, notification, storage, etc.
+
+
+h3. Framework selection.
+
+I will be using PhoneGap as the mobile framework that will enable our application to access all the devices native API's.
+I will pair PhoneGap with Angular. I think that a single page app is perfectly suited to build mobile applications like this one.
+
+It took me some time to decide what UI library I wanted to use for the visual elements. It was tempting to just use Bootstrap (tried and true) once more but I wanted something focused on mobile applications.
+
+My main target device(s) are phone(s), so I only need some limited responsiveness.
+
+__I doubt anybody is going down the hill with the tablet on their pockets to track their speed.__
+
+I used jQuery mobile in the pass but I wanted something different, something that feels more modern. I took a look at several frameworks after deciding to give "ionic":http://ionicframework.com/ a try.
+
+It looks very clean, having most of the components I feel I will need and they have integration with angular out of the door. Ionic is not just a CSS framework but a JavaScript library of components as well.
+
+With the set of frameworks selected, is time to...
+
+
+h3. Getting started
+
+I will assume that you already have "node.js":http://nodejs.org/ installed in your system. If you don't you may need to "install it now":http://blog.dynamicprogrammer.com/2014/02/18/installing-node-js-on-mac-osx.html
+We will also need Xcode installed
+
+You can easily install everything you need with one command
+
+<pre><code>
+
+    npm npm install -g cordova ionic ios-sim
+
+</code></pre>
+
+If you are not planning to run the application is the ios-emulator you can ignore the ios-sim module.
+
+
+h3. Setting up the project.
+
+We will create the project using the ionic CLI with the blank template.
+
+<pre><code>
+
+    ionic start dynamic-sports blank
+
+</code></pre>
+
+
+h3. Setting up karma and phantom.js.
+
+We will open the package.json file and add the following key and code.
+
+<pre><code>
+  
+  "devDependencies": {
+    "karma": "~0.12.9",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-jasmine": "~0.1.5",
+    "karma-ng-scenario": "~0.1.0",
+    "karma-junit-reporter": "~0.2.2",
+    "karma-coverage": "~0.2.1"
+  }
+
+</code></pre>
+
+While we are editing the package.json file we can change the name, version and description for the project.
+We will also add a test script to make our life easier.
+
+<pre><code>
+  "scripts": {
+    "test": "node_modules/karma/bin/karma start tests/karma.config.js"
+  },
+
+</code></pre>
+
+And we will create the folder for the tests and the configuration file for karma
+
+<pre><code>
+
+    mkdir tests
+    cd tests
+    touch karma.config.js
+
+</code></pre>
+
+Open the karma.config.js file and enter the following code.
+
+<pre><code>
+
+    module.exports = function(config) {
+      config.set({
+
+        // base path, that will be used to resolve files and exclude
+        basePath: '../www/',
+
+        // frameworks to use
+        frameworks: ['jasmine'],
+
+        // list of files / patterns to load in the browser
+        files: [
+          'lib/ionic/js/ionic.bundle.js',
+          'js/*.js',
+          '../tests/helper.js',
+          '../tests/*.spec.js'
+        ],
+
+        preprocessors: {
+          'js/*.js': 'coverage'
+        },
+
+        coverageReporter : {
+          type : 'html',
+          dir : '../coverage/'
+        },
+
+        plugins: [
+          'karma-jasmine',
+          'karma-phantomjs-launcher',
+          'karma-coverage',
+          'karma-junit-reporter'
+        ],
+
+        // test results reporter to use
+        // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+        reporters: ['progress', 'coverage'],
+
+        // web server port
+        port: 9876,
+
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
+
+        // level of logging
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_INFO,
+
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: true,
+
+        // Start these browsers, currently available:
+        // - Chrome
+        // - ChromeCanary
+        // - Firefox
+        // - Opera (has to be installed with `npm install karma-opera-launcher`)
+        // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
+        // - PhantomJS
+        // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
+        browsers: ['PhantomJS'],
+
+        // If browser does not capture in given timeout [ms], kill it
+        captureTimeout: 60000,
+
+        // Continuous Integration mode
+        // if true, it capture browsers, run tests and exit
+        singleRun: false
+      });
+    };
+
+</code></pre>
+
+After everything is set you should have a structure similar to this
+
+<pre><code>
+
+    -dynamic-sports
+      README.md
+      gulpfile.js
+      config.xml
+      ionic.project
+      package.json
+      |-node_modules
+      |-platforms
+      |-plugins
+      |-scss
+      |-hooks
+      |-merges
+      |-tests
+      | |
+      | karma.config.js
+      |-www
+        |
+        |-css
+        |-img
+        |-js
+        |-lib
+        |-templates
+        |
+        README.md
+        config.xml
+        index.html
+
+</code></pre>
+
+
+h3. Hooking up Travis CI.
+
+You should sign up into "Travis":http://travis-ci.com and follow "the instructions":http://docs.travis-ci.com/user/getting-started/ to setup your project.
+
+
+h3. Next steps.
+
+"Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
+
+We will create a basic hello world application and deploy into the emulator.

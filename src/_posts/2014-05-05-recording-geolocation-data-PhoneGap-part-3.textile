@@ -1,0 +1,770 @@
+---
+layout: post
+title: Recording Geo location data with PhoneGap and Angular (Part 3).
+summary: We will be writing our Angular services that encapsulate some of PhoneGap API's.
+categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
+collection: Ionic
+---
+
+__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+
+
+The main activity of our app will be to start and stop recording data when we perform our activities.
+
+h3. The simplest UI
+
+During development I like to try to do most of the styling using Firefox (or Chrome) since is faster that deploying to the emulator after each change and I can also use the development tools of the browser.
+
+Ionic comes with a web server for this purpose.
+
+In the command line go to the root of the web application (inside the <span class="code">WWW</span> folder of the solution) and run the following command
+
+<pre><code>
+
+	python -m SimpleHTTPServer 8000
+
+</code></pre>
+
+If you are using port 8000 for something else you can change that.
+We will be using sass so we need to re-compile the sass files after each changes, so we can open another command window and run the gulp watch command.
+
+<pre><code>
+
+	gulp watch sass
+
+</code></pre>
+
+We are not ready to start working on the UI.
+We will start with a simple button that should change between Start and Stop when clicked. We can modify the <span class="code">/templates/home.html</span> to have a new button in the center of the screen.
+
+<pre><code>
+
+	<ion-view title="New session">
+	  <ion-content class="center-child" has-header="true" padding="true">
+	    <button class="button button-block button-positive button-outline icon ion-play start-stop"></button>
+	  </ion-content>
+	</ion-view>
+
+</code></pre>
+
+We need to add the styling for the button. We will create a new <span class="code">_home.scss</span> file under the <span class="code">scss/app/</span> folder.
+
+<pre><code>
+
+	.center-child {
+	  .scroll {
+	    left: 50%;
+	    margin-left: -55px;
+	    margin-top: -110px;
+	    position: fixed;
+	    top: 50%;
+	    .button {
+	      &.start-stop {
+	        border-radius: 50px;
+	        height: 100px;
+	        margin: 0 auto;
+	        position: relative;
+	        width: 100px;
+	      }
+	      &.icon {
+	        &:before {
+	          font-size: 48px;
+	          padding-left: 10px;
+	        }
+	      }
+	    }
+	  }
+	}
+
+</code></pre>
+
+Notice the style applied to the scroll class. That's the trick we use to center the button vertically on the screen no matter what device we are using. For a detailed explanation on how and why this works check "this article on the css tricks website":http://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/
+
+The difference with respect to the article is that we need to use a bigger margin-top to account for the status bar on top of the device.
+
+h4. iPhone 5 view
+
+<img class="img-center" src="/images/posts/iphone5_button.png" alt="Adding the button vertically centered on the emulator (iphone 5)" border="0" class="half-width-img img-center"/>
+
+h3. A directive.
+
+So far we have a play button, but we need to switch the button and convert it into a stop button after clicked.
+
+There are a few approaches to that.
+We can put that logic into the <span class="code">HomeController</span> and modify the styles of the button (please don't).
+We could add a second button and use the <span class="code">ng-show</span> and <span class="code">ng-hide</span> directives to show the right one (not that bad).
+Or we can encapsulate the behaviour in a directive. This will be a very simple directive for this specific case. We can create a toggle state button directive that could be more generic, but at this point I will be creating one specific for this use case.
+
+h3. Setting the project up for testing (redux).
+
+In "the first article of the series":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html we setup karma for testing, but we did miss something.
+
+Angular provides a set of mock methods and helper function to use on your tests. Those elements are distributed in the angular-mocks.js file. Ionic doesn't include that file (at least in the version I'm using at the moment). So we will need to download the proper angular-mocks from the "angular site":https://code.angularjs.org/ .
+
+The version of Ionic I'm using depends on angular 1.2.12 so we download the <span class="code">angular-mocks.js</span> fie for that version of Angular.
+
+__You can check the version of angular you are using opening the <span class="code">angular.js</span> file inside the <span class="code">www/lib/ionic/js/angular</span> folder of your project__
+
+I will save the file inside the <span class="code">www/lib/ionic/js/angular</span> folder and I will modify the <span class="code">karma.config.js</span> file to include the new file.
+
+<pre><code>
+
+	 // list of files / patterns to load in the browser
+    files: [
+      'lib/ionic/js/ionic.bundle.js',
+      'lib/ionic/js/angular/angular-mocks.js',
+      'js/*.js',
+      '../tests/**/*_spec.js'
+    ],
+
+</code></pre>
+
+__Notice that the order of the files in the files array is important!__
+
+h3. Writing our directive.
+
+We know that we need a method to handle the click event and that method will indicate if the button is on or off and also delegate to a handler given to him.
+
+We write our tests first.
+
+<pre><code>
+
+	/*global jasmine, describe, beforeEach, it, expect, module, inject */
+	describe("PlayStopButtonController", function () {
+	  "use strict";
+	  var scope, controller, directive;
+
+	  beforeEach(module("dynamic-sports.directives"));
+
+	  beforeEach(inject(function ($rootScope, $controller, playStopButtonDirective) {
+	    scope = $rootScope.$new();
+	    controller = $controller;
+	    directive = playStopButtonDirective[0];
+	    controller("PlayStopButtonController", {$scope: scope});
+	  }));
+
+	  describe("directive creation", function () {
+
+	    it("should use the PlayStopButtonController controller", function () {
+	      expect(directive.controller).toEqual("PlayStopButtonController");
+	    });
+
+	    it("should use the BirthDate template", function () {
+	      expect(directive.templateUrl).toEqual("/templates/directives/play-stop-button.html");
+	    });
+
+	    it("should be an element", function () {
+	      expect(directive.restrict).toEqual("E");
+	    });
+
+	    it("should replace content", function () {
+	      expect(directive.replace).toBeFalsy();
+	    });
+	  });
+
+	  describe("click()", function () {
+
+	    beforeEach(function () {
+	      scope.isOn = false;
+	      scope.clickHandler = jasmine.createSpy();
+	      scope.click();
+	    });
+
+	    it("should set 'isOn' to true", function () {
+	      expect(scope.isOn).toBeTruthy();
+	    });
+
+	    it("should call the given clickHandler with the value of 'isOn'", function () {
+	      expect(scope.clickHandler).toHaveBeenCalledWith(true);
+	    });
+
+	    it("should not throw if a clickHandler is not provided", function () {
+	      scope.clickHandler = undefined;
+	      expect(scope.click).not.toThrow();
+	    });
+	  });
+	});
+
+</code></pre>
+
+And we go ahead and get on with the implementation
+
+<pre><code>
+
+	angular.module('dynamic-sports.directives')
+	  .controller('PlayStopButtonController', ['$scope', function ($scope) {
+	    'use strict';
+	    $scope.isOn = false;
+	    $scope.click = function () {
+	      $scope.isOn = !$scope.isOn;
+	      if ($scope.clickHandler) {
+	        $scope.clickHandler($scope.isOn);
+	      }
+	    };
+	  }])
+	  .directive("playStopButton", function () {
+	    "use strict";
+	    return {
+	      templateUrl: "/templates/directives/play-stop-button.html",
+	      scope: {clickHandler: "="},
+	      controller: "PlayStopButtonController",
+	      replace: false,
+	      restrict: "E"
+	    };
+	  });
+
+</code></pre>
+
+I'm restricting the directive to be an element directive and I'm setting replace to false so I don't have to provide a root element in the template.
+
+Our template is very simple.
+
+<pre><code>
+
+	<button class="button button-block icon start-stop" ng-class="{'false': 'button-positive button-outline ion-play', 'true': 'button-assertive ion-pause'}[isOn]" ng-click="click()"></button>
+
+</code></pre>
+
+We will have to adjust our CSS for the pause button as follow.
+
+<pre><code>
+
+	&.icon {
+		&:before {
+		  font-size: 48px;
+		}
+	}
+	&.ion-play {
+		&:before {
+		  padding-left: 10px;
+		}
+	}
+	&.ion-pause {
+		&:before {
+		  padding-left: 2px;
+		}
+	}
+
+</code></pre>
+
+
+h3. The controller.
+
+Now that we have the button in place we should hook it up to start recording the location data. We will do that via the HomeController.
+
+We start with the following tests.
+
+<pre><code>
+
+	/*global describe: true, beforeEach: true, it: true, expect: true, module: true, inject: true, spyOn */
+	describe("HomeCtrl", function () {
+	  "use strict";
+	  var scope, geoLocationService;
+
+	  beforeEach(module("dynamic-sports"));
+
+	  beforeEach(inject(function ($rootScope, $controller, _geoLocationService_) {
+	    scope = $rootScope.$new();
+	    geoLocationService = _geoLocationService_;
+	    $controller("HomeCtrl", {$scope: scope, geoLocationService: geoLocationService});
+	  }));
+
+	  describe("#recording()", function () {
+
+	    beforeEach(function () {
+	      spyOn(geoLocationService, "start");
+	      spyOn(geoLocationService, "stop");
+	    });
+
+	    it("should start recording if 'on' === true", function () {
+	      scope.recording(true);
+	      expect(geoLocationService.start).toHaveBeenCalled();
+	    });
+
+	    it("should stop recording if 'on' === false", function () {
+	      scope.recording(false);
+	      expect(geoLocationService.stop).toHaveBeenCalled();
+	    });
+	  });
+	});
+
+</code></pre>
+
+The implementation is super simple at the moment, notice the geoLocationService that we are injecting in the controller. At the moment is just an empty shell that we are spying on in the tests.
+
+<pre><code>
+
+	/* globals angular, console */
+	angular.module('dynamic-sports.controllers')
+  	  .controller('HomeCtrl', ['$scope', 'geoLocationService',
+      function ($scope, geoLocationService) {
+      'use strict';
+
+	  $scope.recording = function (on) {
+	    if (on) {
+	      geoLocationService.start();
+	    } else {
+	      geoLocationService.stop();
+	    }
+	  };
+  	}]);
+
+</code></pre>
+
+
+h3. Geo location service.
+
+Time to implement the geolocation service that does the actual work! We could probably consume this from inside the controller but please don't do that or your controllers are going to end up big and bloated.
+
+We need to install the "cordova geolocation plugin":https://cordova.apache.org/docs/en/3.0.0/cordova_geolocation_geolocation.md.html
+
+<pre><code>
+
+	cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git
+	// or
+	cordova plugin add org.apache.cordova.geolocation
+
+</code></pre>
+
+Our service needs to expose two methods. <span class="code">start</span> and <span class="code">Stop</span>.
+
+The <span class="code">start</span> method will take two callbacks. We start writing some tests.
+
+<pre><code>
+
+	/* global describe, beforeEach, it, module, inject, navigator: true */
+	describe("Geo Location services", function () {
+	  "use strict";
+	  var scope, service;
+
+	  beforeEach(module("dynamic-sports.services"));
+
+	  beforeEach(inject(function ($rootScope, _geoLocationService_) {
+	    scope = $rootScope.$new();
+	    navigator = {geolocation: {watchPosition: jasmine.createSpy().andReturn("12345"), clearWatch: jasmine.createSpy()}};
+	    service = _geoLocationService_;
+	  }));
+
+	  describe("start(successCb, errorCb)", function () {
+
+	    it("should start watching the position", function () {
+	      var success = function () {};
+	      var error = function () {};
+	      service.start(success, error);
+	      expect(navigator.geolocation.watchPosition).toHaveBeenCalledWith(success, error);
+	    });
+	  });
+
+	  describe("stop()", function () {
+
+	    it("should not call clearWatch if we are not watching", function () {
+	      service.stop();
+	      expect(navigator.geolocation.clearWatch).not.toHaveBeenCalled();
+	    });
+
+	    it("should call clearWatch with the watchId", function () {
+	      service.start();
+	      service.stop();
+	      expect(navigator.geolocation.clearWatch).toHaveBeenCalledWith("12345");
+	    });
+	  });
+	});
+
+</code></pre>
+
+We are creating a bunch of spies to mock out the geolocation Cordova/PhoneGap API's.
+
+The implementation is super simple for now.
+
+<pre><code>
+
+	/* globals angular */
+	angular.module('dynamic-sports.services')
+	.factory('geoLocationService', function () {
+		'use strict';
+		var watchId;
+		return {
+		  start: function (success, error) {
+		    watchId = navigator.geolocation.watchPosition(success, error);
+		  },
+		  stop: function () {
+		    if (watchId) {
+		       navigator.geolocation.clearWatch(watchId);
+		    }
+		  }
+		};
+	});
+
+</code></pre>
+
+h3. Our file service.
+
+Right now we only need to save data into a file. We install the file service plug-in.
+
+<pre><code>
+
+	cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file.git
+	// or
+	cordovae plugin add org.apache.cordova.file
+
+</code></pre>
+
+We are going to create a simple API for the service with two methods <span class="code">save()</span> and <span class="code">open()</span>
+
+We will drive our code with the following tests.
+
+<pre><code>
+
+/* global describe, beforeEach, it, module, inject, navigator */
+	describe("File services", function () {
+	  "use strict";
+	  var scope, service, openSuccess, openError;
+
+	  beforeEach(module("dynamic-sports.services"));
+
+	  beforeEach(inject(function ($rootScope, _fileService_) {
+	    scope = $rootScope.$new();
+	    service = _fileService_;
+	    openSuccess = jasmine.createSpy();
+	    openError = jasmine.createSpy();
+	  }));
+
+	  describe("open(fileName, successCb, errorCb)", function () {
+
+	    it("should use the file service", function () {
+	      spyOn(window, "requestFileSystem");
+	      service.open("file", openSuccess, openError);
+	      expect(window.requestFileSystem).toHaveBeenCalled();
+	    });
+
+	    it("should return the file content on success", function () {
+	      service.open("file", openSuccess, openError);
+	      window.OnRequestFileSystemSuccess().OnGetFileSuccess().OnFileEntrySuccess("file content");
+	      expect(openSuccess).toHaveBeenCalledWith("file content");
+	    });
+
+	    it("should call the errorCb if requestFileSystem fails", function () {
+	      service.open("file", openSuccess, openError);
+	      window.OnRequestFileSystemError();
+	      expect(openError).toHaveBeenCalled();
+	    });
+
+	    it("should call the errorCb if can't get the file", function () {
+	      service.open("file", openSuccess, openError);
+	      window.OnRequestFileSystemSuccess().OnGetFileError();
+	      expect(openError).toHaveBeenCalled();
+	    });
+
+	    it("should call the errorCb if can't read the file", function () {
+	      service.open("file", openSuccess, openError);
+	      window.OnRequestFileSystemSuccess().OnGetFileSuccess().OnFileEntryError();
+	      expect(openError).toHaveBeenCalled();
+	    });
+	  });
+
+	  describe("save(fileName, data, successCb, errorCb)", function () {
+
+	    it("should use the file service", function () {
+	      spyOn(window, "requestFileSystem");
+	      service.save("file", {}, openSuccess, openError);
+	      expect(window.requestFileSystem).toHaveBeenCalled();
+	    });
+
+	    describe("content serialization", function () {
+
+	      beforeEach(function () {
+	        spyOn(writer, 'write');
+	      });
+
+	      it("should serialize the content and add to the file", function () {
+	        service.save("file", {data: "some-data"}, openSuccess, openError);
+	        window.OnRequestFileSystemSuccess().OnGetFileSuccess().OnWriteSuccess();
+	        expect(writer.write).toHaveBeenCalledWith('{"data":"some-data"}');
+	      });
+
+	      it("should add a string", function () {
+	        service.save("file", "data", openSuccess, openError);
+	        window.OnRequestFileSystemSuccess().OnGetFileSuccess().OnWriteSuccess();
+	        expect(writer.write).toHaveBeenCalledWith('"data"');
+	      });
+
+	      it("should add an integer", function () {
+	        service.save("file", 123, openSuccess, openError);
+	        window.OnRequestFileSystemSuccess().OnGetFileSuccess().OnWriteSuccess();
+	        expect(writer.write).toHaveBeenCalledWith('123');
+	      });
+	    });
+	  });
+	});
+
+</code></pre>
+
+Resulting in the following implementation.
+
+<pre><code>
+
+	/* globals angular */
+	angular.module('dynamic-sports.services')
+	  .factory('fileService', function () {
+	  'use strict';
+
+	    function writeToFile(data, successCb) {
+	      return function (writer) {
+	        writer.onwriteend = function(evt) {
+	          if (successCb) {
+	            successCb();
+	          }
+	        };
+	        writer.seek(writer.length);
+	        writer.write(JSON.stringify(data));
+	      };
+	    }
+
+	    function gotFileEntry(data, successCb, errorCb) {
+	      return function(fileEntry) {
+	        fileEntry.createWriter(writeToFile(data, successCb), errorCb);
+	      };
+	    }
+
+	    function write(fileName, data, successCb, errorCb) {
+	      return function (fileSystem) {
+	        fileSystem.root.getFile(fileName, {create: true, exclusive: false}, gotFileEntry(data, successCb, errorCb), errorCb);
+	      };
+	    }
+
+	    function fileContents(successCb) {
+	      return function (file) {
+	        var reader = new FileReader();
+	        reader.onloadend = function(evt) {
+	          successCb(evt.target.result);
+	        };
+	        reader.readAsText(file);
+	      };
+	    }
+
+	    function readFile(successCb, errorCb) {
+	      return function (fileEntry) {
+	        fileEntry.file(fileContents(successCb), errorCb);
+	      };
+	    }
+
+	    function read(fileName, successCb, errorCb) {
+	      return function (fileSystem) {
+	        fileSystem.root.getFile(fileName, null, readFile(successCb, errorCb), errorCb);
+	      };
+	    }
+
+	    return {
+	      save: function (fileName, data, successCb, errorCb) {
+	        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, write(fileName, data, successCb, errorCb), errorCb);
+	      },
+	      open: function (fileName, successCb, errorCb) {
+	        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, read(fileName, successCb, errorCb), errorCb);
+	      }
+	    };
+	  });
+
+</code></pre>
+
+We are introducing a <span class="code">cordova_mocks.js</span> file in the test folder that's mocking all the Cordova services (and plug-ins) for us to be able to easily test our service.
+
+We added the file to the file section of the karma.config.js file.
+
+<pre><code>
+
+	// list of files / patterns to load in the browser
+    files: [
+      'lib/ionic/js/ionic.bundle.js',
+      'lib/ionic/js/angular/angular-mocks.js',
+      '../tests/cordova_mocks.js',
+      '../js/*.js',
+      '../js/**/*.js',
+      '../tests/**/*_spec.js'
+    ],
+
+</code></pre>
+
+This mock file will evolve with the application.
+
+<pre><code>
+
+	//Geo location
+
+	navigator = {geolocation: {watchPosition: jasmine.createSpy().andReturn("12345"), clearWatch: jasmine.createSpy()}};
+
+	// File
+	LocalFileSystem = {PERSISTENT: 1};
+
+	var requestFileSystemSuccessCb, requestFileSystemErrorCb, getFileSuccesCb, getFileErrorCb, fileSuccesCb, fileErrorCb, writerCb;
+	var fileSystem = {
+	  root: {
+	    getFile: function (fileName, options, successCb, errorCb) {
+	      getFileSuccesCb = successCb;
+	      getFileErrorCb = errorCb;
+	    }
+	  }
+	};
+
+	var writer = {
+	  seek: function () {},
+	  length: 0,
+	  write: function (data) {
+	    this.onwriteend();
+	  }
+	};
+
+	var fileEntry = {
+	  file: function (successCb, errorCb) {
+	    fileSuccesCb = successCb;
+	    fileErrorCb = errorCb;
+	  },
+	  createWriter: function (cb) {
+	    writerCb = cb;
+	  }
+	};
+
+	function FileReader () {
+	  this.readAsText = function (file) {
+	    if (this.onloadend) {
+	      this.onloadend({target: {result: file}});
+	    }
+	  };
+	}
+
+	window.requestFileSystem = function (cons1, cons2, successCb, errorCb) {
+	  requestFileSystemSuccessCb = successCb;
+	  requestFileSystemErrorCb = errorCb;
+	};
+
+	window.OnRequestFileSystemError = function () {
+	  if (requestFileSystemErrorCb) {
+	    requestFileSystemErrorCb();
+	  }
+	};
+
+	window.OnRequestFileSystemSuccess = function () {
+	  if (requestFileSystemSuccessCb) {
+	    requestFileSystemSuccessCb(fileSystem);
+	  }
+	  return {
+	    OnGetFileError: function () {
+	      if (getFileErrorCb) {
+	        getFileErrorCb();
+	      }
+	    },
+	    OnGetFileSuccess: function () {
+	      if (getFileSuccesCb) {
+	        getFileSuccesCb(fileEntry);
+	      }
+	      return {
+	        OnWriteSuccess: function () {
+	          writerCb(writer);
+	        },
+	        OnFileEntryError: function () {
+	          if (fileErrorCb) {
+	            fileErrorCb();
+	          }
+	        },
+	        OnFileEntrySuccess: function (content) {
+	          if (fileSuccesCb) {
+	            fileSuccesCb(content);
+	          }
+	        }
+	      };
+	    }
+	  };
+	};
+
+</code></pre>
+
+h3. Hooking everything up.
+
+We need to add a new method in the <span class="code">HomeCtrl</span> to hook up the click event for the main button and these two new services. You may noticed that for now we are just using an alert to display the data and some errors up to the user. We will be changing that later on.
+
+<pre><code>
+
+	/* globals angular, console */
+	angular.module('dynamic-sports.controllers')
+	  .controller('HomeCtrl', ['$scope', 'geoLocationService', 'fileService',
+	    function ($scope, geoLocationService, fileService) {
+	    'use strict';
+	    var fileName;
+
+	    function onChange(newPosition) {
+	      var data = newPosition.coords;
+	      data.timestamp = newPosition.timestamp;
+	      fileService.save(fileName, data, function () {}, function (error) {});
+	    }
+
+	    function onChangeError(error) {
+	      alert("Error: " + error);
+	    }
+
+	    $scope.recording = function (on) {
+	      if (on) {
+	        fileName = geoLocationService.start(onChange, onChangeError);
+	      } else {
+	        geoLocationService.stop();
+	        fileService.open(fileName, function (result) { alert(result); }, function (error) {alert("Err:" + error); });
+	      }
+	    };
+
+	  }]);
+
+</code></pre>
+
+We drove the implementation with the following test.
+
+<pre><code>
+
+	/*global describe: true, beforeEach: true, it: true, expect: true, module: true, inject: true, spyOn */
+	describe("HomeCtrl", function () {
+	  "use strict";
+	  var scope, geoLocationService, fileService;
+
+	  beforeEach(module("dynamic-sports"));
+
+	  beforeEach(inject(function ($rootScope, $controller, _geoLocationService_, _fileService_) {
+	    scope = $rootScope.$new();
+	    geoLocationService = _geoLocationService_;
+	    fileService = _fileService_;
+	    $controller("HomeCtrl", {$scope: scope, geoLocationService: geoLocationService, fileService: fileService});
+	  }));
+
+	  describe("#recording() start", function () {
+
+	    beforeEach(function () {
+	      spyOn(geoLocationService, "start").andReturn("123456");
+	      spyOn(fileService, "save");
+	      scope.recording(true);
+	    });
+
+	    it("should start recording", function () {
+	      expect(geoLocationService.start).toHaveBeenCalled();
+	    });
+
+	    it("should call the fileService.save method", function () {
+	      var payload = {coords: {}, timestamp: "time-stamp-here"};
+	      geoLocationService.start.mostRecentCall.args[0](payload);
+	      expect(fileService.save).toHaveBeenCalled();
+	    });
+	  });
+
+	  describe("#recording() stop", function () {
+
+	    beforeEach(function () {
+	      spyOn(geoLocationService, "stop");
+	      scope.recording(false);
+	    });
+
+	    it("should stop recording if 'on' === false", function () {
+	      expect(geoLocationService.stop).toHaveBeenCalled();
+	    });
+	  });
+	});
+
+</code></pre>
+
+h3. Next steps.
+
+On part 4, we will do a quick refactoring of the js code to improve maintainability.

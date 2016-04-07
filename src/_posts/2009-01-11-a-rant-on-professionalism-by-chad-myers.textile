@@ -1,0 +1,10 @@
+---
+layout: post
+title: A rant on professionalism by Chad Myers.
+summary: Chad Myers goes on in this rant on professionalism.
+categories: [Programming, General]
+---
+
+I can only agree.
+
+<a title="http://www.lostechies.com/blogs/chad_myers/archive/2009/01/11/a-rant-on-professionalism.aspx" href="http://www.lostechies.com/blogs/chad_myers/archive/2009/01/11/a-rant-on-professionalism.aspx">http://www.lostechies.com/blogs/chad_myers/archive/2009/01/11/a-rant-on-professionalism.aspx</a>

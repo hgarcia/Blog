@@ -1,0 +1,24 @@
+---
+layout: post
+title: My actual minimum requirements for a project
+summary: My previous post got me thinking, what are the things I will considered as minimum requirements for me to work in a project even when I have serious constrains on time?
+categories: [Methodology, Programming, Tools]
+---
+
+My previous post got me thinking, what are the things I will considered as minimum requirements for me to work in a project even when I have serious constrains on time?
+
+For requirements I mean methodologies and practices that I will need to use. After some thinking this is what I came up with.
+
+There are at least three things, commonly associated to an <a href="http://agilemanifesto.org/" target="_blank">Agile</a> project that I will want to have in place.
+
+<ul>
+	<li>Source control (yes, there are still companies that don't know what this is). Installing Subversion (<a href="http://www.visualsvn.com/server/" target="_blank">VisualSVN server</a> + <a href="http://tortoisesvn.tigris.org/" target="_blank">TortoiseSVN</a>) usually takes 30/60 minutes.</li>
+	<li>Continuous Integration server, <a href="http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET" target="_blank">CC.net</a>, <a href="http://www.jetbrains.com/teamcity/" target="_blank">TeamCity</a>: install and configuration 3 hours maybe half a day.</li>
+	<li>Using TDD as a design tool at least for the domain but only If I can use <a href="http://www.jetbrains.com/resharper/" target="_blank">ReSharper</a> or a similar tool (I can do with the free version of <a href="http://devexpress.com/Products/Visual_Studio_Add-in/CodeRushX/" target="_blank">CodeRush</a> as well).</li>
+</ul>
+
+This is the type of things that I use, even when writing some demo code or my own applications that I'm playing with. At home I have Subversion installed in my dev machine and in and old Pentium 4 that runs TeamCity.
+
+I don't think that this will add any significant amount of time and the benefits are such that I can see myself not using them.
+
+I will probably don't do much in the sense of integration test, (of any at all) in the automated UI test fields and code coverage. I like to do that but not in circumstances as described in the previous post.

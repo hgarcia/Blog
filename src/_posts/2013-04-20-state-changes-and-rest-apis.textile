@@ -1,0 +1,64 @@
+---
+layout: post
+title: State changes, rest APIs and end points based permissions.
+summary: I often get asked how to model HTTP APIs to change status on objects when we try to manage all our permissions based on the end points and HTTP verbs available.
+categories: [Programming, Architecture]
+---
+
+You are ready to write your new HTTP API (notice I'm not saying REST) and everything goes well until you get the following requirement.
+
+__Customer status can be one of "Active, Passive, Enabled or Deleted".__
+
+So far no problem.
+
+__Editing customers is available to all back-end roles, but status changes is only available to some roles.__
+
+This scenario is the one that most new comers find problematic. Specially if you want to model your permissions at the end point. For example using some kind of middleware.
+
+
+h3. Customers end points.
+
+You may have the following end-points for the Customer object.
+
+<pre><code>
+
+  GET     https://server.com/customers (all customers)
+  GET     https://server.com/customers/:id (customer by id)
+  POST    https://server.com/customers (create a new customer)
+  PUT     https://server.com/customers (update the given customer)
+  DELETE  https://server.com/customers/:id (delete the customer)
+
+</code></pre>
+
+
+A few things to notice here. The PUT and POST route may or may not have the id at the end.
+The implementation of the DELETE operation can be a logical delete while preserving the data in your data store, but that is not really relevant
+
+In this scenario any update to customers is done via PUT.
+We want to grant access to this operation to multiple roles, but we only want a <strong>subset</strong> of those roles to be able to change the status of the customer.
+
+So we can't really use this end point to change status without changing how we implement security.
+
+
+h3. Model Status on it's own.
+
+At this point of the analysis I like to stop and think what is the status of the customer. It may have started as a String property in the customer object, but it's usually more than that.
+
+I like to take a page of the DDD book and model the status as a value object.
+
+I start by creating an empty Status object that contains only one String property.
+
+I follow this with the creation of just one end point.
+
+<pre><code>
+
+  PUT     https://server.com/customers/:id/status (updates the status for the customer with the payload)
+
+</code></pre>
+
+
+h3. Conclusion and home work.
+
+Modeling the API in this manner will also allow us to add links to the customer object that represent some operations.
+
+I think that implementing security at the end points and only at the end points help you with how you model the API and the underlaying model. A nice side effect is that your code will be more modular and easy to maintain.

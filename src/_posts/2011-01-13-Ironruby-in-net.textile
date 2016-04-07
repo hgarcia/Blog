@@ -1,0 +1,29 @@
+---
+layout: post
+title: Codemash, IronRuby and .Net a match made in heaven.
+summary: A high level introduction to Ruby (IronRuby) and how to use it to enhance your projects in .net.
+categories: [Codemash, Programming]
+---
+
+Presenter:  "Amir Barylko":http://orthocoders.com/
+"@abarylko":http://twitter.com/#!/abarylko
+
+Good presentation from Amir on how to leverage IronRuby to make your life as a .net programming easier.
+
+The talk started with a few questions to the audience on why to bother to use IronRuby while in the .net world.
+
+* Make your toolbox grow!
+* The right tool for the job.
+* Not a replacement.
+* Combine strengths.
+* Problem solving.
+
+He followed by a brief introduction to Ruby that helped the audience to follow along the demos.
+
+h3. Demos
+
+Using RSpec to test a C# class. 
+Adding the Enumerable mixin into a C# class. (This demo rise expressions of "Wow!" and "Really cool!")
+A demonstration of method missing on a C# class.
+Showing Sinatra to create a simple web application. During this demo he also made the library used in the previous examples a Singleton mixin the Singleton module. (more Wows)
+BDD with Cucumber.

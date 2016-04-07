@@ -1,0 +1,105 @@
+---
+layout: post
+title: An HTTP calculator web service, just for fun.
+summary: Listening to .Net Rocks earlier today Carl Franklin joked about exposing a calculator as a REST web service. It's so silly that I had to try.
+categories: [Programming]
+---
+
+Last week, I was listening to the ".Net Rocks episode 807":http://www.dotnetrocks.com/default.aspx?showNum=807 with "Bill Wagner":http://billwagner.cloudapp.net/ in witch "Carl Franklin":http://carlfranklin.net/ joked about exposing the back end of a calculator as a REST web service. I was walking to the subway when he made the joke and I couldn't stop laughing.
+
+While at the platform, waiting for the train, I started to think about how to implement it.
+
+__I'm not suggesting this is a proper REST implementation, just an intellectual exercise during a subway ride. Let's call it an HTTP web service if your wish.__
+
+h3. A calculator resource
+
+The first thing is to figure out what resources to expose.
+We could certainly expose a calculator resource and in that case we could map the verb as follow:
+
+|_{width:20%}. METHOD |_{width:25%}.URL |_. |
+| GET | calculators | List of available calculators (smell, smell) |
+| GET | calculator/:id | Get the calculator by :id |
+| POST | calculator/:id | Creates an existing calculator |
+| PUT  | calculator/:id | Modifies a calculator. |
+| DELETE | calculator/:id | Remove the calculator |
+
+
+The payload for the calculator could be a series of operations that could look something like this.
+
+<pre><code>
+  [
+    ['+', 6, 7, 22],
+    ['-',['*', 2, 5]],
+    ['*' ['/', 10, 2]]
+  ]
+</code></pre>
+
+And translates to: <span class="code">(6 + 7 + 22) - (2 * 5) * (10 / 2)</span>
+
+h3. Calculator, calculations.
+
+I don't think that having a series of calculators makes any sense.
+It looks like what we need is a series of calculations instead:
+
+|_{width:20%}. METHOD |_.URL |
+| GET | calculations |
+| GET | calculation/:id |
+| POST | calculation/:id |
+| PUT | calculation/:id |
+| DELETE | calculation/:id |
+
+
+Much better.
+
+h3. Operations as resources.
+
+So, it works but you need to do a PUT of a complete new document to add new operations to the calculation.
+
+Unless you implement PATCH and use it to modify it, what is perfectly fine but I think we can do better.
+
+While discussing the use of the calculation and the payload we keep talking about operations.
+
+What if we express operations as resources?
+
+Let's take the basic arithmetic operations: addition, subtraction, multiplication and division.
+
+|_{width:20%}. METHOD |_.URL |
+| GET | calculation/:id/addition/:id |
+| POST | calculation/:id/addition/:id |
+| PUT | calculation/:id/addition/:id |
+| DELETE | calculation/:id/addition/:id |
+
+
+It may look ok but I think we don't need to "name" each operation since we already have a notation in the operation itself.
+We don't want an addition or a subtraction resource, just an <span class="code">operation</span> resource.
+
+Like this:
+
+|_{width:20%}. METHOD |_.URL |
+| GET | calculation/:id/operation/:id |
+| POST | calculation/:id/operation/:id |
+| PUT | calculation/:id/operation/:id |
+| DELETE | calculation/:id/operation/:id |
+
+
+This allow us to modify any of the operations in the calculation. Ex: we can change an addition for a subtraction with a simple PUT.
+
+h3. A simple calculation
+
+I think that the operations as resources approach provides another advantage.
+
+The calculation payload is now simpler, something like this.
+
+<pre><code>
+  {
+    id: "xxxx",
+    total: 10.5,
+    operations: "http://calculator.domain.com/calculation/xxxx/operations"
+  }
+</code></pre>
+
+Where operations is a link to the resources.
+
+h3. A fun exercise.
+
+Well, this was a fun exercise for a short subway ride.

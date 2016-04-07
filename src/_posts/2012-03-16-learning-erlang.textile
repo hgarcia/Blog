@@ -1,0 +1,57 @@
+---
+layout: post
+title: Learning Erlang.
+summary: 5 or 6 years ago I started to learn Erlang for the first time. I read a book, follow an online tutorial and them I move on with other projects. It's fair to say that I didn't learn much at all.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
+After my first (failed) attemp to learn Erlang half a decade ago, I kept keeping an eye on it and reading on and off about some new cool company using it, some new database being written with it and how great everybody think it is.
+
+h3. Fast forward to the present day.
+
+I decided to give it another try. I plan to write a series of blog posts as notes of my learning process. I hope it will help me to internalize the language.
+
+I also plan to complete a small web project on Erlang. I learn the best while doing and I have this project on my personal backlog for some time now.
+
+<aside class="resources">
+  <h4>Resources</h4>
+
+  * "Erlang language":http://www.erlang.org
+  * "Documentation":http://www.erlang.org/doc/reference_manual/introduction.html
+  * "Course":http://www.erlang.org/course/course.html
+
+</aside>
+
+h3. Of dots, colons, semi colons and commas...
+
+If you have a problem with languages that use semicolons, Erlang may not be for you. It not only uses semicolons but dots, commas, colons and semi colons.
+
+* Use dots as a terminator (ex: ends a function an export statement).
+* Use colons to call functions in modules.
+* Use commas at end of lines of code.
+* Use semicolons at the end of a line inside a case or if statement, except the last line of a case.
+
+h3. The name of the game is pattern matching.
+
+Variables are bound to values or data structures, not assigned. Once a variable is bound can't be bound to a different value. Binding variables is done matching a pattern. Unbound variables match any value, so to bound a variable to a value we match the new variable to the value using the equal sign.
+
+<script src="https://gist.github.com/2054805.js?file=variables.erl"></script>
+
+Variables start with an upper case, Atoms with lower case. Atoms can contain any character when using quotes.
+Atoms are similar to symbols in Ruby. I like to think of Atoms as labels used for clarity.
+
+h3. A list, a Tuple, a Record.
+
+You create a list using [] like in JavaScript. Tuples are create using {}.
+The difference is that list are of variable size while Tuples are of fix size. There is no limit to how many items can be stored in a Tuple.
+Both list and tuples can contain any item; Atoms, variables, Numbers, even Tuples and Lists.
+
+<script src="https://gist.github.com/2054805.js?file=list_tuples.erl"></script>
+
+You can use both this types to create complex data structures.
+
+There are also "Records.":http://www.erlang.org/doc/reference_manual/records.html Records are similar to Tuples but the elements can be accesed by the key (Atom).
+The name of the Record and the name of the elements should be Atoms, you define records and they structure before hand. You can assign a default value to the fields. The Records need to be define before usage on the code.

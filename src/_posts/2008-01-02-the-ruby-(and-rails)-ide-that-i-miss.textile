@@ -1,0 +1,16 @@
+---
+layout: post
+title: The Ruby (and Rails) IDE that I miss
+summary: I keep searching for the right IDE for my Ruby and Ruby on Rails adventures. I keep changing and playing around with the ones I had and lately I keep using NetBeans 6.0. Yesterday I decide to try again and after looking at The usual suspects, I found Eclipse for Rails...
+categories: [Programming, Tools, Ruby]
+---
+
+I keep searching for the right IDE for my Ruby and Ruby on Rails adventures. I keep changing and playing around with the ones I had and lately I keep using NetBeans 6.0.
+
+Yesterday I decide to try again and after looking at The usual suspects, I found one that I missed always before, it's the <a href="http://www.napcs.com/products/rails/Eclipse/index.htm">Eclipse for Rails</a>. It's not an extension but a pre-package Eclipse with some extensions configured in a way that make it Rails ready. You can find it at <a href="http://www.napcs.com/">http://www.napcs.com/.</a>
+
+I haven't really try it yet, but a first impression is very favorable. The package even include the Subclipse plugin to connect to a subversion repository. The SQLPlugin to been able to open a database and create, view, edit tables right there.
+
+In the site <a href="http://www.napcs.com/howto/railsonwindows.html">they even have instructions</a> on how you can build the environment on your own from scratch downloading Eclipse and the necessary plug ins.
+
+I will try it for my next Ruby project, that I need to start in a day or two and blog a little more about it.

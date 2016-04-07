@@ -1,0 +1,26 @@
+---
+layout: post
+title: Our Kanban board went up today.
+summary: We have been looking forward to implement Kanban for a while and after a few delays we put the board up today. We decided to define our pipeline using five columns.
+categories: [Programming, Methodology]
+---
+
+We have been looking forward to implement Kanban for a while and after a few delays we put the board up today.
+We decided to define our pipeline using five columns:
+
+* Backlog (queue)
+* Analysis (queue)
+* Developmen (Divided in eight pipelines, one for each developer)
+* Testing (Divided in four pipelines)
+
+* QA ?> Testing done by our QA guy
+* Client 1 ?> The client does the testing (2 pipelines)
+* Development ?> Development does internal testing
+* Done ?> also knows as complete or delivered.
+
+We presented this idea to one of our internal clients a week ago and they are on board.
+Now the challenge is to make the process work and make sure that we look into what is working and what?s not and we make adjustments as needed.
+
+We are now planning a lunch and learn to the rest of the company to bring every body on board. We are very exited about this one.
+
+The board is in one end of the room visible by everybody.

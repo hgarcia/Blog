@@ -1,0 +1,87 @@
+---
+layout: post
+title: Heads and tails, working with lists. (Learning Erlang 2)
+summary: In almost any language working with lists or data is a fundamental part of programming. Let's see how lists work in Erlang and some of the tools we have to work with them.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
+We have a list with some elements and we want to get the first one. As "we saw before":http://blog.dynamicprogrammer.com/2012/03/16/learning-erlang.html, assignment is done via pattern matching. So to get the first element on a list we can match it to a variable. Let's see how we can do this and what works and what doesn't.
+
+<script src="https://gist.github.com/2054805.js?file=matching_lists.erl"></script>
+
+We start by matching (assigning) a list to a variable A and them we try to get the first element from it.
+
+Our first naive attempt is to match the list to another variable. This of course just bounds the list to B.
+Second attempt is to match to a list with only one element, but this cause the 'no match of right hand side value' exception. Think about, it makes sense.
+Remember that we are trying to pattern match here and the lists have not the same number of elements, so no match occurs.
+
+We could write a list on the left side with the exact number of arguments of the list on the right side, but that's obviously not a proper way to go about it.
+
+So we can use the '_' char to "ignore" elements on the list. The underscore is a wild card variable. Here, I'm using the pipe operator to differentiate between the head and tail of the list.
+Notice that '_' doesn't get bound to the tail of the list.
+We can still use the pipe to bound both the head and the tail to two different variables.
+The pipe operator is also known as "cons" or "constructor" operator since it can be used to create lists or add elements to the head of a list.
+
+<script src="https://gist.github.com/2054805.js?file=cons_operator.erl"></script>
+
+The last element (after the cons operator) has to be a list to build a proper list. If you don't do so you will create what is knows as a non proper list. On these types of list, the tail will be treated as an atom and not a list. You can see the example below, the first time we build a non proper list and we get the tail several times (this is very common in Erlang when processing a list using recursion, here I'm doing it manually just to show the problem).
+
+<script src="https://gist.github.com/2054805.js?file=unproper_proper_lists.erl"></script>
+
+The second time we build a proper list and thus we can process the list without problems.
+
+<aside class="resources">
+  <h4>Books</h4>
+
+  * "Programming Erlang":http://pragprog.com/book/jaerlang/programming-erlang
+  * "Erlang and OTP in action":http://www.manning.com/logan/
+  * "Erlang programming":http://shop.oreilly.com/product/9780596518189.do
+  * "Building web applications<br/>with Erlang":http://shop.oreilly.com/product/0636920021452.do
+
+</aside>
+
+h3. String those characters together.
+
+You may have noticed that we haven't play with strings yet. Well, strings are just lists of chars.
+
+<script src="https://gist.github.com/2054805.js?file=strings.erl"></script>
+
+We can get the first char of a string using the Head Tails notation. But notice that Head (H) doesn't match "A" but 65. "A" will match [65] instead. I think of the double quotes as syntactic sugar to build char lists.
+Another way to build char list is using the $ in front of each char.
+
+h3. List manipulation.
+
+To work with lists we have lots of functions in the "lists module":http://www.erlang.org/doc/man/lists.html.
+
+Let's take a look at some of them.
+
+Append, concat.
+
+<script src="https://gist.github.com/2054805.js?file=append_concat.erl"></script>
+
+Merge.
+
+<script src="https://gist.github.com/2054805.js?file=merge_lists.erl"></script>
+
+Partition.
+
+<script src="https://gist.github.com/2083943.js?file=partition.erl"></script>
+
+Reverse.
+
+<script src="https://gist.github.com/2054805.js?file=reverse_lists.erl"></script>
+
+Sort
+
+<script src="https://gist.github.com/2054805.js?file=lists_sort.erl"></script>
+
+Sequence.
+
+<script src="https://gist.github.com/2083943.js?file=seq.erl"></script>
+
+Split and sublist.
+
+<script src="https://gist.github.com/2083943.js?file=split_sublists.erl"></script>

@@ -1,0 +1,48 @@
+---
+layout: post
+title: XGENO.ORG new lightweight ORM Mapper.
+summary: You can find this new ORM framework at http-//code.msdn.microsoft.com/XGENOORM. Starting with it is fairly easy. Just add a reference on your project to the very small (32K) dll (only one!) and you can start playing with it.
+categories: [Patterns, Programming, Tools, .Net]
+---
+
+You can find this new ORM framework at <a href="http://code.msdn.microsoft.com/XGENOORM">http://code.msdn.microsoft.com/XGENOORM</a>. Starting with it is fairly easy. Just add a reference on your project to the very small (32K) dll (only one!) and you can start playing with it.
+
+h3. First impressions.
+
+My observations come from reading the documentation and not from using it. What I like. It uses the <a href="http://martinfowler.com/eaaCatalog/activeRecord.html">ActiveRecord pattern</a> what I like personally prefer for simple applications.
+
+Since this claim to be a simple ORM this is acceptable. You should understand that this mean that your objects need to inherit from a base class that provides the CRUD operations. If you want to use just POCO's without dependencies on your ORM this won't be a good choice. This is an issue with the pattern though and not this particular ORM.
+
+h3. Mapping is done using Attributes
+
+For Example if you create a new class Dog and you want to mapped into a table Animal you do this
+
+
+
+<script src='http://gist.github.com/561833.js?file=file0.aspx-cs'></script>
+
+
+
+One of the problems I found from my liked is the querying capabilities, no the lack of but the way they are implementing. You pass a Condition object to the Find method, but this object make use of strings, what it's ugly and doesn't work well with Refactoring tools like ReSharper. If we want to find all dogs where the name starts with A we will do something like this.
+
+
+
+<script src='http://gist.github.com/561833.js?file=file1.aspx-cs'></script>
+
+
+
+Not only is using strings for the Column name but also for the operand of the condition. I would prefer a different notation, something like this:
+
+
+
+<script src='http://gist.github.com/561833.js?file=file2.aspx-cs'></script>
+
+
+
+At this point relationships are not supported they are promising this for the next release.
+
+A nice feature is the Audit Attributes, this Attributes are used to mark some properties of your object to save data as modification dates, creation dates and user that changed the objects. All this is done automatically for you, what it's a very nice idea.
+
+In conclusion if you need something extremely simple and you don't care about the relationships you may be able to use it. If you need something more mature using the same pattern I will stick with <a href="http://www.castleproject.org/projects/activerecord">Castle ActiveRecord</a> at this moment.
+
+As a side note this doesn't seem to be open source, so there may not be any support from the community, an strength of the Castle project

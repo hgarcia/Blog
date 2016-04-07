@@ -1,0 +1,40 @@
+---
+layout: post
+title: Building web applications with Erlang by Zachary Kessin.
+summary: As the subtitle says, this book will show you how to use the Yaws web server to build web application in Erlang.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920021452.do" target="_blank"><img class="img-float-right"  src="/images/posts/building-web-applications-with-Erlang.gif" border="0" alt="Building web applications with Erlang - book cover"/></a>This book will show you how to leverage the yaws web server to write web applications using the Erlang language. The author "Zachary Kessin":https://twitter.com/zkessin will show how to build RESTful web services on top of yaws and how to use WebSockets with it. Upon reading this book you should be able to start working on your own solutions since the book touch pretty much all major aspects of web development.
+
+You won't need to be an Erlang expert to follow along with the book, just having an understanding of the syntax and the basics behind Erlang will be enough.
+
+__This review is based upon the Early edition on ePub format.__
+
+The book focused mostly on the back end of things, mostly ignoring or just creating very simple UI clients when needed to stress a point. This approach keeps the examples clean and uncluttered.
+
+You will start writing code almost right away. Playing with Yaws, configuring it, starting it and serving static files. You will learn how to compile, load and run some code and working with dynamic content. It will show you how to use eHtml and the more powerful erlyDTL. (Django template language).
+
+Chapters 4 and 5 will work on implement a REST service, content negotiation, working with headers and how to upload content to it.
+
+You will work with WebSockets on chapter 6 and stream some data (audio or video anyone?) on chapter 7.
+
+Interfacing via HTTP with other clients in the back end is covered in chapter 8. The example for this chapter covers how to implement OAuth and working with the Facebook Canvas.
+
+The last chapter will show a full fledge application build on top of Erlang OTP. As the author mention, this is not a chapter on OTP but rather a basic example of a closer to real world usage of Erlang in a web scenario.
+
+h3. Yaws focus.
+
+The book focus only on how to use Yaws to build this type of applications. Most of the examples are tightly tied to the web server choice. This could be a problem if you choose to use a different web server so be aware of this.
+
+Zachary explains his choice of Yaws at the beginning of the book. He things is the easier package to get something simple working in and the support for WebSockets. I have to agree that in todays age, writing this book without including WebSockets could have been a disservice.
+
+h3. Conclusion
+
+The book manage to pack all this information in just 209 pages, including four appendixes with some basic information on installing Yaws, a comparison on web servers and frameworks for Erlang, interfacing with Ruby and Python and using Erlang on the Emacs text editor.
+
+It's a very fast read and you should be able to finish the book in a few sits.
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__

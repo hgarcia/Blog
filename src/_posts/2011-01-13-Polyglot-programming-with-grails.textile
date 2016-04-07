@@ -1,0 +1,48 @@
+---
+layout: post
+title: Codemash, Polyglot web programming with the Grails framework.
+summary: I'm afraid my notes don't make justice to the presentation.
+categories: [Programming, Codemash]
+---
+
+Jeff Brown gave a great presentation on how to mix JVM languages inside the Grails framework. How to write your controllers in Groovy and them  write your services in Java, Clojure or any other language for the JVM.
+What was very interesting is they way tha this was implemented, using existing extensions points inside Grails, with plugins that intercept the calls and dispatch to the proper object in the right language.
+
+
+I will definitely go back to Grails and take another look, there is a lot of good things in this framework.
+
+
+Presenter: "Jeff Brown":http://www.springsource.com/people/jbrown
+
+
+<blockquote>These are my notes, taken live during the presentation. The notes don't make justice to the presentation. It was very interesting and so I stopped taking notes half way thoughts to give it my undivided attention.</blockquote>
+
+
+h3. Introduction
+
+Groovy is probably the best choice for general programming languages in the JVM. An Object oriented language with great expressiveness. (Less code in Groovy than Java to do the same things.)
+
+Clojure and Scala are both functional programming languages. The hype with functional languages can be rooted in the fact that we are having multiprocessors/cores machines, so multithreading programming is desired to take advantage of all the computer power.
+Object oriented languages are not very well suited to write multithreading programs, due to shared state.
+Pure functional languages and immutability are better choices for this type of programming.
+
+
+h3. Grails
+
+
+Full stack web framework, ORM, IOC, etc. Extensible plugins system. Build on top of proven frameworks and libraries: Spring, Hibernate, Ant, Sitemesh, etc. Even Tomcat comes included to run your system during development.
+
+Consuming libraries written in any other language for the JVM is transparent for us.
+
+Setting your container is done using just Groovy code, no more xml to configure Spring.
+Services declared in the services directory are automatically added to Spring, so there is no need to register it.
+If in a controller we declare a property with the same name of the service, it will automatically reference the service from Spring.
+
+Adding methods to classes is super easy in Groovy. If you define a getter like getBar() on a string, you can call it using "string".bar 
+
+Changing files in different languages, java, clojure, groovy and re-running the application without recompile. This makes the development cycle so much faster.
+
+Groovy uses a plugins and a proxy to dispatch method calls to clojure. 
+
+
+<blockquote>Rhetoric question: Why most of the cool kids are using Mac and textmate?</blockquote>

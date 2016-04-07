@@ -1,0 +1,34 @@
+---
+layout: post
+title: 20 recipes for programming Phone Gap by Jamie Munro.
+summary: A good book to get you up and running with Phone Gap and JQuery mobile.
+categories: [Programming, JavaScript, Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920023708.do" target="_blank"><img class="img-float-right"  src="/images/posts/20_recipes_for_programming_phonegap.gif" border="0" alt="20 recipes for programming phonegap - book cover"/></a>The book doesn't waste any time and after a brief introduction and some setup instructions, it gets right into it.
+
+"Jamie Munro":http://www.endyourif.com/ not only uses Phone Gap but JQuery mobile to build the UI. So, the book serves as a good beginner reference for that library as well.
+
+It's very well organized and each recipe builds on the previous one while keeping them fairly independent at the same time.
+I will recommend you read the book in order the first time. It will give you a good idea of the capabilities and how some of the features and code builds on the previous chapter.
+When using it as a reference you should have no problems going to a particular chapter.
+
+You will learn how to detect if the device is ready, how to get information about the handset, creating menus, how to work with the network, sand boxing your application.
+
+GPS and maps, compass and use the accelerometer are also covered in the first section.
+
+There are several recipes that show how to interact with the device contacts and display tabular data.
+
+Working with the camera and pictures are covered in a short recipe, while capturing audio and video share another one.
+
+Notifications (alerts, vibrate and confirms) are shown near the end of the book.
+
+Another set of recipes deal with storing and retrieving data from the device.
+
+The last recipe teaches you how to create and extend plug-ins for Phone Gap
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__
+
+It's a good resource to get you up and running immediately with Phone Gap. It covers some of the most common tasks you will have to deal with when creating a mobile application. Good reference to keep close by.

@@ -1,0 +1,8 @@
+---
+layout: post
+title: PDC 2009 dates and mailing list.
+summary: A few days ago was announced the date for the Professional Developers Conference 2009 or PDC. You can see the announcement or subscribe to the mailing list. The conference will be on November 17-20, 2009 in Los Angeles, California.
+categories: [General]
+---
+
+A few days ago was announced the date for the Professional Developers Conference 2009 or PDC. The conference will be on November 17-20, 2009 in Los Angeles, California.

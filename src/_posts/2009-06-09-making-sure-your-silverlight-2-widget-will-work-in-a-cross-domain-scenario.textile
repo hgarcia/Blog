@@ -1,0 +1,31 @@
+---
+layout: post
+title: Making sure your Silverlight 2 widget will work in a cross domain scenario
+summary: When creating a Silverlight application that will be used as a widget, you need to make sure that it will work in a cross domain scenario.
+categories: [Programming]
+---
+
+When creating a Silverlight application that will be used as a widget, you need to make sure that it will work in a cross domain scenario. You will certainly serve the widgets from your own domain and the widget will be consumed from other domains, like wordpress.com or blogger.com.
+
+You can find this information in msdn and some other blogs but it’s scattered in bits and pieces and not all together, also I struggle with some examples were they set the value of ExternalCallersFromCrossDomain to FullAccess, what is not supported in Silverlight 2 anymore.
+
+Silverlight security model make it that by default the application is closed to cross domain activity. So here are the three things you need to enable to make sure that you don't have problems down the road.
+
+First, on your Silverlight project expand the Properties folder an open the AppManifest.xml
+
+Make sure that you add the ExternalCallersFromCrossDomain attribute to the Deployment element and that you set the value to ScriptableOnly, after making the changes your AppManifest should look something like this.
+
+
+<script src='http://gist.github.com/561851.js?file=file0.xml'></script>
+
+
+Second: Make sure you decorate the methods that you want to expose to JavaScript with the ScriptableMember attribute, this is necessary to access your code even in the same domain.
+
+
+<script src='http://gist.github.com/561851.js?file=file1.aspx-cs'></script>
+
+
+Third: Make sure that you enable access to the page were the widget will be embedded into. This is accomplished via the enableHtmlAccess param of the object tag. This is only needed if your Widget needs to access the page where it will live. If you use the HtmlPage in any way shape or form you will need to set this up.
+
+
+<script src='http://gist.github.com/561851.js?file=file2.html'></script>

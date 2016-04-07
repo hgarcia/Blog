@@ -1,0 +1,29 @@
+---
+layout: post
+title: Web, Cloud and Mobile solutions with F# - book review.
+summary: A very well written book that will instill the need to write some F# code.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920026099.do" target="_blank"><img class="img-float-right"  src="/images/posts/web-cloud-and-mobile-with-f-sharp.gif" border="0" alt="Web, Cloud and Mobile solutions with F# - book cover"/></a>
+
+"Daniel Mohl's":https://twitter.com/dmohl book had the distinctive quality to make F# really approachable.
+
+__Some of those F# characteristics are: functional / OO paradigm, messaging, records and immutability.__
+
+I think that the secret lies in the approach the author took in showing us how we can use F# and it's distinct capabilities to write better solutions in a world where high availability and scale is a major concern.
+
+There are multiple examples on writing services with different technologies, not just Microsoft products but also open source frameworks. You will learn about a number of F# libraries that will make your life easier in a day to day use in real world projects.
+
+The author makes an effort to show different ways to solve similar problems, ex: using records and classes to interact with databases and queues, while at the same time indicating what is the  preferred way in F#.
+
+Some of my favorite sections of the book: Using NancyFX and WebApi with F# to create HTTP services. Interacting with Azure services and how to combine F# with NoSQL databases like Mongo, Raven and CouchDB.
+
+There is also a really good example on using Web Sockets with a library called Fleck that I wasn't familiar with.
+
+h3. Conclusion
+
+I found the book a really enjoyable read and the reason to try to use F# soon in some side project.
+I feel that makes F# very approachable and is really good on showing why you should care. It's not just another language, or a language that should be used only when doing lots of data processing or scientific work, but a tool that can help even when dealing more pedestrian, but still complex, tasks.

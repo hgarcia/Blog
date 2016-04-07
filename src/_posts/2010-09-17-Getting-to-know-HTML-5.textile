@@ -1,0 +1,30 @@
+---
+layout: post
+title: Getting to know HTML 5.
+summary: HTML 5 is way more than the highly tooted video tag or the use of canvas, it provides new tags for a more semantic representation of documents.
+categories: [General, Programming]
+---
+
+I recently moved my blog from "DasBlog to Jekyll":http://blog.dynamicprogrammer.com/2010/09/02/migrating-the-blog-from-dasblog-to-jekyll.html in the process I decided to write my templates using HTML 5 idioms.
+
+HTML 5 is way more than the highly tooted video tag or the use of canvas, it provides new tags for a more semantic representation of documents.
+
+For the blog the ones I used the most are &lt;article&gt;, &lt;section&gt;, &lt;header&gt;, &lt;footer&gt; and &lt;aside&gt;.
+
+Since I wasn't under pressure I took the time to read the specs and the different interpretations. For example the &lt;aside&gt; tag. A first suggestion was to use the aside tag for data related to the main content of the container, for example if you have an article tag that contains this post the aside tag could be used to display information of related articles or resources like the w3c site.
+
+The usage of the aside tag has evolved and in most cases today is used for auxiliar navigation or extra content (in this page is used for the right side navigation bar).
+
+h3. A header is a header is a header.
+
+The header tag is not only relegate to be used at the page context level, but can be used to identify the header of any section. For example the header of an article (inside an article tag) or a section (inside a section).
+
+The same is applicable to the footer tag.
+
+If you think of it, makes sense, specially when you recognize that this are container elements and don't represent a hierarchy like h tags do, (or should do).
+
+Now, the use of the footer tag is a bit strange and I guess that is the one that doesn't make a lot of sense to me. It's used as the container for secondary information related to the article, like a subheader almost. We need to remember that the meaning/usage of these tags should be semantic and not presentation oriented, for that we use css and from that point of view it makes sense. Still, I'm not feeling very comfortable using footer that way.
+
+I highly recommend start from some of the very good reset templates out there. I used "the kitchen sink":http://html5reset.org/ and I spend some time at "HTML 5 doctor":http://html5doctor.com/ and the "Html 5 validator":http://html5.validator.nu/
+
+Even with all of that and been very careful I still have some errors that need to be addressed, but mostly validate.

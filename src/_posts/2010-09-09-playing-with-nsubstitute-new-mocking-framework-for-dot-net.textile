@@ -1,0 +1,49 @@
+---
+layout: post
+title: Playing with NSubstitute, a new mocking framework for .Net
+summary: I heard about NSubstitute on episode 26 of Talking Shop down under. It sounded like an interesting framework with some interesting ideas, so I took it for a spin.
+categories: [Programming, Testing, Tools, .Net] 
+---
+
+I heard about "NSubstitute":http://nsubstitute.github.com/ on "episode 26 of Talking Shop down under":http://www.talkingshopdownunder.com/2010/08/episode-26-nsubstitute.html.
+
+It sounded like an interesting framework with some interesting ideas, so I took it for a spin. 
+
+??A great (12 parts) comparison serie on mocking frameworks can be found on "Richard Banks blog":http://www.richard-banks.org/2010/07/mocking-comparison-part-1-basics.html?? 
+
+h3. Syntax
+
+Lets see how we set an expectation for both NSubstitute and Rhino.Mocks
+
+
+<script src="http://gist.github.com/572354.js?file=nsubstitue_expectations.cs"></script>
+
+
+Rhino.Mocks has only one more line of code, but a long line at that. It's part of the arrange where you set your expectation.
+In NSubstitute you don't need to do so and you are kind of setting that up in the verification or assert step of your code.
+
+Let's just stub and object and return some values.
+
+
+<script src="http://gist.github.com/572354.js?file=return_value.cs"></script>
+
+
+Almost the same amount of code on both cases. Once again the main difference is the syntax and how the end result just reads like english with NSubstitute.
+
+Let's set things up to throw an exception.
+
+
+<script src="http://gist.github.com/572354.js?file=throw_exception.cs"></script>
+
+
+Once again similar results. Actually I will argue that Rhino Mocks reads a bit better here.
+
+h3. A note of warning when using NSubstitute.
+
+NSubstitute make use of extension methods on Object for it's api, this cause some issues if you rely heavily on intellisense to write your code.
+
+I have the same issues in some of my libraries, where I felt compelling to extend object. The problem is similar to what happens in javascript when you declare global variables/functions. You pollute the global context.
+
+So for example I like to use SharpTestsEx to write nicer assertions. It also use extension methods but they are Type specific. In any case now written a simple assertion for equality in a string is a bit more tricky due to all the extension methods hanging from string and from the SharpTestEx extensions as well.
+
+In any case I really think that I can learn to live with the noise due to how clean the test read and we all know that reading code is what we do 80% of the time.

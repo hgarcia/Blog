@@ -1,0 +1,7 @@
+---
+layout: center
+title: around
+home: 8905405843
+home_size: panoramic
+display_size: large1600
+---

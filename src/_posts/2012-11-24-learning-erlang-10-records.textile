@@ -1,0 +1,98 @@
+---
+layout: post
+title: Records. (Learning Erlang 10)
+summary: We already saw Tuples and lists in Erlang, time to check on records and how we can use them to structure the data in our programs.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+You can certainly use Tuples to create complex types and use an atom as the first item to identify the type of the Tuple.
+
+Creating a person using this convention looks like this.
+
+<pre><code>
+  2> P = {person, "Hernan", "Garcia", "@theprogrammer"}.
+  3> {person, Fname, Lname, Handler} = P.
+  4> Fname.
+  "Hernan"
+  5> Handler.
+  "@theprogrammer"
+</code></pre>
+
+If we want to access the <span class="code">Fname</span> field of the person directly we need to either use pattern matching or use the <span class="code">element/2</span> function, but we need to remember the position of the field.
+Not very convenient.
+
+h3. Enter records.
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
+We can define a record and access the fields by name.
+The same  person example as a record looks like this.
+
+<pre><code>
+  1> rd(person, {first = "", last = "", handler = "@"}).
+  person
+  2> P = #person{first = "Hernan"}.
+  #person{first = "Hernan",last = [],handler = "@"}
+  3> Fname = P#person.first.
+  4> Fname.
+  "Hernan"
+</code></pre>
+
+Once we define a record it will enforce the field names in case we want to access a field that have not been defined.
+
+<pre><code>
+  1> P = #person{age = 25}.
+  * 1: field age undefined in record person
+</code></pre>
+
+We can check if a variable is of a given record type using the <span class="code">is_record/2</span> function.
+
+<pre><code>
+  1> is_record(P, person).
+  true
+  2> A = "string".
+  3> is_record(A, person).
+  false
+</code></pre>
+
+The syntax to update a record is not obvious. You may be tempted to try to change the value of a given record but that will not work.
+
+<pre><code>
+  1> P#person{first = "Diego2"}.
+  #person{first = "Diego2",last = [],handler = "@"}
+  2> P.
+  #person{first = "Hernan",last = [],handler = "@"}
+</code></pre>
+
+We need to remember that Erlang is immutable, so you really don't update a record but assign the record with the changed values to a new variable.
+
+<pre><code>
+  1> P2 = P#person{first= "Diego"}.
+  2> P2.
+  #person{first = "Diego",last = [],handler = "@"}
+  3> P.
+  #person{first = "Hernan",last = [],handler = "@"}
+</code></pre>
+
+Pattern matching works pretty much as expected.
+
+<pre><code>
+  1> #person{first = Name} = P.
+  2> Name.
+  "Hernan"
+</code></pre>
+
+You can use a record as the value of a record field as well. Aka nested records.
+
+<pre><code>
+  1> rd(actor, {name="", gender=""}).
+  2> rd(movie, {title="", mainactor=actor}).
+  2> M = #movie{title = "The movie", mainactor = #actor{name = "Diva", gender = "F"}}.
+  3> M#movie.mainactor#actor.name.
+  "Diva"
+</code></pre>
+
+h3. Conclusion.
+
+We will see records more and more once we start to work in our first applications and interact with databases.

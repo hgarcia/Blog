@@ -1,0 +1,39 @@
+---
+layout: post
+title: FubuMVC another MVC framework for .Net
+summary: We are living in very exiting times in the .Net world. Every time I look I find a new framework to do web development. I recently found FubuMVC. This framework is a bit different from Sharp Architecture or the Catharsis guidance
+categories: [Frameworks, Patterns, .Net]
+---
+
+We are living in very exiting times in the .Net world. Every time I look I find a new framework to do web development. I recently found <a href="http://mvc.fubu-project.org/" target="_blank">FubuMVC</a>. This framework is a bit different from <a href="/2008/12/19/sharp-architecture-approaching-version-1-0.html" target="_blank">Sharp Architecture</a> or the <a href="/2009/01/01/catharsis--a-complete-framework-for-developing-web-apps-using-mvc-and-nhibernate-2-0.html" target="_blank">Catharsis guidance</a> since this one does not use <a href="http://www.asp.net/mvc/" target="_blank">ASP.NET MVC</a> but is inspired by it.
+
+??Fubu is an acronym which means "For us, by us." After using the Microsoft ASP.NET MVC Beta framework and disagreeing with some of the design choices made therein, several of us decided to try to bend it to our design choices using its extensibility points. Eventually we reached our goal, but we realized we had overrode or replaced large portions of the MVC framework. At this point, it was suggested that maybe we take it one step further and write our own MVC framework starting at the same layer where ASP.NET MVC begins. This is the realization of that suggestion.
+To be clear: This framework is NOT based on the ASP.NET MVC Framework at all. It is inspired by it, however.??
+
+The project is very active at the moment with several daily commits almost every day, but there isn't a lot of documentation. The <a href="http://fubumvc.pbwiki.com/" target="_blank">wiki</a> is practically empty. I guess at this point they are focusing on functionality. I downloaded the code and was able to do a build with no problems. You can build using VS or <a href="http://rake.rubyforge.org/" target="_blank">Rake</a>.
+
+See this <a href="http://fubumvc.pbwiki.com/Running-the-example-AltOxite-website" target="_blank">wiki article</a> on how to start with Fubu.
+
+To use <a href="http://rake.rubyforge.org/" target="_blank">Rake</a> you need to have <a href="http://www.ruby-lang.org/en/downloads/" target="_blank">Ruby</a> installed on the machine to take advantage of their script. There is a batch file to install the Rake gem if you don't have it, so just install Ruby and them start playing.
+
+<a href="../../../images/posts/FubuMVCanotherMVCframeworkfor.Net_1CA/ScreenHunter_01%202009-01-08%2023.18.13_2.jpg"><img alt="ScreenHunter_01 2009-01-08 23.18.13" src="/images/posts/FubuMVCanotherMVCframeworkfor.Net_1CA/ScreenHunter_01%202009-01-08%2023.18.13_thumb.jpg" border="0" height="197" width="244"></a>
+
+Here is some of the output using <a href="http://rake.rubyforge.org/" target="_blank">Rake</a>, notice that the build script runs the test as well, something we all know is a good practice, but not everybody does, doesn't it?
+
+<a href="../../../images/posts/FubuMVCanotherMVCframeworkfor.Net_1CA/ScreenHunter_02%202009-01-08%2023.18.55_2.jpg"><img alt="ScreenHunter_02 2009-01-08 23.18.55" src="/images/posts/FubuMVCanotherMVCframeworkfor.Net_1CA/ScreenHunter_02%202009-01-08%2023.18.55_thumb.jpg" border="0" height="125" width="244"></a>
+<a href="../../../images/posts/FubuMVCanotherMVCframeworkfor.Net_1CA/ScreenHunter_03%202009-01-08%2023.19.32_2.jpg"><img alt="ScreenHunter_03 2009-01-08 23.19.32" src="/images/posts/FubuMVCanotherMVCframeworkfor.Net_1CA/ScreenHunter_03%202009-01-08%2023.19.32_thumb.jpg" border="0" height="86" width="244"></a>
+
+h3. Taking a look at the Project
+
+Open the FubuMVC solution file inside the src folder. Run the Test projects, everything should be green, you should see 3 ignored cases. -Since I'm using windows XP in this machine I wasn't able to properly run the AltOxite project since It doesn't seem to work properly with Cassini and or IIS 5.1.-  +UPDATE: This have been already fixed on the trunk, so update your code now.+
+
+I really like this framework, so far (looking and browsing the code) this is the one I like the best from an architectural point of view. It's simple and powerful at the same time. Enforcing best practices (or what I think about us best practices) like separation of concerns. See in the example the controllers live in a separate assembly from the web project. (Sharp Architecture and Catharsis both take the same approach by the way).
+
+A few links to the project author's blogs.
+
+<ul>
+	<li><a href="http://jeremydmiller.com/">Jeremy Miller's Blog</a></li>
+	<li><a href="http://chadmyers.lostechies.com">Chad Myers' Blog</a></li>
+	<li><a href="http://joshuaflanagan.lostechies.com/">Joshua Flanagan's Blog</a></li>
+	<li><a href="http://cre8ivethought.com/blog/index">Mark Nijhof's Blog</a></li>
+</ul>

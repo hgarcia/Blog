@@ -1,0 +1,10 @@
+---
+layout: post
+title: The Renaissance in development; Ted Neward at Oredev 2008
+summary: You can get all the videos (110)
+categories: [General, Methodology, Programming, Tools]
+---
+
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="437" height="314" id="viddler"><param name="movie" value="http://www.viddler.com/player/1aec82a4/" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /><embed src="http://www.viddler.com/player/1aec82a4/" width="437" height="314" type="application/x-shockwave-flash" allowScriptAccess="always" allowFullScreen="true" name="viddler"></embed></object>
+
+You can get all the videos (110) here <a href="http://www.viddler.com/explore/oredev/videos/" target="_blank">http://www.viddler.com/explore/oredev/videos/</a>

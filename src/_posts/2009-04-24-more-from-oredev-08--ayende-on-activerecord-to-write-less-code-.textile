@@ -1,0 +1,17 @@
+---
+layout: post
+title: More from Oredev 08 - Ayende on ActiveRecord to write less code.
+summary: A very good presentation with lots of code to learn and appreciate some of the niceties of ActiveRecord.
+categories: [Programming, .Net]
+---
+
+A very good presentation with lots of code to learn and appreciate some of the niceties
+of <a href="http://www.castleproject.org/projects/activerecord" target="_blank">ActiveRecord</a>.
+
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="437" height="314" id="viddler">
+		<param name="movie" value="http://www.viddler.com/player/9be85770/" />
+		<param name="allowScriptAccess" value="always" />
+		<param name="allowFullScreen" value="true" />
+		<embed src="http://www.viddler.com/player/9be85770/" width="437" height="314" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" name="viddler">
+		</embed>
+	</object>

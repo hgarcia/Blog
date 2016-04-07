@@ -1,0 +1,15 @@
+---
+layout: post
+title: Some interesting looking projects 2.
+summary: A second list of projects from Codeplex and google code.Visual Studio Comparison Tools- Requires WinMerge to be installed in the machine. Provides contextual methods in VS to make fast comparison between two files or a file and the clipboard.HTML...
+categories: [General]
+---
+
+A second list of projects from Codeplex and google code.
+
+* <a href="http://www.codeplex.com/ComparisonTools" title="Visual Studio Comparison Tools" target="_blank">Visual Studio Comparison Tools</a>: Requires WinMerge to be installed in the machine. Provides contextual methods in VS to make fast comparison between two files or a file and the clipboard.
+* <a href="http://www.codeplex.com/htmlagilitypack" title="HTML Agility Pack" target="_blank">HTML Agility Pack</a>: A nice library to parse html pages, very tolerant with not complaint HTML.
+* <a href="http://code.google.com/p/jsonexserializer/" title="JsonExSerializer" target="_blank">JsonExSerializer</a>: A framework to serialize and deserialize objects into Json format. An alternative to Newtonsoft Json library.
+* <a href="http://code.google.com/p/nunit-extension-datadriven/" title="NUnit AddIn for data-driven testing" target="_blank">NUnit AddIn for data-driven testing</a>: From the website. "DataDriven Extension is an NUnit Addin that allows you to create test cases from any data sources (like database or plain text files etc.) and can used for parameterized test."
+* <a href="http://code.google.com/p/svncommittoftp/" title="SVN commit to FTP" target="_blank">SVN commit to FTP</a>: It update files via FTP to a server after a commit is done into a svn repository.
+* <a href="http://code.google.com/p/nhibernate-helper-kit/" title="NHibernate helper kit" target="_blank">NHibernate helper kit</a>: I haven't tested it myself but it promise to create a Data Model from an existing database using NHibernate, not quiet the right thing to do if you are going the TDD way but there are some times when you may find this useful.

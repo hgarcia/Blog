@@ -1,0 +1,26 @@
+---
+layout: post
+title: Hurray to my team
+summary: In the last year my team was able to successfully adopt the following practices in no particular order-    Unit testing, Continuous Integration ...
+categories: [General]
+---
+
+In the last year my team was able to successfully adopt the following practices/tools in no particular order:   
+
+<ul>
+<li>Unit testing (mostly Test First or TDD) - we were doing no formal repetitive testing before.</li>
+<li>Continuous Integration using CC.net. - a build you mean F5 on VS? Nant to drive our builds.</li>
+<li>Subversion as our source control system (we have no VCS before!).</li>
+<li>NHibernate (we were using DooDads or simple Ado.NET before).</li>
+<li>DI with Castle.Windsor.</li>
+<li>Mocking (we started using NMock2 but we are moving to Rhino.Mocks now).</li>
+<li>Code reviews and a bit of pair programming.</li>
+<li>Fogbugz as our bug tracking system (we had an in house tool before, but I hated that we also have to do maintenance of this tool and that have no value to the core business).</li>
+<li>Weekly meetings were we watch videos about the technologies we are using or we plan to use, we discuss methodologies or how to better use the tools we have. We read something and we talk about it.</li>
+</ul>
+
+I found this meetings really productive. At the beginning it was difficult for some of the members of the team to participate, to express their point of views; but that have changed. This participation makes for a more cohesive team with new ideas and different point of views. 
+
+We started to implement some automation in our regression and smoke tests as well, but we are in the exploratory phase here.  
+
+This is a testimony to the maturity of the team and how well they are taking on new challenges. Our next goal is to apply some of the Lean ideas like Kanbam.

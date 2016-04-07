@@ -1,0 +1,49 @@
+---
+layout: post
+title: Book review - Introducing HTML 5.
+summary: Introducing HTML 5 by Bruce Lawson and Remy Sharp is one of those books that I would recommend to any web developer out there.
+categories: [Programming, Books]
+---
+
+<a class="img-float-right" href="http://www.amazon.com/Introducing-HTML5-Voices-Matter-ebook/dp/B003WJRW2U/ref=sr_1_4?ie=UTF8&qid=1331255319&sr=8-4" target="_blank"><img src="/images/posts/intro-html5.jpg" border="0" alt="Book cover image Introducing HTML 5" style="width: 75%"/></a>I got this book, Introducing HTML 5 by "Bruce Lawson":http://www.brucelawson.co.uk/ and "Remy Sharp":http://remysharp.com/ , several months back but I only got around to read it a few weeks ago.
+I have to confess that my expectations were low, not because of the authors but because of the topic.
+I have been using some of the new markup elements for more than a year and a half now, and I have been following HTML 5 and keeping myself informed for a long time.
+
+h3. Oh boy, was I wrong.
+
+I have to admit that the book started to get my attention around page 14, nothing spectacular at this point, but the prose and the way the content was presented was very attractive to me and make for a fun read.
+
+Bruce Lawson starts explaining the new structural elements with clear examples of usage and (more important) taking a realistic, pragmatic approach on their usage.
+
+Once on chapter 2, the book starts to get really interesting, presenting some not so common elements like the <time> tag and how to work with HTML 5 outlines.
+
+__By the way, the time element in the last 10 days of so was removed from the draft and re-added a few days later. :-)__
+
+The book also takes in consideration accessibility and how to coding our markup for it. The proper usage of headings, hierarchy, usage of hgroup, differences between section and article, etc.
+
+The chapter ends with a case study of a probable HTML 5 markup to use for the guardian.co.uk website.
+
+Once again the author is very clear on when his choices may not be the same that another programmer would take in the same situation, but it makes a point on explaining his reasoning and his mental process behind the choice.
+
+h3. Way more than markup...
+
+The book is very clear on what features are either not covered or only covered as an introduction.
+
+Forms occupy a full chapter and is probably the one chapter that I read with the most interest, specially since I did neglect the use of some of the new features in HTML 5 forms before, so it served me as a good refresher course.
+
+The validation API is covered in some extend and some work arounds are shown for browsers that don't support or patially support some of the features.
+
+Chapter 4 is the inevitable video and audio chapter, nice simple code examples and some useful tricks are explained.
+Chapter 5 is dedicated to the Canvas API.
+
+This is another good chapter to follow with a code editor at hand to practice and type some of the examples. The chapter is intended as an introduction to what is maybe the biggest new api.
+
+Chapter 6 touches on Data storage and chapter 7 explain how to build offline applications.
+
+The last three chapters are dedicated to Drag and Drop, Geolocation and Messages, Workers and Sockets.
+
+h4. Recommended?
+
+Absolutelly. The information in some of the subjects is only introductory, but in most cases that may be all that you need, to cover most commmon scenarios.
+
+The book is very clear, it reads well and there is no fluff in it, that alone is a miracle for a technical books, so go ahead and get a copy you won't regret it.

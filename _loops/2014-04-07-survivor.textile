@@ -1,0 +1,7 @@
+---
+layout: center
+title: survivor
+home: 13680055873
+home_size: small320
+display_size: large1600
+---

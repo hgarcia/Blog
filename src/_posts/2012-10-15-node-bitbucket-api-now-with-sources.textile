@@ -1,0 +1,64 @@
+---
+layout: post
+title: Node Bitbucket now includes access to sources.
+summary: I added last night access to the src endpoints of the API that allows you to get the content of files and folders.
+categories: [node.js, Programming]
+---
+
+A few hours ago I pushed "version 0.0.3 of the bitbucket-api":https://npmjs.org/package/bitbucket-api node.js module to npm.
+
+In the new version I added access to the src end point via the <span class="code">sources(path, revision)</span> method.
+
+This method gives you access to the "src resources":https://confluence.atlassian.com/display/BITBUCKET/src+Resources .
+
+These resources allow you to get access to information about files and directories in the repository as well as raw content from a file or folder structure.
+
+h3. Usage.
+
+<pre><code>
+  repo.sources('/package.json').info(function (err, result) {
+    //get access to the info for the package.json file
+  });
+
+  repo.sources('/').info(function (err, result) {
+    //get access to the info for the root folder
+  });
+
+  repo.sources('/package.json').raw(function (err, result) {
+    //gets the content of the package.json file
+  });
+
+  repo.sources('/').raw(function (err, result) {
+    //gets the content (as a string) of the root folder.
+  });
+</code></pre>
+
+h3. Instance methods
+
+All callbacks follow the standard node signature <span class="code">cb(err, result)</span>.
+
+<span class="code">info(cb)</span>
+
+The result is a literal with the data returned by the API.
+
+<span class="code">raw(cb)</span>
+
+The result contains a data and a lines properties.
+
+__This only works for text files, binary files will return a 500 status code.__
+
+<pre><code>
+  obj.data //Contains a string with the file raw content
+  obj.lines //Contains an array with the string split by '\n' characters.
+</code></pre>
+
+In case of an error parsing the data at the moment we return a result with this form.
+
+<pre><code>
+  {
+    success: false,
+    status: 500     //Or other HTTP status code
+  }
+</code></pre>
+
+_This API will change in the next release and the module will use the err object to return any and all errors._

@@ -1,0 +1,60 @@
+---
+layout: post
+title: Playing with recursion, (Learning Erlang 6).
+summary: Tail and body recursive functions are at the heart of every Erlang program.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
+In Erlang you utilize recursion instead of loops. It used to be very important to utilize Tail recursive functions for performance considerations and to not blow the stack. In recent versions of the language this is not necessarily the case. Refer to the article "The Eight Myths of Erlang Performance":http://www.erlang.org/doc/efficiency_guide/myths.html for more information on the subject.
+
+h3. Tail recursion
+
+A tail recursive function is one where the last statement is a call to itself.
+
+Let's create a simple function that calculate fees on an amount and return a Tuple with the original amount and the sum of the fees to be paid. (The math makes no sense in this example but we don't care about the business case here)
+
+<script src="https://gist.github.com/2403205.js?file=recursion.erl"></script>
+
+So, we create a <span class="code">recursion</span> module and we export only one function, <span class="code">calculateFees\2</span>
+
+The client calls <span class="code">calculateFees\2</span> and internally we call <span class="code">calculateFees\3</span>
+While the list is not empty It will match the second head for <span class="code">calculateFees\3</span>.
+
+<script src="https://gist.github.com/2403205.js?file=console1.erl"></script>
+
+Notice what's is going on in here, on each call we take the head from the list and calculate the fees based on the amount. Then we call ourselves <span class="code">calculateFees\3</span>, passing the tail in the second position. Once the list is empty we will match against the first head of the function.
+At this point we return a tuple with the original amount and the calculated fees.
+
+<aside class="resources">
+  <h4>Links</h4>
+
+  * "Efficiency guide":http://www.erlang.org/doc/efficiency_guide/introduction.html
+  * "A Deeper look at Tail recursion in Erlang":http://prog21.dadgum.com/1.html
+  * "Introduction to Erlang":http://trigonakis.com/blog/2011/03/30/introduction-to-erlang-recursion-12/
+
+</aside>
+
+h3. No case to match.
+
+If you forget to add a clause for a given case, your code will throw an exception on runtime. Ex, in this case we forgot to add a case to handle an empty list.
+
+<script src="https://gist.github.com/2403205.js?file=no_eguard_clause.erl"></script>
+
+<script src="https://gist.github.com/2403205.js?file=console2.erl"></script>
+
+h3. Infinite loops
+
+This example is extremely silly, but this same issue can happen with more complicate code.
+
+<script src="https://gist.github.com/2403205.js?file=infinite.erl"></script>
+
+We have a guard clause but in the recursive call we are always adding a new element to the list (in this case is just the same list).
+
+A slight variation of the code is when we don't use tail recursion but body recursion and may eventually blow the stack.
+
+<script src="https://gist.github.com/2403205.js?file=blow.erl"></script>
+
+I run the code above for a good 20 minutes in my old laptop without blowing it. So again, check "The Eight Myths of Erlang Performance":http://www.erlang.org/doc/efficiency_guide/myths.html for more information.

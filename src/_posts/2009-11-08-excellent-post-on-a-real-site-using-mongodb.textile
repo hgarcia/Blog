@@ -1,0 +1,8 @@
+---
+layout: post
+title: Excellent post on a real site using MongoDB.
+summary: Post from the business insider on a real world use of MongoDB.
+categories: [Programming, MongoDB]
+---
+
+<iframe height="430" border="0" src="http://www.businessinsider.com/embed?id=4af379ed0000000000f9b6a8&amp;width=950&amp;height=430" frameborder="0" width="950"></iframe>

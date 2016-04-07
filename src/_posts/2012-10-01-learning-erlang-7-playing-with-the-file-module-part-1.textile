@@ -1,0 +1,124 @@
+---
+layout: post
+title: Playing with the file module (part 1). (Learning Erlang 7)
+summary: After some time playing with Dart is time to come back to Erlang. This time I will explore the functions in the file module that allow to dynamically execute code from files.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+At one point or another, while writing code, is inevitable to interact with the file system.
+
+The <span class="code">file</span> module in Erlang contains most of the functions you are used to in other languages for reading, writing, opening, creating and deleting files.
+
+The main surprise for me was to find a number of functions used to evaluate or execute Erlang code contained on files.
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
+I would expect this functions (<span class="code">eval</span> and such) to be in another module, maybe even implemented as BIF. It feels a bit odd and out of place to have code executing functions in a module that deals with files.
+
+_Keep in mind that maybe there are other ways to evaluate code in Erlang that I'm not aware yet._
+
+Let's explore these functions first.
+
+h3. "file:consult/1":http://www.erlang.org/doc/man/file.html#consult-1
+
+It takes the name of a file as the sole argument. It reads a list of terms from the file. Each term should be separated by a dot.
+
+For example, let's assume we have a file with the name <span class="code">sci-fi-shows.txt</span> with this content:
+
+<pre><code>
+  {show, "Alphas", "sci-fi"}.
+  {show, "Dr. Who", "sci-fi"}.
+  {show, "Life on Mars", "sci-fi"}.
+  {show, "Misfits", "sci-fi"}.
+  {show, "Warehouse 13", "sci-fi"}.
+</code></pre>
+
+When reading it we should get a tuple with the following result.
+
+<pre><code>
+  1> file:consult("sci-fi-shows.txt").
+  {ok,[{show,"Alphas","sci-fi"},
+       {show,"Dr. Who","sci-fi"},
+       {show,"Life on Mars","sci-fi"},
+       {show,"Misfits","sci-fi"},
+       {show,"Warehouse 13","sci-fi"}]}
+</code></pre>
+
+We can assign the result to a tuple as well.
+
+<pre><code>
+  1> {ok, SciFiShows} = file:consult("sci-fi-shows.txt").
+  2> SciFiShows.
+  [{show,"Alphas","sci-fi"},
+   {show,"Dr. Who","sci-fi"},
+   {show,"Life on Mars","sci-fi"},
+   {show,"Misfits","sci-fi"},
+   {show,"Warehouse 13","sci-fi"}]
+</code></pre>
+
+If we pass the wrong name we will get an error Tuple.
+
+<pre><code>
+  1> file:consult("this-is-not-a-file").
+  {error,enoent}
+</code></pre>
+
+It will also return an error if the file has the wrong content, in this case the error usually contains the line number, the error type and some details.
+
+<pre><code>
+  1> file:consult("wrong-content.txt").
+  {error, {1, erl_parse, ["syntax error before: ","is"]}}
+</code></pre>
+
+h3. "file:eval/1":http://www.erlang.org/doc/man/file.html#eval-1 and "file:eval/2":http://www.erlang.org/doc/man/file.html#eval-2
+
+These functions evaluate and execute the code in the file but they don't return the result of the evaluation.
+
+You can use it to dynamically run code, given a file with this code.
+
+<pre><code>
+  io:format("hello").
+</code></pre>
+
+We can run it and we will see this.
+<pre><code>
+  1> file:eval("eval-1.txt").
+  hellook
+</code></pre>
+
+<span class="code">file:eval/2</span> takes a second argument bindings used in the evaluation of the code.
+
+h3. "file:script/1":http://www.erlang.org/doc/man/file.html#script-1  and "file:script/2":http://www.erlang.org/doc/man/file.html#script-2
+
+Similar to the <span class="code">eval</span> functions but returning the result of the last statement in the file.
+
+Given a file with this code.
+
+<pre><code>
+  Result = 1 + 1.
+</code></pre>
+
+This is the result.
+
+<pre><code>
+  1> file:script("script-1.txt").
+  {ok,2}
+</code></pre>
+
+h3. The path functions
+
+The <span class="code">consult/1</span>, <span class="code">eval/1</span> and <span class="code">script/2</span> functions have corresponding path functions.
+
+<pre><code>
+  file:path_consult(["/bin", "/lib", "/configs"], "filename.txt").
+  file:path_eval(["/bin", "/lib", "/configs"], "filename.txt").
+  file:path_script(["/bin", "/lib", "/configs"], "filename.txt").
+  file:path_script(["/bin", "/lib", "/configs"], "filename.txt", Bindings).
+</code></pre>
+
+They are equivalent to the non path_ functions but they will search for the file in the the list of given paths until it find it.
+
+h3. Next time.
+
+We will continue exploring the <span class="code">file</span> module, looking at the functions that allow us to work with files in a more traditional way.

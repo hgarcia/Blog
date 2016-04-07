@@ -1,0 +1,20 @@
+---
+layout: post
+title: ALT.NET
+summary: I'm trilled to discover that I'm not crazy and that my search and adoption of alternative tools (alternatives to the Microsoft tools) to develop in .net is a philosophy adopted not only by me but for a lot of people. It even has a name ALT.NET.
+categories: [General, .Net]
+---
+
+I'm trilled to discover that I'm not crazy and that my search and adoption of alternative tools (alternatives to the Microsoft tools) to develop in .net is a philosophy adopted not only by me but for a lot of people.
+
+It even has a name ALT.NET a term create by <a target="_blank" href="http://laribee.com">David Larabee</a>.
+
+Just to clarify is not that I hate Microsoft, I agree that they produce very good tools and very good software in general, even IE is not that bad, even when all of us that do Web development complain constantly about it, security holes, non-standard js and DOM implementations, etc. My problem with some of the Microsoft tools is that they use too many wizards for everything or they make things easy to use only if you want to do it the Microsoft way.
+
+The Redmond giant have been changing its ways lately and they are even releasing some really good and promising stuff, like Silverlight and the ability to run it in any browser (my test in IE and Firefox have been very promising, there is not support for Opera thought and Safari in a power PC only works with the version 1.0, but this is still better than using Windows Media player embed.
+
+My problems come when looking at integrated solutions to manage the development cycle. I took a look at TFS and the whole Team System ecology and they look fine on paper but they don't work really well for me. And what with the complicate versioning and licensing!!!
+
+For all my non .net development I settle on <a target="_blank" href="http://www.eclipse.org">Eclipse</a>, I rely heavily on it, I have integration with <a target="_blank" href="http://ant.apache.org">Ant</a> and <a target="_blank" href="http://subversion.tigris.org">Subversion</a>, support for editing Java, PHP, and AJAX based applications all in the same environment. I have been playing with <a target="_blank" href="http://www.eclipse.org/mylyn/">Mylyn</a> and a little plug in for FogBugz later and I'm very please that I don't need to leave Eclipse at all, I even have my UML tool of choice running on it, <a target="_blank" href="http://www.visual-paradigm.com">Paradigm</a>.
+
+I don't want to be unfair, I have been able to integrate VS 2005 with Subversion and FogBugz as well. FogBugz provides their own add in and I'm using VisualSVN for Subversion (I like Ankhsvn but has issues with web apps, there are workarounds but <a target="_blank" href="http://www.visualsvn.com">VisualSVN</a> cost almost nothing and works right out of the box, it leverage <a target="_blank" href="http://tortoisesvn.tigris.org">TortoiseSVN</a>).

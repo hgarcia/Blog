@@ -1,0 +1,64 @@
+---
+layout: post
+title: Codemash 2.0.1.3 precompilers.
+summary: PhoneGap in the morning, build you own application in the evening.
+categories: [Programming, Codemash]
+---
+
+We are half way through Codemash 2.0.1.3 since this year we got two days of precompilers.
+
+I think I choose fairly well but as usual I had to leave out some sessions that looked really good. Nothing I can do about that.
+
+h3. Choose your own application
+
+I wasn't very sure to attend or not the "Choose your own application" session. It looked very interesting in paper, but I was worry since I had been using those frameworks for a while.
+
+I'm glad I did it anyway, the session was really good and the amount of work both "Dennis Burton":http://twitter.com/dburton and "Brian Genisio":http://twitter.com/BrianGenisio  put behind it is  impressive.
+
+I will recommend you visit their site "http://chooseyourownapplication.com":http://chooseyourownapplication.com sign up and follow the instructions.
+
+You will be making some decisions along the way, choosing the language to use, the different technologies and libraries and even deployment platform, getting new badges with each complete "level".
+
+It should take you a few hours to complete it, but once you are done, you will have a single page application with a basic back end.
+
+The exercise finish leaving a list of things you could do to make the application a bit more "real world" and robust.
+
+Even when the application you will work on is very simple, it deals with several common scenarios that apply to more complex apps of this nature.
+
+I thinks is a very good resource for understanding single page apps, and even more, since you can go back and start again and make different decisions, it's also a good way to evaluate and compare the different technologies.
+
+h3. Atomic Scala
+
+"Dianne Marsh":http://twitter.com/dmarsh and "Bruce Eckel":https://twitter.com/BruceEckel put together a condensed version of their seminar specially for Codemash, all based on their "upcoming book":http://www.atomicscala.com/book/ of the same title.
+
+The idea is to teach Scala step by step, introducing each feature in order.
+
+From their website:
+
+__We present each Atom (chapter) in the book as a very short lecture, followed by an exercise period. Atomic concepts make learning Scala easy and fun.__
+
+It's a nice approach to learn a new language and is a gentle introduction to Scala, that can be a bit scary if you come from traditional OO languages.
+
+I had a good time pairing and doing the exercises, sadly I had to leave after lunch but I plan to complete the book later tonight.
+
+I recommend keeping an eye once the book is finally released and get yourself a copy if you want to get into Scala.
+
+h3. Behind the scenes of building Roslyn
+
+I wasn't planning to attend this session, I poke my head into the room and I got hook. It's not a secret that I like languages, compilers and also "processes", so been able to learn how Roslyn was build was very interesting and educational.
+
+Roslyn is an impressive project, a compiler for very well established languages like C# and VB, integrated deep inside a non trivial products like VS (and WebMatrix).
+
+The process, testing (both unit and functional) and performance considerations and how the team addressed each of those problems was very revealing.
+
+Both "Kevin Pilch-Bisson":http://twitter.com/Pilchie and "Brian Rasmussen":https://twitter.com/kodehoved made what can sound like a boring and arid subject into a very good and engaging presentation.
+
+I gain a better appreciation of the complexities involved while working on a project of these level of complexity and visibility.
+
+h3. Building Mobile Applications with PhoneGap
+
+"Ray Camden":http://twitter/cfjedimaster gave a good presentation/workshop.
+
+I particularly enjoyed the first part of the session where he introduced PhoneGap and the different ways to use it, some of the common pitfalls and the different work-flows recommended to get your application out the door in good shape.
+
+He was very entertaining and well prepared and I took a few tips from it that will certainly save me some time in the future.

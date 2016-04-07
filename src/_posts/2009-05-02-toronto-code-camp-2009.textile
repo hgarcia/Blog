@@ -1,0 +1,17 @@
+---
+layout: post
+title: Toronto Code Camp 2009
+summary: Last weekend was the 2009 edition of the Toronto Code Camp were I had the privilege to participate as one of the many volunteers.
+categories: [General]
+---
+
+Last weekend was the <a href="http://www.torontocodecamp.net/" target="_blank">2009 edition of the Toronto Code Camp</a> were I had the privilege to participate as one of the many volunteers.
+This is a free event that runs from 9 am to 6 pm with 25 sessions in topics such as: <a href="http://wix.sourceforge.net/" target="_blank">Wix</a>, <a href="http://silverlight.net/getstarted/silverlight3/default.aspx" target="_blank">Silverlight 3</a>, <a href="http://www.asp.net/mvc/" target="_blank">ASP.NET MVC</a>, <a href="http://research.microsoft.com/en-us/um/cambridge/projects/fsharp/" target="_blank">F#</a>, <a href="http://www.microsoft.com/azure/data.mspx" target="_blank">SQL Data Services</a>, Extending VS, new features in VB10, Linq internals and more.
+
+I was impressed by how well organized the event was. The sessions I was able to assist were no bad at all. The presenters were experienced and well prepared. Most of the material was at the 100 to 200 level, maybe the Linq internals session touch around the 300 with expression trees. Even if you consider yourself at the 400 level, with so many sessions on so different topics you can always find something interesting and new things to learn.
+
+The interaction with fellow developers and the involvement in the community have a lot of value as well. There was a high sense of camaraderie during the event and the after party. On a personal note I was able to "infest" another volunteer with the MVC virus.
+
+If you haven’t attend a code camp near you city or town make sure to check for them and don’t miss it. They are a lot of fun. As a developer I want to thanks "Chris Dufour":http://ca.linkedin.com/in/cdufour for putting the time to organize such an event.
+
+P.S.: I got a cool Polo shirt sponsored by <a href="http://www.objectsharp.com/Pages/default.aspx" target="_blank">ObjectSharp</a>.

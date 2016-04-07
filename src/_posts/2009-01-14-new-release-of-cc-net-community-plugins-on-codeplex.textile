@@ -1,0 +1,12 @@
+---
+layout: post
+title: New Release of CC.Net Community plugIns on CodePlex.
+summary: If you use Cruise Control.Net you may want to take a look at this project. CC.Net Community PlugIns
+categories: [Programming, .Net]
+---
+
+If you use Cruise Control.Net you may want to take a look at this project: <a href="http://www.codeplex.com/ccnetplugins" target="_blank">CC.Net Community PlugIns</a>.
+
+<blockquote>
+Designed to be a repository for many different plugins for CruiseControl.NET. Hope to have many users contributing plugins to the repository.
+</blockquote>

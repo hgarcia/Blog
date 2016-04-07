@@ -1,0 +1,49 @@
+---
+layout: post
+title: Have fun with your build scripts.
+summary: We put Cucumber in our test, use a capybara to automate the browser and we pickler our stories.
+categories: [Programming, General]
+---
+
+This past weekend I have to put together a build script for my latest project.
+I have been using Rake with Albacore for some time now in most of my .net projects for several reasons.
+
+One of those reasons is the flexibility that a proper programming language and a good DSL give you.
+
+On Saturday around 1:00 AM I was testing a new step to automate the retrieval of dependencies via NuGet on the build.
+
+??As a side note, on Sunday the next day "Amir Barylko posted a detailed article":http://is.gd/DgEHoH on how to doing exactly that.??
+
+I was trying to come up with a proper name for the step when I got an idea.
+
+Let's have some fun with my script.
+
+I usually create a namespace on my rake file and my tasks are defined inside the namespace.
+
+So I decided to give my namespace a persons' name and use verbs for all my tasks.
+
+That way to run the build instead of typing something boring like:
+
+<pre><code>
+	rake setup:build
+</code></pre>
+
+I can do:
+
+<pre><code>
+	rake girkard:builds
+</code></pre>
+
+It may also have a positive impact in the team (I will report on that later, or maybe not).
+Let's imagine talking to somebody and say, Giskard is telling my that the integration fails.
+
+Of course, this is nothing new and the guys from Jenkins had the idea long before me, but I still think that is fun.
+
+This can be taken to dangerous extremes, but I guess that if keep between reasonable boundaries there is no damage.
+
+At the end of the day we are already putting Cucumber in our test.
+We use a Capybara to drive the browser (although sometimes is a webrat), and we pickler the stories from Pivotal.
+
+<blockquote>
+	Extra geek points for those of you that recognized the name "Giskard" without using Wikipedia :-)
+</blockquote>

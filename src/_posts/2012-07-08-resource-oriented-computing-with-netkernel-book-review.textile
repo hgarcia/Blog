@@ -1,0 +1,32 @@
+---
+layout: post
+title: Resource Oriented Computing with NetKernel by Tom Geudens.
+summary: An entertainment book in a very different approach to programming.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920024460.do" target="_blank"><img class="img-float-right"  src="/images/posts/resource-oriented-computing-with-netkernel.gif" border="0" alt="Resource Oriented Computing with NetKernel - book cover"/></a>
+
+This book was my first exposure to Resource Oriented Computing and NetKernel.
+
+"Tom Geudens":http://practical-netkernel.blogspot.ca/ does a good job introducing a very different way to approach programming.
+
+The first three chapters will get you started with building and (somehow) understanding what a module is and how is created.
+
+Chapter four show you how to interact with a db (MongoDb) and how to build something more complex and (useful).
+
+The second part of the book digs deeper in the languages and tools included with NetKernel, like the nCoDe editor or the DPML and XRL languages.
+
+_Be ready to read lots of XML in the book._
+
+A big plus, at least for me, is that every chapter has a section on testing.
+
+h3. Conclusion
+
+If you want to learn ROC or you are interested in different approaches to computing programmers this book is for you.
+
+The author has a very entertainment style that makes for an easier read on a subject that could be very dense otherwise.
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__

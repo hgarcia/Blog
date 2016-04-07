@@ -1,0 +1,11 @@
+---
+layout: post
+title: Fixing IIS 5.0 to work with the MVC
+summary: I just found this post with detailed instruction on how to make the MVC framework work in IIS. The instructions are very basic and you shouldn't have any problems making it work, but you may not know how to modify the extension handling in IIS 5.
+categories: [General, Tools]
+---
+
+I just found a post with detailed instruction on how to make the "MVC framework work in IIS 5.0":http://guyellisrocks.com/iis/configuring-iis5-for-asp-net-mvc/ .
+
+The instructions are very basic and you shouldn't have any problems making it work, but you may not know how to modify the extension handling in IIS, so I thought to add this.
+

@@ -1,0 +1,182 @@
+---
+layout: post
+title: Building a Flickr based photos showcase.
+summary: Upon the demise of Jux I had to find out where and how to put my pictures. I decided that the best I could do was to build a simple multi layout site myself. (Silly of me)
+categories: [JavaScript]
+---
+
+Upon the demise of Jux I had to find out where and how to put my pictures.
+
+The idea was to try to replace Jux and integrate it into my blog. The blog is a static site generated using Jekyll hosted on Heroku as a rack application.
+The reason I use rack is to re-route some old URL posts from a previous migration when the site was using the DasBlog engine.
+
+I wanted to host the images on Flick to reduce not only bandwidth but also the size of the slug when pushing to Heroku.
+
+After a bit of browsing around I found "this Jekyll plugin":http://jonasforsberg.se/2012/04/15/flickr-plugin-for-jekyll by "Jonas Forsberg":https://twitter.com/himynameisjonas to insert images from Flickr.
+The plug-in worked well but I wanted to have a bit more control on the sizes of the images that I inserted in each individual post without having to change the template.
+
+The plug-in depends on the "fleakr":https://github.com/reagent/fleakr gem, so I dig into the code for the gem and after fiddling around a bit I came up with this:
+
+<pre><code>
+  require 'liquid'
+  require 'fleakr'
+
+  Fleakr.api_key       = "YOUR_API_KEY_HERE"
+  Fleakr.shared_secret = "YOUR_SHARED_SECRET_HERE"
+
+  CACHED_IMAGES = {}
+  SIZES = {:square => "Square", :large_square => "Large Square", :thumbnail => "Thumbnail", :small =>
+  "Small", :small320 => "Small 320", :medium => "Medium", :medium640 => "Medium 640", :medium800 => "Medium 800", :large => "Large", :large1600 => "Large 1600", :large2048 => "Large 2048", :original => "Original"}
+
+  module Flickr
+    @printed = false
+    def flickr_url(image_id)
+      "http://www.flickr.com/photos/theprogrammer/#{image_id}"
+    end
+
+    def flickr_img(image_id, size = :medium, attrs = {})
+      img = image_object(image_id, get_size_segment(size.downcase.to_sym))
+      image_tag(img[:title], img[:url], attrs)
+    end
+
+    private
+
+    def get_size_segment(symbol)
+      SIZES[symbol]
+    end
+
+    def image_object(image_id, size)
+      url = flickr_url(image_id)
+      resource = CACHED_IMAGES[url] ||= Fleakr.resource_from_url(url)
+      if (resource)
+        image = resource.images.find do |img| img.size == size end
+        {:title => resource.title, :url => image.url}
+      else
+        {:title => "not found", :url => "#"}
+      end
+    end
+
+    def image_tag(title, url)
+      "<img alt='#{title}' src='#{url}' #{image_attrs(attrs)}>"
+    end
+
+    def image_attrs(attrs)
+      string_of_attributes = ""
+      attrs.each {|k, v| string_of_attributes += "#{k}=\"#{v}\""}
+      string_of_attributes
+    end
+
+  end
+
+  Liquid::Template.register_filter(Flickr)
+
+</code></pre>
+
+The new plug-in only exposes one public method <span class="code">flick_img</span> that takes three parameters.
+
+The image id (from Flickr) a string for the image size and an optional hash with attributes for the IMG tag.
+
+This gives you complete control on how to insert your images on your Jekyll blog.
+
+h3. Post definitions
+
+I decided to define all the variables in the header of the post. I'm still not sure about some of the names for the attributes but so far this is what I have.
+
+<pre><code>
+  ---
+  layout: single
+  title: up the mountain
+  home: 8998363978
+  home_size: small320
+  display_size: large
+  ---
+</code></pre>
+
+h3. Layouts
+
+I'm using multiple layouts for some different types of posts.
+I decided to keep it simple and I create only 3 different layouts.
+
+A "single" layout that align the image to the right of the screen.
+A "center" layout that try to go full screen on the image and center it in the window.
+An "slider" layout that creates a "very simple" automatic slider when I want to group multiple images together.
+
+The slider is based on code posted by "Jon Raasch"http://jonraasch.com/blog/a-simple-jquery-slideshow but I made a few changes to accommodate for images of multiple sizes in my set among other things.
+
+<pre><code>
+  /***
+      Based on the Simple jQuery Slideshow Script
+      Released by Jon Raasch (jonraasch.com) under FreeBSD license: free to use or modify, not responsible for anything, etc.  Please link out to me if you like it :)
+  ***/
+  if ($('#slideshow')) {
+    window.slideSwitch = function () {
+        var $active = $('#slideshow IMG.active');
+        if ($active.length === 0 ) {
+          $active = $('#slideshow IMG:first');
+          show($active);
+        } else {
+          hide($active)
+          var $next =  $active.next().length ? $active.next()
+            : $('#slideshow IMG:first');
+          show($next);
+        }
+        function hide(ele) {
+          ele.animate({opacity: 0.0}, 1000).removeClass('active');
+        }
+        function show(ele) {
+          ele.animate({opacity: 1.0}, 1000).addClass('active');
+        }
+    };
+    window.slideSwitch();
+    setInterval(window.slideSwitch, 5000);
+  }
+</code></pre>
+
+There is also a simple function that "resizes" the image container. It's not my best code and some refactoring is granted to happens sometime in the future. This prevent the image from "taking over" the screen.
+
+<pre><code>
+  function resizeMainImage() {
+    var containerHeight = $(window).height() - 90;
+    var imageHeight = containerHeight;
+    var img = $('#single-image img');
+    if ($('#center-text-container') && $('#center-text-container').length > 0) {
+      imageHeight = containerHeight - 60;
+    }
+    if (img && img.height() > imageHeight) {
+      img.attr('height', imageHeight);
+    }
+    var wrapper = $('#image-wrapper');
+    if (wrapper && wrapper.length === 0) {
+      wrapper = $('#slideshow');
+    }
+    if (wrapper && wrapper.length > 0) {
+      wrapper.height(containerHeight);
+    }
+    var sliders = $('#slideshow-img-container img');
+    if (sliders && sliders.length){
+      for (var i = 0; i < sliders.length; i++) {
+        $(sliders[i]).height(containerHeight);
+      }
+    }
+  }
+</code></pre>
+
+h3. Masonry and the home page
+
+I decided to use "masonry.js":http://masonry.desandro.com/  for the home page layout and is kind off working  most of the time. I still see some issues on mobile devises with images overlapping and the layout not loading properly some times.
+
+I'm not sure if the library is to blame or how I'm using it, (probably the later).
+
+h3. Responsive?
+
+I didn't do anything special for mobile besides setting image width to 100%. It works pretty well on iPhones and iPads. I didn't have the opportunity to check on Android devices.
+
+__I know that's not really "responsive" and just a hack but I just wanted something simple for now.__
+
+There are still some things to fix, like titles displaying off screen, but I'm certainly not in a hurry.
+
+h3. Conclusion
+
+The whole thing took me a bit over 3 hours to put together.
+I will be the first to admit that neither the code or the markup are really there yet but as a first approximation I'm fairly happy with how things turned out.
+I still need to work on how to show the images in the RSS feed, at the moment is just the title.

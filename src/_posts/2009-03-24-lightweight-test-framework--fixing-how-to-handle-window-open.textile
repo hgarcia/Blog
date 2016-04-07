@@ -1,0 +1,82 @@
+---
+layout: post
+title: Lightweight Test Framework, fixing how to handle window.open
+summary: As I mentioned in a previous post I have been playing with the Microsoft Lightweight Test Automation Framework. The Lightweight framework handle alert and confirms without any problem, both in IE and Firefox out of the box.
+categories: [Programming, Testing, Tools]
+---
+
+As I mentioned in a previous post I have been playing with the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Microsoft Lightweight Test Automation Framework</a>.
+
+The Lightweight framework handle alert and confirms without any problem, both in IE and Firefox out of the box. I guess it won't be an issue on the Mac either. Now window.open is another issue, a JavaScript error was thrown in both browsers.
+
+So here is how I fix it so far (so far because I still need to deal with a nasty bug on Firefox).
+
+h3. Window.open is not working (and a solution).
+
+After digging around and thanks to Firebug (and at a lesser degree, the new Developer tools for IE8) I found that the problem seems to be in two places. Wait until the end of the post to change anything on your files.
+
+My first approach.
+
+First open the following file (in the source code solution for the framework).
+
+Engine/Resources/ScripFiles/BrowserFrame.js
+
+We will change the following line:
+
+
+
+<script src='http://gist.github.com/561843.js?file=file0.js'></script>
+
+
+
+to
+
+
+
+<script src='http://gist.github.com/561843.js?file=file1.js'></script>
+
+
+
+Engine/Resources/ScripFiles/TestExecutorBase.js
+
+Search for openWindowAndRegister: this is the function that will be assigned to window.open by the framework to handle the calls get a new window object and add it to the browser windows collection of the TestExecutor object.
+
+We will change the following line:
+
+
+
+<script src='http://gist.github.com/561843.js?file=file2.js'></script>
+
+
+
+with the following code:
+
+
+
+<script src='http://gist.github.com/561843.js?file=file3.js'></script>
+
+
+
+The temp variables are there just to help when debugging. Notice that we are calling _originalOpen on activeFrame and not activeFrame.get_jsFrame()
+
+Now this will make window.open functions work in IE but not in Firefox where I get an "Illegal operation on WrappedNative prototype object" exception, this seems to be a known regression on Firefox since at least version 1.07.
+
+Upon thinking about this I notice that we should be able to actual use window.open directly inside openWindowAndRegister.
+
+So here goes the solution that works, I kept the changes to BrowserFrame.js but the changes to TestExecutorBase are now as follow replace :
+
+
+
+<script src='http://gist.github.com/561843.js?file=file2.js'></script>
+
+
+
+with the following code:
+
+
+
+<script src='http://gist.github.com/561843.js?file=file4.js'></script>
+
+
+
+window.open returns a windows object and them we can register it to the _windowCollection internal array of the TestExecutor. So far I like this solution, now I need to figure out how to write test against this new window. I guess I will leave that for another post.

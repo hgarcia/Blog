@@ -1,0 +1,44 @@
+---
+layout: post
+title: Proper naming in generics and Lambda expressions.
+summary: Hopefully gone are the days were you considered ok the use of single letter names for your variables or your arguments and you are giving informative names to all the artifacts in your code.
+categories: [Programming, .Net]
+---
+
+Hopefully gone are the days were you considered ok the use of single letter names for your variables or your arguments and you are giving informative names to all the artifacts in your code.
+
+But what about generics? What about the <T> in them? Are you paying attention? More and more you will see that programmers are shying away from the single letter placeholder and are using more explanatory names. If you look at the code in FubuMvc you will see things like this.
+
+
+
+<script src='http://gist.github.com/561854.js?file=file0.aspx-cs'></script>
+
+
+
+That is more informative than Load<T>.
+I used to do the single letter naming for generics in my code, but I'm trying to avoid it as much as possible today. The same way I won't tolerate bad names for my functions anymore. I still have a problem with the T in there. I was also doing that, but lately I have dropped the T altogether as well. I see the use of the T as a kind of Hungarian notation. 
+
+In the Lambdas department the single letter variables are all over the place.
+
+
+
+<script src='http://gist.github.com/561854.js?file=file1.aspx-cs'></script>
+
+
+
+This is a simple example, where c may be sufficient since you are properly naming the collection (cities) but I still think there is something there, specially when you have longer expressions. And certainly don't use x.
+Like in:
+
+
+
+<script src='http://gist.github.com/561854.js?file=file2.aspx-cs'></script>
+
+
+
+What's x? What do you think?
+
+h3. Why should you care?
+
+Making your code readable will make your code better. When you have to think about the proper name for a variable or a method, you also have to think about what that method do and what that variable represents. You can catch possible errors or misconceptions just because the name is not right. It will make your methods shorter and will help you to make your methods do just "one thing and one thing only" (since is very difficult to fins a name for something that does to many things). Oh, by the way, just in case you didn't get the memo, anything with the word manager in it, is wrong.
+
+Oh, I forgot, maybe the most important think of all. In a year from now when you need to do some maintenance in the code, you will be up and running in seconds and not pulling your hair of trying to understand what the hell you were thinking when you wrote that. And that, my friend, is a good thing.

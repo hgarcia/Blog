@@ -1,0 +1,18 @@
+---
+layout: post
+title: The Passionate Programmer - Book review.
+summary: On Saturday I pick it up from the post office and next day I was sitting in the backyard going through the pages while preparing a BBQ.
+categories: [Books]
+---
+
+Last week I was reading <a href="http://www.valuablecode.com/2009/09/how-a-code-retreat-taught-me-to-be-comfortable-throwing-away-code/" target="_blank">Alistair's post about the Toronto Code Retreat</a>. I was planning to attend but I had plane tickets for the same day so I miss the opportunity, what I regret. In that post Alistair refers to the book <a href="http://www.pragprog.com/titles/cfcar2/the-passionate-programmer" target="_blank">The Passionate Programmer</a> by <a href="http://chadfowler.com/" target="_blank">Chad Fowler</a>. Next thing you know, I was ordering the book online.
+
+On Saturday I pick it up from the post office and next day I was sitting in the backyard going through the pages while preparing a BBQ. The book reads fast. Its divided in Five sections and each section consist of a series of very short chapters that, most of the time, are no more than two or three pages .
+
+I found that I'm doing a lot of the things that Fowler recommends and I identify myself with some of the situations he mentions in the book. I particularly enjoyed the section about marketing yourself something I'm not good at doing.
+
+There are a few chapters that I market down to re-read later on, not because they are so deep that need a re-write, but mostly because are the ones that talk to my weakness and the stuff that I need to remind myself to work on to improve.
+
+Sparkled along the book there are easies from some renowned programmers on how they build their careers. They make for an enjoyable and fun read, and provide a break from the more "to the point" writing that Chad uses.
+
+All in all a very enjoyable book that can provide some help on achieving exactly what the tag line for the book is "creating a remarkable career in software development".

@@ -1,0 +1,86 @@
+---
+layout: post
+title: Clone a project on Codeplex to your own Codeplex repo with Mercurial.
+summary: If you use Github (Git) or Bitbucket (Mercurial) you are familiar with the ability to fork a project into your own repository in those sites.
+categories: [Programming, Tools]
+---
+
+If you use Github (Git) or Bitbucket (Mercurial) you are familiar with the ability to fork a project into your own repository in those sites.
+
+<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="github_fork" border="0" alt="github_fork" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/github_fork_thumb.png" width="510" height="145">
+
+<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="bitbucket_fork" border="0" alt="bitbucket_fork" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/bitbucket_fork_thumb.png" width="513" height="174">
+
+Once forked you can start working in your own repo and once you are ready to integrate you will send a pull request to the master repository.
+Codeplex recently started using Mercurial but it doesn't have (or I couldn't find) a way to clone a project directly from inside Codeplex.
+
+_UPDATED March 5: Yesterday "Codeplex added support for forks":http://blogs.msdn.com/codeplex/archive/2010/03/05/codeplex-mercurial-support-for-forks.aspx when using mercurial._
+
+h3. First, cloning to your local computer
+
+_You need to have "TortoiseHg":http://bitbucket.org/tortoisehg/stable/wiki/download installed on your computer before going forward with this tutorial._
+
+First you need to check out the project you want to fork using the clone url:
+
+Go to the source control page of the project and click on the source control connection instructions.
+
+<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="sc_connection_instructions" border="0" alt="sc_connection_instructions" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/sc_connection_instructions_thumb.png" width="556" height="135">
+
+Copy the clone url and open the TortoiseHg clone window.
+
+<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="hg_clone" border="0" alt="hg_clone" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/hg_clone_thumb.png" width="578" height="159">
+
+Enter the repository url as the source path and select a folder where to clone the repository. If you don't have a folder already created for this repo, just add the name in the destination path text field and the folder will be create.
+
+<img border="0" alt="clone_dialog" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/clone_dialog_thumb.png" width="552" height="196">
+
+h3. Second create a project on Codeplex and add as a Sync source.
+
+Log into Codeplex (or create an account) and create a project where you want to work on, make sure you select Mercurial as your source control.
+You should be able to also use Google code to host your clone, everything should work the same, just make sure you use Mercurial as well.
+
+Once the project is created go to your new project source control page and copy the address to your repository.
+
+In your computer open the properties of your cloned repository (the one we cloned in the previous step).
+
+<img border="0" alt="repo_settings" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/repo_settings_thumb.png" width="488" height="383">
+
+Go to the sync tab and click in the Add button.
+
+<img border="0" alt="sync_dialog" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/sync_dialog_thumb.png" width="304" height="438">
+
+Notice that the default (an only) repository is the original one, we want to add the repo to our newly created project and set it as default.
+
+<img border="0" alt="add_remote_source" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/add_remote_source_thumb.png" width="516" height="232">
+
+If you are using https authentication make sure you add your username and password following this form: <span class="code">https://username:password@hg01.codeplex.com/repository</span>
+
+Add any Alias name but not "default", not now. Click Ok.
+
+Select the Remote repository marked as default and click the edit button, change the alias from default to "origin".
+
+<img border="0" alt="change_default_to_origin" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/change_default_to_origin_thumb.png" width="505" height="179">
+
+Now in the sync dialog select the new repository (the one pointing to your project) and click the Set as default button.
+
+<img border="0" alt="click_default" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/click_default_thumb.png" width="185" height="91">
+
+Once done you should have something like this, the name of the projects should reflect the projects you are working with.
+
+<img border="0" alt="default_sets" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/default_sets_thumb_1.png" width="657" height="165">
+
+At this moment you are ready to push the code to your new project, just open the synchronize window from TortoiseHg and click push.
+
+<img border="0" alt="commit_to_your_project" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/commit_to_your_project_thumb.png" width="520" height="320">
+
+Once this is done, go to the source code tab in Codeplex and take a look, notice that you should have all commits from the original project plus any new commits done into your clone, in this case I added three commits after cloning.
+
+<img border="0" alt="new_changeset" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/new_changeset_thumb.png" width="503" height="291">
+
+<img border="0" alt="blog_engine_sc" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/blog_engine_sc_thumb.png" width="486" height="281">
+
+h3. From inside Visual Studio
+
+Or course this works from inside Visual Studio as well if you have <a href="/2010/02/19/mercurial-integration-with-visual-studio.html">the Hg plug-in installed</a>
+
+<img border="0" alt="from_inside_vs" src="/images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/from_inside_vs_thumb.png" width="486" height="275">

@@ -1,0 +1,58 @@
+---
+layout: post
+title: Using Extension methods- Improving readability.
+summary: I consider extension methods one of the most interesting features of the .Net framework. I like it so much because It brings some of the strength of JavaScript into the framework. The possibility of write stuff like this.Have fun!!!
+categories: [Programming]
+---
+
+I consider extension methods one of the most interesting features of the .Net framework. I like it so much because It brings some of the strength of JavaScript into the framework. The possibility of write stuff like this.
+
+
+<script src='http://gist.github.com/561828.js?file=file0.aspx-cs'></script>
+
+
+An do stuff like this:
+
+
+<script src='http://gist.github.com/561828.js?file=file1.aspx-cs'></script>
+
+
+There are a lot of discussions about when to use extension methods and when not to. The problem is when you use extension methods instead of inheritance.
+
+h3. Using extension methods to augment the framework or modify the language.
+
+A clear choice for me is when you want to augment types, like the previous example of using PercentOf in an integer.Or what about this.
+
+
+<script src='http://gist.github.com/561828.js?file=file2.aspx-cs'></script>
+
+
+Or what about having a handy method to get the Unix Time right from the DateTime object?
+
+
+<script src='http://gist.github.com/561828.js?file=file3.aspx-cs'></script>
+
+
+Or the other way around
+
+
+<script src='http://gist.github.com/561828.js?file=file4.aspx-cs'></script>
+
+
+h3. Encapsulate functionality that you always do.
+
+I need to use Reflection quite a lot for one of my projects and I have a set of methods to do some very common operations, like get a value from a property, get a list of properties, etc. What if those methods where available for you in every object?
+
+
+<script src='http://gist.github.com/561828.js?file=file5.aspx-cs'></script>
+
+
+And what about some handy string methods
+
+
+<script src='http://gist.github.com/561828.js?file=file6.aspx-cs'></script>
+
+
+Have fun!!! 
+
+_Some of the utilities methods like Squeeze are part of the Subsonic Utilities library that I modified and turned into extension methods._

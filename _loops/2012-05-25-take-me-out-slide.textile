@@ -1,0 +1,9 @@
+---
+layout: slide
+title: ...to the ballgame
+home: 9111146162
+home_size: small320
+display_size: large
+slide: [9111146162, 9108947567, 9111159806, 9108952817, 9108925899, 9108929369, 9108931777]
+title_style: "font-family: Helvetica; font-size: 1.7em;"
+---

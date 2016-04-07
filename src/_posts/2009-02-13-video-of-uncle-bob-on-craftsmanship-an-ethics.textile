@@ -1,0 +1,10 @@
+---
+layout: post
+title: Video of Uncle Bob on Craftsmanship an ethics
+summary: InfoQ has a video recorded at JAOO on witch Robert Martin talks about craftsmanship and ethics on software development.
+categories: [General, Methodology]
+---
+
+"InfoQ":http://www.infoq.com/presentations/craftmanship-ethics has a video recorded at "JAOO":http://jaoo.dk/ on witch "Robert Martin":http://www.objectmentor.com/omTeam/martin_r.html talks about craftsmanship and ethics on software development.
+
+Martin is a very good presenter and the video captures his energy on stage.

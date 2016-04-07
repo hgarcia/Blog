@@ -1,0 +1,53 @@
+---
+layout: post
+title: Isolate yourself from external libraries using the Facade pattern.
+summary: Besides programming against Interfaces and using Dependency Injection to reduce coupling, there is another practice that can/should be used when you consume an external library.
+categories: [Patterns, Programming]
+---
+
+Besides programming against Interfaces and using <a href="http://en.wikipedia.org/wiki/Dependency_injection" target="_blank">Dependency Injection</a> to reduce coupling, there is another practice that can/should be used when you consume an external library. That is, provide a wrapper around the library or in other words the use of the <a href="http://en.wikipedia.org/wiki/Facade_pattern" target="_blank">Facade pattern</a>.
+
+h3. Why?
+
+Consider this example.
+
+
+<script src='http://gist.github.com/561832.js?file=file0.aspx-cs'></script>
+
+
+As you can see using the ILogger interface in the constructor give us the ability to pass any object that implements it, but take a look at the using statements.
+
+
+<script src='http://gist.github.com/561832.js?file=file1.aspx-cs'></script>
+
+
+Yeah, Log4Net is there, so even when we are isolating ourselves from a dependency to the concrete implementation, we are still carrying a dependency to the assembly. Not only that but if we want to change our logging service we need to do it for some other logging service that implements the same interface. 
+
+As well you are having a dependency on the Level enumeration used in the signature of the Log method from the ILogger interface.
+
+
+<script src='http://gist.github.com/561832.js?file=file2.aspx-cs'></script>
+
+
+While we are at this, take a look at that signature, you may want to do something simpler to use. So what will be the chance for another third party Logging library to implement this ILogger interface? Null of course. 
+
+The solution is the Facade pattern. We start defining our own interface for logging.
+
+
+<script src='http://gist.github.com/561832.js?file=file3.aspx-cs'></script>
+
+
+Notice how we create specific method for the levels we want to use, you may need other methods later on, but you can always implement them when you actually need them.
+Now, we create a concrete implementation that uses Log4Net.
+
+
+<script src='http://gist.github.com/561832.js?file=file4.aspx-cs'></script>
+
+
+Now our objects that need Logging can consume our own implementation and any dependency on Log4Net is removed. At this point we can use Dependency Injection to provide our concrete implementation of the logging class and we are free to change the library that does the actual logging anytime we want.
+
+
+<script src='http://gist.github.com/561832.js?file=file5.aspx-cs'></script>
+
+
+Also notice how much more clean and readable is the log code.

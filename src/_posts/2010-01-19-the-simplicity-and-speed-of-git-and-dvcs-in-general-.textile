@@ -1,0 +1,36 @@
+---
+layout: post
+title: The simplicity and speed of Git and DVCS in general.
+summary: Since I started using Git a few months ago, and particularly GitHub since last September, my life have been good in DVCS land.I used to be a Subversion user and I was happy*, maybe because I didn't know anything better.
+categories: [Continuous Integration, Methodology, Programming, Tools]
+---
+
+Since I started using <a href="http://git-scm.com/" target="_blank">Git</a> a few months ago, and particularly GitHub since last September, my life have been good in <a href="http://en.wikipedia.org/wiki/Distributed_revision_control" target="_blank">DVCS</a> land.<br><br>I used to be a Subversion user and I was happy*, maybe because I didn't know anything better. Of course I heard all the cool kids (specially in the Ruby world) talking about Git and bragging about it, but I was being loyal to my old pal SVN.
+
+But this was slowing me down and I wasn't aware of it. I'm not sure what make me install msysgit for the first time. After struggling a little bit at the beginning and wrapping my head around the concepts and the commands I noticed that my flow started to change.
+
+This change was good. Was more Agile. Doing small commits for little changes of code seems natural since the speed of this commits was almost instantaneous (remember the commits happens in your own machine). I'm talking of commits been done almost at the line of code level. 
+
+Change this line, run the test, commit. Write another test. Make it fail. Write some code. Make it pass. Commit. Refactor. Run test. Commit. Keep going.
+
+Once It was time to push those changes to the master a single command push every change + every comment at blasting speed.
+
+Since them I started using <a href="http://mercurial.selenic.com/" target="_blank">Mercurial</a> as well and the experience was very similar. In the case of Mercurial I just use <a href="http://tortoisehg.bitbucket.org/" target="_blank">TortoiseHg</a> but I stick with the command line for Git for most of my operations and I'm glad of that decision.
+
+I wasn't planning on writing this post today but I just happen to grab the code for <a href="http://github.com/edgecase/ruby_koans/" target="_blank">edgecase Ruby Koans</a> from GitHub and it took me all of 1 minute to do everything. Here is the flow:
+
+Open <a href="http://git-scm.com/" target="_blank">Console2</a> and launch the Git bash. Type the following sequence of commands.
+
+
+
+<script src='http://gist.github.com/561858.js?file=file0.bash'></script>
+
+
+
+Notice that I had to type help because I didn't remember if I had to add a remote or I was able to do a pull right away (I removed the help output from the console output fro brevity).
+
+Of course the Ruby Koans are just a bunch of very simple text files but the whole process took me less than 2 minutes. I think that is not just because Git is faster but also using the command line for this type of task tends to be a lot faster than using a Gui tool.
+
+If you haven't try it yet go ahead and take the plunge. Go distributed, even if you work alone, you want regret it.
+
+*I'm still using Subversion at work, looking forward to have the time to switch but we are dealing with some time sensitive projects so I don't want to mess around with that.

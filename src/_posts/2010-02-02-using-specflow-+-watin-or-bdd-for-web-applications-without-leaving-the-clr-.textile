@@ -1,0 +1,40 @@
+---
+layout: post
+title: Using SpecFlow + WatiN or BDD for web applications without leaving the CLR.
+summary: Last week I wrote about using cucumber to test your web applications outside in. In the post I showed a simple example (actually comes with cucumber) to open a browser, go to a site and perform some actions.
+categories: [Programming, Tools]
+---
+
+Last week I wrote about using cucumber to test your web applications outside in. In the post I showed a simple example (actually comes with cucumber) to open a browser, go to a site and perform some actions.
+
+I showed the same to my team at work and they mention that could be nice to been able to use c# and Visual Studio to do something similar.
+
+After thinking about it I decided to give another try to a tool I check a few month ago "SpecFlow":http://www.specflow.org/.
+
+SpecFlow is a tool and a set of libraries to write specifications using "Gherkin":http://wiki.github.com/aslakhellesoy/cucumber/gherkin. You can check the "screencast here":http://www.specflow.org/specflow/screencast.aspx or read "this post from Ryan Lanciaux":http://ryanlanciaux.com/ryanlanciaux/post/Gherkin-style-BDD-testing-in-NET.aspx . SpecFlow can use either NUnit or MsTest as the engine.
+
+Now I needed something to drive the browser. "WatiN":http://watin.sourceforge.net/ is the .Net port of "WatiR":http://watir.com/ and is very easy to use.
+
+<img border="0" alt="001_features" src="/images/posts/UsingSpecFlowWatiNorBDDforwebapplicatio_14C77/001_features_thumb.png" width="244" height="157">
+
+The code looks like this (actually I edited it a little bit to make it nicer).
+
+<img border="0" alt="002_features" src="/images/posts/UsingSpecFlowWatiNorBDDforwebapplicatio_14C77/002_features_thumb.png" width="609" height="344">
+
+_Note: The proper way to do this is to use the following configuration settings in your .config file._
+
+
+<script src="http://gist.github.com/567691.js?file=app.config"></script>
+
+
+I think that the integration from SpecFlow with VS is great. If you or your team feel very strong on using VS this is a very good tool (there are versions for both VS 2008 and 2010). After writing the features and running the test you will have hints and code to copy and paste from the TestRunner into the specification class.
+
+<img border="0" alt="005_features" src="/images/posts/UsingSpecFlowWatiNorBDDforwebapplicatio_14C77/005_features_thumb.png" width="729" height="351">
+
+You will generate the specification from an item template.
+
+<img border="0" alt="004_features" src="/images/posts/UsingSpecFlowWatiNorBDDforwebapplicatio_14C77/004_features_thumb.png" width="508" height="149">
+
+h3. Conclusion:
+
+I think that this is a great tool, specially if you are using it to develop desktop apps or library code in c#. You can use tools like R# to generate your classes and methods from the step definition class directly.

@@ -1,0 +1,10 @@
+---
+layout: post
+title: The Herding code podcast about FubuMVC.
+summary: Herding code interview with Chad Myers and Jeremy Miller on FubuMVC
+categories: [Programming, .Net]
+---
+
+This week the guys at the herding code chat with <a href="http://www.lostechies.com/blogs/chad_myers/" target="_blank">Chad Myers</a> and <a href="http://codebetter.com/blogs/jeremy.miller/default.aspx" target="_blank">Jeremy Miller</a> on <a href="http://www.ohloh.net/p/FubuMVC" target="_blank">FubuMVC</a>, testing with JavaScript and <a href="http://docs.jquery.com/QUnit" target="_blank">QUnit</a> and <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod" target="_blank">SOLID principles</a>.
+
+<a title="http://herdingcode.com/?p=131" href="http://herdingcode.com/?p=131">http://herdingcode.com/?p=131</a>

@@ -1,0 +1,32 @@
+---
+layout: post
+title: Microinteractions - book review
+summary: Microinteractions are all those little things we deal with in a daily basic. Every piece of software and hardware have a good number of them. You should read the book if you want to understand how to make your users life significantly better.
+categories: [Books, Mobile, Programming]
+---
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920027676.do" target="_blank"><img class="img-float-right" src="/images/posts/microinteractions.gif" border="0" alt="Microinteractions - book cover"></a>
+
+h3. Overview.
+
+Microinteractions are all those little things we deal with in a daily basic. Every piece of software and hardware have a good number of them.
+You should read "Dan Saffer":https://twitter.com/odannyboy book if you want to understand how to make your users life and your applications significantly better.
+
+Sometimes as developers we glance over those little things that will make our application much better.
+We can spend great amounts of time writing the perfect code, making that function elegant, concise and readable while at the same time we burden the end user with ridiculous flows, unhelpful error messages and obscure settings.
+
+The book brings an understanding of these interactions and provide a framework to work with them. From using the appropriate control to enter data on a form to displaying the correct message in context after something important happened and hundreds of other little details that actually "make" our application.
+
+The author explain that these interactions have four parts:
+
+Trigger, Rules, Feedback, Loop and Modes.
+
+He will explore each part in details in it's own chapter with multiple examples rules and how different scenarios can have different solutions.
+He will put everything together and go deep into the topic with a series of case studies.
+
+I found the chapters that deal with each part of the microinteractions to be the most interesting of the book, as well as the section on how to test them.
+
+I was able to find use cases on my own work where reading the book could have helped on how some of those interactions have been designed and implemented. I'm sure you will find the same.
+
+Absolutely recommended.

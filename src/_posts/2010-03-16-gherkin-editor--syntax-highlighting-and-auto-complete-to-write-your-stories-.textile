@@ -1,0 +1,30 @@
+---
+layout: post
+title: Gherkin editor, syntax highlighting and auto complete to write your stories.
+summary: Last Friday I was showing some of the guys at the office how to write user stories with the Gherkin language to been able to use them in either Cucumber or Specflow as executable specifications.
+categories: [Methodology, Programming, Testing, Tools]
+---
+
+Last Friday I was showing some of the guys at the office how to write user stories with the <a href="http://wiki.github.com/aslakhellesoy/cucumber/gherkin" target="_blank">Gherkin</a> language to been able to use them in either <a href="http://cukes.info/" target="_blank">Cucumber</a> or <a href="http://specflow.org/" target="_blank">Specflow</a> as executable specifications.
+
+They were receptive but they have a problem. Notepad. They wanted to use Word and have a template, and some spell checking support….
+
+At first I got a little frustrated but I actually thought about it and try to put myself on their shoes. Here I'm, a developer, asking to the business to write specs in a very specific format. It's not that they were negative about it, but they were expressing they concerns and they needs.
+
+h3. Enter Gherkin editor.
+
+So I decided to try to create a simple editor with some of the features requested. I remembered some time ago <a href="http://www.dotnetrocks.com/default.aspx?showNum=245" target="_blank">an interview on DNR with a PM for the SharpDevelop team.</a> He mentioned that they had the editor surface as either a service or a plug in. After searching I found it (<a href="http://wiki.sharpdevelop.net/Default.aspx?Page=AvalonEdit&amp;amp;AspxAutoDetectCookieSupport=1" target="_blank">AvalonEdit</a>) and <a href="http://www.codeproject.com/KB/edit/AvalonEdit.aspx" target="_blank">also a nice little sample app</a>.
+
+So I got the code, read the documents and after a few hours of hacking with the sample I was able to put together a super basic editor.
+
+I hosted the code in <a href="http://gherkineditor.codeplex.com/" target="_blank">Codeplex</a> using Mercurial and just added the first <a href="http://gherkineditor.codeplex.com/releases/view/42100" target="_blank">Release 0.1 alpha</a>, work on my machine, use at your own risk, etc, etc.
+
+h3. Some screenshots.
+
+<a href="../../../images/posts/Gherkineditorsyntaxhighlightingandautoc_13DA6/syntax-highlighting.png"><img border="0" alt="syntax-highlighting" src="/images/posts/Gherkineditorsyntaxhighlightingandautoc_13DA6/syntax-highlighting_thumb.png" width="494" height="243"></a> 
+
+<a href="../../../images/posts/Gherkineditorsyntaxhighlightingandautoc_13DA6/auto-completion.png"><img border="0" alt="auto-completion" src="/images/posts/Gherkineditorsyntaxhighlightingandautoc_13DA6/auto-completion_thumb.png" width="225" height="310"></a> 
+
+h3. Future plans
+
+The next step will be to add spell checker and a template to create a new document. Contextual code completion could be a nice to have. Multi language support is a must for Cucumber.

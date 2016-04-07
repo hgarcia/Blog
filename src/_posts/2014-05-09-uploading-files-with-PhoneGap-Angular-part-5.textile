@@ -1,0 +1,124 @@
+---
+layout: post
+title: Uploading files with PhoneGap and Angular (Part 5).
+summary: We will upload the information we recorded in Part 3 into a service.
+categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
+collection: Ionic
+---
+
+__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+
+
+In the previous to last post we created a series of files, each one with data from a recorded session. We want to upload that data into a server for further processing.
+
+In this post we will add the upload mechanism and we will build a simple web server that will receive the data.
+
+From this post one we will only show the code for the implementation and left the test code out of the posts unless there is something specially interesting on it.
+You can always get the code with all the tests in the "github repository":https://github.com/hgarcia/dynamic-sports for this project.
+
+h3. Getting the saved files
+
+Before uploading any of the files we need to get a list of files available for upload.
+We use the cordova file plugin that we already added previously to the project. 
+We will add a list method to our <span class="code">fileService</span>
+
+We expose a public <span class="code">list</span> function and we move the implementation into a private function.
+
+<pre><code>
+    
+    function list(successCb, errorCb) {
+      return function (fileSystem) {
+        var reader = fileSystem.root.createReader();
+        reader.readEntries(successCb, errorCb);
+      };
+    }
+
+    ... 
+
+    list: function (successCb, errorCb) {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, list(successCb, errorCb), errorCb);
+    },
+
+</code></pre>
+
+
+h3. The server
+
+We need to upload the files to a server, for this exercise we created a simple web server using "Express":http://expressjs.com and we deploy it to Heroku. I'm not implementing any type of authentication or security at this point. We will do that later.
+
+__The code for the web server can be found on "Github.":https://github.com/hgarcia/dynamic-sports-api You can clone and use it as a starting point if you wish.__
+
+h3. And the server service
+
+We start by installing the cordova <span class="code">file-transfer</span> plug-in.
+
+<pre><code>
+    
+    cordova plugin add org.apache.cordova.file-transfer
+
+</code></pre>
+
+Once the plug-in is installed we can write our upload method. We want to pass an array of <span class="code">FileEntry</span> objects and send each one to the server.
+
+We also want to report back success or error for each entry individually what makes our implementation very simple. 
+
+<pre><code>
+
+    /* globals angular */
+    angular.module('dynamic-sports.services')
+      .factory('serverService', function () {
+        'use strict';
+
+        function getFileUploadOptions(fileURI) {
+          var options = new FileUploadOptions();
+          options.fileName = fileURI.substr(fileURI.lastIndexOf('/')+1);
+          options.mimeType = "text/plain";
+          return options;
+        }
+        return {
+          upload: function (files, onSuccess, onError) {
+            var ft =  new FileTransfer();
+            for (var i = 0; i < files.length; i++) {
+              var file = files[i];
+              ft.upload(file.toURL(), encodeURI("http://app.herokuapp.com/uploads"), onSuccess, onError, getFileUploadOptions(file.fullPath));
+            }
+          }
+        };
+      });
+
+</code></pre>
+
+We hook everything together on the <span class="code">HomeCtrl</span> after injecting the new service
+
+<pre><code>
+
+    .controller('HomeCtrl', ['$scope', 'geoLocationService', 'fileService', 'serverService',
+      function ($scope, geoLocationService, fileService, serverService) {
+
+    ....
+
+    function filesSaved() {
+      alert("Saved");
+    }
+
+    function uploadFiles(files) {
+      serverService.upload(files, filesSaved, errHandler);
+    }
+
+    $scope.upload = function () {
+      fileService.list(uploadFiles, errHandler);
+    };
+    
+</code></pre>
+
+And we add a button to the home page that calls the <span class="code">upload()</span> function.
+
+<pre><code>
+    
+    <button class="button button-block" ng-click="upload()">Upload</button>
+
+</code></pre>
+
+h3. Next Steps
+
+We will add some feedback to the user regarding the upload process and we will improve the UI for the Home page.

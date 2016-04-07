@@ -1,0 +1,9 @@
+---
+layout: post
+title: Going mobile with Mippin.
+summary: This blog is going mobile.
+categories: [General]
+---
+
+This blog is going mobile. I will be using the services of <a href="http://mippin.com" target="_blank">Mippin</a>.
+To visit the mobile version of the site just go to: http://mippin.com/dynamicprogrammer

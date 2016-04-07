@@ -1,0 +1,16 @@
+---
+layout: post
+title: Sharp Architecture project template in a machine without ASP.NET MVC Beta installed
+summary: In my machine at work I can't install ASP.NET MVC (it installs but fails to install the project templates, I don't know why and I haven't had time to look into it).
+categories: [Programming, Tools, .Net]
+---
+
+In my machine at work I can't install ASP.NET MVC (it installs but fails to install the project templates, I don't know why and I haven't had time to look into it). When I installed Sharp Architecture everything went well, but running the project template yields and error. I was doing this at a Starbuck's, trying to build a proof of concept and was a bit frustrating. I was sure that the culprit was related to the error I had installing MVC.
+
+Last night I run across a thread entitled <a href="http://groups.google.com/group/sharp-architecture/browse_thread/thread/bd62213055e35bea?hl=en" target="_blank">Removed dependency on installed ASP.NET MVC Beta</a> on the <a href="http://groups.google.com/group/sharp-architecture?hl=en" target="_blank">Sharp Architecture discussion group</a>.
+
+In this thread there is a reference to a post by <a href="http://codebetter.com/blogs/kyle.baley/archive/2008/12/12/asp-net-mvc-and-the-gaaak.aspx" target="_blank">Kyle Baley</a> where he mentions the same problem, <a href="http://devlicio.us/blogs/billy_mccafferty/default.aspx" target="_blank">Billy McCafferty</a> notes that the reference to the MVC templates have been removed on the trunk.
+
+Kyle's post mentions a few alternative solutions and further down the thread there is a discussion about losing the item templates for the MVC project and Replacing them with ReSharper templates.
+
+I will suggest just that you can also use Visual Studio Item Templates, <a href="http://msdn.microsoft.com/en-us/library/tsyyf0yh(VS.80).aspx" target="_blank">creating them yourself</a> in case you don't have ReSharper. You can see an example on building this item templates in this old post of mine <a href="/2008/05/18/nant-build-scripts-template-for-visual-studio.html">Nant build scripts template for Visual Studio</a>.

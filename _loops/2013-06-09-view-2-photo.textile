@@ -1,0 +1,7 @@
+---
+layout: center
+title: view 2
+home: 8997239393
+home_size: small320
+display_size: large1600
+---

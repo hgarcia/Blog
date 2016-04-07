@@ -1,0 +1,24 @@
+---
+layout: post
+title: Node module to access the Bitbucket Api
+summary: Just released a very simple node.js module to access the BitBucket API. Early version allows to list repositories or get a single repository and work with Issues.
+categories: [node.js, Programming]
+---
+
+I'm working on a side project at the moment and I'm hosting the code on BitBucket. I needed a way to access the API with node and I though that It was a nice exercise to write a simple module to do so.
+
+At the moment it covers issues and all related objects (components, milestones, versions and comments).
+
+You can also get a list or a single repository for the logged in user.
+
+The Api is in flux and you should expect changes coming in the future.
+
+Almost complete docs in the "README file":https://bitbucket.org/hgarcia/node-bitbucket-api
+
+h3. Plans
+
+I will be adding access to the rest of the API in the next weeks as well as finish the documentation and stabilize parts of the API a bit more.
+
+I want to add better error messages and provide better error checking when working with some of the more complex objects (Ex: Issues).
+
+I may also implement OAuth but that is not really one of my main priorities at the moment.

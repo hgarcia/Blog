@@ -1,0 +1,48 @@
+---
+layout: post
+title: Starting with Node.js.
+summary: Installing node.js  First, you need a supported OS, like Linux, Mac or Solaris. I will be doing the install on Ubuntu.Go to the node.js download page download the Gzipped file and extract in a folder of your choice in your disk.
+categories: [General, Programming, node.js]
+---
+
+h3. Installing node.js
+
+First, you need a supported OS, like Linux, Mac or Solaris. I will be doing the install on Ubuntu.
+Go to the <a href="http://nodejs.org/#download" target="_blank">node.js download page</a> download the Gzipped file and extract in a folder of your choice in your disk.
+Open a terminal and go to the folder where you extracted the downloaded files.
+Type ./configure, if you don't have a c++ compiler you will see an error.
+
+<img src="/images/posts/moz-screenshot.png" alt="Compiling with g++" border="0" height="72" width="603">
+
+I choose to go with the g++ one, so I typed:
+
+
+
+<script src='http://gist.github.com/561865.js?file=file0.console'></script>
+
+
+
+Running ./configure once again and everything should go with no problems.
+Now type "make" and once that is finished
+
+
+<script src='http://gist.github.com/561865.js?file=file1.console'></script>
+
+
+
+To verify that everything has been installed correctly type "node" in the command, you should have the Repl.
+h3. Writing your first program.
+
+Once in the shell you can type .help to see a list of some of the commands available.
+
+<img src="/images/posts/repl.png" border="0" alt="Node.js repl"/>
+
+As with any Repl you can use it to play with and explore the different features or to write little one off scripts.
+Let's try a to write a little webserver (code taken from the node.js website).
+
+<img src="/images/posts/server1.png" border="0" alt="A node web server"/>
+<img src="/images/posts/server2.png" border="0" alt="A node web server in the console."/>
+
+Now when we visit "http://127.0.0.1:8124" this is what we see.
+
+<img src="/images/posts/browser.png" border="0" alt="node web server hello world."/>

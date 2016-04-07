@@ -1,0 +1,32 @@
+---
+layout: post
+title: Functional JavaScript book review
+summary: A great book to get into functional programming, JavaScript or both.
+categories: [Books, JavaScript]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+h3. Overview.
+
+This book has something for every body. If you are a functional person you may learn the way of JavaScript and how to achieve most of the functional idioms with the language.
+
+<a href="http://shop.oreilly.com/product/0636920028857.do" target="_blank"><img class="img-float-right" src="/images/posts/functional_javascript.gif" border="0" alt="Functional JavaScript - book cover"></a>
+
+If you are a JavaScript person you will learn how to use your tool of choice in a functional way.
+
+Even if you are familiar with JavaScript and functional programming, the book serves as a good resource to refresh and update your knowledge on both fields.
+
+There are lots of code examples that illustrate each and every point in the book. I found myself going back to those examples as a way to internalize the most complicate or tricky concepts.
+
+If you are new to JavaScript the first two to three chapters are going to serve as a good introduction to the language in the context of functional programming.
+
+Regarding your JavaScript level I would recommend to at least skim over those initial chapters to make sure you don't miss anything important.
+
+The book is a good and deep read without being dry or boring. "Michael Fogus":http://twitter.com/fogus manages to keep the interest while increasing the difficulty level across the book.
+
+The progression feels natural and you shouldn't have problems following along. At the end of the book you will be able to see problems in a new light where data and behaviour don't (necessarily) need to be coupled in the concept of Object.
+
+h3. Conclusion
+
+I would certainly recommend the book to all JavaScript developers out there. Thinking in a functional way when developing your next big JS project should help to create cleaner and more maintainable code.

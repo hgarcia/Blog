@@ -1,0 +1,38 @@
+---
+layout: post
+title: Nant build scripts template for Visual Studio
+summary: I was creating for the 10th time today a nant build file from Visual Studio when I came to the realization that I needed to automate the process a bit more. So I created an item template to include build files.  You just need to copy this zip file...
+categories: [Programming, Tools, .Net]
+---
+
+I was creating for the 10th time today a nant build file from Visual Studio when I came to the realization that I needed to automate the process a bit more. So I created an item template to include build files. You just need to copy this <a href="../../../images/posts/nant-build-file.zip" target="_blank">zip file</a> into the ItemTemplate folder inside your Templates. Usually is My Documents\Visual Studio 2008\Templates\ItemTemplates  
+
+After that just right click on a project or solution and select Add New Item, at the bottom of the dialog you will see a section called My Templates.
+
+<img src="/images/posts/sp32-20080517-175301.png" alt="" border="0">
+
+Notice the new Nant build file item.
+
+<img src="/images/posts/sp32-20080517-175933.png" alt="" border="0">
+
+h3. Adding intellisense to edit the file
+
+There are a few other post out there to do this on VS 2005 on VS 2008 there are a few changes. The most important one is where to install the schemas.
+
+<ol>
+	<li>Copy the nant.xsd schema file from your Nant folder, inside a subfolder called schema</li>    
+	<li>Paste the file on the schemas folder for VS 2008; C:\Program Files\Microsoft Visual Studio 9.0\Xml\Schemas</li>    	<li>Open Visual Studio and use the new item template to create a build file</li>
+</ol>
+
+If you type "<" you will see a list of options
+
+<img src="/images/posts/sp32-20080517-181043.png" alt="" border="0">
+
+h3. Troubleshooting
+If it doesn't work for you it may be possible that you have a different version of schema files. On VS with the build file open click on Xml -> Schemas <br/>Locate the entry for the build file and check the target namespace, it should be the same as the xmlns attribute of your project tag 
+
+<img src="/images/posts/sp32-20080517-214607.png" alt="" border="0">
+If it's not change the attribute value with the value displayed in the schemas dialog.
+
+h3. More to do
+You may want to customize the item template and add the most common options for your build files, like add the automatic execution of your unit test, Ncover, FxCop, package, etc. I notice that I usually end up with a similar script in most cases, you can them save the script as an item template using File->Export Template, when asked choose to import the template into VS.

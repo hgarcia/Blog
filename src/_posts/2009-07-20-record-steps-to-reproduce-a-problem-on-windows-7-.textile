@@ -1,0 +1,31 @@
+---
+layout: post
+title: Record steps to reproduce a problem on windows 7.
+summary: I needed to do some screen captures for a future post I'm writing. This is usually not a problem but in this laptop I don't have an screen capture utility installed.
+categories: [Testing, Tools]
+---
+
+I needed to do some screen captures for a future post I'm writing. This is usually not a problem but in this laptop I don't have an screen capture utility installed. So I did a search in Windows 7 just typing screen capture in the Search Programs and Files box to see if it has something already before downloading one of the two tools I usually use.
+
+<a href="../../../images/posts/Recordstepstoreproduceaproblemonwindows_769/ScreenShot001_2.png"><img  border="0" alt="ScreenShot001" src="/images/posts/Recordstepstoreproduceaproblemonwindows_769/ScreenShot001_thumb.png" width="296" height="118"></a> 
+
+And the result was Record Steps to Reproduce a problem.
+
+<a href="../../../images/posts/Recordstepstoreproduceaproblemonwindows_769/ScreenShot002_2.png"><img  border="0" alt="ScreenShot002" src="/images/posts/Recordstepstoreproduceaproblemonwindows_769/ScreenShot002_thumb.png" width="352" height="116"></a> 
+
+I was, of course, curious about it. So I clicked and a recording bar displays on top of my applications. After clicking the Start Record button, whenever you click in the screen a red dot fades in and the screen gets capture.
+
+<a href="../../../images/posts/Recordstepstoreproduceaproblemonwindows_769/ScreenShot003_2.png"><img border="0" alt="ScreenShot003" src="/images/posts/Recordstepstoreproduceaproblemonwindows_769/ScreenShot003_thumb.png" width="372" height="68"></a> 
+
+Now, this does not records video but still images, every click a new image, a new step. You can also add comments while recording.
+
+Click the stop button and will prompt you for a place to save a zip file.
+The zip file contains and mht file (MHTML Document) I guess the M stands for Microsoft, that can be opened by IE.
+
+This document has all the screens in the proper order they were captured with a highlight of the area clicked, plus a detailed step by step trace of your workflow, like application, document open, where you click, etc. Also the comments will be added to the proper step. You can even review the error reported as a slide show. 
+
+I'm not sure if this was there before on Vista or XP. On Windows 7 you can find it in the Control Panel, under Troubleshooting, but the only way I can make it show up is using the search function.
+
+<a href="../../../images/posts/Recordstepstoreproduceaproblemonwindows_769/ScreenShot004_2.png"><img  border="0" alt="ScreenShot004" src="/images/posts/Recordstepstoreproduceaproblemonwindows_769/ScreenShot004_thumb.png" width="417" height="271"></a> 
+
+This can be very helpful if you need to see what a user is doing on their computer with a piece of software you wrote.

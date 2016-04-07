@@ -1,0 +1,23 @@
+---
+layout: post
+title: Uskhay a web framework and a programming exercise.
+summary: I will try to create a simple CMS framework on top of the ASP.Net MVC. This will be mostly an exercise, something that I feel I need to try to see how it works.
+categories: [Frameworks, .Net]
+---
+
+I will try to create a simple CMS framework on top of the ASP.Net MVC. This will be mostly an exercise, something that I feel I need to try to see how it works. Some of the goals:
+
+* The framework will be extensible but opinionated.
+* The views need to be composite and the markup created by the designer should be very simple with minimum or no code at all.
+* The framework needs to provide a centralize Exception handler mechanism.
+* Multiple sites in one install.
+* Partial views should use a common interface (IViewModule?) so we can provide a modular architecture.
+* Easy to template by a designer, easy to skin by a designer.
+* HTML and CSS standards compliance friendly.
+
+In line administration are fully backend integrated to the site.
+
+* Testability is paramount, and the framework should come with a good set of unit test as part of the release.
+* Been able to run the test from inside the framework, so install can diagnose problems.
+
+I will be posting more about this and some code as soon as I have something put together.

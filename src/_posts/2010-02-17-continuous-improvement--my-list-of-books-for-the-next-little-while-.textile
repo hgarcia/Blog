@@ -1,0 +1,44 @@
+---
+layout: post
+title: Continuous Improvement- my list of books for the next little while.
+summary: Yesterday I received another box of books from Amazon.ca with 6 more books in it. After taking them out and putting them down into my already filled shelves I sat down and look at the pile of books. 17 computer books in all.
+categories: [Books]
+---
+
+Yesterday I received another box of books from Amazon.ca with 6 more books in it. After taking them out and putting them down into my already filled shelves I sat down and look at the pile of books. 17 computer books in all that I haven't started or haven't finished.
+
+I decided that it was time to make a list and put some kind of priority/order on the reading ahead.
+So here it goes, this is the list (in order for now) of books that I plan to read in the next 6-9 months.
+
+h3. Computer programming and methodology
+
+<a href="http://www.pragprog.com/titles/dlret/agile-retrospectives" target="_blank">Agile Retrospectives: Making good teams great</a> (<strike>in progress</strike>
+<a href="/2010/02/18/book-review--agile-retrospectives---making-good-teams-great-.html">Finished</a>) (BTW: I just found <a href="http://www.youtube.com/watch?v=qqtPZYigfNI" target="_blank">this presentation</a> from the authors at Google)
+<a href="http://www.growing-object-oriented-software.com/" target="_blank">Growing object-oriented software guided by test</a> (in progress)
+<a href="http://www.amazon.com/User-Stories-Applied-Software-Development/dp/0321205685" target="_blank">User stories applied</a>.
+<a href="http://www.wrox.com/WileyCDA/WroxTitle/Testing-ASP-NET-Web-Applications.productCd-0470496649.html" target="_blank">Testing ASP.NET Web applications</a>.
+<a href="http://www.pragprog.com/titles/pbdp/debug-it" target="_blank">Debug it!</a>
+<a href="http://www.pragprog.com/titles/prj/ship-it" target="_blank">Ship it!</a>
+<a href="http://www.ironpythoninaction.com/" target="_blank">IronPython in Action</a> (finish this one. It's a great book. I'm just busy)
+<a href="http://apress.com/book/view/9781430219897" target="_blank">Beginning Scala</a>.
+
+[The order after this one is just tentative]
+
+<a href="http://www.amazon.com/Designing-Obvious-Common-Approach-Application/dp/032145345X" target="_blank">Designing the obvious</a>.
+<a href="http://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319" target="_blank">C.O.D.E The hidden language of computer software and hardware</a> (in progress â€" fantastic book, geeky, deep and incredible well written)
+<a href="http://www.amazon.com/Designing-Moment-Interface-Design-Concepts/dp/0321535081/ref=pd_sim_b_2" target="_blank">Designing the moment</a>.
+<a href="http://apress.com/book/view/1590598504" target="_blank">Expert F#</a>.
+<a href="http://www.pragprog.com/titles/mnee/release-it" target="_blank">Release it!</a>
+<a href="http://www.manning.com/rahien/" target="_blank">DSLs in Boo</a>.
+<a href="http://www.amazon.com/Web-Application-Hackers-Handbook-Discovering/dp/0470170778" target="_blank">Web application hackers handbook</a>. (probably need to read this sooner)
+<a href="http://www.amazon.com/Agile-Principles-Patterns-Practices-C/dp/0131857258" target="_blank">Agile principles, patterns and practices in c#.</a>
+<a href="http://www.amazon.ca/ASP-NET-Framework-Unleashed-Stephen-Walther/dp/0672329980" target="_blank">ASP.NET MVC framework unleashed</a>.
+<a href="http://www.amazon.com/Foundation-Expression-Blend-Silverlight-Foundations/dp/1430219505" target="_blank">Foundation Expression Blend 3 with Silverlight</a>. (Need to finish this one, but since Silverlight 4 is coming I may just wait).
+
+h3. General reading.
+
+<a href="http://brainrules.net/" target="_blank">Brain rules</a>.
+<a href="http://www.amazon.com/Once-More-Around-Park-Baseball/dp/1566633710" target="_blank">Once more around the park</a>.
+<a href="http://www.amazon.com/Boys-Summer-Roger-Kahn/dp/0060914165" target="_blank">The boys of summer</a>.
+
+I will try to keep this list updated (I make no promise though) and post a brief review of the books that I like the most.

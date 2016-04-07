@@ -1,0 +1,73 @@
+﻿---
+layout: post
+title: Creating a MongoDB provider for Blogengine.Net - Part 1
+summary:  The code in this post is of demo quality and should not be taken as production ready code. It's a first take on the project and will evolve during a series of posts.  Blogengine.net is an open source blogging platform written in asp.net.
+categories: [MongoDB, Programming, .Net]
+---
+
+_The code in this post is of demo quality and should not be taken as production ready code. It's a first take on the project and will evolve during a series of posts._
+
+<a href="http://www.dotnetblogengine.net/" target="_blank">Blogengine.net</a> is an open source blogging platform written in asp.net. The engine comes with two Data store providers a DB provider and an XML provider. Since the engine is using the provider model, it should be fairly easy to write a new data store provider.
+
+As you may have noticed by some of my previous posts, I'm really interested in alternatives to relational databases, the so called NoSql movement. 
+
+h3. Getting all the pieces together.
+
+First download the Blogengine.net source code from <a href="http://www.codeplex.com/blogengine" target="_blank">codeplex.com</a>, a <a href="http://github.com/samus/mongodb-csharp/downloads" target="_blank">mongodb driver</a> for .net and <a href="http://www.mongodb.org/display/DOCS/Downloads" target="_blank">mongodb</a>.
+
+At the moment I'm aware of two drivers for .net, the more mature <a href="http://github.com/samus/mongodb-csharp/downloads" target="_blank">mongodb-csharp</a> and a more resent one <a href="http://github.com/atheken/NoRM" target="_blank">NoRM</a>. NoRM is trying to provide a more OO experience, avoiding the use of strings as much as possible and embracing Linq, it's still very young but very promising. You can check <a href="http://blog.wekeroad.com/2010/03/04/using-mongo-with-linq" target="_blank">an article by Rob Connery</a> to learn some of the capabilities. We will be using mongodb-csharp in this example. (Build from 2010-03-01).
+
+Be certain of download the proper version of MongoDB for your OS 32 or 64 bits.
+
+h3. Installing MongoDB.
+
+Unzip the files downloaded into a folder of your choice. I'm using c:\MongoDB.
+Create a data and db folders under c, you should have something like c:\data\db
+Run mongod.exe from the mobogodb bin folder.
+
+
+
+<script src='http://gist.github.com/561861.js?file=file0.console'></script>
+
+
+
+To stop the daemon just type Ctrl+c.
+
+h3. Setting up the project.
+
+You can download the project as I have it set from <a href="http://nosqlproviders.codeplex.com/" target="_blank">my codeplex repo</a> using Mercurial to save you some time.(Changeset <a href="http://nosqlproviders.codeplex.com/SourceControl/changeset/view/59b63f72169f">59b63f72169f</a>)
+
+What I did was to create a new folder \lib under the solution root (of the BlogEngine.Net code), added Nunit, Rhino Mocks and the MongoDb drivers libraries. Them from within VS I added an Specs project to hold my test and a second project to hold the code for the provider.
+
+You should have something like this right now.
+
+<a href="../../../images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up.png"><img border="0" alt="initial_solution_set_up" src="/images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up_thumb.png" width="244" height="168"></a> 
+
+And the following directory structure.
+
+<a href="../../../images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure.png"><img border="0" alt="initial_dir_structure" src="/images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure_thumb.png" width="288" height="275"></a>
+
+You may not have the Resharper files and folders, that depends if you have Resharper installed or not.
+
+h3. Lets write the first test for our MongoDBProvider and generate the class, it needs to inherit from BlogProvider.
+
+Even when I have the source I'm treating BlogEngine.Net as a close system. This change a little bit the way I will develop such a provider. I have control of the code there are a bunch of stuff that I will probably refactor or move around. But in this case I can't since I don't want to fork the project.
+The first test will be to insert a new post. The code will look something like this.
+
+
+
+<script src='http://gist.github.com/561861.js?file=file1.aspx-cs'></script>
+
+
+
+Let's take a look at the MongoDB class.
+
+
+
+<script src='http://gist.github.com/561861.js?file=file2.aspx-cs'></script>
+
+
+
+In line 27 I made sure we disconnect from the db. Note in line 21 that I'm getting a mapper from a factory. This is an obvious requirement since we need a mechanism to map from our objects to the documents and back.
+
+In the next article we will take a look at the Mapper class for Post, save and update our first entity.

@@ -1,0 +1,79 @@
+---
+layout: post
+title: Who are you, private/public key authentication for connect.
+summary: A simple module that implements authentication using a private/public key scheme.
+categories: [JavaScript, node.js, Programming]
+---
+
+Who-are-you, reads a series of http headers and authorize (or not) the caller to access the API.
+
+<aside class="resources">
+  <h4>UPDATE</h4>
+
+  You should also check Joyent's "node-http-signature":https://github.com/joyent/node-http-signature that provides HMAC authentication in a more complete and mature module.
+  If you are using "Restify":http://mcavage.github.com/node-restify/#Bundled-Plugins  you can use the Joyent module right away since it comes already included.
+</aside>
+
+h3. Usage
+
+* Provide the client with a private and public key.
+* Create names (or use the defaults) for the http headers the client will use to make the request.
+* Choice a public value that will be used to generate the hash with the private key.
+* At the moment it uses sha1 to generate the (hash) token.
+
+h3. Example
+
+Given the keys:
+
+* apiKey: 90ijUhj88uY
+* secretKey: ppKJHnmm09Iu564ghfB=
+
+And using the default custom http headers:
+
+The client should send a request with the following headers:
+
+<pre><code>
+
+  x-api-key: 90ijUhj88uY
+  x-request-time: '1357169907984'
+  x-token: 'a001880c10e2a61231311b1b56cecd98c71a7fe4'
+
+</code></pre>
+
+The hash is calculated (in node) using the crypto module.
+
+<pre><code>
+
+  var hash = crypto.createHmac('sha1', 'ppKJHnmm09Iu564ghfB=')
+      .update('1357169907984')
+      .digest('hex');
+
+</code></pre>
+
+On the server application you can add the module as usual:
+
+<pre><code>
+
+  var whoareyou = require('whoareyou');
+  server.use(whoareyou.privatePublicKey(accountStore, null));
+
+</code></pre>
+
+If you want to use custom headers use an options argument as this:
+
+<pre><code>
+
+  var whoareyou = require('whoareyou');
+  var options = {
+    "apiKey": "x-key",
+    "dateTime": "x-date",
+    "token": "x-hash"
+  };
+  server.use(whoareyou.privatePublicKey(accountStore, options));
+
+</code></pre>
+
+The <span class="code">accountStore</span> is expected to have one method <span class="code">get(apiKey, cb)</span> the callback takes two arguments and error and an <span class="code">account</span> object.
+The <span class="code">account</span> object is expected to have at least one property <span class="code">secretKey</span> that contains exactly that.
+
+The middleware will add two properties to the request <span class="code">authenticated</span> a boolean indicating if the authentication have been succesful and <span class="code">currentAccount</span> that contains a clone of the <span class="code">account</span> object returned by the <span class="code">accountStore.get</span> method.

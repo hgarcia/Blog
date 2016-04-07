@@ -1,0 +1,36 @@
+---
+layout: post
+title: Jump start CoffeeScript - book review.
+summary: An incredible entertaining way to learn CoffeeScript.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/9780987247827.do" target="_blank"><img class="img-float-right"  src="/images/posts/jump-start-coffee-script.gif" border="0" alt="Jump Start CoffeeScript - book cover"/></a>
+
+There are possible two types of technical books I really enjoy, the ones dealing with process and general programming and the ones that tell a story while teaching something new.
+
+"Earle Castledine's":http://www.mrspeaker.net/ book does the later and it does it very well.
+
+The author paints the picture of a somehow dysfunctional team set to build a 2D game as part of a coding competition where the developer decides to write the game using CoffeeScript even when he has little knowledge of the language.
+
+This setup works very well to show case all the features of the language in the frame of a non trivial application.
+
+The narrative is great and keep the pace very well.
+
+h3. Three books on one.
+
+The book not only deals with coffee-script but takes on teaching some Canvas and basics game mechanics.
+
+What it's even better, it manage to do all this in just a bit over 200 pages.
+
+__Page count of the ePub version on an iPad2__
+
+You can get all the code from the book to follow along, specially some of the assets for the game that you may not be able (or incline to) do by yourself.
+
+I really enjoyed reading it and coding along; even when I was familiar with the language I gain a better appreciation for it.
+
+h3. Conclusion
+
+Absolutely recommendable, you can't go wrong with this book.

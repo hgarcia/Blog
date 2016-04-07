@@ -1,0 +1,14 @@
+---
+layout: post
+title: The future of C#.
+summary: They talk about LINQ and the changes needed to support it in c#. There is a very interesting point on Extension methods a feature that fascinate myself and scare me a little bit. It's so cool that I know that we will overuse it at the beginning.
+categories: [Programming, .Net]
+---
+
+The guys from <a target="_blank" href="http://www.infoq.com">InfoQ </a>has a very interesting video with <a target="_blank" href="http://www.infoq.com/interviews/mads-torgersen-csharp">Mads Torgersen</a>, PM of C# talking about the future of the language.
+
+They talk about LINQ and the changes needed to support it in c#. There is a very interesting point on Extension methods a feature that fascinate myself and scare me a little bit. It's so cool that I know that we will overuse it at the beginning.
+
+Type inference is also referred in this chat and why the use of var have been included now (no, is not to make look more like javascript:-) ).
+
+Check it out.

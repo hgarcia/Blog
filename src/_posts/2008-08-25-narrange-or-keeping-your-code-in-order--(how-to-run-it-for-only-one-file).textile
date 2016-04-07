@@ -1,0 +1,20 @@
+---
+layout: post
+title: NArrange or keeping your code in order. (How to run it for only one file)
+summary: There is a feature of Refactor that I really like and is the posibility to re-order the code (grouping fields, properties, private and public methods together) and order them alfabetically.  I'm a Resharper user and I was looking for some add-in ...
+categories: [Tools]
+---
+
+There is a feature of Refactor that I really like and is the posibility to re-order the code (grouping fields, properties, private and public methods together) and order them alfabetically. I'm a Resharper user and I was looking for some add-in to help to achieve something similar when I came across <a target="_blank" title="NArrange the .Net code organizer " href="http://narrange.sourceforge.net/">NArrange</a>.
+
+Install NArrange takes no time at all, this is not a VS Add-in but a console app that <a target="_blank" title="How to use NArrange" href="http://www.codeproject.com/KB/codegen/narrange.aspx">can be execute from within VS as an External tool</a>.
+
+I only found one problem using it and is that if I have the file open whem running the tool it breaks the encoding, but I ran it in another machine and I didn't find the same issue, so I need to figure out what is different between the VS configuration in those machines.
+
+I also made a configuration to run it for only one page and the only changes are that in the arguments you need to use ItemPath and in the initial directory ItemDir:
+
+<img alt="NArrange configuration for a single file" title="NArrange configuration for a single file" src="/images/posts/sp32-20080825-231710.png" border="0"/>
+
+The only problem is that when running it for a single file the using statements are moved inside the namespace and I dont like that:
+
+<img alt="Using statement inside the namespace" title="Using statement inside the namespace" src="/images/posts/sp32-20080825-232338.png" border="0"/>

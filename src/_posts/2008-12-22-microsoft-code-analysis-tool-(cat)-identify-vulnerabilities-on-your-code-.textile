@@ -1,0 +1,21 @@
+---
+layout: post
+title: Microsoft Code Analysis Tool (CAT) identify vulnerabilities on your code.
+summary: CAT is a Visual Studio Add-in that analyze your code and all the references in your project looking for vulnerabilities to common attacks.
+categories: [Tools, .Net]
+---
+
+<a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=0178e2ef-9da8-445e-9348-c93f24cc9f9d&amp;amp;displaylang=en" target="_blank">CAT</a> is a Visual Studio Add-in that analyze your code and all the references in your project looking for vulnerabilities to common attacks.
+
+According to the copy in the download page this version deals with:
+
+<ul>
+	<li>Cross Site Scripting </li>
+	<li>SQL Injection </li>
+	<li>Process Command Injection </li>
+	<li>File Canonicalization </li>
+	<li>Exception Information </li>
+	<li>LDAP Injection </li>
+	<li>XPATH Injection </li>
+	<li>Redirection to User Controlled Site</li>
+</ul>

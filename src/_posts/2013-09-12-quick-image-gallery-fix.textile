@@ -1,0 +1,44 @@
+---
+title: A quick fix for the image gallery
+summary: After struggling to get masonry to work properly in multiple devices I choose to go with a different, more classic approach.
+categories: [JavaScript]
+---
+
+A few months ago I rolled out a Flickr backed image gallery for the "loops":http://blog.dynamicprogrammer.com/categories/photos.html section of the site.
+
+In my initial approach I used "masonry.js":http://masonry.desandro.com/ a really cool jQuery plug-in that can build a dashboard of images of multiple sizes.
+
+Somehow, the structure of my HTML and masonry didn't like each other very much. Multiple times the pictures where loading all mangled up and it was really bad on Chrome.
+I'm pretty sure I'm to blame but without time to debug it properly I decided to change to a more classic approach.
+
+h3. Oversizing and overflowing.
+
+The main problem with this type of gallery is that the thumbnails for the images are of different sizes and proportions; some images are landscapes, some are portraits and some others are just square images.
+
+I decided to change the size of the front page image thumbnails to a "small320" or a "medium" size image from Flikr. This results in an images of 320 and 500 pixels wide.
+
+I wrapped the image on a container DIV and I set it's width to 310px. The IMG tag has the max-width set to 100% to fake a "responsive" image.
+
+This gave me a nice grid of images neatly ordered in columns. I still had the problems of images with different height.
+
+I did use another old trick and set the height of the container to 184px and overflow hidden. This make the image to be hidden and cut off all the images to a nice consistent height.
+
+h3. Dealing with boredom.
+
+Look at that, what a nice, uniform and totally boring grid!
+
+I got the labels that were sitting on top and move it down to overlay the picture near the bottom.
+
+I use a 50% alpha on a black background to provide some much needed contrast for the light gray letters. (Specially on very light pictures).
+
+I decided to brake the squareness and rounded up the bottom right corner of the container.
+
+h3. Multi display.
+
+I don't want to call it responsive, because I'm always loading the same images for all devices, what I could improve on.
+
+I just put together a few media queries to brake at four different points.
+
+The smaller brake point not only change the size of the main container but also changes the width of the image wrapper and hide the labels, making for two smaller columns that show better on phones.
+
+I think that the result is much better and maybe later on I will use auto loading for iamges below the fold if I think can improve things.

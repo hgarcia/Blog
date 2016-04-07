@@ -1,0 +1,32 @@
+---
+layout: post
+title: Ruby on Rails 2.0
+summary: It's very interesting to notice that 2.0 won't be fully compatible with the previous versions of Rails, I don't have nothing important or too complicated written with Rails so I don't expect to have too much trouble upgrading but I will like to see what is the response of the rails community to this.
+categories: [Programming, Ruby]
+---
+
+The guys from InfoQ have <a href="http://www.infoq.com/articles/ruby20-dhh-interview" target="_blank">this
+very good article</a> about the release of <a href="http://www.rubyonrails.org/down">Ruby
+on Rails 2.0</a>.
+
+It's very interesting to notice that 2.0 won't be fully compatible with the previous
+versions of Rails, I don't have nothing important or too complicated written with
+Rails so I don't expect to have too much trouble upgrading but I will like to see
+what is the response of the rails community to this.
+
+Of course a major version upgrade can't be fully backward compatible with some older
+versions of the framework so I don't see the problem but we usually hear complains
+when some other vendors make some drastic changes. The argument can be made that Rails
+(and ruby) are open source and free, so you don't have the same investment than when
+you pay tons of money to a vendor for a platform and them&amp;nbsp; he decides to change
+without consulting you.
+
+Worst case scenario you may probably keep running your old Rails app in the old version
+of the framework.
+
+I'm personally doing most of my Rails work using the <a target="_blank" href="http://jruby.codehaus.org/">Jruby </a>interpreter
+and <a target="_blank" href="http://www.netbeans.org/features/ruby/index.html">Netbeans
+6.0</a>, the support of this IDE to the framework and the language is very cool, there
+is nothing like that so far in all the others I tried, even <a target="_blank" href="http://www.aptana.com/rails/">RadRails </a>(now
+supported by <a target="_blank" href="http://www.aptana.com">Aptana </a>and very much
+improved).

@@ -1,0 +1,15 @@
+{% include "./_partials/default_header.html" %}
+{% for post in posts %}
+  {% assign p = post %}
+  {% for category in post.categories %}
+  {% if category == categoryName %}
+    <section class="extra">
+      <header>
+        <h3><a href="{{ p.permaLinkUrl}}">{{ p.title }}</a></h3>
+      </header>
+      <p>{{ p.summary }}</p>
+    </section>
+  {% endif %}
+  {% endfor %}
+{% endfor %}
+{% include "./_partials/default_footer.html" %}

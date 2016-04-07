@@ -1,0 +1,86 @@
+---
+layout: post
+title: Recap of FITC Toronto 2012.
+summary: This was my first FITC and hopefully won't be the last.
+categories: [Design]
+---
+
+I wanted to attend the conference for a few years now, but for one thing or another, never did.
+
+Early this year I was fortunate enough to win a ticket for FITC thanks to the HTML 5 Toronto meet up group on Twitter, so no excuses this time.
+
+In case you don't know, the "FITC conference":http://www.fitc.ca/events/about/?event=124 is focused on design and interactive technology.
+
+The sessions cover topics as front end development, graphic design, interactive art, product and industrial design, etc.
+
+h3. The crowd.
+
+The first thing I noticed was how diverse the crowd was. I think (as a developer) I am particularly sensitive to this due to the ongoing struggle in the development world to attract women and (more importantly) make sure they are treated with respect.
+
+The gender diversity was great, not only there was a great number of women in attendance but also between the presenters.
+
+h3. The organization.
+
+Just one word, great.
+
+Each session started with a professionally pre-recorded sound bite to present the speaker and remind the audience to fill up the evaluation forms.
+
+A small army of volunteers maned the rooms and make sure a form was available on each chair, help with registration, assist the presenter, make sure that lights, sound and projector were working and (I'm sure) lots more.
+
+Presenters were equipped with microphones and the sound worked great (at least in all the sessions I attend).
+
+A few sessions were a bit over crowded, but that's one of those things very difficult to foresee.
+
+h3. The sessions.
+
+Early on I decided to go outside my comfort zone and attend (mostly) non development sessions.
+I took a very "codemash" approach and tried to learn something knew.
+
+I don't regret that decision at all. I hang out a lot at the voodoo lounge, and it wasn't just because of the free beer, but the presentations were really good.
+Maybe the short 30 minutes format combined with the casual setting (sofas) and small room make for a more intimate experience.
+
+h3. My favorites.
+
+h5. "UX doesn't exist":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1980
+
+by "Kurt Krumme":https://twitter.com/#!/burtbrumme of "One method":http://onemethod.com
+
+One of those great presentations that get all the room captivated.
+
+h5. "Back to the good old tangible world":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1815
+
+by "Riccardo Giraldi":https://twitter.com/#!/giraz of "B-reel":http://www.b-reel.com/
+
+He showcased some of the work at b-reel where their interfaced internet with the real world.
+
+* "Shoot Jam to some clothe via facebook":http://www.b-reel.com/projects/ariel-fashion-shoot/
+* "Remote control a Honda civic via the internet, yes a real one.":http://www.b-reel.com/projects/honda-the-experiment/
+* "Or this virtual / real live assistance for 3 liveshop":http://www.b-reel.com/projects/3live-shop/
+
+Riccardo also showed how to control "Scalextrics with an Arduino":http://www.b-reel.com/projects/mind-scalextrics/ live in the voodoo lounge. In the demo he used his computer and iPhones.
+
+h5. "On-Demand inspiration":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1919
+
+by "Denise Jacobs":https://twitter.com/#!/denisejacobs
+
+Another great presentation at the voodoo lounge. Denise talked about how to work toward facilitate inspiration and creativity, how to overcome our own fears and silence the internal critic.
+
+She also had a good technical presentation "How to be a Super CSS Detective":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1918 based on her book "The CSS detective guide":http://cssdetectiveguide.com/
+
+h3. Other great presentations.
+
+* "The thing is your friend":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1947 - "Ivan Poupyrev":https://twitter.com/#!/ipoupyrev
+* "Create more, better, different":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1827 - "Jason Theodor":https://twitter.com/#!/jted
+* "The responsible response to responsive design":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1938 - "Stacey Mulcahy":https://twitter.com/#!/bitchwhocodes
+* "A window to the physical":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1942 - "Peter Nitsch":https://twitter.com/#!/peter_nitsch
+* "The rapid prototyping, creative incubating, lean startup":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1990 - "Hoss Gilford":https://twitter.com/#!/hossgifford
+* "The secrets of creation":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1974 - Panel
+* "HTML 5: life in the trenches":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1814 - "Grant Skinner":https://twitter.com/#!/gskinner
+* "Fun with particles in processing":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1860 - "Randal Church":https://twitter.com/#!/randyREC
+* "How I learn to stop worrying and love Jon Burgerman":http://www.fitc.ca/events/presentations/presentation.cfm?event=124&presentation_id=1823 - "Jon Burgerman":https://twitter.com/#!/jonburgerman
+
+
+h3. Conclusions
+
+It was a great experience that I hope to repeat next year. I'm highly motivated by some of the presentations to start exploring some new things.
+If you are a developer and you are interest in design, I will highly recommend you to go next year.

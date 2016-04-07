@@ -1,0 +1,20 @@
+---
+layout: post
+title: Watir to run my smoke and regression tests
+summary: I have been looking for a tool to drive my web sites smoke and regression test for quite a while, between the tools I used I want to mention Sahi and Selenium, really good tools.
+categories: [Testing, Tools]
+---
+
+I have been looking for a tool to drive my web sites smoke and regression test for quite a while, between the tools I used I want to mention Sahi and Selenium, really good tools.  
+
+In the company I'm working right now we have a framework that is used by several companies to drive their websites. They can change the skinning a little bit but all the sites have the same structure and there a minimum of artifacts that remain from page to page (even when they look different).  
+
+Trying to test this with Selenium wasn't easy, since I don't want to create a complete suite of test for each site, I need to modify the test suite after it was created and imported on the language of choice. At that moment a disconnect is produced between the tester using the recorder and whoever will maintain the test code.  
+
+So I decided that we needed something different, some kind of scripting tool to drive the test. I took a look a Watir a year ago or so and at that time it was mostly IE specific. That was a deal breaker for me. Recently I decided to initiate the search once more and I found out that Watir now come with FireWatir integrated so it can drive both IE and Firefox and also there is Safariwatir to run test against Safari.  
+
+So, I downloaded, installed and run it. It was quite simple and I enjoyed that uses Ruby as the language to create test. In a few minutes I was able to put together a very simple test to log into our site and log out, interacting with some AJAX in the process. 
+
+Please note that my Ruby is quite basic and it was my first time using the Watir library. A few more minutes and I was able to refactor the test to load username, password, site domain and browser from a YAML file. So now I can have a configuration file and a single test that will run against as many sites (domains really) I want, with as many different users, even invalid one.  
+
+The next step is to encapsulate this functionality in a library and them use either RSpec or TestUnit to drive the tests and generate a report. So far I'm very excited and enjoying it.

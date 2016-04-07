@@ -1,0 +1,15 @@
+---
+layout: post
+title: Gherkin editor, small bug fix
+summary: Fixing code completion and syntax highlight for files.
+categories: [Tools]
+---
+
+One of my oldest OOS projects, the Gherkin editor have been having some attention lately with a few downloads, comments and issues been open.
+
+I decided to take a few hours and at least fix what seems to be the main issue for users.
+
+Now, opening features files will provide the proper syntax highlight in the text.
+
+The new release is Beta 2 and is available at "http://gherkineditor.codeplex.com/":http://gherkineditor.codeplex.com/
+

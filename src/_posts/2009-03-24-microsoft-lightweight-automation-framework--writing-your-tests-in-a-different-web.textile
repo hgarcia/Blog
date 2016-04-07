@@ -1,0 +1,16 @@
+---
+layout: post
+title: Microsoft Lightweight Automation Framework- Writing your tests in a different web
+summary: This is a quick post. In the samples for the framework the test are written in the same system to test.
+categories: [Programming, Testing, Tools]
+---
+
+_There is another way to do this. Check <a href="http://weblogs.asp.net/asptest/archive/2008/12/02/running-the-lightweight-test-automation-framework-for-asp-net-from-a-separate-application.aspx" target="_blank">this post from the QA team blog</a>.__
+
+This is a quick post. In the samples for the framework the test are written in the same system to test.
+
+This is not terrible, since you can easily remove those files for the final compilation, but I prefer to have my test in a different project. Well that's very easy to do. Just create another web application and follow the same conventions that in the sample to create your test.
+Add a reference to the framework, create an App_Code folder if you don't have one, add a Tests folder inside and create all your test fixtures in it.
+
+Them when loading the pages to test just use a relative path.
+The important thing is to run the test runner under the same domain of the app you want to test.

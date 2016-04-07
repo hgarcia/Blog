@@ -1,0 +1,41 @@
+---
+layout: post
+title: Lightweight Test Framework, attaching to a new window after window.open
+summary: In a previous post I mention about a fix to been able to open a new window both in IE and Firefox using the Lightweight Test Framework.
+categories: [Programming, Testing, Tools]
+---
+
+In <a href="/2009/03/24/lightweight-test-framework--fixing-how-to-handle-window-open.html" target="_blank">a previous post</a> I mention about a fix to been able to open a new window both in IE and Firefox using the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Lightweight Test Framework</a>.
+
+Today I want to talk about how to hook into the newly opened window or any other window opened by the testing framework.
+Let me said this, it's not very difficult but is kind of convoluted, I won't be surprised if there is a better way to do this, but I can't seem to find it.
+
+The key resides in the BrowserCommandTarget object. This object has a property WindowIndex that maps to the index of the _windowCollection array on the client side code (the JavaScript implementation of the framework).
+
+The next thing we need to do is figure out how to send a BrowserCommand to this window, and sure enough BrowserCommand has a target property that takes a BrowserCommandTarget.
+
+So here is the code to click a button in a window that was open after calling window.open in the main window.
+
+
+
+<script src='http://gist.github.com/561844.js?file=file0.aspx-cs'></script>
+
+
+
+Lines 4 and 5 is just the normal way you click in an element. In this case I look for an element with the Id of "openWindow" and do a Click. This is the html of the page we are testing.
+
+
+
+<script src='http://gist.github.com/561844.js?file=file1.html'></script>
+
+
+
+After this page opens I want to click the button with the name "clickedOnTheSecondWindow" in the newly opened window. For that I create a BrowserCommandHandler that knows how to handle the onclick event. A BrowserCommandTarget with the Id of the element to be checked and I pass the index (1) for the newly opened window, the original window already opened in the test frame is index 0.
+Then I create a BrowserCommand and assign the target and the handler to it.
+Finally I call ExecuteCommand in the page object passing the newly created command.
+
+This may sound counter intuitive since page is the same object we used before to click "openWindow" in the test frame. But page.ExecuteCommand takes all the data from the passed in command argument. I consider that it should be a better way to do this and maybe this is a smell on the API or me not figuring out the right way to use it.
+
+I mentioned before that BrowserCommandTarget.Id takes the Id of the element, I'm sure that you notice that none of the buttons have an Id but only a name. The framework will first search by Id and then by name always using the value passed to the Id property.
+
+So far I haven't figured out how to make an assertion in the new window though, I guess that will be something to deal with in another post.

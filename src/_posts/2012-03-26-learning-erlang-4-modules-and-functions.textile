@@ -1,0 +1,68 @@
+---
+layout: post
+title: Modules and functions, Erlang building blocks (Learning Erlang 4).
+summary: Erlang code is divided in modules. Each module contains attributes and functions. Modules (and functions) are the building blocks of any program in Erlang.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
+h3. Functions.
+
+In Erlang you group function together in modules (more on this later).
+A function consist of a name, a set of parenthesis (containing the arguments) an arrow and a body.
+
+A function can contain zero or more arguments. The number of arguments indicates the "arity" of the function.
+
+"Arity":http://en.wikipedia.org/wiki/Arity You will see this notation "lists:sort/1" to indicate the sort function that takes one argument and belongs to the lists module or "lists:sort/2" to indicate the sort function in the same module (lists) but taking 2 arguments.
+
+A function is defined as a set of clauses, each one with it's own head. We said that the function name, the parameters and the arrow is the HEAD. (This is where we finally start seeing some real differences with more traditional languages). Clauses are separated using semicolons and the function definition ends with a stop. The "name" part of the function is technically an atom.
+
+Clauses will be evaluated in order, so the order of the clauses is important. By the way, is considered good practice to provide a catch all clause for your functions and it should be the last one.
+
+__This is sample code to illustrate function definitions. This is not code that I will want to see in production.__
+
+<script src="https://gist.github.com/2202665.js?file=functions1.erl"></script>
+
+In the example above I define a function anchor that can take a tuple with two or three elements or a simple variable. The double plus operator concatenate lists (or strings) together. It's important to notice that this is only one function with three heads.
+
+The pattern match is done on the arguments of the function. It will check number of arguments and them compare the arguments following the rules we saw in "Learning Erlang 3":http://blog.dynamicprogrammer.com/2012/03/19/learning-erlang-3-variables-comparisons-dynamic-typing.html
+
+Even when we know that our anchor function can use some love, we need to start using it right away and to do so we will create a module.
+
+h3. Modules, encapsulation and exports.
+
+Modules are text files where we logically group functions together.
+
+__You may be familiar with other similar module systems, like commonjs used in node.js__
+
+We name the module using the "module" attribute, this has to be the first attribute on a module. The name of the module have to be the same as the name of the file without the extension (erl) and we use an atom not a string.
+
+A Module provide encapsulation, by default all functions defined inside a module are private to it; to expose functions outside the module you need to export them using the export attribute.
+
+The export attribute takes a list containing the function name and the arity. (name/arity)
+
+Since we need to consume the anchor function we create a file with the name htmltags.erl where we copy the function and export it.
+
+<script src="https://gist.github.com/2202665.js?file=modules1.erl"></script>
+
+Now that we have the module we are a step closer to be able to use it.
+
+h3. Compiling and running modules.
+
+The easier way to compile a module is calling the function c() from the erlang shell. I started the shell in the same folder where I saved the htmltags.erl file and invoked c from there.
+
+<script src="https://gist.github.com/2202665.js?file=compiling.erl"></script>
+
+The module is compiled into a file with the beam extension. When I list the files in the current folder this is what I see.
+
+<script src="https://gist.github.com/2202665.js?file=list_of_files.cmd"></script>
+
+The module will be automatically imported into the current shell as well, allowing us to call the functions.
+
+<script src="https://gist.github.com/2202665.js?file=using_module.erl"></script>
+
+h3. Next time.
+
+There are more ways to compile modules and a myriad of attributes that can be used both by the compiler and in code. I will cover them up in a future post.

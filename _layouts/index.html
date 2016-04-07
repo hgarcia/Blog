@@ -1,0 +1,31 @@
+{% include "./_partials/default_header.html" %}
+{% assign first = true %}
+  {% for post in posts limit:9 %}
+      {% if first %}
+        {% assign first = false %}
+        <article>
+          <header>
+            <h2><a href="{{ post.permaLinkUrl}}">{{ post.title }}</a></h2>
+          </header>
+          <section>
+
+          </section>
+          <section>{{ post.contents }}</section>
+            <footer>
+            {% for category in post.categories %}
+              <a href="/categories/{{ category | downcase | replace:'.net','dotnet' | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
+            {% endfor %}
+          </footer>
+        </article>
+        <hr/>
+
+      {% else %}
+
+      	<section class="extra">
+    			<h3><a href="{{ post.permaLinkUrl}}">{{ post.title }}</a></h3>
+      		<p>{{ post.summary }}</p>
+      	</section>
+
+      {% endif %}
+  {% endfor %}
+{% include "./_partials/default_footer.html" %}

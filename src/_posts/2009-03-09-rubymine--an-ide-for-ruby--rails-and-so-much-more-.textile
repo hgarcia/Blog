@@ -1,0 +1,77 @@
+---
+layout: post
+title: RubyMine, an IDE for Ruby, Rails and so much more.
+summary: Ok, first let me be really clear, I'm not a JetBrains fan boy. Yes, I use ReSharper and yes, I also use TeamCity at home as my Continuous Integration server for some of my projects.
+categories: [Tools, Ruby]
+---
+
+Ok, first let me be really clear, I'm not a <a href="http://www.jetbrains.com/index.html" target="_blank">JetBrains</a> fan boy.
+Yes, I use <a href="http://www.jetbrains.com/resharper/index.html" target="_blank">ReSharper</a> and yes, I also use <a href="http://www.jetbrains.com/teamcity/index.html" target="_blank">TeamCity</a> at home as my <a href="http://martinfowler.com/articles/continuousIntegration.html" target="_blank">Continuous Integration</a> server for some of my projects.
+
+I also use <a href="http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET" target="_blank">Cruise Control.Net</a> and <a href="http://jenkins-ci.org/" target="_blank">Jenkins CI</a> in other projects (sometimes both in the same project, to do different things)
+
+But the guys from JetBrains do really good products, ex: TeamCity is ,IMHO, the most friendly CI server of the three to set up and ReSharper makes practicing TDD or BDD not just possible but highly enjoyable.
+
+So when I came across RubyMine a few months ago I decided to give it a try. I have been using <a href="/2008/01/02/the-ruby-%28and-rails%29-ide-that-i-miss.html" target="_blank">different IDE's and Editors</a> on my adventures into the Ruby world but even when I found some of them really good I never really feel at home.
+
+<a href="http://www.netbeans.org/features/ruby/index.html" target="_blank">NetBeans with Ruby support</a> was the one that provided the best IDE experience for me so far, and for text editors I mostly used <a href="http://www.scintilla.org/SciTE.html" target="_blank">Scite</a> that comes with Ruby. (I do all my programming on a PC so no <a href="http://macromates.com/" target="_blank">TextMate</a> for me and for whatever reason <a href="http://www.e-texteditor.com/" target="_blank">e</a> didn't click with me. I also tried <a href="http://www.pspad.com/" target="_blank">PSPad</a>, my favorite text editor for everything else, but it didn't work with ruby. I guess my very basic knowledge of the language didn't help either.
+
+So here are some of the features I like on RubyMine some of them shared by NetBeans.
+
+_Note:I'm not giving out on NetBeans since it's free and has support for PHP._
+
+h3. Easy code navigation.
+
+From a view clicking in the A icon will open the proper controller and position the cursor in the right action.
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_01%202009-03-08%2022.33.43_2.jpg"><img height="185" alt="ScreenHunter_01 2009-03-08 22.33.43" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_01%202009-03-08%2022.33.43_thumb.jpg" width="443" border="0" /></a>
+
+Now if you are in a controller and click in the View icon besides the action you will navigate to the view if it exist.
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_02%202009-03-08%2022.34.22_2.jpg"><img height="101" alt="ScreenHunter_02 2009-03-08 22.34.22" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_02%202009-03-08%2022.34.22_thumb.jpg" width="316" border="0" /></a>
+
+If the views is not available yet RubyMine will open a prompt to create it.
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_03%202009-03-08%2022.34.34_2.jpg"><img height="98" alt="ScreenHunter_03 2009-03-08 22.34.34" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_03%202009-03-08%2022.34.34_thumb.jpg" width="289" border="0" /></a>
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_04%202009-03-08%2022.34.48_2.jpg"><img height="130" alt="ScreenHunter_04 2009-03-08 22.34.48" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_04%202009-03-08%2022.34.48_thumb.jpg" width="334" border="0" /></a>
+
+Also some classes have a (dependencies?) icon beside its declaration that help you to browse to base classes and partial implementations
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_06%202009-03-08%2022.42.26_2.jpg"><img height="101" alt="ScreenHunter_06 2009-03-08 22.42.26" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_06%202009-03-08%2022.42.26_thumb.jpg" width="322" border="0" /></a>
+
+h3. Code hints and code analysis
+
+The familiar (for ReSharper users) yellow light bulb, shows up in some cases giving you hints on how to improve your code. In this case I positioned the cursor on the 'new' string and the id understands that I'm referring to the new action, so it suggest to use a symbol instead.
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_05%202009-03-08%2022.41.49_2.jpg"><img height="66" alt="ScreenHunter_05 2009-03-08 22.41.49" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_05%202009-03-08%2022.41.49_thumb.jpg" width="275" border="0" /></a>
+
+On the right hand you have hints (yellow, red) about your code. Even on html code.
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_09%202009-03-08%2022.43.13_2.jpg"><img height="76" alt="ScreenHunter_09 2009-03-08 22.43.13" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_09%202009-03-08%2022.43.13_thumb.jpg" width="126" border="0" /></a>
+
+   <a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_08%202009-03-08%2022.43.03_2.jpg"><img height="130" alt="ScreenHunter_08 2009-03-08 22.43.03" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_08%202009-03-08%2022.43.03_thumb.jpg" width="396" border="0" /></a>
+
+In this case makes the sensible suggestion of get rid off the B tag and replace with some CSS or the STRONG tag:
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_10%202009-03-08%2022.55.14_2.jpg"><img height="83" alt="ScreenHunter_10 2009-03-08 22.55.14" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_10%202009-03-08%2022.55.14_thumb.jpg" width="219" border="0" /></a>
+
+h3. Refactorings
+
+Of course you have some Refactorings available for you.
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_11%202009-03-08%2022.57.20_2.jpg"><img height="121" alt="ScreenHunter_11 2009-03-08 22.57.20" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_11%202009-03-08%2022.57.20_thumb.jpg" width="489" border="0" /></a>
+
+Code analysis:
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_12%202009-03-08%2022.57.32_2.jpg"><img height="91" alt="ScreenHunter_12 2009-03-08 22.57.32" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_12%202009-03-08%2022.57.32_thumb.jpg" width="495" border="0" /></a>
+
+And find usages:
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_13%202009-03-08%2022.57.48_2.jpg"><img height="210" alt="ScreenHunter_13 2009-03-08 22.57.48" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_13%202009-03-08%2022.57.48_thumb.jpg" width="265" border="0" /></a>
+
+<a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_14%202009-03-08%2022.58.03_2.jpg"><img height="314" alt="ScreenHunter_14 2009-03-08 22.58.03" src="/images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_14%202009-03-08%2022.58.03_thumb.jpg" width="448" border="0" /></a>
+
+h3. Conclusion
+
+This are just some of the features, for a complete list visit the JetBrains site, most of them also work in JavaScript files and html files, so you can use them in other projects not just Ruby ones.

@@ -1,0 +1,34 @@
+---
+layout: post
+title: LINQ to search arrays and Auto-implemented properties.
+summary: This is a cool example of using LINQ to query and filter an array. I like this use of LINQ.
+categories: [Programming, .Net]
+---
+
+This is a cool example I haven't see before of using LINQ to query and filter an array.
+
+-http://microsoft.apress.com/article/74080/- +The url is broken now+.
+
+I like this use of LINQ, it shows the power of the language and what I think is a much useful "usage" than to query db. I need to take a deeper look into this and start using it for xml too.
+
+Another of my favorite "new things" in c# 3.0 is auto-implemented properties. They are so powerfull and so simple to use. Let me tell you that I'm a fanatic of the principle of encapsulation, I really think that is one of the most important features of OO (maybe the one that I see most beneficial since reusability can be achieve with well written libraries of procedural code as well).
+
+Being so I get mad each time that I see somebody doing:
+
+
+
+<script src='http://gist.github.com/561818.js?file=file0.aspx-cs'></script>
+
+
+
+The excuse is usually that it takes too long to declare the fields private and create the accesors for them, so they just go ahead and expose the guts of the class for everybody to see it.
+
+Now auto-generated properties make all this excuses redundant.
+
+
+
+<script src='http://gist.github.com/561818.js?file=file1.aspx-cs'></script>
+
+
+
+To make a read only property just add the private modifier before set, and assign the values in the constructor.

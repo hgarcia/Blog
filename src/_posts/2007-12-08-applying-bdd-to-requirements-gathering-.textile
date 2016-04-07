@@ -1,0 +1,12 @@
+---
+layout: post
+title: Applying BDD to requirements gathering.
+summary: I am an enthusiast of Test Driven Development but sometimes I have the problem that is difficult to know how to start testing. The problem usually is, very ambiguous requirements provided by the client.
+categories: [Testing, Programming]
+---
+
+I am an enthusiast of Test Driven Development but sometimes I have the problem that is difficult to know how to start testing. The problem usually is, very ambiguous requirements provided by the client. I know that we all have sometimes this problem and this is not an issue related to TDD, this is an issue related to pretty much any development practice.
+
+Here is when <a target="_blank" href="http://behaviour-driven.org/">BDD</a> comes to the rescue. I read this <a target="_blank" href="http://dannorth.net/whats-in-a-story">Dan North's article</a> and everything make sense.
+
+I have started to play around with nBehave and so far I like it, now I will love to have a pure English editor or some kind of wizard for my clients to be able to define requirements easily.

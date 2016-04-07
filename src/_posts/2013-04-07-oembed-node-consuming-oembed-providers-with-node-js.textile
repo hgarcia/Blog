@@ -1,0 +1,66 @@
+---
+layout: post
+title: oEmbed-node, consuming oEmbed providers with node.js.
+summary: A new single use module to consume oEmbed providers.
+categories: [JavaScript, node.js, Programming]
+---
+
+During the winter I build a "very simple website":http://thebicho.com to curate ski videos from Vimeo and YouTube for my own personal use.
+
+While working on it I needed to deal with the oEmbedd APIs of these two providers.
+
+The result is this simple but extensible node.js module to easily consume oEmbed API's from multiple providers.
+
+At the moment it <del>only</del> supports YouTube and Vimeo but you can easily extend it to work with others via custom providers.
+
+__UPDATE: Version 0.2.0 adds support for "Revision3":http://revision3.com, "Justin.tv":http://justin.tv and "yFrog":http://twitter.yFrog.com. It also fix a bug when processing YouTube urls that contain multiple parameters in the querystring.__
+
+h3. Usage
+
+<pre><code>
+
+  var oembed = require('oembed-node').init();
+  oembed.get({url: "https://vimeo.com/62584176"}, getVideo);
+  function getVideo(err, result) {
+
+  }
+
+</pre></code>
+
+The result will be a literal object with the properties returned by the provider. The library adds a video_url property to the object.
+This property is not the url you entered but the "proper" url to embed a video. For example for YouTube you should use the http://youtu.be url to call the oEmbed API but the provider can deal with any url from youtube and "returns" the proper one.
+
+h3. Custom providers
+
+The <span class="code">init</span> method of the library takes a literal object that's a map from host names to functions. Each of those functions is the handler that will return a proper oEmbed end point.
+
+For example a custom provider for vimeo would be like this:
+
+<pre><code>
+
+  var customProviders = {
+    "vimeo.com" : {
+      init: function (urlStr) {
+        return {
+          getUrls: function () {
+            return {
+              embed: "http://vimeo.com/api/oembed.json?url=" + urlStr,
+              video: urlStr
+            };
+          }
+        };
+      }
+    }
+  };
+
+</code></pre>
+
+And you can pass it to the <span class="code">init</span> function of the module.
+
+<pre><code>
+
+    var oembed = require('oembed-node').init(customProviders);
+
+</code></pre>
+
+You can use the same handler for multiple host names, just associate it to other keys in the hash.

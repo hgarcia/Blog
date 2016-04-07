@@ -1,0 +1,16 @@
+---
+layout: post
+title: Support Light Table to make it a reality.
+summary: Light Table is at the moment a concept for a different way to work with code.
+categories: [Programming, Tools]
+---
+
+Light Table is a concept for a new IDE introduce by Chris Ganger and inspired by this video of Bret Victor - Inventing on Principle.
+
+Chris "introduced the project in a post on his blog":http://www.chris-granger.com/2012/04/12/light-table---a-new-ide-concept/ and due to the "great reception":http://www.chris-granger.com/2012/04/15/light-tables-numbers/ by the community he decided to submit the project to "Kickstarter":http://www.kickstarter.com/projects/ibdknox/light-table to get the founds needed to make it a real product.
+
+This is Chris introducing us to Light Table.
+
+<iframe frameborder="0" height="360px" src="http://www.kickstarter.com/projects/ibdknox/light-table/widget/video.html" width="480px"></iframe>
+
+If you like what you see, go ahead and "support the project":http://www.kickstarter.com/projects/ibdknox/light-table

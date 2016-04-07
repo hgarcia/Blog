@@ -1,0 +1,16 @@
+---
+layout: post
+title: DevTeach day 1 - Scott Hanselman keynote
+summary: Following to yesterday presentation at the TVBUG, Scott Hanselman gave the keynote on Data Services and Dynamic Data. Both of this two (products?, projects?, solutions?) are focus in different ways to provide access to your data.
+categories: [General]
+---
+
+Following to yesterday presentation at the TVBUG, Scott Hanselman gave the keynote on <a href="http://msdn.microsoft.com/en-us/library/bb906063.aspx">Data Services</a> and <a href="http://blogs.msdn.com/davidebb/default.aspx">Dynamic Data</a>.
+
+Both of this two (products?, projects?, solutions?) are focus on different ways to provide access to your data.
+
+Dynamic data allows you to very easy and quickly create all the admin forms for a given database (similar but different to the scaffolding on Rails).
+
+The main difference is that there is not code generated for the pages you see.<br/>All the code is based on templates and every rendered field is based on templates as well, so you can very easily change the way a field will render.
+
+Data services was already covered in my previous post about Hanselman's presentation at the TVBUG.

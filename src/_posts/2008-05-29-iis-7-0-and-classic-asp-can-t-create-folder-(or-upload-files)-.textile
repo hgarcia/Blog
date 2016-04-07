@@ -1,0 +1,20 @@
+---
+layout: post
+title: IIS 7.0 and classic ASP can't create folder (or upload files).
+summary: I was helping a colleague at work to debug an old classic asp script that uploads an image to the server, create some folders if they don't exist and copy the image on those folders.He was having a permissions denied error.
+categories: [Programming]
+---
+
+I was helping a colleague at work to debug an old classic asp script that uploads an image to the server, create some folders if they don't exist and copy the image on those folders.<br/>He was having a permissions denied error. 
+
+Of course he added permissions to IIS_IUSR to modify the folder but still the same error. In IIS 5.0 and IIS 6.0 this is the user that you grant permissions to write files to the server. 
+
+We search for an answer on google but nothing came up. Actually we found some posts of people that found the same problem, most of them using PHP on IIS 7.0. 
+
+Looking at the system users in the machine (Vista Premiun) I saw a user with the name IIS_WPG, that sound like the IIS Worker Process, we give permissions to that user and suddenly the script started to work. 
+
+I haven't tried it with PHP but my guest is that it's going to work. (I stopped running PHP on IIS long time ago and I stick with Apache even in windows.)
+
+h3. Note on security 
+
+If this was a production machine I would probably enable impersonate and create an ad hoc user to upload files and not give access to the IIS_WPG directly.

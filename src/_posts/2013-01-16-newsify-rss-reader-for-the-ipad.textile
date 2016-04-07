@@ -1,0 +1,24 @@
+---
+layout: post
+title: Newsify, my new choice on RSS reader for the iPad.
+summary: A great client for Google reader with great visualizations and sharing options.
+categories: [Tools]
+---
+
+I do a lot of reading in my iPad and I'm currently subscribe to a few hundred feeds. I use Google reader to manage all my RSS subscriptions but I like to have a good off-line reader while traveling or commuting.
+
+For the longest time I used Byline and I have been happy with it. The problem is that I also use Buffer to share links to articles I found interesting and Byline doesn't have integration with Buffer, so I had to open the article on Safari to share it.
+
+This is a minor inconvenience but last night, I saw that Buffer integrates with a few RSS readers, so I decided to take them for a spin.
+
+I end up installing the free version of Newsify and after just a few minutes, go the full version for just $0.99 cents.
+
+This is a slick and stylish RSS reader, with a great design and flawless integration with Buffer.
+
+The application present all articles in a magazine style view instead of a vanilla list, and it just looks so much appealing.
+
+You can easily get an overview of all the unread feeds and it makes for a much better experience.
+
+If you have a setup similar to mine, go ahead and give it a try.
+
+__You need the full version to share with Buffer and a few other applications__

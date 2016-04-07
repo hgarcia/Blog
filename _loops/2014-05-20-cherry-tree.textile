@@ -1,0 +1,7 @@
+---
+layout: center
+title: blooming
+home: 14043036400
+home_size: small320
+display_size: medium800
+---

@@ -1,0 +1,25 @@
+---
+layout: post
+title: Yahoo.ca doesn't work on IE8 be default.
+summary: This is what you see. What makes me think that yahoo is misdetecting IE8? In any case manually adding the site to the compatibility mode fix this.
+categories: [General]
+---
+
+This is what you see:
+
+<a href="../../../images/posts/Yahoo.cadoesntworkonIE8bedefault_BA29/ScreenHunter_01%202009-03-21%2013.06.58_2.jpg"><img border="0" alt="ScreenHunter_01 2009-03-21 13.06.58" src="/images/posts/Yahoo.cadoesntworkonIE8bedefault_BA29/ScreenHunter_01%202009-03-21%2013.06.58_thumb.jpg" width="552" height="70" /></a> 
+
+What makes me think that yahoo is misdetecting IE8?
+
+In any case manually adding the site to the compatibility mode fix this.
+
+You may think that both Yahoo and Microsoft will have look at one of the top 10 sites, don’t you?
+
+Maybe this affect only the Canadian version of the site?
+
+I'm surprised because this is the first site I found it doesn't work. I was expecting some other sites to have problem but never Yahoo.
+
+Notice that the compatibility button is not shown by default. Looking at the code behind I see this:
+
+
+<script src='http://gist.github.com/561842.js?file=file0.html'></script>

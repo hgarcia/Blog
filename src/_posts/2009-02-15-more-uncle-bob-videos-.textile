@@ -1,0 +1,8 @@
+---
+layout: post
+title: More Uncle Bob videos.
+summary: Sergio Pereira just posted two videos of Uncle Bob presentation at the Chicago Alt.Net meeting.
+categories: [General]
+---
+
+<a href="http://devlicio.us/blogs/sergio_pereira/default.aspx" target="_blank">Sergio Pereira</a> just posted two videos of Uncle Bob presentation at the Chicago Alt.Net meeting. The <a href="http://devlicio.us/blogs/sergio_pereira/archive/2009/02/14/video-xp-after-10-years-why-are-we-still-talking-about-it.aspx" target="_blank">first video</a> is the actual presentation and the <a href="http://devlicio.us/blogs/sergio_pereira/archive/2009/02/14/video-uncle-bob-q-amp-a-at-chicago-alt-net.aspx" target="_blank">second one</a> the QA session that followed.

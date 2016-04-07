@@ -1,0 +1,61 @@
+---
+layout: post
+title: CSS considerations with widget development.
+summary: When building widgets that be embedded on third party pages, JavaScript is not the only consideration or even the most important. CSS clashes are as important.
+categories: [Design, Programming]
+---
+
+When working on scripts that will modify the DOM of third party pages you will have to apply custom styles to those elements.
+
+This can cause problems in the host application and you need to be mindful of that.
+
+h3. Rarely use ids.
+
+I'm very tempted to say "NEVER" use ids, but I know better than to be absolute about these things anymore.
+
+Id's on elements should be unique per page, so using ids will prevent you from including multiple widgets in the same page.
+
+If you have to use ids, make sure the name is unique. EX: dynamic-prog-widget.
+
+h3. Close your tags.
+
+You never know about the DOCTYPE of the page you will be modifying, so a good rule of thumb is to close all your tags and write HTML that should validate as XHTML transitional.
+
+__Your script could check the page DTD and generate HTML accordingly but this will increase the script difficulty considerable.__
+
+You can also have several versions of your widget (good luck maintain that), or indicate clearly what HTML version you are compatible with.
+
+h3. In-line styles.
+
+We all know that we shouldn't in-line styles in our pages and always define then in style sheets.
+
+This rule is usually broken when working with embedded widgets. You will see this approach in some of Google widgets, like the embedded search.
+
+The advantage of this approach is that there is no risk of interfering with the styles of the application.
+
+The disadvantage is that it makes life very difficult for the host application to modify the styling of your widget due to the CSS precedence rules.
+It also can increase code size significantly if the widget needs to be inserted multiple times in the same page.
+
+h3. "Namespace" your rules.
+
+If you use classes make sure you don't use the CSS <span class="code">!important</span> rule in any of your classes.
+
+Don't apply rules to HTML elements or ids (well you shouldn't be using ids anyway).
+
+Make sure your classes have some unique name, you can use a prefix, like the name of your application. Ex: <span class="code">.dynamic-prog-widget-container</span>
+
+h3. External fonts.
+
+This is a fairly new(est) concern. We are starting to use web-fonts more and more nowadays, specially for icons. Even when the possibility of clashing is minimal you can still override a font name by mistake, so make sure you use similar naming conventions as mentioned in the previous paragraph.
+
+h3. Navigation.
+
+Make sure that links either point to new windows, or you allow for the user to configure this behaviour as wanted.
+
+__An easy way to open a new window is using <span class="code">target="_blank"</span> in your links.__
+
+h3. Last thoughts.
+
+Try to avoid resizing as much as possible. Since you don't know the code that will surround your widget, resizing it may cause odd behaviour and make for a poor user experience.
+
+And most of all, be mindful of any interaction the user may have with your widget.

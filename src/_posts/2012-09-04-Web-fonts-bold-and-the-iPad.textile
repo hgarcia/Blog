@@ -1,0 +1,60 @@
+---
+layout: post
+title: On web fonts, bold and the iPad
+summary: When using web fonts make sure to choose the right weight or be ready to see double on the iPad.
+categories: [Design]
+---
+
+This past weekend I took some time to change the look and feel of the site.
+
+My main focus was on changing the typography of the site to simplify more and more the design.
+
+h3. Choosing fonts
+
+I started playing with "TypeCast":http://typecastapp.com to try to find a font combination that I liked.
+
+My first attempt was to use the beautifully crafted "Quattrocento":http://www.google.com/webfonts/specimen/Quattrocento by "Pablo Impallari":http://www.impallari.com for all the text and "Sorts Mill Goudy":http://www.google.com/webfonts/specimen/Sorts+Mill+Goudy by "Barry Schwartz":https://plus.google.com/117431922163742703251/posts for the headings.
+
+After setting the styles and publishing the site with the changes I started to test in different browsers and devices.
+
+Everything was looking good until I tried it on my iPad. Suddenly all my headings had a phantom line under them. Like been duplicated and superimposed.
+
+It was late at night so I decided to leave it along for the next day.
+
+h3. Font style bold on a normal weight font
+
+Came back the next morning and I started to compare the rendering of the fonts on my iPad. The headings were using Sort Mill Goudy, so I opened Google fonts and searched for that font in the iPad, it was rendering with no problems.
+
+While I was still looking at the horrible double render of my titles I noticed a section containing an em tag and here the fonts also had the offending double rendering.
+
+I checked the styling for the em tag and noticed I was setting font-weight to bold.
+
+Could it be possible that Safari on the iPad took exception to using bold in a normal weight font? Headings are always bold in the default style sheet for most browsers, so that made sense.
+
+I decided to test it and remove the font-weight from em and forced the h tags to font-weight: normal. Perfect! Text rendering was back to normal.
+
+Sorts Mill Goudy comes on normal weight only. I was using the wrong font for bold weight.
+
+h3. But headings should be bold (because that's how I like it)
+
+I had to find a font that have a bold style.
+
+I could have used the bold style of Quattrocento but I wanted some variation between headings and the rest of the text on the site.
+
+After looking around for an hour or so I decided to change to "Gentium Book Basic":http://www.google.com/webfonts/specimen/Gentium+Book+Basic by "Victor Gaultney":https://profiles.google.com/victorgaultneytype/about.
+
+__I came really close to switch to "IM Fell DW Pica":http://www.google.com/webfonts/specimen/IM+Fell+DW+Pica instead. I love this family of fonts, but they are all normal weight and it didn't worked. I really felt the need for bold titles to add some rhythm to the text, Gentium gave me that and is a lovely font as well.__
+
+I got the bold style for headings and em and I was rewarded with some perfectly rendered fonts on the iPad and other devices I have available for testing.
+
+h3. Isn't this obvious?
+
+Well, yes I think is pretty obvious once you think about it; what is surprising is that most browsers actually do a good job faking it.
+
+As far as I can tell Safari on iOS5 is the only one that struggles with it.
+
+I wasn't even going to write about it but a few hours after fixing it I was reading the blog from a fairly well known developer and noticed the same problem with the titles on his blog.
+
+He is also using a normal weight font for headings and sure enough, the same double rendering problem. The font in his case is a bit more permissive and you can only really tell in lower case "e" and uppercase "G".
+
+So I think I'm not the only one fooled by this issue, at least now the next person with the same problem may find this article and save a few hours of debugging.

@@ -1,0 +1,12 @@
+---
+layout: post
+title: Free virtual machine software.
+summary: Virtualbox is a free open source virtual machine software. I have been using it to run, Ubuntu, Fedora, BDS and a virtual XP machine with all the new stuff for testing and I love it
+categories: [Tools, General]
+---
+
+<a href="http://www.virtualbox.org/" title="VirtualBox">Virtualbox</a> is a free open source virtual machine software. I have been using it to run, Ubuntu, Fedora, BDS and a virtual XP machine with all the new stuff for testing and I love it.
+
+The performance is great, installing the software can't be any easy and configuring the virtual machines is a breeze.
+
+I totally recommend you give it a try.

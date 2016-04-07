@@ -1,0 +1,60 @@
+---
+layout: post
+title: MongoDb and Scaling MongoDb, two book reviews in one.
+summary: If you do anything with MongoDb this two books are a must have in your library.
+categories: [Programming, Books]
+---
+
+I got both books, "MongoDb, The definitive guide":http://www.amazon.com/dp/1449381561?tag=snaiinaturt-20&camp=14573&creative=327641&linkCode=as1&creativeASIN=1449381561&adid=1M5EF05BK6XAZ2X3WWQW&&ref-refURL=http%3A%2F%2Fwww.snailinaturtleneck.com%2Fblog%2F and "Scaling MongoDb":http://www.amazon.com/dp/1449303218?tag=snaiinaturt-20&camp=14573&creative=327641&linkCode=as1&creativeASIN=1449303218&adid=144BZ9RNEMJ92A7EVM6N&&ref-refURL=http%3A%2F%2Fwww.snailinaturtleneck.com%2Fblog%2F last year at the MongoDB NYC conference. Somehow I forgot to write a review. Time to fix that.
+
+The books, written by 10 gen's employee "Kristina Chodorow":http://www.snailinaturtleneck.com/blog/ , are a must have for anybody working with MongoDb.
+
+They refer to older versions of MongoDb but most of the information is still fairly relevant, so your money will be well spend.
+
+The definitive guide teaches you everything you will need to know to get up and running with MongoDb. Installing it, querying and interacting with the database.
+
+The second book deals with how to scale Mongo using sharding. It's a small book that doesn't waste your time and goes directly to the point.
+
+h3. MongoDb, The definitive guide
+
+This book was written in collaboration with "Michael Dirolf":https://github.com/mdirolf
+
+<a href="../../../images/posts/mongodb-the-definitive-guide.jpg" target="_blank"><img class="img-float-right"  src="/images/posts/mongodb-the-definitive-guide.jpg" border="0" alt="MongoDb The Definitive Guide - book cover" style="width: 30%"/></a>If you know what MongoDb is and why is awesome, you can skip the first chapter. If you have no idea about it go ahead and read it. It's a short one anyway.
+
+The "good stuff" really starts on the second chapter with a good overview of documents, collections, dbs, the mongo shell and data types.
+
+Chapter 3 goes on and build on that, showing the multiple ways you have to insert and update data.
+
+Once you have data in the system you will learn on chapter 4 how to read it. Of course, you want to do that really fast so the next chapter deals with indexing.
+There is a good section on how to use the "explain" and "hint" commands to tune up your indexes.
+
+You will see two examples on using MapReduce in chapter 6 and some aggregation.
+
+Chapter 7 deals with some more advanced topics like using capped collection (for example for logs) and GridFS to store files.
+
+__For sharding, I will recommend getting the second book in this review.__
+
+The next three chapters will help you with administration, replication and sharding.
+
+The administration chapter is certainly very good.
+
+The book ends with four example applications written in Java, PHP, Ruby and Python.
+
+h3. Scaling MongoDb
+
+<a href="../../../images/posts/scaling-mongodb.jpg" target="_blank"><img class="img-float-right"  src="/images/posts/scaling-mongodb.jpg" border="0" alt="MongoDb The Definitive Guide - book cover" style="width: 30%"/></a>It's a very small book at just 49 pages, but packed with information.
+Starts with a quick explanation of sharding and quickly move on unto how to split the data and balance load.
+
+Chapter 3 is probably the highly of the book giving you different strategies on choosing the all important shard key, sharding collections, adding and removing capacity.
+
+There is a bit of a discussion on what makes for a good shard key, what to avoid and what are the problems when choosing what it looks like a good key but is not.
+
+In the next chapter, the author show how to work with collections and indexes. There is only a paragraph on Map Reduce in this book and relate to the behaviour of map reduce in sharded scenarios.
+
+The last chapter (almost) deals with administering the shard. Again very valuable information on how on what to check for, working with outages and a few ideas on how to prevent them.
+
+There is a sixth chapter but is just one page with further reading material. I feel that should be call Appendix instead.
+
+h3. Conclusions
+
+As I mentioned before you should definitely buy both these books and read them in order, starting with the definitive guide.

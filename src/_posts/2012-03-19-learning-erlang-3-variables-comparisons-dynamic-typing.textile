@@ -1,0 +1,74 @@
+---
+layout: post
+title: Variables, comparisons and dynamic typing. (Learning Erlang 3)
+summary: Variables are immutables. Comparison can be performed between any type. Typing is dynamic and some data conversion is performed.
+categories: [Programming, Erlang]
+collection: Learning Erlang
+---
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
+Variables can only be bound once per scope. There is no such thing as global variables. (Great!)
+You don't need to declare variables before hand, you just create and assign at the same time.
+Variables name need to start with an uppercase follow by any number of upper and lower case letters, numbers or the underscore, other characters are invalid.
+
+<script src="https://gist.github.com/2093388.js?file=variables.erl"></script>
+
+Single assignment means that variables are immutables.
+
+<script src="https://gist.github.com/2093388.js?file=variables_inmutables.erl"></script>
+
+The assignment is done by matching an unbound variable to any valid Erlang expression. The match is done using the equal sign. If the variable was previously bound we say that we are doing a test instead of an assignment.
+
+You can assign multiple variables at once, just provide the right pattern.
+
+<script src="https://gist.github.com/2093388.js?file=multiple_assignments.erl"></script>
+
+h3. Erlang goes dynamic.
+
+Not sure if this is true but apparently the reason Erlang use dynamic typing is because the guys that wrote the language originally, didn't know how to write a type system and subsequent attempts to doing so failed due to some design decisions in the language itself.
+
+__I really don't care at all why Erlang is dynamic. I think dynamic languages make things easier in 80% of the cases (maybe more). Ultimately that's what it is so just relax__
+
+<script src="https://gist.github.com/2093388.js?file=dynamic_typing.erl"></script>
+
+h3. One of these things.
+
+__"One of these things":http://muppet.wikia.com/wiki/One_of_These_Things Muppets wiki__
+
+Taking decisions sometimes can overwhelm us, simple human beens, but computers are cold in their binary logic. Let's see how Erlang compare values.
+
+h4. Equality
+
+<script src="https://gist.github.com/2094463.js?file=equal.erl"></script>
+
+Notice lines 8 and 9, the double equal will check for equality but doing some type conversion. If you want strict equality use the equal colon equal operator instead.
+
+h4. Inequality
+
+As with equality there is a not equal and a exactly non equal operator.
+
+<script src="https://gist.github.com/2094463.js?file=not_equal.erl"></script>
+
+h4. More, less, more or equal, less or equal.
+
+Nothing strange here, just the less or equal symbol is actually equal or less.
+
+<script src="https://gist.github.com/2094463.js?file=more_and_less.erl"></script>
+
+Comparing between numbers, lists, atoms and tuples can be done using the same operators.
+
+<script src="https://gist.github.com/2094463.js?file=comparing_types.erl"></script>
+
+When comparing different types the following is taking in consideration:
+
+* number are less than atom
+* atom are less than reference
+* reference are less than func
+* func are less than port
+* port are less than pid
+* pid are less than tuple
+* tuple are less than list
+* list are less than binary
+
+Tuples are compared first by the number of elements contained and secondly each element is compared in turn.

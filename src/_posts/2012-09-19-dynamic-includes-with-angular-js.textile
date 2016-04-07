@@ -1,0 +1,60 @@
+---
+layout: post
+title: Dynamic includes with Angular.js
+summary: Take advantage of expression evaluations to dynamically change the includes in your views.
+categories: [Programming, JavaScript, Angular]
+---
+
+In "a previous post":http://blog.dynamicprogrammer.com/2012/09/10/using-includes-with-angular-js.html I show how to use includes to partition views.
+
+In that example, I was using static includes that provide limited flexibility.
+
+What if you want to display different information on the same area of the template based on some condition?
+
+You could use a conditional statement inside the include and render different code accordingly, but doing that will most likely result in bloated and difficult to maintain views.
+
+h3. One solution.
+
+You can use expression evaluation to decide what include to show. In other words, you will be making the decision sooner and keeping your includes small and focused.
+
+The following code declare a function in the controller that return the name of a partial. You can easily make different decisions in here.
+
+<pre><code>
+  function AppCtrl ($scope) {
+      $scope.getPartial = function () {
+          return 'partials/issues.html';
+      }
+  }
+</code></pre>
+
+In the view you use the expression as the source for the include instead of a string.
+
+<pre><code>
+    <div data-ng-include data-ng-src="getPartial()"></div>
+</code></pre>
+
+This approach works OK but make the controller responsible on deciding what view to show, what is not a very good thing.
+
+h3. Conventions
+
+Another approach is to use some convention to name your includes. Let's say that based in the status of a model you decide what include to show.
+
+You could name you includes in a way that the status is part of the name.
+
+This approach can be used to decide between multiple views easily.
+
+<pre><code>
+  function IssueCtrl ($scope) {
+      $scope.issue = {
+          status: 'open'
+      };
+  }
+</code></pre>
+
+<pre><code>
+    <div data-ng-include data-ng-src="'partials/' + issue.status + '.html'"></div>
+</code></pre>
+
+In the code above angular will look for a partial named <span class="code">open.html</span> in the <span class="code">partials</span> folder.
+
+You can also link the includes to a model property, like shown in the "API reference":http://docs.angularjs.org/api/ng.directive:ngInclude

@@ -1,0 +1,22 @@
+---
+layout: post
+title: Notes while playing with Elixir.
+summary: A series of notes while I play (once again) with Elixir.
+categories: [Programming, Erlang, Elixir]
+---
+
+<h2>Helpers to use more.</h2>
+
+h/1 (documentation)
+i/1 (introspection)
+module_info/0
+
+You can even find the location of the code using this helpers.
+
+<script type="text/javascript" src="https://asciinema.org/a/36028.js" id="asciicast-36028" async></script>
+
+<h2> Pin operator</h2>
+
+Pinning can only be done after the first match (what it makes sense)
+
+<script type="text/javascript" src="https://asciinema.org/a/36030.js" id="asciicast-36030" async></script>

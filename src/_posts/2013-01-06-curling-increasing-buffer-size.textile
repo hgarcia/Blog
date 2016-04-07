@@ -1,0 +1,10 @@
+---
+layout: post
+title: First pull request for curling, increasing buffer size.
+summary: Don't you love OSS? I got the first pull request for curling that increase the buffer size for curl.
+categories: [JavaScript, node.js, Programming]
+---
+
+Just four days after releasing "curling":http://blog.dynamicprogrammer.com/2013/01/01/curling-node-wrapper-for-curl.html  I got the first pull request from "romansky":https://github.com/romansky that increases the buffer size.
+
+These changes have been included in curling v0.3.0 available now via npm. There are no changes to the API so just run <span class="code">npm update</span> to get the new version and everything should work as normal.

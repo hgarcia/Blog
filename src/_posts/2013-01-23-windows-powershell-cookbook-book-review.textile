@@ -1,0 +1,31 @@
+---
+layout: post
+title: Windows PowerShell Cookbook - book review.
+summary: A great reference for automate everything on your Windows machine.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920024132.do" target="_blank"><img class="img-float-right"  src="/images/posts/windows-powershell-cookbook.gif" border="0" alt="Windows PowerShell Cookbook - book cover"/></a>
+
+"Lee Holmes":http://www.leeholmes.com/blog/ takes the cookbook approach to help us discover the incredible power at our fingertips with PowerShell.
+
+It starts with a high level tour of PowerShell. How to get it (installed with most Windows distributions) and how to start playing with it.
+
+You will learn about some of the conventions and common commands available to you and how to explore them.
+How it integrates with .NET, using it for rapid prototyping or as a REPL and much more.
+
+After the introduction, the book takes the form of multiple recipes for common tasks. The tasks grow in difficulty.
+
+The fundamentals section contains a series of recipes that will help you to get comfortable with the shell, customize the command prompt, invoke commands, get to know your session history, learn about aliases, etc.
+
+After that you will take on more serious programming, parsing and working with data, how to pipe commands together to create powerful scripts, interact with environment variables, variables, work with .NET objects, COM and pretty much anything you need to know.
+
+The book is extensive, coming shy of 1600 pages in the iPad version, but the cookbook format make it easy to use and you don't need to read it in order.
+
+If you are new to PowerShell I would recommend that at least you read the introduction and the Fundamentals sections. They will help you to get things done faster.
+
+h3. Conclusion
+
+If you work with a Windows machine I would certainly recommend it. Start using PowerShell today and start automating your workflow with it.

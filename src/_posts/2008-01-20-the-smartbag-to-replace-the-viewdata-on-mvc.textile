@@ -1,0 +1,17 @@
+---
+layout: post
+title: The SmartBag to replace the ViewData on MVC
+summary: Jeffrey Palermo posted about replacing the ViewData on the MVC framework with a generic container called SmartBag. The advantage is that the container will return an object of a given type, so no more casting and also no more using string keys...
+categories: [Programming, .Net]
+---
+
+<a href="http://codebetter.com/blogs/jeffrey.palermo/archive/2008/01/19/introducing-the-smartbag-for-asp-net-mvc-and-soliciting-feedback.aspx">Jeffrey Palermo</a> posted about replacing the ViewData on the MVC framework with a generic container called SmartBag.
+
+The advantage is that the container will return an object of a given type, so no more casting and also no more using string keys to get a given object since the type is used as the key.
+
+Palermo's code take cares of 80 per cent of the usage cases, the only issue will be if you have more than one object of the same type in the smartbag. Jeffrey is asking for feedback from the community so don't hesitate and provide it.
+
+I made a small modification of the code to deal with the 20% of cases stated on the post. Here is the code with those changes.
+
+
+<script src='http://gist.github.com/561824.js?file=file0.aspx-cs'></script>

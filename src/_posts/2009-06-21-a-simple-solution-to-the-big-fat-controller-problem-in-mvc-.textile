@@ -1,0 +1,47 @@
+---
+layout: post
+title: A simple solution to the Big Fat Controller problem in MVC.
+summary: This post have been inspired by the talks about controllerless actions. This is NOT an alternative to that. Controllerless actions is an interesting concept that should be study. Actually Jeffrey Palermo has a concept implementation.
+categories: [Frameworks, Programming, .Net]
+---
+
+This post have been inspired by "the posts about(Chad Myers, going controller less in mvc)":http://www.lostechies.com/blogs/chad_myers/archive/2009/06/18/going-controller-less-in-mvc-the-way-fowler-meant-it.aspx "controllerless actions(Controllerless actions with mvc)":http://www.jeremyskinner.co.uk/2009/06/20/controllerless-actions-with-asp-net-mvc/ .
+
+This is NOT an alternative to that. Controllerless actions is an interesting concept that should be study. Actually "Jeffrey Palermo(Jeffrey Palermo)":http://jeffreypalermo.com/ has a "concept implementation(asp.net mvc actioncontroller or actionless controller)":http://jeffreypalermo.com/blog/the-asp-net-mvc-actioncontroller-ndash-the-controllerless-action-or-actionless-controller/ .
+
+There is a problem with controllers that grow or contain too much code in them.
+
+For the second problem, containing too much code, the only solution I see is code reviews and practice of proper separation of concerns.
+
+For the first problem, we can apply some constrains in the way controllers are written and used to limit the number of methods.
+
+The way we use controllers today is by (sometimes) mimicking the old document based model for web applications.
+
+We call the first screen of our web application Home page, so to handle access to this resource we create a HomeController (so far so good). Now what happens when somebody browse to the route we assign to this resource with no action defined in it? The controller is called and "a default action" is executed, and we tend to call it "Index".
+
+Think about it, why is this action called "Index"? What are we indexing? Nothing. We call it Index and we never look back, because it fits with our old way of doing things. Remember how we used to call the default document/page in the document based web applications a long time ago? 
+"index.html(Wikipedia reference)":http://en.wikipedia.org/wiki/Webserver_directory_index
+
+_In asp and asp.net default.asp was the general name of this page and how IIS got configured, so this action could very well be called Default for similar reasons, but default (all lowercase) is a reserved world in C#, so maybe that played against it. In any case, even when Default is a more meaningful name for the action than Index, it's still not good for our purposes._
+
+Of course there is nothing that force you to call this Actions Index and maybe you are calling them something completely different, but this is the default name after creating a new project. 
+
+When you do a request to the Home resource typing the route in the address bar of the browser and hit enter you are using the Get http verb, so the name of the action should be Get(). Where am I going with all this? 
+
+The controller should control how your presentation handle request, and request are performed using different verbs against resources, so the controller should know how to react to those verbs and coordinate some work with a lower layer, acting almost as a translation layer between your business code and the view. The controller should not know that you want to FindABook or SignIn or LogOut or SendAMail.
+
+Let's limit the actions in a controller to the HTTPVerbs you want to support and no more than that. There are only (4-5 at the most) http verbs you may want to support for a given resource. (Get, Post, Put, Delete, Head) 
+
+Most web applications will only support two Get and Post. These will keep your controllers very, very small as far as you don't write 500 lines in each method, or switch statements to support "multiple actions" per method. 
+
+To enforce this on code you can create your own base controller overridden the ExecuteCore method with something like this:
+
+
+<script src='http://gist.github.com/561852.js?file=file0.aspx-cs'></script>
+
+
+Please note that this is not REST, if you want or need to go REST make yourself a favor and take a look at "openrasta(OpenRasta REST framework for .Net)":http://www.ohloh.net/p/openrasta.
+
+If your view have multiple parts, like in most complex applications, you may think that this approach is limited and unpractical and it won't work. I plan to show in a later post how to implement widgets following this approach, keep tune.
+
+I hope this is useful. 

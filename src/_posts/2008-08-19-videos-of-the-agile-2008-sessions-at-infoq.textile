@@ -1,0 +1,16 @@
+---
+layout: post
+title: Videos of the Agile 2008 sessions at InfoQ
+summary: InfoQ published some videos for sessions at Agile 2008. Agile 2008 was held here in Toronto two weeks ago and I participate as a volunteer. It was a great experience and the variety and quality of the talks was really good.
+categories: [Architecture, Methodology, Patterns]
+---
+
+<a href="http://www.infoq.com/agile2008" title="Info Q - Agile 2008" target="_blank">InfoQ</a> published some videos for sessions at Agile 2008.Agile 2008 was held here in Toronto two weeks ago and I participate as a volunteer.
+
+It was a great experience and the variety and quality of the talks was really good. From the videos at InfoQ I have to recommend the followings:
+
+<a href="http://www.infoq.com/presentations/We-Suck-Less-Douglas-Dymond" title="We Suck Less is not enought - Douglas Dymond" target="_blank">We suck less is not enough!</a> David Douglas and Robin Dymond talk about companies that don't fully commit to Agile or just adopt part of the methodologies, failing in the process and (maybe) hurting Agile. I still think that is possible to take some of the Agile practices and implement them with a great deal of success, without having to go all the way. I know that I'm not alone in this train of though but is interesting to see examples in the real world were this is not the case and the consequences of this. Something to have in mind.
+
+<a href="http://www.infoq.com/presentations/Toyota-Kenji-Hiranabe" title="The Development of a New Car at Toyota - Kenji Hiranabe" target="_blank">The Development of a New Car at Toyota</a> Kenji Hiranabe sessions were a success. In this session he shares his experience meeting Nobuaki Katayama, Chief Engineer at Toyota and what he learned.
+
+A complete list of videos and publishing dates are available in the <a href="http://www.infoq.com/agile2008" title="Info Q - Agile 2008" target="_blank">Agile 2008 section of the InfoQ site</a>.

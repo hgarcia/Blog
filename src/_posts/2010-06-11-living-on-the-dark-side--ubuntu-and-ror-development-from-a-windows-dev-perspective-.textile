@@ -1,0 +1,61 @@
+---
+layout: post
+title: Living on the dark side. Ubuntu and RoR development from a Windows dev perspective.
+summary: Some background information. I'm not a complete newbie to Linux. 12 years ago or so, while still doing lots of IT work I used to admin two Red Hat servers. FTP, file sharing, email, proxy and web servers.
+categories: [General, Programming]
+---
+
+h3. Some background information.
+
+I'm not a complete newbie to Linux. 12 years ago or so, while still doing lots of IT work I used to admin two Red Hat servers: FTP, file sharing, email, proxy and web servers. Those were the days of RedHat 5.0 and 5.2  
+
+The next version I played with was Red Hat 7.0 that I installed and used for a little while, but I was already deep into Microsoft development stuff and never had the time to do any serious work on Linux and stop using it for a while until Ubuntu 6 that I installed in a VM.
+
+I have been running different versions of Ubuntu in my different laptops since them but always in virtual machines. I haven't been able to properly run on metal. Driver issues were always in the way (most of the time the wireless network and sometimes the video card).
+
+h3. Enter Ubuntu 10.04.
+
+I have been very impressed with how much the experienced improved in the last two or three years. Every new release looks more polished and installation simpler and faster. So with the release last month of Ubuntu 10.04, I decided to give it another try and install it in my old Dell Inspiron 6000. I have to say it, wow.  
+
+The installation process was fast and extremely easy. The system is responsive and comes loaded with great productivity tools. (Right now I'm writing this post in OpenOffice that comes pre-installed).  
+
+h3. General impressions.
+
+The package manager: You can install lots of apps using either the synaptic package manager or the Ubuntu Software Centre but it's even faster going to the command line and just type:
+
+
+<script src='http://gist.github.com/561864.js?file=file0.console'></script>
+
+
+I think that as developers, not having a good package manager in windows is killing our productivity.  
+
+Powerful shell: The command line theme repeat itself again and again each time you search for help on pretty much anything. In some cases there are GUI alternatives for the command line operations or tasks that you want to perform, but been able to type a few commands in the shell is so much faster. This was always the case on unix like system. As windows users we need to recognize the power of it and stop trying to do everything via the UI.
+
+Lots of information. Gone are the days where searching for almost any topic in google ended up pointing you to the man pages. Yes, the man pages are important, but they assume certain level of knowledge. During this brief stint, I run across lots of blocks, simple things that I know how to do in my every day platform, but I'm at a lost in linux. In most, if not all the cases, I found relevant and helpful information in blog post or forums. I found specially relevant the solutions given in the official Ubuntu forums.  
+
+Feeling like a first class citizen. I was doing some RoR development and it was fun for once to feel like a first class citizen with most tutorials. The ruby world seems to gravitate around Mac and Linux first and windows second, so lots of time while reading a ruby tutorial you find snappy lines like this one, “in Mac OS use this command [...] (add sudo if you are in Linux). If you are developing in Windows I'm really sorry for you :-)”
+
+But sometimes it's still challenging for the the beginner. I think that windows is still a lot easier to use for the beginner.The problem is that sometimes the information you find is a bit old or for a different distro, so things are not exactly like describe and you need to keep looking or pocking around.  
+
+The multitude of distros also force the program authors to offer different types of packages or just give you a laundry list of commands to do a build in you distribution of choice and them install it.   
+
+I wanted to try a TextMate like editor so in order to install it I need it to do the following:
+
+ <ol><li>Install subversion.</li>
+ 	<li>Install a bunch (like 20) different c and python libraries.</li>
+ 	<li>Get the source.</li>
+ 	<li>Compile.</li>
+ 	<li>(Deal with a bunch of errors and install some more packages that were missing in my machine)</li>
+ 	<li>Compile again.</li>
+ 	<li>Install.</li>
+</ol> 
+ 
+Now, none of this is really a problem for me. I know what all this means and I don't mind having subversion installed even when I'm using Git and Mercurial this days. But I can't imagine a normal user wanted to do any of this.  
+
+Granted, this editor was geared towards the developers, but even so, it seems a bit too much to ask.
+
+h3. Final thoughts.
+
+I'm liking the experience so much that I also switch from win 7 to Ubuntu in my net-book. The primary use of it is to write, listen/watch to some baseball games and do some reading. If you haven't try it or if you had bad experiences in the past, I suggest you go ahead and give it a try, run it with the live cd or install it in a virtual machine with VirtualBox to start.
+
+This post got a bit longer than expected so I will talk about the RoR development experience in a future post.

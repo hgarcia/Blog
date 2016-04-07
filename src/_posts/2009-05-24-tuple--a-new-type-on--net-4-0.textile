@@ -1,0 +1,80 @@
+---
+layout: post
+title: Tuple, a new type on .Net 4.0
+summary: If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it. Let's see what the ubiquitous Wikipedia have to say about it.
+categories: [Programming, .Net]
+---
+
+If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it.
+
+h3. What is a Tuple?
+
+Let's see what the ubiquitous <a href="http://en.wikipedia.org/wiki/Tuple" target="_blank">Wikipedia</a> have to say about it.
+
+bq. In <a href="http://en.wikipedia.org/wiki/Mathematics">mathematics</a>, a <b>tuple</b> is a <a href="http://en.wikipedia.org/wiki/Sequence">sequence</a> (or ordered list) of <a href="http://en.wikipedia.org/wiki/Finite">finite</a> length. An <b>n-tuple</b> is a tuple with n elements. Tuples are usually written within parenthesis. For example, (2, 7, 4, 1, 7) is a 5-tuple.
+
+Tuples are often used to describe mathematical objects that consist of specified components. For example, a <a href="http://en.wikipedia.org/wiki/Graph">graph</a> is commonly defined as the 2-tuple (V, E) where V is the set of vertices and E is the set of edges. The edge set E is a subset of the <a href="http://en.wikipedia.org/wiki/Cartesian_product">cartesian product</a> V × V, hence a set of 2-tuples.
+
+In programming languages you can use Tuples to define a small, finite list of objects, for example in Erlang DateTime is a Tuple with this form:
+
+{Date, Time} Where Date and Time are both Tuples.
+Date = {Year, Month, Day}
+Time = {Hour, Minute, Second}
+
+h3. When to use Tuple?
+
+Tuples are commonly used on functional programming. 
+
+A common example is to use them when a method needs to return more than one value, for example a method that returns a point in a grid can return this point as a set of x,y coordinates in a Tuple.
+
+
+<script src='http://gist.github.com/561848.js?file=file0.aspx-cs'></script>
+
+
+Of course if the Position or Location is an important object in your domain you should create a type for that. But bare with me on this simple example.
+
+So, how you access the values in the Tuple? Very simple.
+
+
+<script src='http://gist.github.com/561848.js?file=file1.aspx-cs'></script>
+
+
+The tuple has a bunch of Item(s) properties each named Item1,2,etc. depending on how many Items the Tuple has. If you are asking yourself if there is a way to determine the number of Item properties programmatically (without using Reflection), the answer, as far as I know, is no.
+
+And that is kind of odd since the Tuple object implements the ITuple interface and that interface has a definition for the Size method. Not only that but the method is implemented in all eight Tuple types. Yes, you hear it correctly eight different Tuple types.
+
+The problem is that the ITuple interface is internal.
+
+This causes a problem when using the "infinite" Tuple or the Tuple with eight parameters in the constructor. This Tuple expects that the last parameter implements ITuple, thus been a Tuple as well.
+
+The problem is that this can't be enforced on compilation time since ITuple is internal and may cause a runtime exception to be thrown. This code below compiles with no problems.
+
+
+<script src='http://gist.github.com/561848.js?file=file2.aspx-cs'></script>
+
+
+But upon running, this is the Exception thrown.
+
+
+<script src='http://gist.github.com/561848.js?file=file3.console'></script>
+
+
+The problem is in the way this check is performed. Using reflector we can see this in the constructor.
+
+
+<script src='http://gist.github.com/561848.js?file=file4.aspx-cs'></script>
+
+
+Notice the check in line 3. If ITuple were public the constructor (and class definition) could be written like this:
+
+
+<script src='http://gist.github.com/561848.js?file=file5.aspx-cs'></script>
+
+
+IMyTuple is the same as ITuple but public. This will help to avoid the possible runtime error shown before since the compiler will refuse to compile anything that is not an implementation of ITuple.
+
+
+<script src='http://gist.github.com/561848.js?file=file6.console'></script>
+
+
+If ITuple is made public thought users may implement the interface in classes that are not Tuple, for example mutable classes, what can be even worse that the runtime error.

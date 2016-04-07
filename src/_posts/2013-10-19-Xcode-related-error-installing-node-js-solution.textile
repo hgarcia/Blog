@@ -1,0 +1,68 @@
+---
+layout: post
+title: Xcode license error when installing node.js on Mac OS
+summary: The solution is simple, but can take you a moment to think of it.
+categories: [node.js]
+---
+
+h3. The trace
+
+Today I was trying to install the newest node.js version to update one of my apps running on Heroku.
+
+I have been using nvm to easily run different versions of node for as long as I can remember and it always go very smoothly, so this time I was caught by surprise  when after doing <span class="code">nvm install v0.10.21</span> and the normal download status finished I got the following stack trace culminating on an error.
+
+<pre><code>
+    { 'target_defaults': { 'cflags': [],
+                         'default_configuration': 'Release',
+                         'defines': [],
+                         'include_dirs': [],
+                         'libraries': []},
+    'variables': { 'clang': 1,
+                   'host_arch': 'x64',
+                   'node_install_npm': 'true',
+                   'node_prefix': '/Users/hernangarcia/.nvm/v0.10.21',
+                   'node_shared_cares': 'false',
+                   'node_shared_http_parser': 'false',
+                   'node_shared_libuv': 'false',
+                   'node_shared_openssl': 'false',
+                   'node_shared_v8': 'false',
+                   'node_shared_zlib': 'false',
+                   'node_tag': '',
+                   'node_unsafe_optimizations': 0,
+                   'node_use_dtrace': 'true',
+                   'node_use_etw': 'false',
+                   'node_use_openssl': 'true',
+                   'node_use_perfctr': 'false',
+                   'python': '/usr/bin/python',
+                   'target_arch': 'x64',
+                   'v8_enable_gdbjit': 0,
+                   'v8_no_strict_aliasing': 1,
+                   'v8_use_snapshot': 'true'}}
+    creating  ./config.gypi
+    creating  ./config.mk
+
+
+    Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+
+
+    gyp: Error 69 running xcodebuild
+    Error running GYP
+    ....
+    IOError: [Errno 2] No such file or directory: 'out/Release/node'
+    make: *** [install] Error 1
+    nvm: install v0.10.21 failed!
+</code></pre>
+
+I noticed in the middle of it the following message.
+
+__Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.__
+
+h3. The solution
+
+Of course, running the command using sudo is NOT the right answer. After thinking for a while I remembered that I did recently install an update to Xcode.
+
+I decided to open Xcode directly and there it was, the new License Agreement dialog box.
+
+Accept it, type in my password and close Xcode.
+
+After that everything went back to normal.

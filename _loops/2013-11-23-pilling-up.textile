@@ -1,0 +1,7 @@
+---
+layout: center
+title: pilling up
+home: 11018486486
+home_size: small320
+display_size: large1600
+---

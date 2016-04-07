@@ -1,0 +1,18 @@
+---
+layout: post
+title: Book review - Agile Retrospectives; Making good teams great.
+summary: This is a very short book on a great practice for any agile team. The book walk you through a lot of techniques an exercises that will help you and your team to have successful retrospectives.
+categories: [Books, Methodology]
+---
+
+This is a very short book on a great practice for any agile team. The book walk you through a lot of techniques an exercises that will help you and your team to have successful retrospectives.
+
+The first 3 chapters provide information on what retrospectives are about. How to create one for your team and what you need to learn to lead them.
+
+The next 5 chapters provide techniques that will help you to go through the different stages of the retrospective. Each technique is clearly explained, with step by step guides and diagrams (when necessary) to provide more information. In some cases, when some techniques are complimentary, this is clearly indicated.
+
+The authors also provide guidance on the scope where to apply the activities and a time estimate.
+
+The previous to last chapter talk briefly about release retrospectives and the last one give some pointers in how to act on the actions, resolutions and experiments the team agree to follow.
+
+If you work as a team lead in an agile team and you are in charge of facilitating the retrospectives, this book is a good tool to have.

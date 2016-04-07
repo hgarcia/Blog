@@ -1,0 +1,84 @@
+---
+layout: post
+title: Using the iPad as a development tool.
+summary: Although the iPad is far from the perfect content creation tool, with a few chosen apps you can turn it into a more than decent development tool.
+categories: [Tools]
+---
+
+Ever since I got the iPad I have been trying to find the way to incorporate it to my work.
+
+I tried multiple apps and the following list are the ones that survived and remain installed as of today.
+
+h3. Apps that I use on a daily basics.
+
+h4. "Splashtop 2":http://www.splashtop.com/splashtop2
+
+I tried multiple remote desktop applications to share screens with my Windows PC and so far this have been the only one that worked really well for me. I haven't try it using an Internet connection, only in the same network but is extremely smooth.
+
+h4. "Textastic":http://www.textasticapp.com/
+
+Probably the best general purpose and programming text editor in the iPad. Connects with Dropbox, FTP, SFTP and WebDAV. It features an extended keyboard with multiple purposes key at the top that give you rapid access to many of characters you will need while programming. Syntax highlighting, HTML templates, auto-completion and more...
+
+h4. "Worqshop":http://worqshop.com/
+
+I use this one a lot for working on my Github projects because, yes, it connects with Github (and Heroku). The most amazing about Worqshop is that is done by a sole developer "Donny Kurniawan":https://twitter.com/donny_k_
+
+At the moment, is only suited for single developers projects, since once a project is clone into the iPad you can only <span class="code">add</span>, <span class="code">commit</span> and <span class="code">push</span> changes.
+
+There is no <span class="code">pull</span> as of today, but still a really great tool. In my case I made sure I push before working in the same project on another computer and I have to delete and re-clone the project in the iPad. A bit cumbersome but is better than nothing.
+
+h4. "Vimmy":http://13cubed.com/2012/09/vimmy-1-5/
+
+This is a reference app. You can easily access references to the most common commands for the Vim text editor.
+
+I use it fairly often since my memory refuses to remember anything besides <span class="code">:w :q :d</span> and a few other basic commands.
+
+h4. "Dropbox":https://www.dropbox.com/ipad
+
+This one is obvious, specially to easily share files between devices.
+
+h4. "iZip":http://www.comcsoft.com/iZip/
+
+Because you always need to zip and unzip files.
+
+h4. "Edge Inspect":http://html.adobe.com/edge/inspect/
+
+The best way to debug web application in the iPad.
+
+h4. "Sketchy":http://www.sketchyapp.com/
+
+My wire framing application of choice.
+
+h4. "Blueprint":http://www.groosoft.com/blueprint/
+
+If I need to design the UI for an iPhone or iPad application, this is the app to use.
+
+h3. Less frequently used apps.
+
+h4. "JSON Designer":http://www.jsondesigner.com/
+
+I use this one when I have to think or design new API's.
+
+h4. "Grafio":http://itunes.apple.com/us/app/grafio-diagrams-ideas/id382418196?mt=8
+
+Great tool to create any type of graphics.
+
+Flow charts, business process diagrams, Venn diagrams, mind maps, sketches, etc. I really like how well the shape recognition works.
+
+h3. Honorable mentions
+
+h4. "Design Pattern Reference":http://itunes.apple.com/th/app/design-patterns-reference/id463395913?mt=8
+
+This app contains a list of design patterns taking from the "Gang of fours, Design Patterns book":http://en.wikipedia.org/wiki/Design_Patterns .
+
+Each pattern is presented with a brief definition and an UML diagram.
+
+h4. "Cheat Docs":http://itunes.apple.com/us/app/cheat-docs/id435818761?mt=8
+
+Another amazing library of reference documents for multiple programming languages, frameworks, applications and more...
+
+h4. "Vim":http://applidium.com/en/applications/vim/
+
+I have to mention it, since I still think is pretty awesome the team at Applidium took the time and ported vim into the iPad.
+
+_If you know or use other apps don't be shy and let me know. I will add it to the list._

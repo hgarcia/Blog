@@ -1,0 +1,7 @@
+---
+layout: single
+title: tentacles
+home: 8721249163
+home_size: small320
+display_size: large
+---

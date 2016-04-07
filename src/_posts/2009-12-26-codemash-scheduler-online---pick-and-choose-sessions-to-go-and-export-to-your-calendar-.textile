@@ -1,0 +1,30 @@
+---
+layout: post
+title: Codemash Scheduler online; pick and choose sessions to go and export to your calendar.
+summary: When the Codemash guys announced their API I decided to create an app using it. I wasn't sure what to do at first but It was pretty obvious anyway. Some kind of scheduling tool.
+categories: [General]
+---
+
+When the Codemash guys announced their API I decided to create an app using it. I wasn't sure what to do at first but It was pretty obvious anyway. Some kind of scheduling tool.
+
+It took me some time to have the time to start and them to finish it. I finally was able to deploy this last night and today I add another feature to considered completed based on my initial goal.
+
+h3. What it does?
+
+The tool has three tabs one for each conference day and a third for the pre compiler. Each tab has columns (representing the rooms where the sessions take place, just noticed I don't have the room on top) and them the sessions are displayed below ordered by time.
+
+The idea is that you can select the sessions you are interested in. The tool does not make any judgement calls and if you want to select two sessions in the same time slot is up to you. Once you mark all the sessions just click the “Save Schedule” button on top and a modal dialog will display with a link to open (in a new window) a list with the selected sessions.
+
+This time the sessions are ordered in three columns: One for each day and the sessions for each day are ordered by time.
+
+The page has the AddThis widget that allow you to twit, email, print, add to favourites, show them in facebook and more. Another cool option is to export them as iCal, this way you can add them to your google calendar and other tools supporting this format.
+
+h3. How was done.
+
+The site have been implemented using ASP.NET MVC, jquery for all the JavaScript and the UI design using JQueryUI. Data is saved as xml so no need to use databases. Originally I started using Castle.ActiveRecord since the data model is extremely simple, but is so simple that the use of a db was overkill. The total time to have the site done was maybe 24 man hours divided in several coding sessions of no more than 3 hours at a time.
+
+The use a a widget like AddThis make implementing the sharing functionality a 15 minutes deal.
+
+h3. Conclusion.
+
+There are some things that can be better like font sizes (thanks Ahmed for the report). Originally I wanted to have a better interface with drag and drop or double click in a session to select, but decided to go with a simpler implementation and get this out of my computer and into the wild.

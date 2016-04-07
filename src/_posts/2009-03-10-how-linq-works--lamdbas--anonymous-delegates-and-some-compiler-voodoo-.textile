@@ -1,0 +1,73 @@
+---
+layout: post
+title: How Linq works, lamdbas, anonymous delegates and some compiler voodoo.
+summary: If you have been following this blog, you probably saw a few posts about what's going on behind closed doors once you submit your code to the mercy of the compiler.
+categories: [Programming, .Net]
+---
+
+If you have been following this blog, you probably saw a few posts about what's going on behind closed doors once you submit your code to the mercy of the compiler. Specially some of the new Magic features of C#, like auto properties and nullable types.
+
+The next logical step is to take a pick to how Linq works (or more specifically some of the implementation).
+
+Let's take a look at something very simple. A function that filters a list of strings by the initial character.
+
+
+
+<script src='http://gist.github.com/561841.js?file=file0.aspx-cs'></script>
+
+
+
+We are using the extension method Where and we pass a lambda expression that reads something like, get each item, making it lowercase and check if starts with this character, if so put it in a new enumeration. Them we use another extension method to convert the enumeration to a List.
+
+Let's compile this and see what Reflector have to tell us about it. Let's look at the code as C#:
+
+
+
+<script src='http://gist.github.com/561841.js?file=file1.aspx-cs'></script>
+
+
+
+That looks very similar to the original code, the lambda notation have been replaced by an anonymous delegate but the rest of the code looks the same. But wait take a look at the object tree for this class.
+
+<a href="../../../images/posts/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_2.jpg"><img height="185" alt="ScreenHunter_16 2009-03-09 00.11.23" src="/images/posts/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_thumb.jpg" width="395" border="0" /></a>
+
+Do you see that <>c_DisplayClass1 private sealed subclass inside our original class?
+
+Let's take a look at the code.
+
+
+
+<script src='http://gist.github.com/561841.js?file=file2.aspx-cs'></script>
+
+
+
+This class has only one method that looks like our delegate. That makes sense but how the Where works? It calls this delegate that returns true or false, and them what?
+Let's click in the Where method in Reflector and take a deeper look.
+
+
+
+<script src='http://gist.github.com/561841.js?file=file3.aspx-cs'></script>
+
+
+
+Since we are passing a List I guess we should take a look at the WhereListIterator object. This is a private class inside the Enumerable object.
+
+
+
+<script src='http://gist.github.com/561841.js?file=file4.aspx-cs'></script>
+
+
+
+Now, we "know" that all the Linq magic happens when the code is actually run (<a href="http://www.hookedonlinq.com/DeferredExecution.ashx" target="_blank">deferred execution</a>) so the bits that we are interest in should be on the MoveNext method:
+
+
+
+<script src='http://gist.github.com/561841.js?file=file5.aspx-cs'></script>
+
+
+
+I'm not sure why we have a Label_0069 in there and the goto in the switch statement, that sounds fishy, but again I don't really know all the scenarios for this code.
+The filtering happens in the while loop.
+
+It takes the current item of the enumeration, pass the item to the delegate and if the result is true it add the item back to the base. It does this each time is called.
+I guess my next one may be the Select method, any suggestion?

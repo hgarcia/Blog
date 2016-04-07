@@ -1,0 +1,44 @@
+---
+layout: post
+title: Fonts inspired by Buenos Aires signage.
+summary: Buenos Aires has a rich lettering culture, in particular the style known as "fileteado". This is a list of fonts that are inspired or that reflect some of that legacy.
+categories: [General]
+---
+
+h3. Montserrat
+
+I came across "Montserrat":http://www.google.com/fonts/specimen/Montserrat a few months ago while researching fonts for a new project.
+
+Montserrat is an old neighbourhood in Buenos Aires where I spend a few years of my life while finishing secondary school.
+
+"Julieta Ulanovsky":https://twitter.com/julietulanovsky has this to say
+
+__The old posters and signs in the traditional neighborhood of Buenos Aires called Montserrat inspired me to design a typeface that rescues the beauty of urban typography from the first half of the twentieth century.__
+
+<a class="anchor-float-center" href="http://www.google.com/fonts/specimen/Montserrat" target="_blank"><img src="/images/posts/montserrat.png" border="0" alt="The Montserrat font"/></a>
+
+
+h3. Milonga
+
+"Milonga":http://www.google.com/fonts/specimen/Milonga is a newish font (I think) from Pablo Impallari.
+
+The font is inspired on the hand painted lettering and decorations that used to be very prominent in Buenos Aires called "fileteado porteño":http://en.wikipedia.org/wiki/Fileteado  and that sadly have been replaced recently for more modern and cosmopolitan signage.
+
+You can see the influence in the termination and some of the ligatures. I really like this font for headings, branding and anything that needs to be highlighted.
+Upper-case letters are particularly beautiful.
+
+<a class="anchor-float-center" href="http://www.google.com/fonts/specimen/Milonga" target="_blank"><img src="/images/posts/milonga.png" border="0" alt="The Milonga font"/></a>
+
+
+h3. La porteña
+
+A very delicate script with hints of fileteado. "La porteña":http://www.sudtipos.com/fonts/43
+
+<a class="anchor-float-center" href="http://www.sudtipos.com/fonts/43" target="_blank"><img src="/images/posts/la-portenia.png" border="0" alt="The Porteña font"/></a>
+
+
+h3. Tanguera
+
+Also from sudtipos, "Tanguera":http://www.sudtipos.com/fonts/109 brings some of the style from older signs you can see in Avenida de Mayo y San Telmo.
+
+<a class="anchor-float-center" href="http://www.sudtipos.com/fonts/109" target="_blank"><img src="/images/posts/tanguera.png" border="0" alt="The Tanguera font"/></a>

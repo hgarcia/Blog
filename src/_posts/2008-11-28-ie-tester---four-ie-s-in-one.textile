@@ -1,0 +1,17 @@
+---
+layout: post
+title: IE Tester - Four IE's in one.
+summary: Test your site on multiple versions of IE.
+categories: [General, Programming]
+---
+
+I was listening to <a href="http://herdingcode.com/?p=103" title="Episode 27 The Herding code" target="_blank">episode 27 of the Herding code podcast</a> and they mentioned this tool called IE tester, so I decided to give it a try.
+<a href="http://www.my-debugbar.com/wiki/IETester/HomePage" title="IE Tester page" target="_blank">IE tester</a> is a browser that can render pages using four different IE rendering engines for HTML, CSS and JavaScript.
+
+The versions supported are 5.5, 6, 7 and 8 beta 2.
+The interface is very slick, using the ribbon control. One of the nicer features is that you can open different tabs, each using a different engine and compare the rendering side by side. Each tab using only a portion of the screen.
+
+They have this nice screen cast on the usage:
+
+<object height="300" width="400"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=830491&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=830491&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" height="300" width="400"></embed></object>
+<a href="http://vimeo.com/830491">ScreenCast IETester</a> on <a href="http://vimeo.com">Vimeo</a>.

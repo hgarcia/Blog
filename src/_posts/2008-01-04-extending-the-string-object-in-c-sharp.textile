@@ -1,0 +1,127 @@
+---
+layout: post
+title: Extending the string object in c#
+summary: I have found some controversy in some post in the wild where I demonstrate how to extend the string object. Sometimes the controversy is around the examples presented. So I decided to make my own example with methods that I wish were included in the framework.
+categories: [Programming, .Net]
+---
+
+_Thanks to Peter I modify where the string[] is declared and changed an obvious mistake instead of string s = ""; I use the correct form of string s = string.Empty;, I can't believe I miss that one, I really annoy my team with that :-)_
+
+I have found some controversy in some post in the wild where I demonstrate how to extend the string object. Sometimes the controversy is around the examples presented. So I decided to make my own example with methods that I wish were included in the framework.
+
+String has two very useful methods ToUpper() and ToLower(), but I found myself looking for a good ToCamel(), ToPascal(), Capitalize() and CapitalizeAll() methods one too many times.
+
+h3. Let's write down what we want to accomplish.
+
+<table style="width: 100%;" border="0" cellpadding="1" cellspacing="1">
+	<tbody>
+		<tr>
+			<td>Method</td>
+			<td>Definition</td>
+		</tr>
+		<tr>
+			<td>ToCamel()</td>
+			<td>Given a set of words separated by a space or an underscore return a lower Camel cased word. ex: Hernan Garcia -> hernanGarcia</td>
+		</tr>
+		<tr>
+			<td>ToPascal()</td>
+			<td>Like ToCamel but all words start with an uppercase</td>
+		</tr>
+		<tr>
+			<td>Capitalize()</td>
+			<td>Given a word or a phrase make the first letter of the phrase and the first letter after a point Upper case and all the rest lower case.</td>
+		</tr>
+		<tr>
+			<td>CapitalizeAll()</td>
+			<td>Like Capitalize but all words start with an uppercase letter.</td>
+		</tr>
+	</tbody>
+</table>
+
+h3. ToCamel()
+
+The implementation is super simple.
+
+
+
+<script src='http://gist.github.com/561822.js?file=file0.aspx-cs'></script>
+
+
+
+An example of usage:
+
+
+
+<script src='http://gist.github.com/561822.js?file=file1.aspx-cs'></script>
+
+
+
+The result:
+
+<img src="/images/posts/SP32-20080105-000550.png" alt="" class="" height="127" width="270">
+
+h3. ToPascal()
+
+
+
+<script src='http://gist.github.com/561822.js?file=file2.aspx-cs'></script>
+
+
+
+Example:
+
+
+
+<script src='http://gist.github.com/561822.js?file=file3.aspx-cs'></script>
+
+
+
+The result:
+
+<img src="/images/posts/SP32-20080105-003049.png" alt="" class="" height="95" width="242">
+
+h3. Capitalize()
+
+The code
+
+
+
+<script src='http://gist.github.com/561822.js?file=file4.aspx-cs'></script>
+
+
+
+Example:
+
+
+
+<script src='http://gist.github.com/561822.js?file=file5.aspx-cs'></script>
+
+
+
+The result:
+
+<img src="/images/posts/SP32-20080105-004245.png" alt="" class="" height="139" width="445">
+
+h3. CapitalizeAll()
+
+The code:
+
+
+
+<script src='http://gist.github.com/561822.js?file=file6.aspx-cs'></script>
+
+
+
+Example:
+
+
+
+<script src='http://gist.github.com/561822.js?file=file7.aspx-cs'></script>
+
+
+
+The result:
+
+<img src="/images/posts/SP32-20080105-003624%281%29.png" alt="" class="" height="101" width="327">
+
+There are some other methods in this same line that we can create, for example a method to convert back from Pascal or Camel into a space or underscore separate string.

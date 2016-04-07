@@ -1,0 +1,43 @@
+---
+layout: post
+title: Testing your asp.net pages with NunitAsp (and no web controls)
+summary: Testing is fundamental to get your code into shape and to be sure that what you are doing is behaving as expected. New methodologies like Test Driven Design (TDD) point to that goal.
+categories: [Programming, Testing, Tools, .Net]
+---
+
+Testing is fundamental to get your code into shape and to be sure that what you are doing is behaving as expected. New methodologies like Test Driven Design (TDD) point to that goal. We (developers) are lazy and very self confident, we normally write the code and run it a few times without paying a lot of attention of the requirements, if the code works as we think it should we are happy and move to code something else (or write some blog post :-) ).
+
+So the idea behind TDD is that instead of write your code first and test it later, you start by writing your test (hopefully something that tries to follows the requirements, if not there is no much good on the practice either), them you run your test you see it fail and run the code that will make the test pass.
+
+This post is not about TDD, there are tons of articles out there on how to do it. This post is about how to do TDD on web development (even if you don't use web controls).
+
+You can write test in different ways, but the most effective one is creating the test in a way that they can be run automatically, and that the test suite can evolving with your code and incorporating more and more test while your code evolve. For that reason in the .Net world there are some frameworks that allow you to write Unit test and run them the console, inside a GUI or as part of your automatic build (within or without a CC process).
+
+Nunit is my framework of choice (for no particular reason besides that I have been using it for a while), please try others as well, there have been a lot of talk about MbUnit. Nunit works very well for me to test libraries or console apps, what is great because we all know that most of your code should reside on libraries, but the reality is that I am a web developer and you like it or not you need to put code in your code behind classes (even if is just to glue everything together) and for testing this code you will need an extension to Nunit called NunitAsp.
+
+Follow the instructions from the NunitAsp site to download, install and set up your testing project, you will need to install Nunit as well if you haven't done so.
+
+The examples in the NunitAsp are great but they all assume that you are using webcontrols something that I don't do and I know that I'm not alone. I don't think that Web controls are evil or anything like it, I just like to have full control on my markup and JavaScript. I did use them once in a while for small sites that don't need a lot of complication, but for large projects I use my own libraries that output html to the browser.
+
+So let's see the differences in the code. Let's say that you have a page with this html markup...
+
+
+<script src='http://gist.github.com/561825.js?file=file0.aspx-cs'></script>
+
+
+...and this code behind:
+
+
+<script src='http://gist.github.com/561825.js?file=file1.aspx-cs'></script>
+
+
+So your first attemp may be to call the onclick method of the button using the standard, but doing so won't call the javascript method since NunitAsp does not understand JavaScript, the page won't be submitted.
+
+So what do you do? The solution is simple, you create a TextBoxTester that will represent your hidden input field (I guess that TextBox works with any input field), change the value of the field modifying the Text property of the object and them use the static Submit method on the CurrentWebForm object.
+
+
+<script src='http://gist.github.com/561825.js?file=file2.aspx-cs'></script>
+
+
+And that's all is to it, now you can start testing your web control free asp.net pages.
+

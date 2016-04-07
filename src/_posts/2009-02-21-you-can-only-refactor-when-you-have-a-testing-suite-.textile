@@ -1,0 +1,24 @@
+---
+layout: post
+title: You can only refactor when you have a testing suite.
+summary: I don't remember if I read this on Clean Code or Refactoring or maybe I just hear it somewhere, but It's so true. It's not that you can't change the code and that you can't apply refactoring techniques.
+categories: [Programming, Testing]
+---
+
+I don't remember if I read this on Clean Code or Refactoring or maybe I just hear it somewhere, but It's so true. 
+
+It's not that you can't change the code and that you can't apply refactoring techniques. The problem is that each change may be breaking other stuff and changing functionality and there is not way to validate the state of the program without running the unit test.
+
+I started to work on a program that I download from Codeplex. The code is good but it's not generic enough for what I need it to do, so I jump into it and started to refactor it.
+
+The problem is no unit test to validate my changes. How to proceed? Easy, write them.
+
+First I did a few changes and I get the program working in my machine. There were some strings hardcoded that reference paths to some external files.  I also create two projects, one for the unit tests and one for a library (the project is a console app at this moment).
+
+I move most of the code into the library and consume it from the console app, run it. Notice a few bugs or design decisions I didn't like. Make notes in the code about them to come to that later on. It finally ran so I'm ready to start writing test.
+
+So the first thing is to remove a big list of parameters I'm passing to me new library. This is a side effect of applying extract method on the main.
+
+So I do Introduce parameters object. Now I want to add new functionality into this class so I will do this using Test First. But before doing anything else I need to write enough tests to validate the functionality of the original code.
+
+There is a problem, the code is couple to some external libraries, so I will have to do some extra refactoring to isolate the code from this libraries using interfaces or the facade pattern. This will allow me to write the tests. I will have to run the application after each change to make sure that it still works when doing those changes.

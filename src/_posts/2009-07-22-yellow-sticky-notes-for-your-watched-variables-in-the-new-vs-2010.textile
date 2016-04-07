@@ -1,0 +1,28 @@
+---
+layout: post
+title: Yellow sticky notes for your watched variables in the new VS 2010.
+summary: One new feature in the code editor is the ability to put sticky notes in the code while debugging. This sticky notes are actually attached to a given variable and you can see the actual value of it in the note (similar to using the watch window).
+categories: [Programming, .Net, Tools]
+---
+
+One new feature in the code editor is the ability to put sticky notes in the code while debugging. This sticky notes are actually attached to a given variable and you can see the actual value of it in the note (similar to using the watch window).
+
+To make use of this sticky notes you just need to hover your mouse over a variable while on a debugging session and in the hint for the value of the variable you will see a little note icon.
+
+<a href="../../../images/posts/Yellowstickynotesforyourwatchedvariables_F8B3/ScreenShot005_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="ScreenShot005" border="0" alt="ScreenShot005" src="/images/posts/Yellowstickynotesforyourwatchedvariables_F8B3/ScreenShot005_thumb.png" width="421" height="122" /></a>
+
+Click in the icon and a sticky note will be placed near the location of the cursor, you can move this note around in VS so it doesn?t interfere with the code.
+
+<a href="../../../images/posts/Yellowstickynotesforyourwatchedvariables_F8B3/ScreenShot006_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="ScreenShot006" border="0" alt="ScreenShot006" src="/images/posts/Yellowstickynotesforyourwatchedvariables_F8B3/ScreenShot006_thumb.png" width="214" height="128" /></a>
+
+Notice that the value is null since the variable have not been evaluated yet. You can click in the button of the note to add a comment.
+
+If we continue running the program we can see that the value have been updated. This variable will hold an array of squares, so the value is the Length of the array. Click in the plus sign and you can see each value, now each value has an sticky note icon besides it as well, clicking them will add this variables into the same sticky note.
+
+<a href="../../../images/posts/Yellowstickynotesforyourwatchedvariables_F8B3/ScreenShot007_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="ScreenShot007" border="0" alt="ScreenShot007" src="/images/posts/Yellowstickynotesforyourwatchedvariables_F8B3/ScreenShot007_thumb.png" width="226" height="139" /></a>
+
+<a href="../../../images/posts/Yellowstickynotesforyourwatchedvariables_F8B3/ScreenShot008_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="ScreenShot008" border="0" alt="ScreenShot008" src="/images/posts/Yellowstickynotesforyourwatchedvariables_F8B3/ScreenShot008_thumb.png" width="466" height="141" /></a>
+
+The notes disappear once the debug session ends, but starting a new session will bring up all the notes back.
+
+<a href="../../../images/posts/Yellowstickynotesforyourwatchedvariables_F8B3/ScreenShot009_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="ScreenShot009" border="0" alt="ScreenShot009" src="/images/posts/Yellowstickynotesforyourwatchedvariables_F8B3/ScreenShot009_thumb.png" width="436" height="173" /></a>

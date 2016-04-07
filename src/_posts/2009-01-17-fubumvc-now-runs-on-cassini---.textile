@@ -1,0 +1,12 @@
+---
+layout: post
+title: FubuMVC now runs on Cassini!!!
+summary: A few moments ago (55 minutes to be exact) Chad Myers made a commit on revision 55 of the FubuMVC enabling this to run using F5 inside Visual Studio, using Cassini.
+categories: [Frameworks, .Net]
+---
+
+A few moments ago (55 minutes to be exact) <a href="http://www.lostechies.com/blogs/chad_myers/" target="_blank">Chad Myers</a> made a commit on <a href="http://code.google.com/p/fubumvc/source/detail?r=55" target="_blank">revision 55</a> of the <a href="http://code.google.com/p/fubumvc/" target="_blank">FubuMVC</a> enabling this to run using F5 inside Visual Studio, using Cassini.
+
+He also updated <a href="http://fubumvc.pbwiki.com/" target="_blank">the wiki</a> with new information about minimum requirements, compiling the code and running the demo site.
+
+It’s interesting to look at the details of the commit and notice the changes needed on the project file to launch Cassini.

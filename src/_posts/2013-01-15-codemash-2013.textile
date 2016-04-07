@@ -1,0 +1,51 @@
+---
+layout: post
+title: Codemash 2.0.1.3, another great conference.
+summary: Notes from another great Codemash.
+categories: [Programming, Codemash]
+---
+
+Say that Codemash doesn't disappoint is an understatement. Codemash is great!
+Even with the conference continuously growing year after year, it have managed to keep true to it's identity.
+
+When everything was over, a new CD was added to "The Womack Family Band":https://www.womackband.com/ collection, an XBox won and new knowledge was acquired.
+
+And probably most important, new friends were made and all friendships rekindle.
+
+This time I was able to manage "the Codemash blues":https://twitter.com/codemash/status/290332929614311426 much better than previous years, but I'm already looking forward to Codemash 2.0.1.4
+
+h3. Thursday sessions
+
+After a hearty breakfast I head over "Ben Callahan":http://bencallahan.com/ session on "Web design process in a responsive world", where he explored the new processes that "Sparkbox":http://seesparkbox.com/ is using to tackle the challenges presented when working on responsive sites, specifically how to work in multidisciplinary teams and how roles are changing.
+
+You can follow the process in the open while the Sparkbox team "redesign their own website":http://building.seesparkbox.com/
+
+I follow up with some hardware session and a very entertainment "Raspberry Pi deep dive" by "Gary Short":https://twitter.com/garyshort where he show us how to leverage Mono, C# and VistaDB to create a simple application and deploy it to the Pi.
+
+After lunch, I decided to head over "Jimmy Bogard":http://lostechies.com/jimmybogard/ session on "Functional testing with ASP.NET MVC". I wasn't sure about it but it was a great session with good solid examples. It reflects my own experience when using similar tools and I learned about some helpers inside "MVC Contrib":http://mvccontrib.codeplex.com/ I wasn't aware off. A solid presentation.
+
+"Carl Franklin":http://carlfranklin.net/ introduced us to his "GesturePack":http://www.franklins.net/gesturepak.aspx product, that allow recording and playing back gestures with the Kinect. It was a very interactive presentation and he was very open on some of the processes he followed while creating the library, some of the challenges and limitations and where he want to take it.
+
+The last session of the day was probably the highlight of the conference. "Brian Sherwin":https://twitter.com/bsherwin presented together with his son Stephen on the journey they started five years ago when they started playing with a Netduino, a robot and a Kinect controller.
+They were extremely well prepared in what is a very difficult presentation, not only compiling code live but also interacting with a robot.
+They show us the first project they took on with the Arduino and how they evolved taking on a new challenge and going a bit further each time.
+
+__I just noticed that Thursday was a very .NET day for me. Strange, I guess not doing .Net for a living for the last 2 years may have something to do with it. In any case, they were all really good sessions.__
+
+h3. Friday sessions
+
+After Thursday night party I started Friday at "Joshua Smith":https://twitter.com/kognate session on the Go language. A few weeks prior to Codemash I started to (again) hear references to Go in multiple conversations. This was a good presentation to get a 10000 feet overview of some of the interesting features of the language.
+
+I kept the "languages" theme with "Dick Wall" session on "SubCut" an IOC container for Scala.
+
+After lunch another "Jimmy Bogard":http://lostechies.com/jimmybogard/ session; this time on "Building external DSLs". After a quick overview on DSLs and the differences betwen internal and external DSLs, Jimmy showed how to use "Irony":http://irony.codeplex.com/ to help on building the language, with lot's of code examples.
+
+For the last session of the day (and the conference) I head over to "John Lindquist":https://twitter.com/johnlindquist introductory session on AngularJS.
+
+h3. Thanks for another great Codemash
+
+Once again, many thanks to all the volunteers, organizers and sponsors that make this possible, as well as everybody at the Kalahari that is "so" nice.
+
+For the last four years, I have been using the end of Codemash as my "official" new years day from a professional point of view.
+
+So, let the new year begin.

@@ -1,0 +1,9 @@
+---
+layout: slide
+title: first snowfall 2013
+home: 11018559343
+home_size: small320
+display_size: large
+slide: [11018559343, 11018524724, 11018478666, 11018467086, 11018437296, 11018491704, 11018543033]
+title_style: "font-family: Helvetica; font-size: 1.4em;"
+---

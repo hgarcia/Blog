@@ -1,0 +1,26 @@
+---
+layout: post
+title: Dependencies to third party libraries; attributes, the kiss of dead.
+summary: In part 1 I talked about using the facade pattern or a wrapper to avoid dependencies to third party libraries. In the second part I talked about taking care of custom exceptions defined in those libraries and how to shield you client code from...
+categories: [Patterns, Programming]
+---
+
+In <a href="/2009/01/14/isolate-yourself-from-external-libraries-using-the-facade-pattern-.html">part 1</a> I talked about using the facade pattern or a wrapper to avoid dependencies to third party libraries. In the second part I talked about <a href="/2009/02/10/the-problem-with-third-party-libraries--exceptions-.html">taking care of custom exceptions</a> defined in those libraries and how to shield you client code from them.
+
+Today I want to talk about Attributes that those libraries may define and that may force you to use them. The problem here is that if you use them you will add a dependency to the original library, so any effort done to hide the use of that library will be lost.
+
+If the library is an open source project there is a solution and is change the code of the library. If not you should decide if there is no other alternative and in the worst case scenario live with the dependency.
+
+h3. "Fixing" the problem when using Open source libraries.
+
+I had a situation while using <a href="http://james.newtonking.com/projects/json-net.aspx" target="_blank">Json.Net</a>. I had a class and I wanted to mark two methods to be ignored by the serializer, to do so in Json.Net you need to use the JsonIgnoreAttribute.
+
+The problem is that I implemented a wrapper on top of Json.Net so non of my class hold a dependency to the library. This allow me to change the library used to do the actual parsing if I chose so without impacting my clients.
+
+Now, if I add the attribute to all the classes that I will eventually serialize the dependencies on Json.Net may well be all over my code base. The problem here is that the use of an attribute on this case is reasonable.
+
+My solution was to actually change the code and use the XmlIgnoreAttribute (from the .Net framework), but the problem is that if I get a new version of the library now I will have to go and change the code again. The other problem is that the attribute name is misleading for another developer, it does not communicate the real implications of using it.
+
+I think that a better approach (for all libraries) is to provide a default implementation but let the end user to change them, for example let him to inject attributes types to replace the defaults. In the above example, I could create my own SerializeIgnoreAttribute and inject it for a key IgnoreSerialization into Json.Net.
+
+The library may have an in memory dictionary or read this preferences for a configuration file (less desirable).

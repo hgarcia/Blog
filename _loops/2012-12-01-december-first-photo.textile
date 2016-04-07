@@ -1,0 +1,7 @@
+---
+layout: single
+title: December 1st
+home: 8236515844
+home_size: small320
+display_size: large
+---

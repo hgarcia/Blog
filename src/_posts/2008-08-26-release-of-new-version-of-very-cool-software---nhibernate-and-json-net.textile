@@ -1,0 +1,12 @@
+---
+layout: post
+title: Release of new versions of very cool software - NHibernate and Json.NET.
+summary: In the last few days two of my favorite pieces of software released new versions.
+categories: [Tools, Programming, .Net]
+---
+
+In the last few days two of my favorite pieces of software released new versions.
+
+NHibernate released <a href="https://sourceforge.net/project/showfiles.php?group_id=73818&amp;package_id=73969" title="NHibernate 2.0 GA final" target="_blank">version 2.0 final</a> version and <a href="http://james.newtonking.com/archive/2008/08/25/json-net-3-0-released.aspx" title="Json.NET 3.0 released" target="_blank">Json.NET</a> came up with the <a href="http://www.codeplex.com/Json/Release/ProjectReleases.aspx?ReleaseId=16593" title="Download Json.Net 3.0 from here" target="_blank">3.0 version</a>.
+
+Documentation for the new version of NHibernate can be found in<a href="http://nhforge.org/wikis/reference2-0en/nhibernate-2-0-reference-documentation.aspx" title="NHibernate 2.0 wiki." target="_blank"> this wiki</a>.I just wanted to say thank as a user of both libraries to all the developers involved in a project as massive as NHibernate and in particular to James Newton for his fabulous Json.Net.

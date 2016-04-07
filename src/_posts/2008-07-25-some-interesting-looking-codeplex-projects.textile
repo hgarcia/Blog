@@ -1,0 +1,18 @@
+---
+layout: post
+title: Some interesting looking CodePlex projects
+summary: Here is a list of some projects that look interesting. Extension Methods Extravaganza- A collection of some extension methods. You can find extension to the object the ICollection, IEnumerable, IList, String and StringBuilder.  I specially ...
+categories: [General, Tools]
+---
+
+<ul>
+<li><a href="http://www.codeplex.com/ExtensionMethodsYay" title="Extension Methods Extravaganza" target="_blank">Extension Methods Extravaganza</a>: A collection of some extension methods. You can find extension to the object the ICollection, IEnumerable, IList, String and StringBuilder.  I specially like the StringBuilder and IList methods. I know I will be able to make good use of them.</li>
+<li><a href="http://www.codeplex.com/reflectoraddins" title="Reflector AddIns" target="_blank">Reflector AddIns</a>: The always useful Reflector gains power in a level of magnitude with this collection of AddIns. Special attention to Diff, FileDisassembler, ClassView, CodeModelViewer, CodeSearch and Deblector (allows to debug processes within Reflector).</li>
+<li><a href="http://www.codeplex.com/ProMesh" title="ProMesh MVC Framework" target="_blank">ProMesh MVC Framework</a>: I saw this framework for the first time six or seven month ago and I was impressed. Later on the Microsoft ASP.NET MVC got my full attention and kind of forgot about this one. Take a look at it, there are some interesting ideas on it.</li>
+<li><a href="http://www.codeplex.com/CoolStorage" title="CoolStorage.NET" target="_blank">CoolStorage.NET</a>: It's a lightweight ORM framework very easy to use. I haven't use it in production yet but I played around with it and the learning curve is non existent, it comes with a very well written and detailed manual. ···Thinks you may like: No XML configuration required at all (I personally don't mind mapping files but I know that a lot of developers do.)···Thinks you may not like: All entities need to inherit from a base class. Entities expose methods like New(), Read(), Filter(), Save() etc.</li>
+<li><a href="http://www.codeplex.com/LazyParser" title="LazyParser" target="_blank">LazyParser</a> From the same <a href="http://www.axum.be/" title="Philippe Leybaert" target="_blank">Philippe Leybaertfather</a> of ProMesh and CoolStorage. An expression parser with support for C# syntax, very powerful.</li>
+<li><a href="http://www.codeplex.com/Utilities" title="Utilities.NET" target="_blank">Utilities.NET</a> From <a href="http://james.newtonking.com/" title="James Newton-King" target="_blank">James Newton-King</a> a complete set of utilities that you should have in your bag of tricks.</li>
+<li><a href="http://www.codeplex.com/Json" title="Json.NET" target="_blank">Json.NET</a>Again from <a href="http://james.newtonking.com/" title="James Newton-King" target="_blank">James Newton-King</a> the bare bones for my REST services libraries.</li>
+</ul>
+
+More to come in a future post...

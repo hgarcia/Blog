@@ -1,0 +1,22 @@
+---
+layout: post
+title: Introducing Loops, my non technical content at jux.com.
+summary: I recently discovered Jux and love it immediately. You can find my non technical content in there.
+categories: [General]
+---
+
+h3. A platform to share content with an uncanny sense of design.
+
+A few days ago I found "Jux":http://jux.com while searching for a nice and clean on-line blogging platform.
+
+It was love at first use.
+
+The interface is so clean and the layouts so thoughtful.  I had to start using it right away.
+
+Articles, pictures, bullet points, videos, and other type of content have their own unique layouts to make the most of it.
+
+It's the perfect place for my non-technical content.
+
+__I reserve the right to cross-post now and them if I think it makes sense__
+
+Go ahead and "visit it now":https://theprogrammer.jux.com if you wish.

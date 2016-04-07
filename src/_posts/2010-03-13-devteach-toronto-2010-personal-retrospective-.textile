@@ -1,0 +1,76 @@
+---
+layout: post
+title: DevTeach Toronto 2010 personal retrospective.
+summary: I attended my first DevTeach in 2008 and I loved the quality of the content and speakers. I have been looking forward at the next one in TO since them.
+categories: [General]
+---
+
+I attended my first DevTeach in 2008 and I loved the quality of the content and speakers. I have been looking forward at the next one in TO since them. This time I convince my boss to pay for the whole team to attend. This was a somehow smaller DevTeach but the quality of the conference was as good or better than I remember. 
+
+One of the things I noticed that was different. A lot of the presenters mentioned agile methodologies and XP practices, not just in the agile track. Also when they polled the attendance on TDD, CI, IOC, DI, ORM, etc a lot of hands went up. This surprise me because 2 years ago, aside from the alt.net track, most of those tools/practices were largely ignore or seen as a novelty. I'm very happy about this change and is an indication that we are getting better as a community (I'm biased here since I think that those practices make you better). 
+
+This is a list of the sessions I attended and some comments on the high points or things I liked the most. 
+
+h3. Day 1
+
+Keynote: <a href="http://www.devteach.com/Keynote.aspx">A Lap Around Visual Studio 2010</a> Beth Massi
+
+<a href="http://www.devteach.com/">How to Partition and Layer a Software Application</a> Michael Stiefel.
+
+Michael was very well prepared and showed the transformation of a very tightly coupled console app into a very cohesive and well architected solution that make possible replace the UI with a web front end without touching any of the business logic.
+
+<a href="http://www.devteach.com/">Maintainable and Modern JavaScript</a> K. Scott Allen
+
+Great session, lots of live coding and tips on how to embrace and do proper JavaScript programming. Scott introduced the session with the evolution of the clock and manage to correlate it with the evolution of web applications. (Mostly how we write web applications). 
+
+<a href="http://www.devteach.com/">A Lap Around ASP.NET 4.0</a> Rob Windsor 
+
+Rob always gives good presentations. Once again some live coding and lots of demos. 
+
+<a href="http://www.devteach.com/">LINQ in Layered Applications</a> K. Scott Allen
+
+I particularly enjoyed this one. Scott presented different patterns and usages of Linq in layered applications. He talked about things like deferred execution and touched in some of the pros and cons of different approaches. Besides the demos he navigate the code of some OSS projects that use the different approaches. Scott was able to provide the information and express his preferences in a non judgmental way.
+
+<a href="http://www.devteach.com/">Just Add Kung Fu with ASP.NET MVC v2</a> Colin Bowern 
+
+I came to this session for the last 20 minutes and I really like it. Two members of my team saw it from the beginning and they love it.
+
+h3. Day 2
+
+<a href="http://www.devteach.com/">Convention-over-Configuration in a Web World</a> James Kovacs   
+
+<a href="http://www.devteach.com/">Agile Application Architecture</a> Mario Cardinal   
+
+<a href="http://www.devteach.com/">Separate Your UI Concerns with MVVM and Prism</a> Brian Noyes
+
+Enjoyed this session very much. I need to use Prism on my next Silverlight project.
+
+<a href="http://www.devteach.com/">Using Dynamic in C# to do Amazing Things</a> Aaron Erickson   
+ 
+<a href="http://www.devteach.com/">From 1 Server to 2: Making the Leap to Web Farms</a> Richard Campbell
+
+Wow! Richard is fantastic. This was an IT session. I haven't really done any "real" IT work in years. Richard managed to get me hook from hello and he never lost me. Not only was very informative, but it was also incredible funny and geeky. He is a mix between a presenter and stand comedian. 
+
+<a href="http://www.devteach.com/">The Azure Whirlwind Tour</a> Colin Melia 
+
+h3. Day 3
+
+<a href="http://www.devteach.com/">Building Business Productivity Solutions</a> Beth Massi
+
+<a href="http://www.devteach.com/">Agile Estimation</a> Joel Semeniuk
+
+Another high point. Joel talked about what is an estimate, how our managers understand estimation, some mistakes we all make and how to work around them.
+
+<a href="http://www.devteach.com/">ORM Fundamentals</a> Donald Belcham 
+
+<a href="http://www.devteach.com/">Kanban and Scrumban</a> Joel Semeniuk 
+
+As good as his previous talk. 
+
+<a href="http://www.devteach.com/">Convention-over-Configuration in an Agile World</a> James Kovacs 
+
+I think that even when both his talks were good, this was the better of the two.
+
+h3. Conclusion
+
+I'm looking forward to the next one. I know that my team also enjoyed and we'll be happy to attend again. I strongly encourage you to attend to the next one if you haven't done so.

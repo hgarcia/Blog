@@ -1,0 +1,37 @@
+---
+layout: post
+title: My link collection for September 9th, 2010.
+summary: The art of APIs, Forking with git, Git hooks, UX simplicity, BDD, node.js, Rails 3.1 plans, going offline and ActiveRecord queries.
+categories: [General, Links]
+---
+
+p(tweet-link). "Mastering the Art of APIs – Part 1":http://bit.ly/9uSxLo
+<span class="by-link">Think Vitamin</span>    
+
+p(tweet-link). "A Big Forking Problem":http://bit.ly/ctZM77
+<span class="by-link">Adrian Sutton</span>
+<span class="comment-link">On git, github and building communities</span>
+
+p(tweet-link). "Slaying dragons with git, bash, and ruby":http://bit.ly/cJzCiv
+<span class="by-link">Ruby Pond</span>
+<span class="comment-link">Really cool article on taking advantage of those git hooks</span>
+
+p(tweet-link). "Simplicity is Not Overrated, Just Misunderstood":http://bit.ly/adSzJY
+<span class="by-link">UXMovement.com</span>
+
+p(tweet-link). "Limiting Concurrency in Node.js":http://bit.ly/96VSLj
+<span class="by-link">Paul's Journal</span> 
+<span class="comment-link">Sounds counter intuitive but it has a point in there</span>
+
+p(tweet-link). "Steak: because Cucumber is for vegetarians!":http://bit.ly/9pznhH
+<span class="by-link">Jeff Kreeftmeijer</span>
+
+p(tweet-link). "Automatic Flushing: The Rails 3.1 Plan":http://bit.ly/dqXIR3
+<span class="by-link">Katz Got Your Tongue?</span>
+
+p(tweet-link). "Offline: What does it mean and why should I care?":http://bit.ly/bXPhzx 
+<span class="by-link">HTML5Rocks</span>
+<span class="comment-link">An extensive tutorial on offline web techniques and technologies.</span>
+
+p(tweet-link). "Display ActiveRecord generated SQL queries in the console":http://bit.ly/czE27I
+<span class="by-link">iluvruby - Milan Dobrota's Ruby on Rails Tumblelog</span>

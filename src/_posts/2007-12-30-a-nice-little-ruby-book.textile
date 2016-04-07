@@ -1,0 +1,18 @@
+---
+layout: post
+title: A nice little Ruby book
+summary: If you are learning Ruby or if you just wander what is all of that about there are a few free online books that you should jump into. Mr. Neighborly's Humble Little Ruby Book is a free e-book from the guys at infoq.com
+categories: [Books, Programming, Ruby]
+---
+
+If you are learning Ruby or if you just wander what is all of that about there are a few free online books that you should jump into.
+
+<a href="http://www.infoq.com/minibooks/ruby">Mr. Neighborly's Humble Little Ruby Book</a> is a free e-book from the guys of <a href="http://www.infoq.com">http://infoq.com</a> you just need to create an account log in and download the pdf, if you like the book you can purchase it for just $9.95. The book is written in an easy to follow language (sometimes a little too campy for my taste) but is clear and you can get started on Ruby right away. It goes throught all the language constructs, objects, etc. It even have a chapter on sockets, http and web services.<br/>I found this a nice book to start your journey into Ruby land.
+
+Another one that have been available for a while now is <a href="http://www.sapphiresteel.com/The-Little-Book-Of-Ruby">The little Book Of Ruby</a> brought to you by the nice people that makes <a href="http://www.sapphiresteel.com/">Ruby in Steel</a> the Ruby editor for Visual Studio (It comes with some code available for download). Both books have a lot in common but some sections are complementary so (being both free) go crazy and download them!
+
+You don't need to learn Ruby first before start playing around with Rails but I found it handy to at least take a quick overview to the common objects/types like string, numbers and Collections before Riding the Rails.
+
+For Rails one of the best once from my point of view is Agile Web Development with Rails from The Pragmatic Programmers. Clear, right to the point and It also comes with code for downloads (specially handy when you don't want to start dealing with writing the css files while learning a new program and framework).<br/>The book is using the Rails command line methods to generate all the boiler plate code but you can easily use NetBeans, the aforementioned Ruby in Steel or <a href="http://www.aptana.com/rails/">RadRails</a>.
+
+With the new DLR coming fast and steady and the development of IronRuby improving, you should seriously consider learning this really elegant language even if you don't think on leaving the .NET arena.

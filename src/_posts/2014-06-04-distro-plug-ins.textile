@@ -1,0 +1,26 @@
+---
+layout: post
+title: Distro transports plug-ins.
+summary: I moved support for Redis into another module to exercise the transport plug-in API.
+categories: [JavaScript]
+---
+
+h3. distro-redis
+
+I yanked the support for Redis from the Distro module and moved into distro-redis. This makes distro lightweight and remove dependencies on third party modules on the code (for now).
+
+If you want to use redis you will need to add dependencies no only on distro but also on <span class="code">distro-redis</span> and when creating the distro factory pass the module to the <span class="code">create</span> method.
+
+
+<pre><code>
+	
+	var distro = require('distro');
+	var distroRedis = require('distro-redis')
+
+	var server = distro.create(distroRedis).server(options);
+
+	//Or
+
+	var client = distro.create(distroRedis).client(options);
+
+</code></pre>

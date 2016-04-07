@@ -1,0 +1,34 @@
+---
+layout: post
+title: .Net simple Templating system (2)
+summary: There was something that I wasn't happy with my template system, so I decided to improved it. The algorithm used was wrong, I was checking for all the properties and/or fields of the object instead of check for the variables in the template first...
+categories: [Programming]
+---
+
+There was something that I wasn't happy with my template system, so I decided to improved it. The algorithm used was wrong, I was checking for all the properties and/or fields of the object instead of check for the variables in the template first.
+
+(If you haven't, <a href="../../../2007/12/25/the-same-template-in-the-client-and-server-side-.html">read my previous post </a>about this template system)
+
+I also provide a few new overloaded constructors; on top of the simple one that accept the template as a string, I added an overload where you can pass a custom regex for the pattern (so you don't need to use the default notation and you can use whatever you want without modifying the code).
+
+Another constructor take an object that implements the ITemplateCompilable interface (<a href="../../../2007/12/25/the-same-template-in-the-client-and-server-side-.html">read my previous post</a> to learn more about this interface) and of course has an overload for a custom regex as well.
+
+The support for nested objects is "perfect" now. There is no limit as how deep you want to go, of course this may affect perfomance since reflection is heavily used to get the values of the object, but the system impose no limits.
+
+You can use this notation:
+
+
+<script src='http://gist.github.com/561820.js?file=file0.aspx-cs'></script>
+
+
+And pass an object to replace all the variables (using the new Anonymous object notation the object may look like this).
+
+
+<script src='http://gist.github.com/561820.js?file=file1.aspx-cs'></script>
+
+
+To get this output;
+
+<pre>Hello Hernan our records indicate that you purchased the book: Agile Web Development with Rails.</pre>
+
+You can find the new code here <a target="_blank" href="../../../images/posts/latrompalibraries.zip">latrompalibraries.zip</a>.

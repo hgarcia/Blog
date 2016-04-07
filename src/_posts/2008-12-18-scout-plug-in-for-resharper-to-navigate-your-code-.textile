@@ -1,0 +1,19 @@
+---
+layout: post
+title: Scout plug in for Resharper to navigate your code.
+summary: This is a plug-in for Resharper that allows you to use Reflector and and the .Net framework source code to navigate your code. You can download it from the Google code project page.
+categories: [Tools, .Net]
+---
+
+This is a plug-in for Resharper that allows you to use Reflector and and the .Net framework source code to navigate your code.
+
+You can download it from the <a href="http://code.google.com/p/scoutplugin/" target="_blank">Google code project page</a>. Once installed open VS and the Resharper options page. 
+Under environment go to Search and Navigation-> Scout
+
+Clicking into it will ask you if you want to download Reflector, click Yes if you haven’t done this before. Since I already have Reflector I just browse to the exe file. You can them can set some configuration options like using the same instance of Reflector each time or set some configuration per solution or custom.
+
+To configure the MS server reference follow <a href="http://weblogs.asp.net/scottgu/archive/2007/10/03/releasing-the-source-code-for-the-net-framework-libraries.aspx" target="_blank">the instructions on Scott Gu site</a>.
+
+Once you are done you can do right click in a class or method and hit Go to declaration, is the class is in an external assembly reflector will open up and navigate to the given method showing the code in it. For example HttpContext.Cache().
+
+Very powerful.
