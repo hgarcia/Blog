@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "npm run build && cd ./build && now",
     "build": "node ./build.js",
     "start": "WRITTING=writting node ./build.js"
   },
