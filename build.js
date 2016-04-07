@@ -13,6 +13,7 @@ let Metalsmith = require("metalsmith"),
   permalinks = require("metalsmith-permalinks"),
   textile = require("./lib/metalsmith-textile"),
   home = require("./lib/metalsmith-home"),
+  pkg = require("./lib/metalsmith-pkg-json"),
   datePermalink = require("./lib/metalsmith-date-permalink");
 
 function buildChain() {
@@ -61,6 +62,7 @@ function buildChain() {
       source: "./assets", // relative to the working directory
       destination: "./assets" // relative to the build directory
     }))
+    .use(pkg())
     .use(assets({
       source: "./images", // relative to the working directory
       destination: "./images" // relative to the build directory

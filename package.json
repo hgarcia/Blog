@@ -5,14 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "node ./build.js",
-    "start": "serve ./build",
-    "writting": "WRITTING=writting node ./build.js"
+    "start": "WRITTING=writting node ./build.js"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "serve": "^1.4.0"
-  },
   "devDependencies": {
     "lodash": "^4.7.0",
     "metalsmith": "^2.1.0",
