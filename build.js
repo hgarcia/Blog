@@ -1,6 +1,6 @@
 "use strict";
 
-let Metalsmith = require("metalsmith"),
+var Metalsmith = require("metalsmith"),
   archive = require("metalsmith-archive"),
   assets = require("metalsmith-assets"),
   browserSync = require("metalsmith-browser-sync"),
@@ -18,7 +18,7 @@ let Metalsmith = require("metalsmith"),
 
 function buildChain() {
 
-  let chain = Metalsmith(__dirname)
+  var chain = Metalsmith(__dirname)
     .use(dateInFilename(true))
     .use(metadata([
       {
