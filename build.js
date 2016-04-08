@@ -31,7 +31,7 @@ function buildChain() {
             "twitter_url": "http://twitter.com/theprogrammer",
             "projects_url": "http://github.com/hgarcia",
             "music_url": "http://www.acidplanet.com/artist.asp?songs=292536&amp;t=4858",
-            "rss_url": "http://feeds.feedburner.com/TheDynamicProgrammer",
+            "rss_url": "https://dynamicprogrammer.com/rss.xml",
             "author": "Hernan Garcia",
             "name": "The Dynamic Programmer"
           }
