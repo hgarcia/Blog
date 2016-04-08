@@ -1,4 +1,0 @@
----
-layout: atom.xml
-title: The Dynamic Programmer
----

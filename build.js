@@ -25,10 +25,10 @@ function buildChain() {
         pattern: "**/*",
         metadata: {
           "site": {
-            "url": "http://dynamicprogrammer.com",
-            "blog_url": "http://blog.dynamicprogrammer.com",
-            "photos_url": "http://blog.dynamicprogrammer.com/categories/photos.html",
-            "twitter_url": "https://twitter.com/theprogrammer",
+            "url": "https://dynamicprogrammer.com",
+            "blog_url": "https://dynamicprogrammer.com",
+            "photos_url": "https://dynamicprogrammer.com/categories/photos.html",
+            "twitter_url": "http://twitter.com/theprogrammer",
             "projects_url": "http://github.com/hgarcia",
             "music_url": "http://www.acidplanet.com/artist.asp?songs=292536&amp;t=4858",
             "rss_url": "http://feeds.feedburner.com/TheDynamicProgrammer",
@@ -51,7 +51,7 @@ function buildChain() {
     .use(home())
     .use(feed({
       collection: "posts",
-      "site_url": "http://blog.dynamicprogrammer.com/",
+      "site_url": "https://dynamicprogrammer.com/",
       "title": "The Dynamic Programmer"
     }))
     .use(layouts({
