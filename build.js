@@ -4,6 +4,7 @@ var Metalsmith = require("metalsmith"),
   archive = require("metalsmith-archive"),
   assets = require("metalsmith-assets"),
   browserSync = require("metalsmith-browser-sync"),
+  changed = require("metalsmith-changed"),
   collections = require("metalsmith-collections"),
   dateInFilename = require("metalsmith-date-in-filename"),
   drafts = require("metalsmith-drafts"),
@@ -19,6 +20,8 @@ var Metalsmith = require("metalsmith"),
 function buildChain() {
 
   var chain = Metalsmith(__dirname)
+    .clean(false)
+    .use(changed())
     .use(dateInFilename(true))
     .use(metadata([
       {
