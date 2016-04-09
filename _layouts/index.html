@@ -1,31 +1,18 @@
 {% include "./_partials/default_header.html" %}
-{% assign first = true %}
-  {% for post in posts limit:9 %}
-      {% if first %}
-        {% assign first = false %}
-        <article>
-          <header>
-            <h2><a href="{{ post.permaLinkUrl}}">{{ post.title }}</a></h2>
-          </header>
-          <section>
+  <div class="top-hero" style="background: url('https://farm6.staticflickr.com/5570/14881545769_0e45d31c4f_h.jpg');">
 
-          </section>
-          <section>{{ post.contents }}</section>
-            <footer>
-            {% for category in post.categories %}
-              <a href="/categories/{{ category | downcase | replace:'.net','dotnet' | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
-            {% endfor %}
-          </footer>
-        </article>
-        <hr/>
+    {% include "./_partials/menu.html" %}
+    <header>
+      <h1>The d<span class="accent-font">y</span>namic programmer</h1>
+    </header>
+  </div>
 
-      {% else %}
-
-      	<section class="extra">
-    			<h3><a href="{{ post.permaLinkUrl}}">{{ post.title }}</a></h3>
-      		<p>{{ post.summary }}</p>
-      	</section>
-
-      {% endif %}
+  <div class="roll">
+  {% for post in posts limit:25 %}
+    <article>
+        <h2><a href="{{ post.permaLinkUrl}}">{{ post.title }}</a></h2>
+      <div>{{ post.summary }}</div>
+    </article>
   {% endfor %}
+  </div>
 {% include "./_partials/default_footer.html" %}

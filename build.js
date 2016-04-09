@@ -29,9 +29,9 @@ function buildChain() {
           "site": {
             "url": "https://dynamicprogrammer.com",
             "blog_url": "https://dynamicprogrammer.com",
-            "photos_url": "https://dynamicprogrammer.com/categories/photos.html",
-            "twitter_url": "http://twitter.com/theprogrammer",
-            "projects_url": "http://github.com/hgarcia",
+            "photos_url": "https://www.flickr.com/photos/theprogrammer",
+            "twitter_url": "https://twitter.com/theprogrammer",
+            "projects_url": "https://github.com/hgarcia",
             "music_url": "http://www.acidplanet.com/artist.asp?songs=292536&amp;t=4858",
             "rss_url": "https://dynamicprogrammer.com/rss.xml",
             "author": "Hernan Garcia",

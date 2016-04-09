@@ -1,19 +1,27 @@
 {% include "./_partials/default_header.html" %}
-<ul class="archive">
-{% for entry in archive %}
-  <li>{{entry.year}}
-    <ul class="archive">
-    {% for month in entry.months %}
-      <li>{{month.name}}
-        <ul class="archive">
-        {% for post in month.data %}
-          <li><a href="{{post.permaLinkUrl}}">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
-      </li>
-    {% endfor %}
-    </ul>
-  </li>
-{% endfor %}
-</ul>
+  <div class="top-hero" style="background: url('https://farm6.staticflickr.com/5570/14881545769_0e45d31c4f_h.jpg');">
+    {% include "./_partials/menu.html" %}
+    <header>
+      <h1>The d<span class="accent-font">y</span>namic programmer - Chronological Archive</h1>
+    </header>
+  </div>
+<div class="roll">
+  <ul class="archive">
+  {% for entry in archive %}
+    <li><h2>{{entry.year}}</h2>
+      <ul class="archive">
+      {% for month in entry.months %}
+        <li><h3>{{month.name}}</h3>
+          <ul class="archive">
+          {% for post in month.data %}
+            <li><h5>Day {{post.day}} - <a href="{{post.permaLinkUrl}}">{{ post.title }}</a></h5></li>
+          {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
 {% include "./_partials/default_footer.html" %}
