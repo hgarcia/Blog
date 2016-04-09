@@ -7,22 +7,11 @@
     </header>
   </div>
 <div class="roll">
-  <ul class="archive">
-  {% for entry in archive %}
-    <li><h2>{{entry.year}}</h2>
-      <ul class="archive">
-      {% for month in entry.months %}
-        <li><h3>{{month.name}}</h3>
-          <ul class="archive">
-          {% for post in month.data %}
-            <li><h5>Day {{post.day}} - <a href="{{post.permaLinkUrl}}">{{ post.title }}</a></h5></li>
-          {% endfor %}
-          </ul>
-        </li>
-      {% endfor %}
-      </ul>
-    </li>
-  {% endfor %}
-  </ul>
+{% for category in categories %}
+    <article>
+        <h2><a href="ajax/index.js">{{ category.name }}</a></h2>
+      <div>{{ category.description }}</div>
+    </article>
+{% endfor %}
 </div>
 {% include "./_partials/default_footer.html" %}
