@@ -14,7 +14,6 @@ var Metalsmith = require("metalsmith"),
   permalinks = require("metalsmith-permalinks"),
   textile = require("./lib/metalsmith-textile"),
   home = require("./lib/metalsmith-home"),
-  pkg = require("./lib/metalsmith-pkg-json"),
   datePermalink = require("./lib/metalsmith-date-permalink");
 
 function buildChain() {
@@ -65,7 +64,6 @@ function buildChain() {
       source: "./assets", // relative to the working directory
       destination: "./assets" // relative to the build directory
     }))
-    .use(pkg())
     .use(assets({
       source: "./images", // relative to the working directory
       destination: "./images" // relative to the build directory
@@ -74,7 +72,16 @@ function buildChain() {
       chain
       .use(browserSync({
         server: "build",
-        files: ["src/**/*.md", "src/**/*.textile", "src/*.md", "src/*.textile", "_layouts/**/*.*", "_layouts/**/*"]
+        files: ["src/**/*.md",
+          "src/**/*.textile",
+          "src/*.md",
+          "src/*.textile",
+          "_layouts/**/*.*",
+          "_layouts/**/*",
+          "assets/**/*.*",
+          "_partials/*.*",
+          "lib/**/*.js",
+          "*.js"]
       }))
     }
   return chain;

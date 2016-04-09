@@ -4,8 +4,8 @@
 		<h2>{{ title }}</h2>
 	</header>
   {% for coll in collection %}
-  <section>
-    <h3>This article is part of the {{coll}} series.</h3>
+  <section class="collections">
+    <h5>This article is part of the {{coll}} series.</h5>
     {% if previous %}
     Previous article:<br/><a href="{{previous.permaLinkUrl}}">{{previous.title}}</a><br/>
     {% endif %}
@@ -14,6 +14,7 @@
     {% endif %}
   </section>
   {% endfor %}
+
   <section>
   {{ contents }}
 	</section>
