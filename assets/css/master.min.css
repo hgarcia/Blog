@@ -125,28 +125,35 @@ h2 a {
 .accent-font {
   color: #E00875;
 }
+.menu {
+    background-color: rgba(0,0,0,0.2);
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.menu .home-link {
+    color: #fff;
+    font-size: 24px;
+    padding: 0 3px;
+}
 .top-hero {
     height: 295px;
-    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;
 }
 .top-hero header {
-    top: 90px;
+    top: 120px;
     position: relative;
 }
 .top-hero h1 {
-    min-width: 400px;
+    min-width: 320px;
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
     background-color: rgba(255,255,255,0.5);
-}
-.top-hero .home-link {
-    background-color: rgba(255,255,255,0.7);
-    font-size: 24px;
-    padding: 0 3px;
 }
 .img-float-right {
     float: right;
@@ -155,7 +162,6 @@ h2 a {
 .roll {
     max-width: 800px;
     margin: 0 auto;
-    top: 300px;
     position: relative;
 }
 .roll article {
