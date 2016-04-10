@@ -14,12 +14,12 @@
 <div class="roll">
   <article>
       <div>
-      {% if collection %}
+      {% if series %}
         <section class="collections">
-          <h3>This article is part of the {{collection}} series.</h3>
+          <h3>Other articles in the {{collection}} series.</h3>
           <ol>
-          {% for file in series %}
-            <li><a href="{{file.permalinkUrl}}">{{file.title}}</a></li>
+          {% for s in series %}
+            <li><a href="{{s.url}}">{{s.title}}</a></li>
           {% endfor %}
           </ol>
         </section>
