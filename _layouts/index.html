@@ -9,7 +9,7 @@
 
   <div class="roll">
   {% for post in posts limit:25 %}
-    <article>
+    <article class="listing">
         <h2><a href="{{ post.permaLinkUrl}}">{{ post.title }}</a></h2>
       <div>{{ post.summary }}</div>
     </article>

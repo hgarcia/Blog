@@ -8,10 +8,12 @@
   </div>
 <div class="roll">
 {% for category in categories %}
-    <article>
-        <h2><a href="ajax/index.js">{{ category.name }}</a></h2>
-      <div>{{ category.description }}</div>
+  {% if category.categoryName %}
+    <article class="listing">
+        <h2><a href="../{{category.path}}">{{ category.categoryName }}</a></h2>
+      <div>{{ category.summary }}</div>
     </article>
+  {% endif %}
 {% endfor %}
 </div>
 {% include "./_partials/default_footer.html" %}

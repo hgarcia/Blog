@@ -11,7 +11,7 @@
   {% assign p = post %}
   {% for category in post.categories %}
   {% if category == categoryName %}
-    <article>
+    <article class="listing">
         <h2><a href="{{ p.permaLinkUrl}}">{{ p.title }}</a></h2>
       <div>{{ p.summary }}</div>
     </article>

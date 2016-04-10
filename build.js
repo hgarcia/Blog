@@ -12,6 +12,7 @@ var Metalsmith = require("metalsmith"),
   metadata = require("metalsmith-filemetadata"),
   layouts = require("metalsmith-layouts"),
   permalinks = require("metalsmith-permalinks"),
+  series = require("./lib/metalsmith-simple-series"),
   textile = require("./lib/metalsmith-textile"),
   home = require("./lib/metalsmith-home"),
   datePermalink = require("./lib/metalsmith-date-permalink");
@@ -45,6 +46,7 @@ function buildChain() {
     .use(archive({collections: "_posts"}))
     .use(collections())
     .use(textile())
+    .use(series())
     .use(permalinks({
       collection: "_posts",
       pattern: ":date/:title",

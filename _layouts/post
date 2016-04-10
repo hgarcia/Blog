@@ -14,17 +14,16 @@
 <div class="roll">
   <article>
       <div>
-      {% for coll in collection %}
-      <section class="collections">
-        <h5>This article is part of the {{coll}} series.</h5>
-        {% if previous %}
-        Previous article:<br/><a href="{{previous.permaLinkUrl}}">{{previous.title}}</a><br/>
-        {% endif %}
-        {% if next %}
-        Next article:<br/><a href="{{next.permaLinkUrl}}">{{next.title}}</a></br>
-        {% endif %}
-      </section>
-      {% endfor %}
+      {% if collection %}
+        <section class="collections">
+          <h3>This article is part of the {{collection}} series.</h3>
+          <ol>
+          {% for file in series %}
+            <li><a href="{{file.permalinkUrl}}">{{file.title}}</a></li>
+          {% endfor %}
+          </ol>
+        </section>
+      {% endif %}
 
       {{ contents }}
     <footer>
