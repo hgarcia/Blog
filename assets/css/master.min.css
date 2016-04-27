@@ -197,6 +197,10 @@ h2 a {
     border-left: 2px solid #dedede;
     border-bottom: 3px solid #dedede;
 }
+p>code {
+  background-color: #cdcdcd;
+  padding: 0 3px;
+}
 .roll pre {
     border: 1px solid #dedede;
     margin-bottom: 2em;

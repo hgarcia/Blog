@@ -7,7 +7,7 @@ categories: [Programming, React, JavaScript]
 
 This is very simple, but for whatever reason I struggle for a bit. So I'm posting it here in case somebody else finds it helpful.
 
-I wanted to add an icon as the logo to the navigation bar while using "ReactBootstrap":http://react-bootstrap.github.io/
+I wanted to add an icon as the logo to the navigation bar while using [ReactBootstrap](http://react-bootstrap.github.io/)
 
 The examples on the ReactBootstrap site use a string as the brand attribute.
 
@@ -17,8 +17,7 @@ After a quick look, the solution to this was obvious. The `brand` attribute is o
 
 In other words you can do this.
 
-<pre><code>
-
+```
   var icon = (
     <span class="logo">
       <a href="/">
@@ -27,10 +26,9 @@ In other words you can do this.
   );
 
   ...
-    <Navbar brand={icon} toggleNavKey={0}>
+  <Navbar brand={icon} toggleNavKey={0}>
   ...
-
-</code></pre>
+```
 
 Et voila! It works!
 
