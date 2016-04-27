@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "cd ./build && netlify deploy -s dynprogblog -p .",
+    "deploy": "node deploy.js",
     "build": "node ./build.js",
     "start": "WRITTING=writting node ./build.js"
   },
