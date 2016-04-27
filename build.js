@@ -9,6 +9,7 @@ var Metalsmith = require("metalsmith"),
   dateInFilename = require("metalsmith-date-in-filename"),
   drafts = require("metalsmith-drafts"),
   feed = require("metalsmith-feed"),
+  markdown = require("metalsmith-markdown"),
   metadata = require("metalsmith-filemetadata"),
   layouts = require("metalsmith-layouts"),
   permalinks = require("metalsmith-permalinks"),
@@ -46,6 +47,7 @@ function buildChain() {
     .use(archive({collections: "_posts"}))
     .use(collections())
     .use(textile())
+    .use(markdown())
     .use(series())
     .use(permalinks({
       collection: "_posts",
