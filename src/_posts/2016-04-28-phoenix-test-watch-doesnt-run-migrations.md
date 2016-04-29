@@ -7,7 +7,7 @@ header_img: https://c2.staticflickr.com/2/1700/26492321025_5ab096171d_h.jpg
 background_position: 0px 24%
 ---
 
-I added to my Phoenix project the [test.watch]() task for mix since I love to have the test running all the time while developing new features.
+I added to my Phoenix project the [test.watch](https://github.com/lpil/mix-test.watch) task for mix since I love to have the test running all the time while developing new features.
 
 It's specially good for me since I'm going down Phoenix seriously now.
 
