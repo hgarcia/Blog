@@ -1,7 +1,7 @@
 {% include "./_partials/default_header.html" %}
 {% include "./_partials/menu.html" %}
 {% if header_img %}
-<div class="top-hero" style="background-image: url('{{header_img}}');">
+<div class="top-hero" style="background-image: url('{{header_img}}'); background-position: {{background_position}}; background-size: cover;">
 {% else %}
 <div class="top-hero" style="background-image: url('https://farm6.staticflickr.com/5593/15068267985_e52290db61_h.jpg');">
 {% endif %}
