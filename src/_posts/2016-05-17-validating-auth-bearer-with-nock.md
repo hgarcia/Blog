@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Validating auth bearer headers with nock.
+title: Testing auth bearer headers with nock.
 summary: A bit tricker but not impossible.
 categories: [Node.js, JavaScript]
 header_img: https://c2.staticflickr.com/8/7531/26431307433_fc6fe65ac4_h.jpg
