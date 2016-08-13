@@ -2,7 +2,10 @@
 layout: post
 title: Phoenix models automatically adding tracking fields.
 summary: Ecto (or Phoenix) automatically add created and update field to your models.
+header_img: https://c1.staticflickr.com/9/8843/28644048342_8a1083d05d_h.jpg
+header_img_id: 28644048342
 categories: [Programming, Elixir]
+background_position: 0px 20%
 ---
 
 I started building a new API for a side project of mine.

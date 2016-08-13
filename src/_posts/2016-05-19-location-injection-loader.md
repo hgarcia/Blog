@@ -4,6 +4,7 @@ title: On dependency injection, service locator and module loaders.
 summary: A quick note about the differences after hearing this terms confused multiple times in the same week.
 categories: [Programming]
 header_img: https://c2.staticflickr.com/8/7778/26856515591_7c633aa63a_h.jpg
+header_img_id: 26856515591
 background_position: 0px 80%
 ---
 

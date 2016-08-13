@@ -4,6 +4,7 @@ title: Mix test.watch doesn't run migrations.
 summary: The mix task test.watch doesn't run the migration as mix test does.
 categories: [Programming, Elixir]
 header_img: https://c2.staticflickr.com/2/1700/26492321025_5ab096171d_h.jpg
+header_img_id: 26492321025
 background_position: 0px 24%
 ---
 

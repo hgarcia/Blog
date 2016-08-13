@@ -4,6 +4,7 @@ title: Taking HyperTerm for a ride.
 summary: HyperTerm, the hackable terminal, another tool running on top of electron.
 categories: [Programming]
 header_img: https://c1.staticflickr.com/9/8690/28644074772_f6c54de59e_h.jpg
+header_img_id: 28644074772
 background_position: 0px 20%
 ---
 

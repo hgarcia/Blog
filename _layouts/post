@@ -2,8 +2,10 @@
 {% include "./_partials/menu.html" %}
 {% if header_img %}
 <div class="top-hero" style="background-image: url('{{header_img}}'); background-position: {{background_position}}; background-size: cover;">
+<span class="banner-legend"><a href="https://www.flickr.com/photos/theprogrammer/{{header_img_id}}" target="flickr">full image</a></span>
 {% else %}
 <div class="top-hero" style="background-image: url('https://farm6.staticflickr.com/5593/15068267985_e52290db61_h.jpg');">
+<span class="banner-legend"><a href="https://www.flickr.com/photos/theprogrammer/15068267985" target="flickr">full image</a></span>
 {% endif %}
   <header>
     <h1>{{ title }}</h1>

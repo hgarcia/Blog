@@ -4,6 +4,7 @@ title: Switching from Jekyll to Metalsmith.
 summary: After 6 years of Jekyll it was time to switch.
 categories: [General]
 header_img: https://c2.staticflickr.com/8/7095/26650912200_0ba0664e48_h.jpg
+header_img_id: 26650912200
 background_position: 0px 53%
 ---
 
