@@ -13,11 +13,11 @@ We notice the problems mostly in the html generated. It's not standard complianc
 
 The JavaScript code is also old and you find the same method that does almost the same thing in four or five places, sometimes we found exactly the same function copy and paste with comments and all in two scripts files, and them both scripts file were included in the same html page.
 
-So we decided that we had enought and was time to fix the problem. The application syndicate a lot of it's content in the form of widgets and we want to make sure that we are not breaking somebody else code (our bad html has been the source of complains from some bloggers). Also we need to be sure that the css classes and the javascript methods that our widgets use are not going to interfere with other people applications.
+So we decided that we had enough and was time to fix the problem. The application syndicate a lot of it's content in the form of widgets and we want to make sure that we are not breaking somebody else code (our bad html has been the source of complains from some bloggers). Also we need to be sure that the css classes and the javascript methods that our widgets use are not going to interfere with other people applications.
 
 This should be a common concern for anybody doing webs sites today. Web 2.0 may have lost it's original meaning and today is mostly a marketing term, but it's quiet possible that you end up doing some type of mash up in the near future.
 
-Some tips that you may found usefull:
+Some tips that you may found useful:
 
 * Use a global namespace to contain all your global variables and global methods.
 * Create other namespaces but try to keep the tree short (I try to keep my hierarchy
@@ -30,4 +30,4 @@ for that application intro specific scripts using a second level NameSpace.
 rules, like naming conventions and directory structure) even if you do Agile a little
 bit of architecture never hurt anybody.
 
-I recommend that you take a look at the serie of videos by <a href="http://www.crockford.com/" target="_blank">Douglas Crockford</a> in the <a href="http://developer.yahoo.com/yui/theater/" target="_blank">YUI theatre</a>.
+I recommend that you take a look at the series of videos by <a href="http://www.crockford.com/" target="_blank">Douglas Crockford</a> in the <a href="http://developer.yahoo.com/yui/theater/" target="_blank">YUI theatre</a>.

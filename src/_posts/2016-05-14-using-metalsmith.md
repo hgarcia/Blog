@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Switching from Jenkins to Metalsmith.
-summary: After 6 years of Jenkins it was time to switch.
+title: Switching from Jekyll to Metalsmith.
+summary: After 6 years of Jekyll it was time to switch.
 categories: [General]
 header_img: https://c2.staticflickr.com/8/7095/26650912200_0ba0664e48_h.jpg
 background_position: 0px 53%
