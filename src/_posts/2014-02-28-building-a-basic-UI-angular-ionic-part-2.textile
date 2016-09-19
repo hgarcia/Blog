@@ -6,7 +6,7 @@ categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
 ---
 
-__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+__Code for this series is available on [Github](https://github.com/hgarcia/dynamic-sports)__
 
 
 We will install a few more things that we will need to start building our application and create a basic hello world that we will deploy to our emulator.

@@ -3,9 +3,12 @@ layout: post
 title: Adding TCP support to Distro.
 summary: The first version only supported UDP time to add TCP.
 categories: [JavaScript]
+header_img: https://c1.staticflickr.com/9/8298/29318612995_fe718fa792_h.jpg
+header_img_id: 29318612995
+background_position: 0px 46%
 ---
 
-I took a bit of time to add TCP support to "distro":https://www.npmjs.org/package/distro
+I took a bit of time to add TCP support to [distro](https://www.npmjs.org/package/distro)
 
 Now you can create a network of client servers with TCP, UDP4 and UDP6.
 

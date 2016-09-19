@@ -4,9 +4,12 @@ title: Recording Geo location data with PhoneGap and Angular (Part 3).
 summary: We will be writing our Angular services that encapsulate some of PhoneGap API's.
 categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
+header_img: https://c1.staticflickr.com/9/8055/28697677373_b6666fc694_h.jpg
+header_img_id: 28695721284
+background_position: 0px 30%
 ---
 
-__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+__Code for this series is available on [Github](https://github.com/hgarcia/dynamic-sports)__
 
 
 The main activity of our app will be to start and stop recording data when we perform our activities.

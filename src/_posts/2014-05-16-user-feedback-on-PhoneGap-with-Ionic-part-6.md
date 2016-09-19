@@ -4,12 +4,15 @@ title: A few different ways to improve user feedback in our Ionic application (P
 summary: Showing upload progress, adding a navigation bar button and improving the user experience.
 categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
+header_img: https://c1.staticflickr.com/9/8055/28697677373_b6666fc694_h.jpg
+header_img_id: 28695721284
+background_position: 0px 30%
 ---
 
-__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+*Code for this series is available on [Github](https://github.com/hgarcia/dynamic-sports)*
 
 
-h3. Showing upload progress.
+## Showing upload progress.
 
 We want to report the progress of uploaded files with a simple message and a counter indicating how many have been uploaded. In the case there is an error with a file we want to show all errors at the end of the process.
 
@@ -19,14 +22,14 @@ Once the process finishes we want to show a message that slides down from the to
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/mwn__C6zitM?rel=0" frameborder="0" allowfullscreen></iframe>
 
-h3. The code
+## The code
 
 We can start with a very simple UI element in the home page to indicate that the upload process started.
 
 We are also moving the upload button into the navbar and adding a small badge icon to display the number of files.
 If we have no files we want to disable the button and hide the badge.
 
-<pre><code>
+```
 
 	<ion-view title="New session">
 	  <ion-nav-buttons side="right">
@@ -39,11 +42,11 @@ If we have no files we want to disable the button and hide the badge.
 	  </ion-content>
 	</ion-view>
 
-</code></pre>
+```
 
-And we need to do a few changes to the <span class="code">HomeCtrl</span> as well to keep track of success and failures.
+And we need to do a few changes to the `HomeCtrl` as well to keep track of success and failures.
 
-<pre><code>
+```
 
 	/* globals angular, console */
 	angular.module('dynamic-sports.controllers')
@@ -113,27 +116,27 @@ And we need to do a few changes to the <span class="code">HomeCtrl</span> as wel
 	      fileService.list(filesToUpload, errHandler);
 	    });
 	  }]);
-</code></pre>
+```
 
 We check for the number of files once we load the home page and we keep track of the number of created and uploaded files.
 
-h3. Changes on the file service.
+## Changes on the file service.
 
 During testing I found that the emulator reads not only the files we created but a few others from the root of the file sytem. We will create an specific folder for the tracking files to avoid problems.
 
-We do that adding a private method on our <span class="code">fileService</span> that creates a Directory if it doesn't exist.
+We do that adding a private method on our `fileService` that creates a Directory if it doesn't exist.
 
-<pre><code>
-	
-	function getCreateDir(entry, successCb, errorCb) { 
-	  entry.getDirectory("dynsports", {create: true, exclusive: false}, successCb, errorCb); 
+```
+
+	function getCreateDir(entry, successCb, errorCb) {
+	  entry.getDirectory("dynsports", {create: true, exclusive: false}, successCb, errorCb);
 	}
 
-</code></pre>
+```
 
-We replace all calls to <span class="code">fileSystem.root.getFile()</span> with the result of calling this new function. For example our <span class="code">write</span> function instead of using the <span class="code">root</span> system directly:
+We replace all calls to `fileSystem.root.getFile()` with the result of calling this new function. For example our `write` function instead of using the `root` system directly:
 
-<pre><code>
+```
 
 	function write(fileName, data, successCb, errorCb) {
 	  return function (fileSystem) {
@@ -141,11 +144,11 @@ We replace all calls to <span class="code">fileSystem.root.getFile()</span> with
 	  };
 	}
 
-</code></pre>
+```
 
 It now looks like this.
 
-<pre><code>
+```
 
 	function write(fileName, data, successCb, errorCb) {
 	  return function (fileSystem) {
@@ -155,39 +158,28 @@ It now looks like this.
 	  };
 	}
 
-</code></pre>
+```
 
 We also need to add a method to delete the files once upload finishes successfully.
 
-The new method looks like this.
-
-<pre><code>
-	
-</code></pre>
-
-We will call it from the <span class="code">HomeCtrl</span> inside the success call back for the upload method.
-
-<pre><code>
-	
-
-</code></pre>
+We will call it from the `HomeCtrl` inside the success call back for the upload method.
 
 
-h3. Tool-tip
+## Tool-tip
 
 Adding the tool-tip is easy. We only need a few lines of html and this css.
-In the <span class="code">home.html</span> file we add the div that will be our sliding tool-tip.
+In the `home.html` file we add the div that will be our sliding tool-tip.
 
-<pre><code>
+```
 
 	<div class="status slide" ng-class='{"status-success-visible": uploadSucceded, "status-error-visible": uploadErrored}'>{{uploadMessage}}</div>
 
-</code></pre>
+```
 
 We will use CSS transitions to slide it down and up again. We are using two different classes for success and error to show the tool-tip in different colours.
 
-<pre><code>
-	
+```
+
 	.slide {
 	  color: #fff;
 	  height: 22px;
@@ -208,11 +200,11 @@ We will use CSS transitions to slide it down and up again. We are using two diff
 	  top: 64px;
 	}
 
-</code></pre>
+```
 
 We need to set the message and change those scope variables to true or false in the controller. We add a new private function that we will call when we check for upload completion.
 
-<pre><code>	
+```
 
 	function toolTip() {
 	  if (!$scope.uploading) {
@@ -226,4 +218,4 @@ We need to set the message and change those scope variables to true or false in 
 	  }
 	}
 
-</code></pre>
+```

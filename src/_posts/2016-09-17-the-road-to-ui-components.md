@@ -22,7 +22,7 @@ Let's see how we got here.
 
 The earlier approaches that I remember was the use of partials in pages.
 
-We called that (server side include)[https://en.wikipedia.org/wiki/Server_Side_Includes]
+We called that [server side includes](https://en.wikipedia.org/wiki/Server_Side_Includes).
 
 Of course, they run on the server, generating a complete page on the browser. In those early days and based in the complexity of those applications, this was usually more than enought.
 
@@ -109,7 +109,7 @@ But you don't always want or need a full fledge SPA.
 
 ## Components
 
-The W3C started to talk about a (series of proposals)[https://en.wikipedia.org/wiki/Web_Components] that could finally bring the notion of components as a standard.
+The W3C started to talk about a [series of proposals](https://en.wikipedia.org/wiki/Web_Components) that could finally bring the notion of components as a standard.
 
 Among this standards we have the idea of Shadow DOM and scoped CSS. These are important since as we mentioned above, components sometimes need some form of styling that should not interfere with other elements of the page.
 
@@ -123,9 +123,9 @@ I think that React deserves it's own section in this saga.
 
 It's not because is the bext (or the worst). It's because suddenly, we have a very popular library, that (again and again) claimed to be just that. A UI library to build self contained components.
 
-Besides the early controversies with JSX, React[https://facebook.github.io/react/] took the word by storm.
+Besides the early controversies with JSX, [React](https://facebook.github.io/react/) took the word by storm.
 
-React wasn't even the first to the party, Google's (Polymer)[https://www.polymer-project.org/] was earlier and the proposed path was to embrace standards via (polyfills)[http://webcomponents.org/] to build Web Components that should be future proof.
+React wasn't even the first to the party, Google's [Polymer](https://www.polymer-project.org/) was earlier and the proposed path was to embrace standards via [polyfills](http://webcomponents.org/) to build Web Components that should be future proof.
 
 After React.js a series of other libraries came up, to name a few, we have Riot.js, Vue.js, Mithril, Cycle.js and many more.
 
@@ -155,12 +155,12 @@ If you want to go this path, you need to relay on some of the webcomponents poly
 
 ## Personal choice.
 
-I so far found myself liking Vue.js[https://vuejs.org/] the most. It seems to solve all the problems mentioned before.
+I so far found myself liking [Vue.js](https://vuejs.org/) the most. It seems to solve all the problems mentioned before.
 
 It's fairly easy to test. It's easy to use components in isolation in a legacy web page or scale up to a full fledge SAP if you need so.
 
 It has good Browser support and is fast.
 
-The killer feature for me is (single file components)[https://vuejs.org/guide/application.html#Single-File-Components].
+The killer feature for me is [single file components](https://vuejs.org/guide/application.html#Single-File-Components).
 
 In a future article I will share some of my experiences working with Vue.js during the last few months.

@@ -4,12 +4,15 @@ title: Deleting files with PhoneGap (Part 8).
 summary: On our application we are uploading files to a server, we need to delete the files from the device once we are done..
 categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
+header_img: https://c1.staticflickr.com/9/8055/28697677373_b6666fc694_h.jpg
+header_img_id: 28695721284
+background_position: 0px 30%
 ---
 
-__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+*Code for this series is available on [Github](https://github.com/hgarcia/dynamic-sports)*
 
 
-h3. Cleaning up
+## Cleaning up
 
 In our application we are uploading the files with the data from a session into our server. The problem is that we are not removing the files from the device.
 So the next time that you want to upload files, you will be uploading all the files again.
@@ -18,16 +21,16 @@ It's not that much that we forgot about this, but we decided to move on to other
 
 It's surprisingly simple.
 
-Our code is given list of <span class="code">fileEntry</span> objects to the upload method. Each <span class="code">fileEntry</span> have a <span class="code">remove</span> method that will delete the entry from the device.
+Our code is given list of `fileEntry` objects to the upload method. Each `fileEntry` have a `remove` method that will delete the entry from the device.
 
-We need to call this method after the upload succeed. We could add the code into the <span class="code">serverService.upload</span> method, but I don't think  it belongs there.
+We need to call this method after the upload succeed. We could add the code into the `serverService.upload` method, but I don't think  it belongs there.
 
 I think the consumer of this method should be responsible from deciding what to do with the file.
 
-We need to modify the <span class="code">upload</span> method a bit to return the fileEntry to the consumer on success.
+We need to modify the `upload` method a bit to return the fileEntry to the consumer on success.
 
-<pre><code>
-	
+```
+
 	...
 
 	function savedFile(file, cb) {
@@ -48,12 +51,12 @@ We need to modify the <span class="code">upload</span> method a bit to return th
 
 	...
 
-</code></pre>
+```
 
-Now the consumer can call the remove method directly. 
+Now the consumer can call the remove method directly.
 
-<pre><code>
-	
+```
+
 	function filesSaved(file) {
 	  if (file.remove) {
 	    file.remove();
@@ -64,8 +67,8 @@ Now the consumer can call the remove method directly.
 	  }, 100);
 	}
 
-</code></pre>
+```
 
-Just in case we do a quick check to verify the argument respond to the <span class="code">remove</span> method, before calling it.
+Just in case we do a quick check to verify the argument respond to the `remove` method, before calling it.
 
 You can add some callbacks to the remove method to react on success or error if you want.

@@ -4,23 +4,26 @@ title: Displaying current and max speed with PhoneGap and Ionic (Part 7).
 summary: I want to display the current and maximun speed of the current session on the home page.
 categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
+header_img: https://c1.staticflickr.com/9/8055/28697677373_b6666fc694_h.jpg
+header_img_id: 28695721284
+background_position: 0px 30%
 ---
 
-__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+*Code for this series is available on [Github](https://github.com/hgarcia/dynamic-sports)*
 
 
-h3. Max and current speed.
+## Max and current speed.
 
 We want to start displaying the maximum and current speed in the home page. The numbers need to be big enough to read easily. we also want to show the  duration for the active session.
 
-h3. UI
+## UI
 
-We will change the home page once more. We will remove the <strong>Uploading files</strong> message since the badge numbers on the upload icon provide enough feedback.
+We will change the home page once more. We will remove the *Uploading files* message since the badge numbers on the upload icon provide enough feedback.
 
 We will accommodate the three boxes for the counters near the top of the application and we will move the start/stop button a tiny bit closer to the bottom.
-The HTML for the <span class="code">home.html</span> page now look like this.
+The HTML for the `home.html` page now look like this.
 
-<pre><code>
+```
 
 	<ion-view title="New session">
 	  <ion-nav-buttons side="right">
@@ -49,11 +52,11 @@ The HTML for the <span class="code">home.html</span> page now look like this.
 	  </ion-content>
 	</ion-view>
 
-</code></pre>
+```
 
-We are going to clean up the CSS significantly. Mostly re-structuring the <span class="code">sass</span> file and removing the center button hack. We will be using absolute positioning for now.
+We are going to clean up the CSS significantly. Mostly re-structuring the `sass` file and removing the centre button hack. We will be using absolute positioning for now.
 
-<pre><code>
+```
 
 	.center-child {
 	  .scroll {
@@ -85,18 +88,18 @@ We are going to clean up the CSS significantly. Mostly re-structuring the <span 
 
 	....
 
-</code></pre>
+```
 
-h3. Controller abuse.
+## Controller abuse.
 
-I'm abusing the <span class="code">HomeCtrl</span> here and it's pretty obvious that a service wants to spawn out from this code. 
-we are adding a new object on the <span class="code">$scope</span>, the <span class="code">session</span> object, that contains three properties; maximum speed, current speed and duration.
+I'm abusing the `HomeCtrl` here and it's pretty obvious that a service wants to spawn out from this code.
+we are adding a new object on the `$scope`, the `session` object, that contains three properties; maximum speed, current speed and duration.
 
-We injected the <span class="code">$interval</span> service to the controller to calculate duration and display it every second. We are also adding the great "moment.js":http://momentjs.com library to calculate and display duration easily.
+We injected the `$interval` service to the controller to calculate duration and display it every second. We are also adding the great [moment.js](http://momentjs.com) library to calculate and display duration easily.
 
-Take a look at the <span class="code">stopTimer</span> method. We need to make sure we de-register the interval and we destroy the times to avoid memory leaks.
+Take a look at the `stopTimer` method. We need to make sure we de-register the interval and we destroy the times to avoid memory leaks.
 
-<pre><code>
+```
 
 	/* globals angular, console */
 	angular.module('dynamic-sports.controllers')
@@ -249,16 +252,16 @@ Take a look at the <span class="code">stopTimer</span> method. We need to make s
 	    resetSession();
 	  }]);
 
-</code></pre>
+```
 
-h3. Speed conversion.
+## Speed conversion.
 
 The Geo-location service reports speed in meters per second and we want to display kilometers per hour. The conversion is easily done multiplying the speed by 3.6
-We also make sure that we only display 3 characters for speed, so we use the <span class="code">substring</span> method of the <span class="code">String</span> object.
+We also make sure that we only display 3 characters for speed, so we use the `substring` method of the `String` object.
 
-We encapsulates all the logic in the <span class="code">toKmPerHour</span> function.
+We encapsulates all the logic in the `toKmPerHour` function.
 
-h3. How it looks.
+## How it looks.
 
 This video was taken directly from my iPhone.
 

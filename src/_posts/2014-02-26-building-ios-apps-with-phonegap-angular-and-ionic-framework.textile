@@ -4,9 +4,12 @@ title: Building an iOS app with PhoneGap, Angular.js and the ionic framework (Pa
 summary: We will build an iOS app with web technologies to track outdoor activities.
 categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
+header_img: https://c1.staticflickr.com/9/8055/28697677373_b6666fc694_h.jpg
+header_img_id: 28695721284
+background_position: 0px 30%
 ---
 
-__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+__Code for this series is available on [Github](https://github.com/hgarcia/dynamic-sports)__
 
 
 __<strong>UPDATE</strong>: I updated this article to align with Ionic 1.0.0-beta1 that makes starting with Ionic much simpler. The previous version of the article can still be found "here":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework-back.html__
@@ -71,7 +74,7 @@ h3. Setting up karma and phantom.js.
 We will open the package.json file and add the following key and code.
 
 <pre><code>
-  
+
   "devDependencies": {
     "karma": "~0.12.9",
     "karma-phantomjs-launcher": "~0.1.4",

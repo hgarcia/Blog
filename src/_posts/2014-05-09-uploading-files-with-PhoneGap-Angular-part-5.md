@@ -4,9 +4,12 @@ title: Uploading files with PhoneGap and Angular (Part 5).
 summary: We will upload the information we recorded in Part 3 into a service.
 categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
+header_img: https://c1.staticflickr.com/9/8055/28697677373_b6666fc694_h.jpg
+header_img_id: 28695721284
+background_position: 0px 30%
 ---
 
-__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
+*Code for this series is available on [Github](https://github.com/hgarcia/dynamic-sports)*
 
 
 In the previous to last post we created a series of files, each one with data from a recorded session. We want to upload that data into a server for further processing.
@@ -14,18 +17,18 @@ In the previous to last post we created a series of files, each one with data fr
 In this post we will add the upload mechanism and we will build a simple web server that will receive the data.
 
 From this post one we will only show the code for the implementation and left the test code out of the posts unless there is something specially interesting on it.
-You can always get the code with all the tests in the "github repository":https://github.com/hgarcia/dynamic-sports for this project.
+You can always get the code with all the tests in the [github repository](https://github.com/hgarcia/dynamic-sports) for this project.
 
-h3. Getting the saved files
+## Getting the saved files
 
 Before uploading any of the files we need to get a list of files available for upload.
-We use the cordova file plugin that we already added previously to the project. 
-We will add a list method to our <span class="code">fileService</span>
+We use the cordova file plugin that we already added previously to the project.
+We will add a list method to our `fileService`
 
-We expose a public <span class="code">list</span> function and we move the implementation into a private function.
+We expose a public `list` function and we move the implementation into a private function.
 
-<pre><code>
-    
+```
+
     function list(successCb, errorCb) {
       return function (fileSystem) {
         var reader = fileSystem.root.createReader();
@@ -33,36 +36,36 @@ We expose a public <span class="code">list</span> function and we move the imple
       };
     }
 
-    ... 
+    ...
 
     list: function (successCb, errorCb) {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, list(successCb, errorCb), errorCb);
     },
 
-</code></pre>
+```
 
 
-h3. The server
+## The server
 
-We need to upload the files to a server, for this exercise we created a simple web server using "Express":http://expressjs.com and we deploy it to Heroku. I'm not implementing any type of authentication or security at this point. We will do that later.
+We need to upload the files to a server, for this exercise we created a simple web server using [Express](http://expressjs.com) and we deploy it to Heroku. I'm not implementing any type of authentication or security at this point. We will do that later.
 
-__The code for the web server can be found on "Github.":https://github.com/hgarcia/dynamic-sports-api You can clone and use it as a starting point if you wish.__
+*The code for the web server can be found on [Github](https://github.com/hgarcia/dynamic-sports-api) You can clone and use it as a starting point if you wish.*
 
-h3. And the server service
+## And the server service
 
-We start by installing the cordova <span class="code">file-transfer</span> plug-in.
+We start by installing the cordova `file-transfer` plug-in.
 
-<pre><code>
-    
+```
+
     cordova plugin add org.apache.cordova.file-transfer
 
-</code></pre>
+```
 
-Once the plug-in is installed we can write our upload method. We want to pass an array of <span class="code">FileEntry</span> objects and send each one to the server.
+Once the plug-in is installed we can write our upload method. We want to pass an array of `FileEntry` objects and send each one to the server.
 
-We also want to report back success or error for each entry individually what makes our implementation very simple. 
+We also want to report back success or error for each entry individually what makes our implementation very simple.
 
-<pre><code>
+```
 
     /* globals angular */
     angular.module('dynamic-sports.services')
@@ -86,11 +89,11 @@ We also want to report back success or error for each entry individually what ma
         };
       });
 
-</code></pre>
+```
 
-We hook everything together on the <span class="code">HomeCtrl</span> after injecting the new service
+We hook everything together on the `HomeCtrl` after injecting the new service
 
-<pre><code>
+```
 
     .controller('HomeCtrl', ['$scope', 'geoLocationService', 'fileService', 'serverService',
       function ($scope, geoLocationService, fileService, serverService) {
@@ -108,17 +111,17 @@ We hook everything together on the <span class="code">HomeCtrl</span> after inje
     $scope.upload = function () {
       fileService.list(uploadFiles, errHandler);
     };
-    
-</code></pre>
 
-And we add a button to the home page that calls the <span class="code">upload()</span> function.
+```
 
-<pre><code>
-    
+And we add a button to the home page that calls the `upload()` function.
+
+```
+
     <button class="button button-block" ng-click="upload()">Upload</button>
 
-</code></pre>
+```
 
-h3. Next Steps
+## Next Steps
 
 We will add some feedback to the user regarding the upload process and we will improve the UI for the Home page.
