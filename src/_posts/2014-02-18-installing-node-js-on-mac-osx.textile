@@ -3,6 +3,9 @@ layout: post
 title: Installing node.js on Mac OSX.
 summary: Installing node.js in two simple steps.
 categories: [General, node.js, JavaScript]
+header_img: https://c1.staticflickr.com/9/8426/28695293754_fed581983e_h.jpg
+header_img_id: 28695293754
+background_position: 0px 45%
 ---
 
 Installing "node.js":http://nodejs.org/ on Mac OSX or Linux is very simple. You can download a installer for OSX or packages for Linux, but I like to use nvm to manage all the versions installed in the system.

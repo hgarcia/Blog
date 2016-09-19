@@ -3,15 +3,18 @@ layout: post
 title: MongoDB applied design patterns book review.
 summary: The books should be mandatory read for any developer that's planning to use MongoDB and is coming from a more traditional background.
 categories: [Books, MongoDB]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
-__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+*Disclaimer: I got this book as part of the bloggers review program at O'Reilly.*
 
-h3. Overview.
+## Overview.
 
 There is a common mistake newcomers to mongoDB made and is treat it as a relational database when designing the schema and operating against it.
 
-This book by "Rick Copeland":https://twitter.com/rick446 deals with common design patterns of document stores specifically tailored for MongoDB.
+This book by [Rick Copeland](https://twitter.com/rick446) deals with common design patterns of document stores specifically tailored for MongoDB.
 
 The book is divided in two major parts.
 
@@ -29,7 +32,7 @@ Each scenario explore reads, writes and explore the different options for indexi
 
 The discussions regarding sharding and key selection as very interesting as well, specially since it's one of the most complex things to get right.
 
-h3. Conclusion
+## Conclusion
 
 The books should be mandatory read for any developer that's planning to use MongoDB and is coming from a more traditional background.
 

@@ -4,6 +4,9 @@ title: Building a basic iOS UI using Angular and Ionic (Part 2).
 summary: We will start getting comfortable with the Ionic framework.
 categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
+header_img: https://c1.staticflickr.com/9/8055/28697677373_b6666fc694_h.jpg
+header_img_id: 28695721284
+background_position: 0px 30%
 ---
 
 __Code for this series is available on [Github](https://github.com/hgarcia/dynamic-sports)__
@@ -97,7 +100,7 @@ In the index.html page at the root of the <span class="code">www</span> folder w
       <script src="js/services.js"></script>
     </head>
     <body ng-app="dynamic-sports" animation="slide-left-right-ios7">
-      <!-- 
+      <!--
         The nav bar that will be updated as we navigate between views.
       -->
       <ion-nav-bar class="bar-stable nav-title-slide-ios7">
@@ -105,7 +108,7 @@ In the index.html page at the root of the <span class="code">www</span> folder w
           Back
         </ion-nav-back-button>
       </ion-nav-bar>
-      <!-- 
+      <!--
         The views will be rendered in the <ion-nav-view> directive below
         Templates are in the /templates folder (but you could also
         have templates inline in this html file if you'd like).
@@ -126,7 +129,7 @@ Both directives can take an animation attribute that accepts multiple values, we
 We are using sass, so we will need to run gulp before every build (or set it up to watch). Since we are running an npm command to launch the application in the emulator we can modify that command to add the gulp build step.
 
 <pre><code>
-  
+
   "ios": "gulp sass && ionic emulate ios"
 
 </code></pre>
