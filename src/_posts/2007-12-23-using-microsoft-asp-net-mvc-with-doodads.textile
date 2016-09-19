@@ -9,7 +9,7 @@ I have been using <a target="_blank" href="http://www.mygenerationsoftware.com/p
 
 When I come across such designs DooDads is the tool that allows me to create a layer of abstraction pretty fast into the application, that will later on allow me to make changes and refactor the database with minimal impact in the upper layers.
 
-I'm also a sucker for the MVC pattern and I downloaded as soon as was avalable, I have been playing around with it and one of the things I wanted to do was test it's extensibility using my favorite ORM tool.
+I'm also a sucker for the MVC pattern and I downloaded as soon as was available, I have been playing around with it and one of the things I wanted to do was test it's extensibility using my favorite ORM tool.
 
 h3. Setting things up.
 

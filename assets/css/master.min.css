@@ -200,7 +200,7 @@ h2 a {
 .collections ol a:hover {
     text-decoration: underline;
 }
-.roll article i {
+.roll article i, .roll article em {
     padding: 1.6em 0 1.6em 0.8em;
     display: block;
     border-left: 2px solid #dedede;
