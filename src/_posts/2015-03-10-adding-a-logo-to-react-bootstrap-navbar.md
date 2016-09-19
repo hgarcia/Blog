@@ -3,6 +3,9 @@ layout: post
 title: Adding a logo to ReactBootstrap NavBar.
 summary: Use the brand attribute.
 categories: [Programming, React, JavaScript]
+header_img: https://c1.staticflickr.com/9/8225/29702123916_1e58024850_h.jpg
+header_img_id: 29702123916
+background_position: 0px 55%
 ---
 
 This is very simple, but for whatever reason I struggle for a bit. So I'm posting it here in case somebody else finds it helpful.

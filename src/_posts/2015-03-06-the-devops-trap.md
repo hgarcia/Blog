@@ -3,6 +3,9 @@ layout: post
 title: The DevOps trap, we should all embrace DevOps.
 summary: DevOps and the benefits that spawn from it are undeniable, but I'm worry we (the industry) is pushing it in the wrong way.
 categories: [General, Methodology]
+header_img: https://c1.staticflickr.com/9/8157/29211041432_cb1c78b462_h.jpg
+header_img_id: 29211041432
+background_position: 0px 30%
 ---
 
 It all starts with the undeniable need and benefits of bringing the different practices and areas of software development together. Agile practices allow us to move faster and adapt to change.
@@ -15,7 +18,7 @@ DevOps is one of the newest practices on the Agile arsenal. In reality is not th
 
 According to Wikipedia DevOps is:
 
-__DevOps (a portmanteau of "development" and "operations") is a concept dealing, among other things with software development, operations and services. It emphasizes communication, collaboration and integration between software developers and information technology (IT) operations personnel. DevOps is a response to the interdependence of software development and IT operations.__
+*DevOps (a portmanteau of "development" and "operations") is a concept dealing, among other things with software development, operations and services. It emphasizes communication, collaboration and integration between software developers and information technology (IT) operations personnel. DevOps is a response to the interdependence of software development and IT operations.*
 
 That is a definition that I can agree with.
 
@@ -27,7 +30,7 @@ The focus is on transparency and predictability. Automation and the introduction
 
 This collaboration will naturally bring some of the developers more interested with the operations, network and hardware side of things into a tighter collaboration with the "operations team". This results in a "good" vicious circle and big gains for the company that adopt the practice.
 
-h3. The trap
+## The trap
 
 As with all social practices, the trap is trying to force DevOps into people. This can take many forms but the one that I keep seeing popping around is the idea of having developers double up as operation people and thus not having a proper operations team.
 
@@ -39,11 +42,11 @@ This is the same trap we got into with other Agile practices, like "architecture
 <img src="http://globalnerdy.com/wordpress/wp-content/uploads/2007/11/dilbert-agile_programming.gif" alt="classic dilbert cartoon about Agile presented to a team">
 
 
-h3. We should all embrace DevOps
+## We should all embrace DevOps
 
 We should certainly embrace DevOps and QaDev and DevProd and whatever new practice comes along that help us remove the barriers for collaboration. That encourage open and high bandwidth communication between all the members of the team and between "chickens and pigs":http://en.wikipedia.org/wiki/The_Chicken_and_the_Pig
 
-__Specially, between chikens and pigs!__
+*Specially, between chikens and pigs!*
 
 
 But we should also recognize the need for strong operation people as part of the team tacking charge and helping the team move forward faster and safer. Enabling many deployments a day and achieving the somehow elusive holly grail of Continuous Delivery.
