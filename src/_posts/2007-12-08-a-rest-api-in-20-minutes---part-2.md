@@ -7,7 +7,7 @@ categories: [Programming, .Net]
 
 In this second part we look at the factory methods to handle the different request and the formatters classes.
 
-h3. The Factory.
+### The Factory.
 
 The use of a factory allow us to easily extend this framework with minimun coding.
 
@@ -17,7 +17,7 @@ The use of a factory allow us to easily extend this framework with minimun codin
 
 
 
-h3. Some base classes.
+### Some base classes.
 
 We need to encapsulate some code, so we apply the DRY principle, that code will reside in two base classes.
 
@@ -38,9 +38,8 @@ This objects implement IServiceRequestHandler.
 
 
 
-h3. The Formatter class
+### The Formatter class
 
 
 
 <script src='http://gist.github.com/561815.js?file=file3.cs'></script>
-

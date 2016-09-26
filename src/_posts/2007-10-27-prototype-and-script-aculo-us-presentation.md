@@ -1,0 +1,12 @@
+---
+layout: post
+title: Prototype and Script.aculo.us presentation
+summary: A great presentation from Thomas Fuchs creator of Script.aculo.us at infoq.com. A preview of the new 2.0 version of the Script.aculo.us library on Thomas Fuchs blog. Enjoy!
+categories: [Tools, JavaScript]
+---
+
+A great <a href="http://www.infoq.com/news/2007/10/prototype-script.aculo.us" target="_blank">presentation</a> from <a href="http://mir.aculo.us/" target="_blank">Thomas Fuchs</a> creator of <a href="http://script.aculo.us/" target="_blank">Script.aculo.us</a> at <a href="http://infoq.com" target="_blank">infoq.com.</a>
+
+A preview of the <a href="http://mir.aculo.us/2007/10/26/script-aculo-us-2-0-slides" target="_blank">new 2.0 version of the Script.aculo.us</a> library on Thomas Fuchs blog.
+
+Enjoy!

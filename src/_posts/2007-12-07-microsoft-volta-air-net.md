@@ -5,12 +5,12 @@ summary: I just came across Volta in Microsoft live labs. I haven't downloaded o
 categories: [Frameworks, General]
 ---
 
-__UPDATE: This project is not available anymore but you can check details on it in "the wikipedia page":http://en.wikipedia.org/wiki/Microsoft_Live_Labs_Volta__
+*UPDATE: This project is not available anymore but you can check details on it in [the wikipedia page](http://en.wikipedia.org/wiki/Microsoft_Live_Labs_Volta)*
 
 I just came across Microsoft Volta.
 
 I didn't download it or anything but my first impression is that it tries to be some kind of AIR. It's not exactly the same, but the idea, according with my limited understading, is that you program an application using any .NET language and them you can compile the application targeting different architectures. The client side always run on a JScript interpreter, most of the time that will be a browser.
 
-I tried some of the examples and the load time seems to be a little too much for my taste. Upon looking at the Net tab in Firebug, a simple Ajax dictionary download 2.67 Mg of code mostly JavaScript files that map into .net classes, but that is not the worst part, the really bad thing is that it do this making <strong>175 individual httpRequest!!!!</strong>
+I tried some of the examples and the load time seems to be a little too much for my taste. Upon looking at the Net tab in Firebug, a simple Ajax dictionary download 2.67 Mg of code mostly JavaScript files that map into .net classes, but that is not the worst part, the really bad thing is that it do this making __175 individual httpRequest!!!!__
 
 To be fair this is just a Technology Preview and I'm sure that they may work on some of this issues. This came out just two days ago, so I encourage you all to download it and give a try to learn more, I know I will do that.

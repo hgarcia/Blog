@@ -5,7 +5,7 @@ summary: I have been playing with the new version of Flex and I'm very impressed
 categories: [General, Programming]
 ---
 
-I have been playing with the new version of <a target="_blank" href="http://www.adobe.com/products/flex/">Flex </a>and I'm very impressed with it's possibilities. I did try Flex when it was first released and even when I like it, the price tag and the needs to install an specific server to use it discourage me and I decided to focus on Ajax to create rich UI. There was also the fact that at that point integration was other technologies was only considered for Coldfusion and Java, .net was mentioned as a future release and php was not even in the list.
+I have been playing with the new version of [Flex](http://www.adobe.com/products/flex/) and I'm very impressed with it's possibilities. I did try Flex when it was first released and even when I like it, the price tag and the needs to install an specific server to use it discourage me and I decided to focus on Ajax to create rich UI. There was also the fact that at that point integration was other technologies was only considered for Coldfusion and Java, .net was mentioned as a future release and php was not even in the list.
 
 Since version 2.0 (3.0 is coming) Flex is not tied to the server anymore, you still can use the Flex server to use what they call data services but you can use Flex as a front end technology without having to worry about the back-end.
 
@@ -21,4 +21,4 @@ I could improve the Ajax UI performance modifying the WS to return JSON instead 
 
 I'm not advocating to replace Ajax with Flex, but I think that you should give it a look if you are doing an app with a lot of Ajax calls where you change the presentation dynamically.
 
-A good place to start is the <a target="_blank" href="http://www.adobe.com/devnet/flex/">Flex developer Center</a>, lots of demos and articles that will stir you down the right path.
+A good place to start is the [Flex developer Center](http://www.adobe.com/devnet/flex/), lots of demos and articles that will stir you down the right path.

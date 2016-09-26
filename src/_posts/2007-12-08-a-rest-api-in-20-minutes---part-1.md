@@ -25,7 +25,7 @@ the object and a change in the url should make the object available.
 properties (columns) on a object)
 * Being able to expose not just databases objects but other type of objects in the future.
 
-h3. URL Format and how to read them.
+### URL Format and how to read them.
 
 I wanted very easy to read urls, so I came with this scheme.
 
@@ -51,9 +51,9 @@ _more indicates what operand to use in the where clause.
 
 It took this idea from the HttpHandler implementation on Subsonic.
 
-h3. Architecture:
+### Architecture:
 
-h4. Interfaces.
+### Interfaces.
 
 
 
@@ -67,7 +67,7 @@ h4. Interfaces.
 
 
 
-h3. Utilities.
+### Utilities.
 
 I create this class to map a uri into an object for easy manipulation, the uri is
 what will tell us wich object to load and how to process it.
@@ -78,7 +78,7 @@ what will tell us wich object to load and how to process it.
 
 
 
-h3. Custom Exceptions
+### Custom Exceptions
 
 We want to throw custom exceptions, don't we?
 This is just in the works, only one class for now.
@@ -89,7 +89,7 @@ This is just in the works, only one class for now.
 
 
 
-h3. The HTTP Handler
+### The HTTP Handler
 
 We will map the extentions that we won't to handle via the API to this Http Handler.
 

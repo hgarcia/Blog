@@ -3,6 +3,9 @@ layout: post
 title: Ajax Hacks
 summary: I really like the Hacks series form O'Reilly, these are very simple references books. They present a problem and a solution in the form of quick articles and they are usually based on common issues for that technology.
 categories: [Books, Programming]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 I really like the <a target="_blank" href="http://www.oreilly.com/catalog/ajaxhks/">Hacks </a>series form <a target="_blank" href="http://www.oreilly.com/">O'Reilly</a>, these are very simple references books.
@@ -13,6 +16,6 @@ This book in the series presents 80 different hacks or techniques to create AJAX
 
 The code examples are good but I found that some of them are not really ready to copy and paste into your application and you should look into them as starting points.
 
-For example in some demos using Prototype the make use of both the $() function and the DOM equivalent document.getElementById(), I could like to see some consistency in there.
+For example in some demos using Prototype the make use of both the `$()` function and the DOM equivalent `document.getElementById()`, I could like to see some consistency in there.
 
 Besides that, the book is really good and you will find yourself flipping through its pages while putting together your next AJAX application.
