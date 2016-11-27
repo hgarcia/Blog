@@ -122,6 +122,9 @@ a {
 h2 a {
     text-decoration: none;
 }
+div.asciicast iframe {
+  width: 100% !important;
+}
 .accent-font {
   color: #E00875;
 }
