@@ -3,6 +3,7 @@ layout: post
 title: Choo application setup and first elements.
 summary: In this post we will build a simple application with choo that list a series of tv shows, we will look at how to use the choo-cli and how to do some testing.
 categories: [Programming, Choo]
+collection: Choo
 header_img: https://c2.staticflickr.com/6/5791/30586665571_65fead6800_h.jpg
 header_img_id: 30586665571
 background_position: 0px 55%
