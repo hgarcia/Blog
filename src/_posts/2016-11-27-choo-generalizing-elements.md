@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Choo generalizing your elements.
-summary: In this post we will refactor the elements to reduce their dependencie on the library.
+summary: In this post we will refactor the elements to reduce their dependency on the library.
 categories: [Programming, Choo]
 collection: Choo
 header_img: https://c2.staticflickr.com/6/5791/30586665571_65fead6800_h.jpg
@@ -22,7 +22,7 @@ If we open the `pages/home.js` file we can see that we are passing the complete 
 
 This means that our elements need to understand the structure of the `state` and they are depending on the `send` function as well to raise their events.
 
-We can 'inverse' the dependencie and let our elements to dictate what their need.
+We can 'inverse' the dependencies and let our elements to dictate what their need.
 
 ## Removing dependencies
 
