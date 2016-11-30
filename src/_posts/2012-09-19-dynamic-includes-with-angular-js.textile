@@ -5,7 +5,7 @@ summary: Take advantage of expression evaluations to dynamically change the incl
 categories: [Programming, JavaScript, Angular]
 ---
 
-In "a previous post":http://blog.dynamicprogrammer.com/2012/09/10/using-includes-with-angular-js.html I show how to use includes to partition views.
+In "a previous post":http://blog.dynamicprogrammer.com/2012/09/10/using-includes-with-angular-js-to-organize-your-ui-modules/ I show how to use includes to partition views.
 
 In that example, I was using static includes that provide limited flexibility.
 
