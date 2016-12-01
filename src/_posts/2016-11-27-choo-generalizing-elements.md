@@ -28,7 +28,7 @@ We can 'inverse' the dependencies and let our elements to dictate what their nee
 
 Let's start with the `showList` element.
 
-We want to pass to our elements a [parameter object]](http://refactoring.com/catalog/introduceParameterObject.html).
+We want to pass to our elements a [parameter object](http://refactoring.com/catalog/introduceParameterObject.html).
 
 In the last post we didn't write any test for our elements, let's do that now.
 

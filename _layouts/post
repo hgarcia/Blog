@@ -7,12 +7,13 @@
 <div class="top-hero" style="background-image: url('https://farm6.staticflickr.com/5593/15068267985_e52290db61_h.jpg');">
 <span class="banner-legend"><a href="https://www.flickr.com/photos/theprogrammer/15068267985" target="flickr">full image</a></span>
 {% endif %}
-  <header>
-    <h1>{{ title }}</h1>
-  </header>
 </div>
 <div class="roll">
   <article>
+    <header>
+      <h1>{{ title }}</h1>
+      <span class="publishedDate">Published on {{monthName}} {{day}}, {{year}}</span>
+    </header>
       <div>
       {% if series %}
         <section class="collections">

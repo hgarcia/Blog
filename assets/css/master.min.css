@@ -145,18 +145,17 @@ div.asciicast iframe {
     padding: 0 3px;
 }
 .top-hero {
-    height: 295px;
+    height: 60vh;
     top: 0;
     width: 100%;
     z-index: 1;
 }
 .top-hero header {
-    top: 120px;
+    top: 32px;
     position: relative;
 }
 .top-hero h1 {
-    min-width: 320px;
-    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     background-color: rgba(255,255,255,0.5);
@@ -168,7 +167,7 @@ div.asciicast iframe {
   font-size: 12px;
   position: absolute;
   right: 6px;
-  top: 271px;
+  top: 56vh;
 }
 .img-float-right {
     float: right;
@@ -192,8 +191,8 @@ div.asciicast iframe {
   margin-left: 20px;
 }
 .roll section.collections {
-    padding: 0.8em;
-    border-left: 3px solid #E00875;
+    padding-left: 0.8em;
+    border-left: 3px solid #e6e6e6;
     margin-bottom: 3em;
 }
 .collections h3 {
@@ -228,6 +227,17 @@ p>code {
 .roll pre code {
     font-family: Courier, monospace;
     font-size: 14px;
+}
+.roll article header {
+  margin-top: 3em;
+  margin-bottom: 2em;
+}
+.roll article header h1 {
+  font-size: 2.5em;
+}
+.roll article header span.publishedDate{
+  float: right;
+  font-size: 0.8em;
 }
 .roll article footer {
     font-size: small;
