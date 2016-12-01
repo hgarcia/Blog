@@ -1,7 +1,0 @@
----
-layout: single
-title: Wrigley building
-home: 8905730868
-home_size: medium
-display_size: large
----

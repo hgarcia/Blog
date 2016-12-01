@@ -1,7 +1,0 @@
----
-layout: single
-title: just some music
-home: 9112424272
-home_size: small320
-display_size: large
----

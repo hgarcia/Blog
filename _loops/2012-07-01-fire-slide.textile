@@ -1,8 +1,0 @@
----
-layout: slide
-title: Fire
-home: 9112369296
-home_size: small320
-display_size: large
-slide: [9112369296, 9110148177, 9110151987, 9110151987, 9112375842, 9112376920]
----

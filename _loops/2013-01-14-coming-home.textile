@@ -1,7 +1,0 @@
----
-layout: single
-title: coming home
-home: 8404842221
-home_size: small320
-display_size: large
----

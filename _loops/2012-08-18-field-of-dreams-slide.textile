@@ -1,9 +1,0 @@
----
-layout: slide
-title: Field of dreams
-home: 9111139859
-home_size: small320
-display_size: large
-slide: [9111139859, 9111146051, 9113366698, 9111149101]
-title_style: "font-family: Helvetica; font-size: 1.2em;"
----

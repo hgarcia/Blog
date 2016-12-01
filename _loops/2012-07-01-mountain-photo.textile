@@ -1,7 +1,0 @@
----
-layout: single
-title: Mountain
-home: 9110201865
-home_size: medium
-display_size: medium640
----

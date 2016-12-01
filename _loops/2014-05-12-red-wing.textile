@@ -1,7 +1,0 @@
----
-layout: center
-title: red wing
-home: 14165410871
-home_size: small320
-display_size: medium640
----

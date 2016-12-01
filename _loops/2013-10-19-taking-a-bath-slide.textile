@@ -1,9 +1,0 @@
----
-layout: slide
-title: taking a bath
-home: 9371428980
-home_size: small320
-display_size: large
-slide: [9371428980, 9260515190, 9260512836, 9260510432, 9257730407, 9257728155]
-title_style: "font-family: Helvetica; font-size: 1.7em;"
----

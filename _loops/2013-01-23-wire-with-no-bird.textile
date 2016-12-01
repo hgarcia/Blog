@@ -1,7 +1,0 @@
----
-layout: single
-title: wire with no bird
-home: 8405940514
-home_size: small320
-display_size: large
----

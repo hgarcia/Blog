@@ -1,7 +1,0 @@
----
-layout: single
-title: Up there
-home: 9110010075
-home_size: small320
-display_size: large
----

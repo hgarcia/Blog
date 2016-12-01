@@ -1,7 +1,0 @@
----
-layout: single
-title: hi there
-home: 8178904708
-home_size: small320
-display_size: large
----

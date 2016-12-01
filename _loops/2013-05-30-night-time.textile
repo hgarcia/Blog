@@ -1,7 +1,0 @@
----
-layout: center
-title: night time
-home: 8905459965
-home_size: small320
-display_size: large1600
----

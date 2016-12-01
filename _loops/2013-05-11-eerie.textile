@@ -1,7 +1,0 @@
----
-layout: single
-title: eerie
-home: 8739953954
-home_size: small320
-display_size: large
----

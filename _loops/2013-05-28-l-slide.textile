@@ -1,9 +1,0 @@
----
-layout: slide
-title: L
-home: 8905747824
-home_size: medium
-display_size: large
-slide: [8905747824, 8905743088, 8905756898]
-title_style: "font-family: Helvetica; font-size: 1.7em;"
----

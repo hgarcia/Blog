@@ -1,7 +1,0 @@
----
-layout: single
-title: HIKE
-home: 8178912197
-home_size: small320
-display_size: large
----

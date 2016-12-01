@@ -1,7 +1,0 @@
----
-layout: single
-title: what's up?
-home: 8905090149
-home_size: medium
-display_size: large
----

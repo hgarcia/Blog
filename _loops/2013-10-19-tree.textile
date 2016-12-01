@@ -1,7 +1,0 @@
----
-layout: center
-title: tree
-home: 9260455014
-home_size: small320
-display_size: large1600
----

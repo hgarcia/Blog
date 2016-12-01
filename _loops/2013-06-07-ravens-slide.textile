@@ -1,9 +1,0 @@
----
-layout: slide
-title: Ravens
-home: 8998351426
-home_size: small320
-display_size: large
-slide: [8998351426, 8998353258, 8997173243, 8997176837, 8997248275]
-title_style: "font-family: Helvetica; font-size: 1.7em;"
----

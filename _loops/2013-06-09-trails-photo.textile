@@ -1,7 +1,0 @@
----
-layout: single
-title: trails
-home: 8997191735
-home_size: medium
-display_size: large
----

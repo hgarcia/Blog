@@ -1,7 +1,0 @@
----
-layout: single
-title: up the mountain
-home: 8998363978
-home_size: small320
-display_size: large
----

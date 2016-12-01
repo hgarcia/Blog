@@ -1,7 +1,0 @@
----
-layout: single
-title: cold forest
-home: 8405939230
-home_size: small320
-display_size: large
----

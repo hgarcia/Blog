@@ -1,7 +1,0 @@
----
-layout: center
-title: hideout
-home: 11018572503
-home_size: small320
-display_size: large1600
----

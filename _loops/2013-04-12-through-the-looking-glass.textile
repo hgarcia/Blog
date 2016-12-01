@@ -1,7 +1,0 @@
----
-layout: single
-title: Through the looking glass
-home: 8641907341
-home_size: small320
-display_size: large
----

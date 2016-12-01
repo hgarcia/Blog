@@ -1,7 +1,0 @@
----
-layout: single
-title: Please hold
-home: 7206605636
-home_size: small320
-display_size: large
----

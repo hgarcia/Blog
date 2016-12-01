@@ -1,7 +1,0 @@
----
-layout: single
-title: bridge over trouble waters
-home: 8998461902
-home_size: small320
-display_size: large
----

@@ -1,7 +1,0 @@
----
-layout: single
-title: old & new
-home: 8123885015
-home_size: small320
-display_size: large
----

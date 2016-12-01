@@ -1,7 +1,0 @@
----
-layout: single
-title: blue
-home: 8906021918
-home_size: small320
-display_size: large
----

@@ -1,7 +1,0 @@
----
-layout: center
-title: tree waiting
-home: 14168781644
-home_size: small320
-display_size: medium640
----

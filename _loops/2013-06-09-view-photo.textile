@@ -1,7 +1,0 @@
----
-layout: center
-title: view
-home: 8998394638
-home_size: small320
-display_size: large1600
----

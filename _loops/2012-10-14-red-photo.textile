@@ -1,7 +1,0 @@
----
-layout: single
-title: red
-home: 8087104659
-home_size: small320
-display_size: large
----

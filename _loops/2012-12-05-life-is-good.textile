@@ -1,7 +1,0 @@
----
-layout: single
-title: life is good
-home: 8246662457
-home_size: small320
-display_size: medium640
----
