@@ -3,6 +3,9 @@ layout: post
 title: Microinteractions - book review
 summary: Microinteractions are all those little things we deal with in a daily basic. Every piece of software and hardware have a good number of them. You should read the book if you want to understand how to make your users life significantly better.
 categories: [Books, Mobile, Programming]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 

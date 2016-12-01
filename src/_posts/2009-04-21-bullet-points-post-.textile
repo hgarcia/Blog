@@ -3,6 +3,9 @@ layout: post
 title: Bullet points post.
 summary: Common List E-book (free online) Apparently you can also download it from the Apress website's book page but the link was down for maintenance when I tried.
 categories: [Books, Programming, Tools]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 * <a href="http://gigamonkeys.com/book/" target="_blank">Common List E-book (free online)</a>.

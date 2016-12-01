@@ -3,6 +3,9 @@ layout: post
 title: ClojureScript up and running - book review.
 summary: A short book with enough information to get you going with this flavor of Clojure that trans-piles into JavaScript.
 categories: [Books]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__

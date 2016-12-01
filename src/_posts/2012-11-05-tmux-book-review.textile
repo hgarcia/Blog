@@ -3,6 +3,9 @@ layout: post
 title: tmux, productive mouse-free development - book review.
 summary: A short book packed with information that will make you more productive in little to no time.
 categories: [Books]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 <a href="http://pragprog.com/book/bhtmux/tmux" target="_blank"><img class="img-float-right"  src="/images/posts/bhtmux_xlargecover.jpg" border="0" alt="tmux: productive mouse-free development - book cover"/></a>

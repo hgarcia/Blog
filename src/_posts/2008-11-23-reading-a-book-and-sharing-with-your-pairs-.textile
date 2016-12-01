@@ -3,6 +3,9 @@ layout: post
 title: Reading a book and sharing with your pairs.
 summary: A month ago or so I found a mention to the Toronto Patterns Study Interest Group in the Toronto XP list. I made contact with them and I was reading the Clean Code book in no time.  I have ben to two meetings so far and I can't be any happier.
 categories: [Books, General]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 A month ago or so I found a mention to the <a target="_blank" href="http://groups.yahoo.com/group/dpsig-toronto/">Toronto Patterns Study Interest Group</a> in the Toronto XP list.

@@ -3,15 +3,18 @@ layout: post
 title: Designing the obvious, book review.
 summary: I just finished reading Designing the obvious by Robert Hoekman, Jr. This is a book about how to design good web applications. The subtitle, a common sense approach to web application design, it's also a good synopsis.
 categories: [Books, General]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 I just finished reading Designing the obvious by Robert Hoekman, Jr. This is a book about how to design good web applications. The subtitle, a common sense approach to web application design, it's also a good synopsis.
 
-The book was written in 2007. There is nothing really revolutionary in it, but it summons up lots of good advices and examples on how to make your web application interface easier to use. 
+The book was written in 2007. There is nothing really revolutionary in it, but it summons up lots of good advices and examples on how to make your web application interface easier to use.
 
-As a developer I really liked to read it, no so much for the content but as a way to get into the mind of a designer (a good one) and what things he considers unacceptable. 
+As a developer I really liked to read it, no so much for the content but as a way to get into the mind of a designer (a good one) and what things he considers unacceptable.
 
-I confess that I did commit some (maybe all) the interaction sins that are mentioned in this book in more than one occasion. 
+I confess that I did commit some (maybe all) the interaction sins that are mentioned in this book in more than one occasion.
 
 Chapter 6, Handle errors wisely is, in my opinion, the best part of the book. There is a long discussion on how to use what he calls Pokaâ€"yoke devices. Poka-yoke is the Japanese term for "mistake-proofing".
 

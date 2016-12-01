@@ -3,6 +3,9 @@ layout: post
 title: Async in c# 5 - book review.
 summary: A good overview of asynchronous programming in c# 5 with the help of the new async and await keywords.
 categories: [Books]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__

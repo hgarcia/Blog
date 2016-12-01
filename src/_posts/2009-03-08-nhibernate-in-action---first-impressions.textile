@@ -3,12 +3,15 @@ layout: post
 title: NHibernate in Action, First impressions
 summary: I got the book NHibernate in Action a few months ago via the MEAP program. Finally I was able to put my hands in the print version a few weeks ago. I have been reading it mostly in the subway during my commute. I'm very excited about it.
 categories: [Books]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
-I got the book <a href="http://www.manning.com/kuate/" target="_blank">NHibernate in Action</a> a few months ago via the <a href="http://www.manning.com/about/meap.html" target="_blank">MEAP</a> program. Finally I was able to put my hands in the print version a few weeks ago. I have been reading it mostly in the subway during my commute. I'm very excited about it. 
+I got the book <a href="http://www.manning.com/kuate/" target="_blank">NHibernate in Action</a> a few months ago via the <a href="http://www.manning.com/about/meap.html" target="_blank">MEAP</a> program. Finally I was able to put my hands in the print version a few weeks ago. I have been reading it mostly in the subway during my commute. I'm very excited about it.
 
 I think the book is a must if you are using <a href="http://www.hibernate.org/343.html" target="_blank">NHibernate</a> or if you plan on using it in the future. It's very well written. Most topics are explained in clear terms, with enough details to be relevant not just in the common usages but also in more complex scenarios.
 
-One of the things I like is that best and common practices are emphasized. The book covers version 1.2 and even when today you should probably use version 2.0 the book is still relevant. 
+One of the things I like is that best and common practices are emphasized. The book covers version 1.2 and even when today you should probably use version 2.0 the book is still relevant.
 
 Ok, back to the book now.

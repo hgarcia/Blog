@@ -3,13 +3,16 @@ layout: post
 title: Book review- User Stories Applied- For Agile Software Development by Mike Cohn
 summary: I pick up the book with a lot of interesting an enthusiasm. My goals were to learn techniques and proper ways to write down user stories, improve my estimation techniques and been able to apply some of those techniques back at work.
 categories: [Books, General, Methodology]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 I pick up <a href="http://is.gd/aO7t2" target="_blank">the book</a> with a lot of interesting an enthusiasm. My goals were to learn techniques and proper ways to write down user stories, improve my estimation techniques and been able to apply some of those techniques back at work.
 
 The book delivers in it’s promise. Some of the things I hope to use at work are the story writing workshops and user role modelling.
 
-User role modelling was one of the most interesting techniques for me. I also enjoyed the guidance for writing good user stories. 
+User role modelling was one of the most interesting techniques for me. I also enjoyed the guidance for writing good user stories.
 
 Mike Cohn takes a very pragmatic approach to some issues usually very controversial in the agile community, like using sticky notes or software to write stories. I particulary liked that.
 

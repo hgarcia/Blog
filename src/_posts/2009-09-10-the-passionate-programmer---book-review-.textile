@@ -3,6 +3,9 @@ layout: post
 title: The Passionate Programmer - Book review.
 summary: On Saturday I pick it up from the post office and next day I was sitting in the backyard going through the pages while preparing a BBQ.
 categories: [Books]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 Last week I was reading <a href="http://www.valuablecode.com/2009/09/how-a-code-retreat-taught-me-to-be-comfortable-throwing-away-code/" target="_blank">Alistair's post about the Toronto Code Retreat</a>. I was planning to attend but I had plane tickets for the same day so I miss the opportunity, what I regret. In that post Alistair refers to the book <a href="http://www.pragprog.com/titles/cfcar2/the-passionate-programmer" target="_blank">The Passionate Programmer</a> by <a href="http://chadfowler.com/" target="_blank">Chad Fowler</a>. Next thing you know, I was ordering the book online.

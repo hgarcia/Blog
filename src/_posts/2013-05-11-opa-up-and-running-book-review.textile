@@ -3,6 +3,9 @@ layout: post
 title: Opa up and running - book review.
 summary: Opa is a new intriguing language and framework for web development. This book will help you to make the most of it very fast.
 categories: [Books]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
@@ -40,4 +43,3 @@ Opa is an intriguing framework and I will have to take it for a spin to make my 
 There are a few other things that bother me, but those are regarding the code examples and the framework and may not be really the book to blame (ex: not external templates, to separate html from the view code).
 
 I also recommend taking a look at some of "Adam Koprowski's repos on Github":https://github.com/akoprow
-

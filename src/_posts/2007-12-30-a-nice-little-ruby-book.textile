@@ -3,6 +3,9 @@ layout: post
 title: A nice little Ruby book
 summary: If you are learning Ruby or if you just wander what is all of that about there are a few free online books that you should jump into. Mr. Neighborly's Humble Little Ruby Book is a free e-book from the guys at infoq.com
 categories: [Books, Programming, Ruby]
+header_img: https://c1.staticflickr.com/9/8109/29239566881_75b8aeea56_h.jpg
+header_img_id: 28851464770
+background_position: 0px 65%
 ---
 
 If you are learning Ruby or if you just wander what is all of that about there are a few free online books that you should jump into.
