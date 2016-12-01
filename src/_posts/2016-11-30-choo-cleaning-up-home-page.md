@@ -7,6 +7,7 @@ collection: Choo
 header_img: https://c2.staticflickr.com/6/5791/30586665571_65fead6800_h.jpg
 header_img_id: 30586665571
 background_position: 0px 55%
+draft: true
 ---
 
 
