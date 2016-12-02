@@ -25,7 +25,13 @@ If the asserts fails, it will raise an error.
 This behaviour could be dangerous in production, so our build script is already configured to remove the assertions from the final code.
 
 ```
-  //Build code example
+  # add -d switch for sourcemapping and debugging production.
+  NODE_ENV=production browserify -e client.js -o dist/js/main.js \
+    -t envify \
+    -g yo-yoify \
+    -g unassertify \
+    -g es2040 \
+    -g uglifyify | uglifyjs
 ```
 
 I will show here the assertions for the `addShow` element. You can check the rest in the repository if you want (see the bottom of the article for a link).
@@ -119,7 +125,7 @@ Now that we exposed the `getAddShowParams` function we can easily write some tes
 
 Notice how addShow is raising 2 events for the action, it doesn't really feel right, we will have to come back to it at a later time.
 
-As always the source for the project is in github tagged
+As always the source for the project is in github tagged.
 
 ## Resources
 
