@@ -129,4 +129,4 @@ As always the source for the project is in github tagged.
 
 ## Resources
 
-* [Github code for this article](https://github.com/hgarcia/tv-series/releases/tag/v0.4)
+* [Github code for this article](https://github.com/hgarcia/tv-series/tree/v0.4)

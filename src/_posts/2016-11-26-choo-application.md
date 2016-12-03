@@ -475,7 +475,7 @@ Some possible articles
 
 ## Resources
 
-* [Github code for this article](https://github.com/hgarcia/tv-series/releases/tag/v0.1)
+* [Github code for this article](https://github.com/hgarcia/tv-series/tree/v0.1)
 * [Choo online manual](https://yoshuawuyts.gitbooks.io/choo/content/)
 * [Intro video](https://www.youtube.com/watch?v=47qyWHkujdo) by [Ron Ross](https://www.youtube.com/channel/UCf0StsEF9U7ThU9NoyxL9zg)
 * [Choo-cli video](https://www.youtube.com/watch?v=FgYd3T8lb_Q) another video by [Ron Ross](https://www.youtube.com/channel/UCf0StsEF9U7ThU9NoyxL9zg)

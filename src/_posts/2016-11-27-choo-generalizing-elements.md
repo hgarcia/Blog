@@ -190,5 +190,5 @@ I will also like to explore some refactorings to be able to test that the event 
 
 ## Resources
 
-* [Github code for this article](https://github.com/hgarcia/tv-series/releases/tag/v0.2)
+* [Github code for this article](https://github.com/hgarcia/tv-series/tree/v0.2)
 * [Choo designing for reusability](https://yoshuawuyts.gitbooks.io/choo/content/guides/designing-for-reusability.html)

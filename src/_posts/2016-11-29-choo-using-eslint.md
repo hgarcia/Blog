@@ -141,6 +141,6 @@ Having the templates as part of the project is very clever, since we may use dif
 
 ## Resources
 
-* [Github code for this article](https://github.com/hgarcia/tv-series/releases/tag/v0.3)
+* [Github code for this article](https://github.com/hgarcia/tv-series/tree/v0.3)
 * [standard](http://standardjs.com/)
 * [eslint](http://eslint.org/)

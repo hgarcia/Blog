@@ -145,10 +145,11 @@ div.asciicast iframe {
     padding: 0 3px;
 }
 .top-hero {
-    height: 60vh;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+  height: 60vh;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  position: fixed;
 }
 .top-hero header {
     top: 32px;
@@ -174,14 +175,17 @@ div.asciicast iframe {
     margin-left: 2em;
 }
 .roll {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
+  position: relative;
+  top: 60vh;
+  z-index: 8;
+  background: white;
 }
 .roll article {
     background-color: #fff;
-    padding: 0 9px 9px;
+    padding: 3em 9px 9px;
     margin-top: 36px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 .roll article p {
     margin-bottom: 1em;
@@ -229,7 +233,6 @@ p>code {
     font-size: 14px;
 }
 .roll article header {
-  margin-top: 3em;
   margin-bottom: 2em;
 }
 .roll article header h1 {
@@ -267,6 +270,7 @@ p>code {
     position:fixed;
     text-align: center;
     width: 100%;
+    z-index: 8;
 }
 .page-footer p {
     top: 6px;
