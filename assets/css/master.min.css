@@ -247,6 +247,10 @@ p>code {
     margin-top: 36px;
     text-align: center;
 }
+.roll ul.archive {
+  max-width: 800px;
+  margin: 0 auto;
+}
 .roll ul.archive li {
     margin-left: 0.6em;
     list-style: none;
