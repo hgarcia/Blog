@@ -8,7 +8,7 @@ collection: Learning Erlang
 
 __Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
 
-We saw some attributes in "the previous post in this series.":http://blog.dynamicprogrammer.com/2012/03/26/learning-erlang-4-modules-and-functions.html
+We saw some attributes in "the previous post in this series.":https://dynamicprogrammer.com/2012/03/26/modules-and-functions-erlang-building-blocks-learning-erlang-4/
 
 An attribute take the form of: <span class="code">-Tag(Values).</span> where Tag should be an atom and Value a literal term.
 Let's see what types of attributes we have and how we use them.
@@ -85,7 +85,7 @@ You can easily create custom attributes. Custom attributes can only take one arg
 
 h4. File and Line.
 
-File and Line are predefined macros than can be ovewriten using the file/2 attribute.
+File and Line are predefined macros than can be overwritten using the file/2 attribute.
 This attribute is used by code generation tools to map the generated code to the code input by the programmer. This will help with debugging.
 
 <span class="code">
@@ -96,7 +96,7 @@ h4. Module info functions.
 
 The compiler inserts and exports two special functions that you can call to access the module information. module_info/0 and module_info/1
 
-This is the output on calling those functions in our "htmltags module.":http://blog.dynamicprogrammer.com/2012/03/26/learning-erlang-4-modules-and-functions.html
+This is the output on calling those functions in our "htmltags module.":https://dynamicprogrammer.com/2012/03/26/modules-and-functions-erlang-building-blocks-learning-erlang-4/
 
 <script src="https://gist.github.com/2292553.js?file=module_info.erl"></script>
 

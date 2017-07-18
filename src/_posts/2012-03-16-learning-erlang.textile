@@ -8,7 +8,7 @@ collection: Learning Erlang
 
 __Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
 
-After my first (failed) attemp to learn Erlang half a decade ago, I kept keeping an eye on it and reading on and off about some new cool company using it, some new database being written with it and how great everybody think it is.
+After my first (failed) attempt to learn Erlang half a decade ago, I kept keeping an eye on it and reading on and off about some new cool company using it, some new database being written with it and how great everybody think it is.
 
 h3. Fast forward to the present day.
 

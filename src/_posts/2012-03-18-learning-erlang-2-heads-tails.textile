@@ -8,7 +8,7 @@ collection: Learning Erlang
 
 __Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
 
-We have a list with some elements and we want to get the first one. As "we saw before":http://blog.dynamicprogrammer.com/2012/03/16/learning-erlang.html, assignment is done via pattern matching. So to get the first element on a list we can match it to a variable. Let's see how we can do this and what works and what doesn't.
+We have a list with some elements and we want to get the first one. As "we saw before":https://dynamicprogrammer.com/2012/03/16/learning-erlang/, assignment is done via pattern matching. So to get the first element on a list we can match it to a variable. Let's see how we can do this and what works and what doesn't.
 
 <script src="https://gist.github.com/2054805.js?file=matching_lists.erl"></script>
 

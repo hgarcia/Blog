@@ -27,7 +27,7 @@ __This is sample code to illustrate function definitions. This is not code that 
 
 In the example above I define a function anchor that can take a tuple with two or three elements or a simple variable. The double plus operator concatenate lists (or strings) together. It's important to notice that this is only one function with three heads.
 
-The pattern match is done on the arguments of the function. It will check number of arguments and them compare the arguments following the rules we saw in "Learning Erlang 3":http://blog.dynamicprogrammer.com/2012/03/19/learning-erlang-3-variables-comparisons-dynamic-typing.html
+The pattern match is done on the arguments of the function. It will check number of arguments and them compare the arguments following the rules we saw in "Learning Erlang 3":https://dynamicprogrammer.com/2012/03/19/variables-comparisons-and-dynamic-typing-learning-erlang-3/
 
 Even when we know that our anchor function can use some love, we need to start using it right away and to do so we will create a module.
 
